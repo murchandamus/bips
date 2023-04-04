@@ -127,7 +127,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [TC] originally called `scriptSig`. The Bitcoin code base used Hungarian notation when it was published.  This transaction field appearing in Transaction Inputs was named for containing the signature and being of the type script.  Today, this field is better understood as the _input script_ which is used to satisfy spending conditions for non-segwit outputs, redirects validation to the Witness Stack for wrapped segwit outputs, and is empty for native segwit outputs. The Input Script may contain an actual script when spending a Bare Output Script, but may only contain push operations for any output type since P2SH.
 
 ; Leaf Script
-: [TC] A Condition Script used for spending P2TR outputs via the script path
+: [TC] A Condition Script used for spending P2TR outputs via the script path. The Leaf Script appears as a Witness Item.
 
 ; Leaf Version
 : [TC] The version of Script used in a leaf script. At the time of writing, only _Tapscript_ is defined.
@@ -148,13 +148,13 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [TC] Part of an Outpoint. The position of the output in a transaction's Output List that created the identified UTXO.
 
 ; Output Script
-: [TC] originally called `scriptPubKey`. The part of a transaction output that contains either a Condition Script or a Forwarding Script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named `scriptPubKey` to refer to the transaction field of the type _script_ that contained the public key. The use of this field had evolved beyond that interpretation even when Bitcoin was published since the field could already contain more complicated scripts.  Today, this field is referred to as the _Output Script_.
+: [TC] originally called `scriptPubKey`. Must be present in each transaction output. Contains either a Condition Script or a Forwarding Script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named `scriptPubKey` to refer to the transaction field of the type _script_ that contained the public key. The use of this field had evolved beyond that interpretation even when Bitcoin was published since the field could already contain more complicated scripts.  Today, this field is referred to as the _Output Script_.
 
 ; P2SH Program
 : [AT] A script template that forwards input validation to the Redeem Script.  P2SH Programs are a type of Forwarding Script.
 
 ; Redeem Script
-: [TC] The Condition Script used for spending P2SH outputs. Note that the Input Script of wrapped segwit inputs is not a Redeem Script but a Witness Program.
+: [TC] The Condition Script used for spending P2SH outputs. Is provided in the Input Script along with Script Arugemnts to satisfy it. The Input Script of wrapped segwit inputs is not a Redeem Script but a Witness Program.
 
 ; Script Arguments
 : [AT] Arguments presented to satisfy the Condition Script, including Signatures, and Public Keys
@@ -220,10 +220,10 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [AT] The part of the serialized transaction that contains the witness stacks for each input
 
 ; Witness Script
-: [TC] A Witness Item that provides the Condition Script used to spend P2WSH outputs
+: [TC] A Witness Item that provides the Condition Script used to spend P2WSH outputs. Appears in the Witness Stack.
 
 ; Witness Stack
-: [TC] The pre-built stack of witness items that is executed in validation to satisfy an input's condition script. If a transaction has at least one segwit input, each input has exactly one witness stack.  Witness stacks are not scripts, but may include witness items that are scripts. While there is a witness stack for each input, the witness stack is not part of the input. Strictly speaking, a witness stack can contain witness items that will not be added to the stack, such as the Control Block.
+: [TC] The pre-built stack of witness items that is executed in validation to satisfy an input's condition script. If a transaction has at least one segwit input, each input has exactly one witness stack.  Witness stacks are not scripts, but may include witness items that are scripts. While there is a witness stack for each input, the witness stack is not part of the input. Strictly speaking, a witness stack can contain witness items that will not be added to the stack, such as the Control Block. The Witness Stack may contain Condition Scripts, specifically it will contain a Witness Script for P2WSH inputs, and a Leaf Script for a P2TR script path spend.
 
 ; Witness Version
 : [TC] The version of the witness program in native segwit outputs
