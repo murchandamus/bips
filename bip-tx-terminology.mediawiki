@@ -38,6 +38,62 @@ Likewise, the _input script_ is a transaction component, but the length indicato
 
 We also introduce some umbrella terms, concepts, and ideas that are useful to describe aspects of transactions (labeled [AT] for Abstract Term).
 
+===Anatomy of a serialized transaction===
+
+In this section we dissect a serialized transaction. Each sub-level in the list repeats a subset of the transaction's serialization to label the included parts. The goal is to provide a map from a serialized transaction back to our definitions above. We use the first ever P2TR transaction with a keypath and a scriptpath input <code>37777defed8717c581b4c0509329550e344bdc14ac38f71fc050096887e535c8</code>.
+
+* Raw '''Transaction''' <code>020000000001027bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e70000000000feffffff7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e70100000000feffffff01b4ba0e0000000000160014173fd310e9db2c7e9550ce0f03f1e6c01d833aa90140134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c03407b5d614a4610bf9196775791fcc589597ca066dcd10048e004cd4c7341bb4bb90cee4705192f3f7db524e8067a5222c7f09baf29ef6b805b8327ecd1e5ab83ca2220f5b059b9a72298ccbefff59d9b943f7e0fc91d8a3b944a95e7b6390cc99eb5f4ac41c0d9dfdf0fe3c83e9870095d67fff59a8056dad28c6dfb944bb71cf64b90ace9a7776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45bffd30a00</code>
+** First part of '''Transaction Header'''
+*** '''Transaction Version''' <code>02000000</code>: integer field, here indicating version 2
+*** '''Marker''' <code>00</code>: serialization artifact indicating extended serialization
+*** '''Flag''' <code>01</code>: serialization artifact indicating presence of a Witness Structure
+** '''Transaction Input List'''
+*** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, varInt here indicating 2 inputs, considered part of the Transaction Header
+*** First '''Input'''
+**** '''Outpoint'''
+***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: little endian txhash indicating that the spent UTXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b.
+***** '''Output Index''' <code>00000000</code>: position of the UTXO on transaction output list of e700b7b33…a4bbc07b
+**** '''Input Script'''
+***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
+**** '''Sequence''' <code>feffffff</code>: transaction field encoding MAX-1, which indicates that the transaction uses lock time but is not replaceable
+*** Second '''Input'''
+**** '''Outpoint'''
+***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: indicating the spent transaction output was created by the transaction e700b7b33…a4bbc07b
+***** '''Output Index''' <code>01000000</code>: the output position, the UTXO was the second position on the transaction output list of e700…c07b
+**** '''Input Script'''
+***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
+**** '''Sequence''' <code>feffffff</code>: transaction field encoding MAX-1, which indicates that the transaction uses lock time but is not replaceable
+** '''Transaction Output List'''
+*** Length of '''Transaction Output List''' <code>01</code>: serialization artifact, varInt here indicating 1 output, considered part of the Transaction Header
+*** First '''Output'''
+**** '''Amount''' <code>b4ba0e0000000000</code>: field defining that 965300 satoshi are assigned to this output
+**** '''Output Script (scriptPubKey)'''
+***** Length of the '''scriptPubKey''' <code>16</code>: serialization artifact, here instructing the interpreter to read 22 bytes
+***** '''Witness Version''' <code>00</code>: indicates a native segwit v0 output
+***** Length of the '''Witness Program''' <code>14</code>: serialization artifact indicating a 20-byte Witness Program
+***** '''Witness Program''' <code>173fd310e9db2c7e9550ce0f03f1e6c01d833aa9</code>: a public key hash since a 20-byte v0 Witness Program indicates a P2WPKH output)
+** '''Witness Structure'''
+*** First '''Witness Stack''': The Witness data corresponding to the first input. (Note that the count of witness stacks is implicitly provided by the input counter, since each input must have a Witness Stack.)
+**** Item count for the first '''Witness Stack''' <code>01</code>: serialization artifact. A single Witness Item indicates a keypath spend.
+**** First '''Witness Item'''
+***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a signature
+***** '''Signature''' <code>134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c</code>: The first Witness Item here is a Script Argument for the corresponding Condition Script. In this case, we see the signature corresponding to the P2TR keypath spend.
+*** Second '''Witness Stack''': The Witness data corresponding to the second input.
+**** Item count for the second '''Witness Stack''' <code>03</code>: serialization artifact, two or more Witness Items indicate a scriptpath spend.
+**** First '''Witness Item'''
+***** '''Length of the first Witness Item''' <code>40</code>: 64 bytes indicate a signature
+***** '''Signature''' <code>7b5d614a4610bf9196775791fcc589597ca066dcd10048e004cd4c7341bb4bb90cee4705192f3f7db524e8067a5222c7f09baf29ef6b805b8327ecd1e5ab83ca</code>: script argument used as an input to the condition script
+**** '''Second Witness Item'''
+***** Length of the second '''Witness Item''' <code>22</code>: serialization artifact instructing to read 34 bytes
+***** '''Leaf Script''' <code>20f5b059b9a72298ccbefff59d9b943f7e0fc91d8a3b944a95e7b6390cc99eb5f4ac</code>: the condition scripts for the P2TR scriptpath spend
+**** Third '''Witness Item'''
+***** Length of the third '''Witness Item''' <code>41</code>: serialization artifact, the length indicates the depth of the Control Block and how many hashing partners are necessary to prove the membership of the Leaf Script
+***** '''Leaf Version''' <code>c0</code>: indicates the version of Tapscript used in the Leaf Script
+***** '''Inner key''' <code>d9dfdf0fe3c83e9870095d67fff59a8056dad28c6dfb944bb71cf64b90ace9a7</code>: The Taproot Internal Key which was tweaked with the Merkle root of the Script Tree to result in the Public Key committed to in the UTXO's Witness Program being spent
+***** '''Tap Branch''' <code>776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45b</code>: The hashing partners necessary to connect the Leaf Script to the Merkle root of the Script Tree.
+** '''Transaction Header (cont)''': A collective term to refer to the meta information of a transaction, split across the transaction.
+*** '''Lock Time''' <code>ffd30a00</code>: the 4-byte lock time field, little endian for 709631
+
 ===Definition of Terms===
 
 ; Annex
@@ -197,61 +253,6 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 | P2TR SP || <nowiki>[…Script Arguments, Leaf Script, Control Block, (Opt: Annex)]</nowiki>
 |}
 
-===Anatomy of a serialized transaction===
-
-In this section we dissect a serialized transaction. Each sub-level in the list repeats a subset of the transaction's serialization to label the included parts. The goal is to provide a map from a serialized transaction back to our definitions above. We use the first ever P2TR transaction with a keypath and a scriptpath input <code>37777defed8717c581b4c0509329550e344bdc14ac38f71fc050096887e535c8</code>.
-
-* Raw '''Transaction''' <code>020000000001027bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e70000000000feffffff7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e70100000000feffffff01b4ba0e0000000000160014173fd310e9db2c7e9550ce0f03f1e6c01d833aa90140134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c03407b5d614a4610bf9196775791fcc589597ca066dcd10048e004cd4c7341bb4bb90cee4705192f3f7db524e8067a5222c7f09baf29ef6b805b8327ecd1e5ab83ca2220f5b059b9a72298ccbefff59d9b943f7e0fc91d8a3b944a95e7b6390cc99eb5f4ac41c0d9dfdf0fe3c83e9870095d67fff59a8056dad28c6dfb944bb71cf64b90ace9a7776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45bffd30a00</code>
-** First part of '''Transaction Header'''
-*** '''Transaction Version''' <code>02000000</code>: integer field, here indicating version 2
-*** '''Marker''' <code>00</code>: serialization artifact indicating extended serialization
-*** '''Flag''' <code>01</code>: serialization artifact indicating presence of a Witness Structure
-** '''Transaction Input List'''
-*** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, varInt here indicating 2 inputs, considered part of the Transaction Header
-*** First '''Input'''
-**** '''Outpoint'''
-***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: little endian txhash indicating that the spent UTXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b.
-***** '''Output Index''' <code>00000000</code>: position of the UTXO on transaction output list of e700b7b33…a4bbc07b
-**** '''Input Script'''
-***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
-**** '''Sequence''' <code>feffffff</code>: transaction field encoding MAX-1, which indicates that the transaction uses lock time but is not replaceable
-*** Second '''Input'''
-**** '''Outpoint'''
-***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: indicating the spent transaction output was created by the transaction e700b7b33…a4bbc07b
-***** '''Output Index''' <code>01000000</code>: the output position, the UTXO was the second position on the transaction output list of e700…c07b
-**** '''Input Script'''
-***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
-**** '''Sequence''' <code>feffffff</code>: transaction field encoding MAX-1, which indicates that the transaction uses lock time but is not replaceable
-** '''Transaction Output List'''
-*** Length of '''Transaction Output List''' <code>01</code>: serialization artifact, varInt here indicating 1 output, considered part of the Transaction Header
-*** First '''Output'''
-**** '''Amount''' <code>b4ba0e0000000000</code>: field defining that 965300 satoshi are assigned to this output
-**** '''Output Script (scriptPubKey)'''
-***** Length of the '''scriptPubKey''' <code>16</code>: serialization artifact, here instructing the interpreter to read 22 bytes
-***** '''Witness Version''' <code>00</code>: indicates a native segwit v0 output
-***** Length of the '''Witness Program''' <code>14</code>: serialization artifact indicating a 20-byte Witness Program
-***** '''Witness Program''' <code>173fd310e9db2c7e9550ce0f03f1e6c01d833aa9</code>: a public key hash since a 20-byte v0 Witness Program indicates a P2WPKH output)
-** '''Witness Structure'''
-*** First '''Witness Stack''': The Witness data corresponding to the first input. (Note that the count of witness stacks is implicitly provided by the input counter, since each input must have a Witness Stack.)
-**** Item count for the first '''Witness Stack''' <code>01</code>: serialization artifact. A single Witness Item indicates a keypath spend.
-**** First '''Witness Item'''
-***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a signature
-***** '''Signature''' <code>134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c</code>: The first Witness Item here is a Script Argument for the corresponding Condition Script. In this case, we see the signature corresponding to the P2TR keypath spend.
-*** Second '''Witness Stack''': The Witness data corresponding to the second input.
-**** Item count for the second '''Witness Stack''' <code>03</code>: serialization artifact, two or more Witness Items indicate a scriptpath spend.
-**** First '''Witness Item'''
-***** '''Length of the first Witness Item''' <code>40</code>: 64 bytes indicate a signature
-***** '''Signature''' <code>7b5d614a4610bf9196775791fcc589597ca066dcd10048e004cd4c7341bb4bb90cee4705192f3f7db524e8067a5222c7f09baf29ef6b805b8327ecd1e5ab83ca</code>: script argument used as an input to the condition script
-**** '''Second Witness Item'''
-***** Length of the second '''Witness Item''' <code>22</code>: serialization artifact instructing to read 34 bytes
-***** '''Leaf Script''' <code>20f5b059b9a72298ccbefff59d9b943f7e0fc91d8a3b944a95e7b6390cc99eb5f4ac</code>: the condition scripts for the P2TR scriptpath spend
-**** Third '''Witness Item'''
-***** Length of the third '''Witness Item''' <code>41</code>: serialization artifact, the length indicates the depth of the Control Block and how many hashing partners are necessary to prove the membership of the Leaf Script
-***** '''Leaf Version''' <code>c0</code>: indicates the version of Tapscript used in the Leaf Script
-***** '''Inner key''' <code>d9dfdf0fe3c83e9870095d67fff59a8056dad28c6dfb944bb71cf64b90ace9a7</code>: The Taproot Internal Key which was tweaked with the Merkle root of the Script Tree to result in the Public Key committed to in the UTXO's Witness Program being spent
-***** '''Tap Branch''' <code>776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45b</code>: The hashing partners necessary to connect the Leaf Script to the Merkle root of the Script Tree.
-** '''Transaction Header (cont)''': A collective term to refer to the meta information of a transaction, split across the transaction.
-*** '''Lock Time''' <code>ffd30a00</code>: the 4-byte lock time field, little endian for 709631
 
 ==Rationale==
 
