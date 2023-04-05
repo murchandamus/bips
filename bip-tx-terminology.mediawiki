@@ -106,7 +106,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [Component] A Condition Script that is directly defined in the Output Script field. Used to specify all types of Bare Outputs including Pay to Pubkey, Pay to Public Key Hash, Pay to Multisig outputs, and arbitrary scripts.
 
 ; Condition Script
-: [Concept] Umbrella term for scripts that encode the actual spending conditions that must be fulfilled to spend a UTXO.  Condition Scripts may be preceded by one or more forwarding scripts.  An Output Script can either directly contain a condition script in the case of a bare output, or will commit to one or multiple condition scripts for other output types.  For P2TR the tweaked public key is considered a condition script as well as each Leaf Script in the script tree.  At the time of writing, there are four distinct Condition Scripts: Witness Script, Leaf Script, Redeem Script (only non-segwit P2SH), and Bare Output Script (bare outputs, Pay to Multisig, P2PK, P2PKH).
+: [Concept] aka “locking script”. Umbrella term for scripts that encode the actual spending conditions that must be fulfilled to spend a UTXO.  Condition Scripts may be preceded by one or more forwarding scripts.  An Output Script can either directly contain a condition script in the case of a bare output, or will commit to one or multiple condition scripts for other output types.  For P2TR the tweaked public key is considered a condition script as well as each Leaf Script in the script tree.  At the time of writing, there are four distinct Condition Scripts: Witness Script, Leaf Script, Redeem Script (only non-segwit P2SH), and Bare Output Script (bare outputs, Pay to Multisig, P2PK, P2PKH).
 
 ; Control Block
 : [Component] The proof of existence for a Leaf Script.  Appears as a Witness Item in Witness Stacks for P2TR script path inputs.  Only consists of the Inner Key for Script Trees with a single Leaf Script, otherwise provides the Inner Key as well as a Taproot Branch in the form of the hashing partners for the used Leaf Script.
@@ -124,7 +124,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [Concept] The position of an input in a transaction's Input List
 
 ; Input Script
-: [Component] originally called `scriptSig`. The Bitcoin code base used Hungarian notation when it was published.  This transaction field appearing in Transaction Inputs was named for containing the signature and being of the type script.  Today, this field is better understood as the _input script_ which is used to satisfy spending conditions for non-segwit outputs, redirects validation to the Witness Stack for wrapped segwit outputs, and is empty for native segwit outputs. The Input Script may contain an actual script when spending a Bare Output Script, but may only contain push operations for any output type since P2SH.
+: [Component] aka “scriptSig”. The Bitcoin code base used Hungarian notation when it was published.  This transaction field appearing in Transaction Inputs was named for containing the signature and being of the type script.  Today, this field is better understood as the _input script_ which is used to satisfy spending conditions for non-segwit outputs, redirects validation to the Witness Stack for wrapped segwit outputs, and is empty for native segwit outputs. The Input Script may contain an actual script when spending a Bare Output Script, but may only contain push operations for any output type since P2SH.
 
 ; Leaf Script
 : [Component] A Condition Script used for spending P2TR outputs via the script path. The Leaf Script appears as a Witness Item.
@@ -133,7 +133,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [Component] The version of Script used in a leaf script. At the time of writing, only _Tapscript_ is defined.
 
 ; Lock Time
-: [Component] Part of the Transaction Header. Lock Time specifies a time (in blockheight or UNIX time) before which a transaction cannot be included in a block if any input's sequence number indicates non-finality.  The lock time can also indicate a relative spending lock in combination with `OP_CHECKSEQUENCEVERIFY`. Serialized as the four-byte <code>nlock time</code> integer field.
+: [Component] aka “nLockTime”. Part of the Transaction Header. Lock Time specifies a time (in blockheight or UNIX time) before which a transaction cannot be included in a block if any input's sequence number indicates non-finality.  The lock time can also indicate a relative spending lock in combination with `OP_CHECKSEQUENCEVERIFY`. Serialized as the four-byte <code>nlock time</code> integer field.
 
 ; Marker
 : [Artifact] 1-byte serialization artifact indicating that a type of extended serialization is being used for this transaction.  Must always be <code>00</code> (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]).BIP144).  (Note: Non-segwit nodes will only accept _stripped segwit transactions_, because the marker appears at the position where non-segwit nodes expect the input counter. The input counter may not be zero, so a complete (non-stripped) segwit transaction appears invalid to a non-segwit node.)
@@ -148,16 +148,16 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [Component] Part of an Outpoint. The position of the output in a transaction's Output List that created the identified UTXO.
 
 ; Output Script
-: [Component] originally called `scriptPubKey`. Must be present in each transaction output. Contains either a Condition Script or a Forwarding Script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named `scriptPubKey` to refer to the transaction field of the type _script_ that contained the public key. The use of this field had evolved beyond that interpretation even when Bitcoin was published since the field could already contain more complicated scripts.  Today, this field is referred to as the _Output Script_.
+: [Component] aka “scriptPubKey”. Must be present in each transaction output. Contains either a Condition Script or a Forwarding Script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named `scriptPubKey` to refer to the transaction field of the type _script_ that contained the public key. The use of this field had evolved beyond that interpretation even when Bitcoin was published since the field could already contain more complicated scripts.  Today, this field is referred to as the _Output Script_.
 
 ; P2SH Program
 : [Concept] A script template that forwards input validation to the Redeem Script.  P2SH Programs are a type of Forwarding Script.
 
 ; Redeem Script
-: [Component] The Condition Script used for spending P2SH outputs. Is provided in the Input Script along with Script Arugemnts to satisfy it. The Input Script of wrapped segwit inputs is not a Redeem Script but a Witness Program.
+: [Component] The Condition Script used for spending P2SH outputs. Is provided in the Input Script along with Script Arguments to satisfy it. The Input Script of wrapped segwit inputs is not a Redeem Script but a Witness Program.
 
 ; Script Arguments
-: [Concept] Arguments presented to satisfy the Condition Script, including Signatures, and Public Keys
+: [Concept] aka “Unlocking Script”.  Arguments presented to satisfy the Condition Script, includes e.g. Signatures and Public Keys.
 
 ; Script Tree
 : [Concept] The Merkle tree composed from the collection of Leaf Scripts committed to by a P2TR output
@@ -181,7 +181,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 : [Component] Part of a Control Block that specifies the hashing partners necessary to prove the existence of a Leaf Script in a Script Tree
 
 ; Taproot Internal Key
-: [Component] (aka Inner Key). The untweaked public key before it is tweaked with the Merkle root of the Script Tree to create the Taproot Output Key. Appears as part of a Control Block for a script path P2TR input.
+: [Component] aka “Inner Key”. The untweaked public key before it is tweaked with the Merkle root of the Script Tree to create the Taproot Output Key. Appears as part of a Control Block for a script path P2TR input.
 
 ; Taproot Output Key
 : [Component] The public key present in the Witness Program of a P2TR output script composed by tweaking the Inner Key with the Script Tree's Merkle root
