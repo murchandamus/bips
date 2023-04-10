@@ -96,23 +96,23 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 
 ===Definition of Terms===
 
-; Annex
-: [Component] A Witness Item reserved for future extensions, currently unused (see [[https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-5|BIP341]])
+; annex
+: [Component] A _witness item_ reserved for future extensions, currently unused (see [[https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki#cite_note-5|BIP341]])
 
-; Amount
+; amount
 : [Component] The count of satoshis assigned to an output
 
-; Bare Output Script
-: [Component] A Condition Script that is directly defined in the Output Script field. Used to specify all types of Bare Outputs including Pay to Pubkey, Pay to Public Key Hash, Pay to Multisig outputs, and arbitrary scripts.
+; bare output script
+: [Component] A _condition script_ that is directly defined in the _output script_ field. Used to specify all types of bare outputs including Pay to Pubkey (P2PK), Pay to Public Key Hash (Pay to Public Key Hash), Pay to Multisig (P2MS) outputs, and arbitrary scripts.
 
-; Condition Script
-: [Concept] aka “locking script”. Umbrella term for scripts that encode the actual spending conditions that must be fulfilled to spend a TXO.  Condition Scripts may be preceded by one or more forwarding scripts.  An Output Script can either directly contain a condition script in the case of a bare output, or will commit to one or multiple condition scripts for other output types.  For P2TR the taproot output key is considered a condition script as well as each Leaf Script in the script tree.  At the time of writing, there are four distinct Condition Scripts: Witness Script, Leaf Script, Redeem Script (only non-segwit P2SH), and Bare Output Script (P2PK, P2PKH, P2MS, and arbitrary scripts).
+; condition script
+: [Concept] aka locking script. Umbrella term for scripts that encode the actual spending conditions that must be fulfilled to spend a TXO.  Condition scripts may be preceded by one or more forwarding scripts.  An _output script_ can either directly contain a condition script in the case of a bare output, or will commit to one or multiple condition scripts for other output types.  For P2TR the _taproot output key_ is considered a condition script as well as each _leaf script_ in the script tree.  At the time of writing, there are four distinct condition scripts: _witness script_, _leaf script_, _redeem script_ (only non-segwit P2SH), and _bare output script_ (P2PK, P2PKH, P2MS, and arbitrary scripts).
 
-; Control Block
-: [Component] The proof of existence for a Leaf Script.  Appears as a Witness Item in Witness Stacks for P2TR scriptpath inputs.  Only consists of the Inner Key for Script Trees with a single Leaf Script, otherwise provides the Inner Key as well as a Taproot Branch in the form of the hashing partners for the used Leaf Script.
+; control block
+: [Component] The proof of existence for a _leaf script_.  Appears as a _witness item_ in _witness stacks_ for P2TR scriptpath inputs.  Only consists of the _taproot internal key_ for _script trees_ with a single _leaf script_, otherwise provides the _taproot internal key_ as well as a _taproot branch_ in the form of the hashing partners for the used _leaf script_.
 
-; Flag
-: [Artifact] Serialization artifact indicating features used by the transaction.  As of writing, the only allowed value is <code>01</code> which indicates that the transaction serialization has a Witness Section (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]).
+; flag
+: [Artifact] A serialization artifact indicating features used by the transaction.  As of writing, the only allowed value is <code>01</code> which indicates that the transaction serialization has a _witness structure_ (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]).
 
 ; Forwarding Script
 : [Concept] A collective term for scripts that redirect input validation to another script or data structure.  Witness Programs and P2SH Programs are forwarding scripts.  Forwarding Scripts make use of _script templates_ that imply additional evaluation steps beyond the explicitly expressed conditions.  In the case of P2SH the Output Script in verbatim only implies that the redeem script must be the preimage of the hash in the Output Script, but the _template_ prescribes that the redeem script must additionally be satisfied.  For Witness Programs, the Output Script is even less verbose with more implied meaning.
