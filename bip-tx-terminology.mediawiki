@@ -48,7 +48,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** '''Marker''' <code>00</code>: serialization artifact indicating extended serialization
 *** '''Flag''' <code>01</code>: serialization artifact indicating presence of a witness structure
 ** '''Transaction Input List'''
-*** Length of '''transaction input list''' <code>02</code>: serialization artifact, <code>varInt</code> here indicating 2 inputs, considered part of the transaction header
+*** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, <code>varInt</code> here indicating 2 inputs, considered part of the transaction header
 *** First '''Input'''
 **** '''Outpoint'''
 ***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: little-endian txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b.
