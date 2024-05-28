@@ -12,20 +12,21 @@
 
 ## Abstract
 
-A Bitcoin Improvement Proposal (BIP) provides a concise, self-contained technical description of one new concept,
-feature, standard, or incident relevant to the Bitcoin community.
+A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained technical description of one new concept,
+feature, standard, implementation guideline, or incident relevant to the Bitcoin community.
 
 TODO: Should incidents continue to be in-scope?
 
 We intend BIPs to be the primary mechanism for proposing new protocol features, coordinating client standards, and
-sharing design decisions that have gone into Bitcoin. Each BIP is primarily owned by its author, the BIP Champion, and
-represents only the Champion’s opinion or recommendation.
+sharing design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its author, the
+_BIP champion_, and represents the champion’s opinion or recommendation. The champion is responsible for building
+consensus within the community
 
-This BIP replaces BIP-2 with a more well-defined and clear process.
+The BIPs repository serves as a highly visible platform to put up mature proposals for debate. The versioning of the
+repository records evolution of proposals per the revision history.
 
-## Copyright
-
-This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+This BIP replaces BIP-2 with a more well-defined and clear process, and may be amended to address future needs of the
+BIP process.
 
 ## What is a BIP?
 ### What is the significance of BIPs?
@@ -99,6 +100,10 @@ largely settled and should only be adjusted in minor details that may come up as
 ## Licensing
 
 ## Changes from BIP-2
+
+## Copyright
+
+This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
 ## Related Work
 
