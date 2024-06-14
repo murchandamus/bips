@@ -7,7 +7,7 @@
   Type: Process
   Created: 2024-05-13
   License: CC0-1.0
-  Replaces: 2
+  Replaces: 1, 2
 </pre>
 
 ## Abstract
@@ -15,8 +15,9 @@
 A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
 feature, standard, implementation guideline, best-practice, design, or incident report relevant to the Bitcoin community.
 
-The BIPs repository serves as a highly visible platform to put forward mature proposals. Because the BIPs are maintained
-as text files in a versioned repository, their revision history is the historical record of each proposal.
+The BIPs repository serves as a highly visible platform to put forward mature proposals. The repositories visibility
+facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
+repository’s versioning of the text-based BIPs retains the historical record of each proposal.
 
 This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
@@ -27,14 +28,18 @@ BIPs are intended to be the primary mechanism for proposing new protocol feature
 documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
 the _BIP champions_, and represents the champions’ opinion or recommendation. The champions are expected to foster
 discussion, address feedback and dissenting opinions, and, if applicable, advance adoption of their proposal within the
-community.
+Bitcoin community.
 
 ### What is the significance of BIPs?
+
+BIPs represent a personal recommendations by BIP champions to the Bitcoin community. Some BIPs may be adopted by one or
+multiple implementations or even incorporated into the Bitcoin protocol.
+
 ### What should be documented in a BIP?
 ### Types
+#### Standards Track
 #### Informational
 #### Process
-#### Standards Track
 
 ## Editors
 ### Responsibilities
@@ -63,7 +68,7 @@ Vetting an idea publicly before investing the time to write a BIP is meant to sa
 wider community time. Asking the Bitcoin community first whether an idea is original helps prevent too much time being
 spent on something that is guaranteed to be rejected based on prior discussions (searching the internet does not always
 do the trick).
-Describing it publicly also ensures that the idea is of interest to more people beside the champion. If the champion is
+Describing an idea publicly also ensures that it is of interest to more people beside the champion. If the champion is
 encouraged by interested responses, they may work on drafting a BIP for the idea. Once the draft has matured to a
 presentable state, the champion should post the draft to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev) and open a pull request to the BIPs repository.
