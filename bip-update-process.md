@@ -12,23 +12,23 @@
 
 ## Abstract
 
-A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained technical description of one new concept,
-feature, standard, implementation guideline, or incident relevant to the Bitcoin community.
+A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
+feature, standard, implementation guideline, best-practice, design, or incident report relevant to the Bitcoin community.
 
-TODO: Should incidents continue to be in-scope?
+The BIPs repository serves as a highly visible platform to put forward mature proposals. Because the BIPs are maintained
+as text files in a versioned repository, their revision history is the historical record of each proposal.
 
-We intend BIPs to be the primary mechanism for proposing new protocol features, coordinating client standards, and
-sharing design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its author, the
-_BIP champion_, and represents the champion’s opinion or recommendation. The champion is responsible for building
-consensus within the community
-
-The BIPs repository serves as a highly visible platform to put up mature proposals for debate. The versioning of the
-repository records evolution of proposals per the revision history.
-
-This BIP replaces BIP-2 with a more well-defined and clear process, and may be amended to address future needs of the
+This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
 
 ## What is a BIP?
+
+BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
+documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
+the _BIP champions_, and represents the champions’ opinion or recommendation. The champions are expected to foster
+discussion, address feedback and dissenting opinions, and, if applicable, advance adoption of their proposal within the
+community.
+
 ### What is the significance of BIPs?
 ### What should be documented in a BIP?
 ### Types
