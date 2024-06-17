@@ -100,22 +100,26 @@ feature’s specification is unclear or incomplete. Reviewers and BIP editors sh
 be improved towards being ready. Pull requests that are proposing off-topic or unserious proposals, or have stopped
 to make progress may be closed.
 
-When the BIP draft is complete, a BIP editor will label it as Standards Track, Informational, or Process, and merge it
-to the BIPs repositry. After the BIP is merged to the repository, its focus should no longer shift significantly, even
-while it may continue to evolve in detail.
+When the BIP draft is complete, a BIP editor will assign a BIP type (see below), and merge it to the BIPs repository.
+After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the champion
+may continue to update the draft as necessary in the git repository. Updates to drafts should also be submitted by the
+author as pull requests.
 
 ### Proposed
 
-When the champion is confident that their BIP is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to _PROPOSED_ to indicate that they are seeking implementation of the BIP. The specification in the BIP should be
-largely settled and should only be adjusted in minor details that may come up as projects implement the BIP.
-
-
--------------------
-
-### Final
+When the champion is confident that their BIP represents a net-improvement, is clear, comprehensive, and ready for
+adoption by the Bitcoin community, they may update the BIP’s status to _PROPOSED_ to indicate that they recommend
+adoption or implementation of the BIP. Where applicable, the champion must ensure that any proposed specification is
+solid, not unduly complicated, and definitive. Subsequently, a BIP’s content should only be adjusted in minor details to
+clarify ambiguities, fill-in omissions, or address other issues discovered as the BIP is adopted.
 
 ### Withdrawn
+
+BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _WITHDRAWN_ or vice versa. When a BIP
+is labeled _WITHDRAWN_, the BIP champion indicates that they no longer pursue adoption of their proposal, have abandoned
+work on it, or no longer recommend the proposed approach.
+
+
 
 ### Standards Track BIPs
 ### Process BIPs
@@ -143,8 +147,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 -------------------------
 
 ==BIP workflow==
-
-The BIP author may update the draft as necessary in the git repository. Updates to drafts should also be submitted by the author as pull requests.
 
 ===Transferring BIP Ownership===
 
@@ -283,8 +285,6 @@ The typical paths of the status of BIPs are as follows:
 
 <img src="bip-0002/process.png"></img>
 
-Champions of a BIP may decide on their own to change the status between Draft, Deferred, or Withdrawn.
-A BIP editor may also change the status to Deferred when no progress is being made on the BIP.
 
 A BIP may only change status from Draft (or Rejected) to Proposed, when the author deems it is complete, has a working implementation (where applicable), and has community plans to progress it to the Final status.
 
