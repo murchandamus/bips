@@ -72,26 +72,37 @@ research, or that an idea is guaranteed to be rejected based on prior discussion
 tests whether it is of interest to more people beside the champion. After establishing that the idea may be of interest
 to the Bitcoin community, the champion should work on drafting a BIP.
 
+It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more
+successful it tends to be. If in doubt, split your BIP into several well-focused ones.
+
 ### Draft
 
 As the first draft is taking shape, the champion should present it to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev). This gives the champion a chance to collect initial feedback and address
-broad concerns. If the champion wishes to work in public on the draft at this stage, it is recommended that they open a
-pull request against their personal fork of the BIPs repository. After fleshing out the draft further and ensuring that
-it is of high quality and properly formatted, the champion should open a pull request to the [BIPs
-repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the formatting requirements specified below
-and named with a working title of the form "bip-authorname-topicofproposal". The champion must not self-assign a number
-to the BIP draft.
+fundamental concerns. If the champion wishes to work in public on the draft at this stage, it is recommended that they
+open a pull request against their personal fork of the BIPs repository instead of the main BIPs repository.
+After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the champion should
+open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
+formatting requirements specified below and named with a working title of the form "bip-authorname-topicofproposal". The
+champion must not self-assign a number to the BIP draft.
 
-Ideas that are on-topic, adhere to the formatting requirements, and have materially progressed beyond the ideation
-phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by independent Bitcoin
-projects working on adopting the proposal, or by the champion working for an extended period of time towards improving
-the proposal based on the community feedback they gathered, the BIP will be assigned a number and the pull request will
-be merged to the repository. While BIPs are author documents which must only meet certain minimum criteria, the BIP
-editors will strive to minimize number assignments for BIPs that fail to garner the interest of the Bitcoin community
-and will never progress to broad adoption across the Bitcoin ecosystem.
-After the BIP is merged to the repository, its focus should no longer shift significantly, even while its content
-continues to evolve in detail.
+BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed beyond the
+ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
+independent Bitcoin projects working on adopting the proposal, or by the champion working for an extended period of time
+towards improving the proposal based on community feedback, will be assigned a number by a BIP editor.
+The BIP editors should delay number assignment when they perceive a BIP draft being met with comprehensive lack of
+interest: number assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest of
+the Bitcoin community, there is no need to refer to it by a number.
+
+BIP drafts are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
+unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or when the proposed
+feature’s specification is unclear or incomplete. Reviewers and BIP editors should provide guidance on how the draft may
+be improved towards being ready. Pull requests that are proposing off-topic or unserious proposals, or have stopped
+to make progress may be closed.
+
+When the BIP draft is complete, a BIP editor will label it as Standards Track, Informational, or Process, and merge it
+to the BIPs repositry. After the BIP is merged to the repository, its focus should no longer shift significantly, even
+while it may continue to evolve in detail.
 
 ### Proposed
 
@@ -132,27 +143,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 -------------------------
 
 ==BIP workflow==
-
-Vetting an idea publicly before going as far as writing a BIP is meant to save both the potential author and the wider community time.
-Asking the Bitcoin community first if an idea is original helps prevent too much time being spent on something that is guaranteed to be rejected based on prior discussions (searching the internet does not always do the trick).
-It also helps to make sure the idea is applicable to the entire community and not just the author. Just because an idea sounds good to the author does not mean it will work for most people in most areas where Bitcoin is used.
-
-Once the champion has asked the Bitcoin community as to whether an idea has any chance of acceptance, a draft BIP should be presented to the [https://groups.google.com/g/bitcoindev Bitcoin development mailing list].
-This gives the author a chance to flesh out the draft BIP to make it properly formatted, of high quality, and to address additional concerns about the proposal.
-Following a discussion, the proposal should be submitted to the [https://github.com/bitcoin/bips BIPs git repository] as a pull request.
-This draft must be written in BIP style as described below, and named with an alias such as "bip-johndoe-infinitebitcoins" until an editor has assigned it a BIP number (authors MUST NOT self-assign BIP numbers).
-
-BIP authors are responsible for collecting community feedback on both the initial idea and the BIP before submitting it for review. However, wherever possible, long open-ended discussions on public mailing lists should be avoided. Strategies to keep the discussions efficient include: setting up a separate SIG mailing list for the topic, having the BIP author accept private comments in the early design phases, setting up a wiki page or git repository, etc. BIP authors should use their discretion here.
-
-It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more successful it tends to be. If in doubt, split your BIP into several well-focused ones.
-
-When the BIP draft is complete, a BIP editor will assign the BIP a number, label it as Standards Track, Informational, or Process, and merge the pull request to the BIPs git repository.
-The BIP editors will not unreasonably reject a BIP.
-Reasons for rejecting BIPs include duplication of effort, disregard for formatting rules, being too unfocused or too broad, being technically unsound, not providing proper motivation or addressing backwards compatibility, or not in keeping with the Bitcoin philosophy.
-For a BIP to be accepted it must meet certain minimum criteria.
-It must be a clear and complete description of the proposed enhancement.
-The enhancement must represent a net improvement.
-The proposed implementation, if applicable, must be solid and must not complicate the protocol unduly.
 
 The BIP author may update the draft as necessary in the git repository. Updates to drafts should also be submitted by the author as pull requests.
 
