@@ -99,13 +99,13 @@ the Bitcoin community, there is no need to refer to it by a number.
 BIP drafts are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or when the proposed
 feature’s specification is unclear or incomplete. Reviewers and BIP editors should provide guidance on how the draft may
-be improved towards being ready. Pull requests that are proposing off-topic or unserious proposals, or have stopped
-to make progress may be closed.
+be improved to progress towards readiness. Pull requests that are proposing off-topic or unserious proposals, or have
+stopped to make progress may be closed.
 
 When the BIP draft is complete, a BIP editor will assign a BIP type (see below), and merge it to the BIPs repository.
 After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the champion
-may continue to update the draft as necessary in the git repository. Updates to drafts should also be submitted by the
-author as pull requests.
+may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
+submitted as pull requests.
 
 ### Proposed
 
