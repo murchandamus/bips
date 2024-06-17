@@ -143,6 +143,21 @@ If you are interested in assuming ownership of a BIP, send a message asking to t
 author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
 make a unilateral decision (it's not like such decisions can't be reversed :)).
 
+## BIP types
+
+* A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
+  network protocol, a change in block or transaction validity rules, or any change or addition that affects the
+  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts, a design document and a
+  reference implementation.
+* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or information to the Bitcoin
+  community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community
+  consensus or recommendation, so users and implementors are free to ignore Informational BIPs or follow their advice.
+* A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
+  BIPs are like Standards Track BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
+  implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
+  are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
+  guidelines, changes to the decision-making process, and changes to the tools or environment used in Bitcoin
+  development. Any meta-BIP is also considered a Process BIP.
 
 ## Licensing
 
@@ -280,14 +295,6 @@ BIPs may also have a Superseded-By header indicating that a BIP has been rendere
 ====Auxiliary Files====
 
 BIPs may include auxiliary files such as diagrams. Auxiliary files should be included in a subdirectory for that BIP, or must be named BIP-XXXX-Y.ext, where "XXXX" is the BIP number, "Y" is a serial number (starting at 1), and "ext" is replaced by the actual file extension (e.g. "png").
-
-==BIP types==
-
-There are three kinds of BIP:
-
-* A Standards Track BIP describes any change that affects most or all Bitcoin implementations, such as a change to the network protocol, a change in block or transaction validity rules, or any change or addition that affects the interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts, a design document and a reference implementation.
-* An Informational BIP describes a Bitcoin design issue, or provides general guidelines or information to the Bitcoin community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community consensus or recommendation, so users and implementors are free to ignore Informational BIPs or follow their advice.
-* A Process BIP describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process BIPs are like Standards Track BIPs but apply to areas other than the Bitcoin protocol itself. They may propose an implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they are more than recommendations, and users are typically not free to ignore them. Examples include procedures, guidelines, changes to the decision-making process, and changes to the tools or environment used in Bitcoin development. Any meta-BIP is also considered a Process BIP.
 
 ==BIP status field==
 
