@@ -167,6 +167,9 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 ## Changes from BIP-2
 
+- The statuses: Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset
+- Many judgment calls required from BIP Editors were either reassigned to the Bitcoin community or the BIP champion
+
 ## Copyright
 
 This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
