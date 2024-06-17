@@ -118,6 +118,10 @@ clarify ambiguities, fill-in omissions, or address other issues discovered as th
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
+tk: Is there substantial value in keeping an ACTIVE/FINAL status around to indicate that a proposal was adopted and/or is
+no longer subject to changes? If so, the transition from _PROPOSED_ to _ACTIVE_ may be proposed by any member of the
+Bitcoin community either with consent of the BIP champion or convincing evidence.
+
 ### Withdrawn
 
 BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _WITHDRAWN_ or vice versa. When a BIP
