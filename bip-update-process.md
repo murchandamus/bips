@@ -36,6 +36,8 @@ BIPs represent a personal recommendations by BIP champions to the Bitcoin commun
 multiple implementations or even incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
+
+
 ### Types
 #### Standards Track
 #### Informational
@@ -113,20 +115,34 @@ adoption or implementation of the BIP. Where applicable, the champion must ensur
 solid, not unduly complicated, and definitive. Subsequently, a BIP’s content should only be adjusted in minor details to
 clarify ambiguities, fill-in omissions, or address other issues discovered as the BIP is adopted.
 
+As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
+discouraged.
+
 ### Withdrawn
 
 BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _WITHDRAWN_ or vice versa. When a BIP
-is labeled _WITHDRAWN_, the BIP champion indicates that they no longer pursue adoption of their proposal, have abandoned
-work on it, or no longer recommend the proposed approach.
+is labeled _WITHDRAWN_, the BIP champion indicates that they have abandoned work on it, no longer pursue adoption of
+their proposal, or no longer recommend the proposed approach.
 
+### Adoption of proposals
 
+The BIPs repository does not track the sentiment on or adoption of proposals. After a BIP is advanced to _PROPOSED_, it
+is up to the Bitcoin community to adopt, ignore, or repudiate a BIP. Individual Bitcoin projects may publish which BIPs
+they implement.
 
-### Standards Track BIPs
-### Process BIPs
+### Transferring BIP Ownership
 
-### Informational BIPs
+It occasionally becomes necessary to transfer ownership of BIPs to a new champion. In general, we would like to retain
+the original author as a co-author of the transferred BIP, but that is really up to the original author. A good reason to
+transfer ownership is because the original author no longer has the time or interest in updating it or following through
+with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
+reason to transfer ownership is because you don't agree with the direction of the BIP. We try to build consensus around
+a BIP, but if that's not possible, you can always submit a competing BIP.
 
-### Transferring Ownership
+If you are interested in assuming ownership of a BIP, send a message asking to take over, addressed to both the original
+author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
+make a unilateral decision (it's not like such decisions can't be reversed :)).
+
 
 ## Licensing
 
@@ -149,10 +165,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 ==BIP workflow==
 
 ===Transferring BIP Ownership===
-
-It occasionally becomes necessary to transfer ownership of BIPs to a new champion. In general, we'd like to retain the original author as a co-author of the transferred BIP, but that's really up to the original author. A good reason to transfer ownership is because the original author no longer has the time or interest in updating it or following through with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad reason to transfer ownership is because you don't agree with the direction of the BIP. We try to build consensus around a BIP, but if that's not possible, you can always submit a competing BIP.
-
-If you are interested in assuming ownership of a BIP, send a message asking to take over, addressed to both the original author and the BIP editors. If the original author doesn't respond to email in a timely manner, the BIP editors will make a unilateral decision (it's not like such decisions can't be reversed :).
 
 ===BIP Editors===
 
