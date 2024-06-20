@@ -33,10 +33,18 @@ BIP process.
 
 ### What is the significance of BIPs?
 
-BIPs represent a personal recommendations by BIP champions to the Bitcoin community. Some BIPs may be adopted by one or
+Individual BIPs do not represent Bitcoin community consensus or a general recommendation for implementation. A BIP
+represents a personal recommendations by the BIP champions to the Bitcoin community. Some BIPs may be adopted by one or
 multiple implementations or even incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
+
+The BIPs repository collects any proposals relevant to the Bitcoin community.
+
+OR:
+
+The BIPs repository is focused on information that supports the Bitcoin currency.^[Projects that astroturf on the
+Bitcoin network to store data, bootstrap their own consensus, or facilitate another currency are not on-topic.]
 
 ### BIP types
 
