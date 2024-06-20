@@ -165,6 +165,45 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 ## Licensing
 
+## BIP Editors
+
+The current BIP editors are:
+
+* Bryan Bishop ([kanzure@gmail.com](mailto:kanzure@gmail.com))
+* Jon Atack ([jon@atack.com](mailto:jon@atack.com))
+* Luke Dashjr ([luke_bipeditor@dashjr.org](mailto:luke_bipeditor@dashjr.org))
+* Mark "Murch" Erhardt ([murch@murch.one](mailto:murch@murch.one))
+* Olaoluwa Osuntokun ([laolu32@gmail.com](mailto:laolu32@gmail.com))
+* Ruben Somsen ([rsomsen@gmail.com](mailto:rsomsen@gmail.com))
+
+### BIP Editor Responsibilities & Workflow
+
+The BIP editors subscribe to the Bitcoin development mailing list.
+Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
+
+For each new BIP draft that comes in, an editor does the following:
+
+* Read the BIP to check if it is ready: sound and complete. The idea must make technical sense, even if it don't seem likely to be accepted.
+* The title should accurately describe the content.
+* The BIP draft must have been sent to the Bitcoin development mailing list for discussion.
+* Motivation and backward compatibility (when applicable) must be addressed.
+* The defined Layer header must be correctly assigned for the given specification.
+* Licensing terms must be acceptable for BIPs.
+
+If the BIP isn't ready, the editor will send it back to the champion for revision, with specific instructions.
+
+Once the BIP is ready for the repository it should be submitted as a "pull request" to the  [BIPs git repository](https://github.com/bitcoin/bips) where it may get further feedback.
+
+The BIP editor will:
+
+* Assign a BIP number in the pull request.
+* Merge the pull request when it is ready.
+* List the BIP in [[README.mediawiki]]
+
+The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP changes, and update BIP headers as appropriate.
+
+BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as correcting misspellings, fixing broken links, etc.
+
 ## Changes from BIP-2
 
 - The statuses: Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset
@@ -187,48 +226,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ==BIP workflow==
 
-===Transferring BIP Ownership===
-
-===BIP Editors===
-
-The current BIP editors are:
-
-* Bryan Bishop ([[mailto:kanzure@gmail.com|kanzure@gmail.com]])
-* Jon Atack ([[mailto:jon@atack.com|jon@atack.com]])
-* Luke Dashjr ([[mailto:luke_bipeditor@dashjr.org|luke_bipeditor@dashjr.org]])
-* Mark "Murch" Erhardt ([[mailto:murch@murch.one|murch@murch.one]])
-* Olaoluwa Osuntokun ([[mailto:laolu32@gmail.com|laolu32@gmail.com]])
-* Ruben Somsen ([[mailto:rsomsen@gmail.com|rsomsen@gmail.com]])
-
-===BIP Editor Responsibilities & Workflow===
-
-The BIP editors subscribe to the Bitcoin development mailing list.
-Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
-
-For each new BIP that comes in an editor does the following:
-
-* Read the BIP to check if it is ready: sound and complete. The ideas must make technical sense, even if they don't seem likely to be accepted.
-* The title should accurately describe the content.
-* The BIP draft must have been sent to the Bitcoin development mailing list for discussion.
-* Motivation and backward compatibility (when applicable) must be addressed.
-* The defined Layer header must be correctly assigned for the given specification.
-* Licensing terms must be acceptable for BIPs.
-
-If the BIP isn't ready, the editor will send it back to the author for revision, with specific instructions.
-
-Once the BIP is ready for the repository it should be submitted as a "pull request" to the [https://github.com/bitcoin/bips BIPs git repository] where it may get further feedback.
-
-The BIP editor will:
-
-* Assign a BIP number in the pull request.
-
-* Merge the pull request when it is ready.
-
-* List the BIP in [[README.mediawiki]]
-
-The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP changes, and update BIP headers as appropriate.
-
-BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as correcting misspellings, fixing broken links, etc.
 
 ==BIP format and structure==
 
