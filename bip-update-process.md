@@ -160,8 +160,7 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
   BIPs are like Standards Track BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
   implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
   are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
-  guidelines, changes to the decision-making process, and changes to the tools or environment used in Bitcoin
-  development. Any meta-BIP is also considered a Process BIP.
+  guidelines, and changes to the decision-making process. Any meta-BIP is also considered a Process BIP.
 
 ## Licensing
 
