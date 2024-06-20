@@ -67,6 +67,8 @@ The BIP process starts with a new idea for Bitcoin. Each potential BIP must have
 champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
+![Status transitions](bip-update-process/status-transitions.png "Status Transitions in the BIP Workflow")
+
 ### Ideation
 
 After having an idea, the champion should evaluate whether it is BIP-able. The idea must be of interest to the broader
