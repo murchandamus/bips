@@ -38,19 +38,20 @@ multiple implementations or even incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
 
+### BIP types
 
-### Types
-#### Standards Track
-#### Informational
-#### Process
-
-## Editors
-### Responsibilities
-
-## Format
-### Specification
-#### BIP Header Preamble
-#### Auxiliary Files
+* A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
+  network protocol, a change in block or transaction validity rules, or any change or addition that affects the
+  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts, a design document and a
+  reference implementation.
+* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or information to the Bitcoin
+  community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community
+  consensus or recommendation, so users and implementors are free to ignore Informational BIPs or follow their advice.
+* A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
+  BIPs are like Standards Track BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
+  implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
+  are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
+  guidelines, and changes to the decision-making process. Any meta-BIP is also considered a Process BIP.
 
 ## Workflow
 
@@ -131,9 +132,9 @@ their proposal, or no longer recommend the proposed approach.
 
 ### Adoption of proposals
 
-The BIPs repository does not track the sentiment on or adoption of proposals. After a BIP is advanced to _PROPOSED_, it
-is up to the Bitcoin community to adopt, ignore, or repudiate a BIP. Individual Bitcoin projects may publish which BIPs
-they implement.
+The BIPs repository does not track the sentiment on or adoption of proposals, and individual BIPs do not take statuses
+based on their adoption or deployment. After a BIP is advanced to _PROPOSED_, it is up to the Bitcoin community to
+adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they implement.
 
 ### Transferring BIP Ownership
 
@@ -148,20 +149,10 @@ If you are interested in assuming ownership of a BIP, send a message asking to t
 author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
 make a unilateral decision (it's not like such decisions can't be reversed :)).
 
-## BIP types
-
-* A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
-  network protocol, a change in block or transaction validity rules, or any change or addition that affects the
-  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts, a design document and a
-  reference implementation.
-* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or information to the Bitcoin
-  community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community
-  consensus or recommendation, so users and implementors are free to ignore Informational BIPs or follow their advice.
-* A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
-  BIPs are like Standards Track BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
-  implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
-  are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
-  guidelines, and changes to the decision-making process. Any meta-BIP is also considered a Process BIP.
+## Format
+### Specification
+#### BIP Header Preamble
+#### Auxiliary Files
 
 ## Licensing
 
