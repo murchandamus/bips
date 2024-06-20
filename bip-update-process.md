@@ -24,6 +24,7 @@ Bitcoin community.
 The BIPs repository serves as a highly visible platform to put forward mature proposals. The repository’s visibility
 facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
 repository’s versioning of the text-based BIPs retains the historical record of each proposal.
+The BIPs repository does not track acceptance, adoption, or community consensus on BIPs.
 
 This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
@@ -168,6 +169,7 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 - The statuses: Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset
 - Many judgment calls required from BIP Editors were either reassigned to the Bitcoin community or the BIP champion
+- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 
 ## Copyright
 
