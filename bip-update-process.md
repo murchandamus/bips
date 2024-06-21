@@ -1,14 +1,14 @@
-<pre>
-  BIP: ?
-  Title: Updated BIP Process
-  Author: Murch <murch@murch.one>
-  Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-Updated-BIP-Process
-  Status: Draft
-  Type: Process
-  Created: 2024-05-13
-  License: CC0-1.0
-  Replaces: 1, 2
-</pre>
+```
+BIP: ?
+Title: Updated BIP Process
+Author: Murch <murch@murch.one>
+Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-Updated-BIP-Process
+Status: Draft
+Type: Process
+Created: 2024-05-13
+License: CC0-1.0
+Replaces: 2
+```
 
 ## More input requested on following open questions
 
@@ -210,56 +210,64 @@ topic has been sufficiently addressed.
 
 #### BIP header preamble
 
-Each BIP must begin with an RFC 2822 style header preamble. The headers must appear in the following order. Headers
+Each BIP must begin with a header preamble. The headers must appear in the following order. Headers
 marked with "\*" are optional and are described below. All other headers are required.
 
-<pre>
-  BIP: \<BIP number, or "?" before being assigned\>
-* Layer: \<Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications\>
-  Title: \<BIP title; maximum 44 characters\>
-  Champion: \<list of champions’ names and email addresses\>
-  Status: \<Draft | Proposed | Withdrawn | [tk] Final \>
-  Type: \<Standards Track | Informational | Process\>
-  Created: \<date created on, in ISO 8601 (yyyy-mm-dd) format\>
-  License: \<abbreviation for approved license(s)\>
-* License-Code: \<abbreviation for code under different approved license(s)\>
-* Post-History: \<list of mailing list threads, or other noteworthy discussions in "date: link" format\>
-* Requires: \<BIP number(s)\>
-* Replaces: \<BIP number\>
-* Superseded-By: \<BIP number\>
-</pre>
+```
+  BIP: <BIP number, or "?" before being assigned>
+* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
+  Title: <BIP title; maximum 44 characters>
+  Champion: <list of champions’ names and email addresses>
+* Discussions-To: <mailing list/URL>
+  Status: <Draft | Proposed | Withdrawn | [tk] Final >
+  Type: <Standards Track | Informational | Process>
+  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
+  License: <abbreviation for approved license(s)>
+* License-Code: <abbreviation for code under different approved license(s)>
+* Post-History: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
+* Requires: <BIP number(s)>
+* Replaces: <BIP number>
+* Superseded-By: <BIP number>
+```
 
-BIP
-: BIP number, or "?" before a number was assigned. Numbers are assigned by BIP Editors and Champions must not
+__BIP__: BIP number, or "?" before a number was assigned. Numbers are assigned by BIP Editors and Champions must not
 self-assign numbers.
 
-Layer
-: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
+__Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-Champions
-: The champions[champ] header lists the names and email addresses of the current owner(s) of the BIP which may or may not be the original authors of the BIP.
-The format of the champion header values must be
+__Champions__: The champions header lists the names and email addresses of the current owner(s) of the BIP. This may or
+may not be the original authors of the BIP. The format of each champion header value must be
 
-  Random J. User <address@dom.ain>
+    Random J. User <address@dom.ain>
 
-If there are multiple champions, each should be on a separate line following RFC 2822 continuation line conventions.
+If there are multiple champions, each should be on a separate line following [RFC
+2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions [tk: what is the convention?].
 
-While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
+__Discussions-To__: While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To
+header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if
+the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
 
-The Type header specifies the type of BIP: Standards Track, Informational, or Process.
+__Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
 
-The Created header records the date that the BIP was assigned a number, while Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists.
-Dates should be in yyyy-mm-dd format, e.g. 2001-08-14.
-Post-History is permitted to be a link to a specific thread in a mailing list archive.
+__Created__: The Created header records the date that the BIP was assigned a number. [tk: for reals?! What should that
+date be?]
 
-BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
+__Post-History__: Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
+should be in yyyy-mm-dd format, e.g. 2001-08-14. Post-History is permitted to be a link to a specific thread in a
+mailing list archive.
 
-BIPs may also have a Superseded-By header indicating that a BIP has been rendered obsolete by a later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a Replaces header containing the number of the BIP that it rendered obsolete.
+__Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
+
+__Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that a BIP has been rendered obsolete by a
+later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
+Replaces header containing the number of the BIP that it rendered obsolete.
 
 #### Auxiliary Files
 
-BIPs may include auxiliary files such as diagrams. Auxiliary files should be included in a subdirectory for that BIP, or must be named BIP-XXXX-Y.ext, where "XXXX" is the BIP number, "Y" is a serial number (starting at 1), and "ext" is replaced by the actual file extension (e.g. "png").
+BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
+`bip-XXXX`, where "XXXX" is the BIP number. The file names in the subdirectory do not need to adhere to a specific
+convention.
 
 ## BIP status field
 
@@ -412,6 +420,8 @@ correcting misspellings, fixing broken links, etc.
   PROPOSED, and WITHDRAWN. The statuses Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset.
 - Judgment calls required from BIP Editors are reassigned either to the Bitcoin community or the BIP champion
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
+- Layer header is no longer restricted to Standards Track
+- Auxiliary files are only permitted in the corresponding BIP’s subdirectory
 
 ## Copyright
 
@@ -421,7 +431,7 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ### References
 
-[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.</ref> 
+[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.
 
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
