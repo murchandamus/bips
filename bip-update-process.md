@@ -173,7 +173,7 @@ If you are interested in assuming ownership of a BIP, send a message asking to t
 author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
 make a unilateral decision (it's not like such decisions can't be reversed :)).
 
-### Revisions
+### tk: Revisions
 
 tk: Should it be possible for a final BIP to be revised? Adding versions could provide a way how to adapt final BIPs to
 the protocol evolving over time.
@@ -417,6 +417,7 @@ correcting misspellings, fixing broken links, etc.
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory
+- Comments-URI, and Comment-Summary headers as well as Comments are dropped
 - The Discussions-To header is dropped
 
 ## Copyright
@@ -436,56 +437,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 -------------------------
 -------------------------
 -------------------------
-
-==BIP comments==
-
-===Specification===
-
-Each BIP should, in its preamble, link to a public wiki page with a summary tone of the comments on that page.
-Reviewers of the BIP who consider themselves qualified, should post their own comments on this wiki page.
-The comments page should generally only be used to post final comments for a completed BIP.
-If a BIP is not yet completed, reviewers should instead post on the applicable development mailing list thread to allow the BIP author(s) to address any concerns or problems pointed out by the review.
-
-Some BIPs receive exposure outside the development community prior to completion, and other BIPs might not be completed at all. To avoid a situation where critical BIP reviews may go unnoticed during this period, reviewers may, at their option, still post their review on the comments page, provided they first post it to the mailing list and plan to later remove or revise it as applicable based on the completed version. Such revisions should be made by editing the previous review and updating the timestamp. Reviews made prior to the complete version may be removed if they are no longer applicable and have not been updated in a timely manner (eg, within one month).
-
-Pages must be named after the full BIP number (eg, "BIP 0001") and placed in the "Comments" namespace.
-For example, the link for BIP 1 will be https://github.com/bitcoin/bips/wiki/Comments:BIP-0001 .
-
-Comments posted to this wiki should use the following format:
-
-    <Your opinion> --<Your name>, <Date of posting, as YYYY-MM-DD>
-
-BIPs may also choose to list a second forum for BIP comments, in addition to the BIPs wiki.
-In this case, the second forum's URI should be listed below the primary wiki's URI.
-
-After some time, the BIP itself may be updated with a summary tone of the comments.
-Summary tones may be chosen from the following, but this BIP does not intend to cover all possible nuances and other summaries may be used as needed:
-
-* No comments yet.
-* Unanimously Recommended for implementation
-* Unanimously Discourage for implementation
-* Mostly Recommended for implementation, with some Discouragement
-* Mostly Discouraged for implementation, with some Recommendation
-
-For example, the preamble to BIP 1 might be updated to include the line:
-
-    Comments-Summary: No comments yet.
-    Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-0001
-                  https://some-other-wiki.org/BIP_1_Comments
-
-These fields must follow the "Discussions-To" header defined in BIP 1 (if that header is not present, it should follow the position where it would be present; generally this is immediately above the Status header).
-
-To avoid doubt: comments and status are unrelated metrics to judge a BIP, and neither should be directly influencing the other.
-
-===Rationale===
-
-What is the purpose of BIP comments?
-
-* Various BIPs have been adopted (the criteria required for "Final" Status) despite being considered generally inadvisable. Some presently regard BIPs as a "good idea" simply by virtue of them being assigned a BIP number. Due to the low barrier of entry for submission of new BIPs, it seems advisable for a way for reviewers to express their opinions on them in a way that is consumable to the public without needing to review the entire development discussion.
-
-Will BIP comments be censored or limited to particular participants/"experts"?
-
-* Participants should freely refrain from commenting outside of their area of knowledge or expertise. However, comments should not be censored, and participation should be open to the public.
 
 ==BIP licensing==
 
