@@ -238,7 +238,7 @@ Layer
 definitions of the various BIP layers.
 
 Champions
-: The champions<ref>'''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.</ref>. header lists the names and email addresses of the current owner(s) of the BIP which may or may not be the original authors of the BIP.
+: The champions[champ] header lists the names and email addresses of the current owner(s) of the BIP which may or may not be the original authors of the BIP.
 The format of the champion header values must be
 
   Random J. User <address@dom.ain>
@@ -417,7 +417,11 @@ correcting misspellings, fixing broken links, etc.
 
 This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
-## Related Work
+## Footnotes
+
+### References
+
+[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.</ref> 
 
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
