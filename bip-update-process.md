@@ -217,7 +217,7 @@ marked with "\*" are optional and are described below. All other headers are req
   BIP: \<BIP number, or "?" before being assigned\>
 * Layer: \<Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications\>
   Title: \<BIP title; maximum 44 characters\>
-  Author: \<list of champions’ real names and email addresses\>
+  Champion: \<list of champions’ names and email addresses\>
   Status: \<Draft | Proposed | Withdrawn | [tk] Final \>
   Type: \<Standards Track | Informational | Process\>
   Created: \<date created on, in ISO 8601 (yyyy-mm-dd) format\>
@@ -229,15 +229,21 @@ marked with "\*" are optional and are described below. All other headers are req
 * Superseded-By: \<BIP number\>
 </pre>
 
-The Layer header (only for Standards Track BIPs) documents which layer of Bitcoin the BIP applies to.
-See [[bip-0123.mediawiki|BIP 123]] for definitions of the various BIP layers. Activation of this BIP implies activation of BIP 123.
+BIP
+: BIP number, or "?" before a number was assigned. Numbers are assigned by BIP Editors and Champions must not
+self-assign numbers.
 
-The Author header lists the names and email addresses of all the authors/owners of the BIP.
-The format of the Author header value must be
+Layer
+: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
+definitions of the various BIP layers.
+
+Champions
+: The champions<ref>'''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.</ref>. header lists the names and email addresses of the current owner(s) of the BIP which may or may not be the original authors of the BIP.
+The format of the champion header values must be
 
   Random J. User <address@dom.ain>
 
-If there are multiple authors, each should be on a separate line following RFC 2822 continuation line conventions.
+If there are multiple champions, each should be on a separate line following RFC 2822 continuation line conventions.
 
 While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
 
