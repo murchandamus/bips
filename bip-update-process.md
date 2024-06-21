@@ -165,6 +165,11 @@ If you are interested in assuming ownership of a BIP, send a message asking to t
 author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
 make a unilateral decision (it's not like such decisions can't be reversed :)).
 
+### Revisions
+
+tk: Should it be possible for a final BIP to be revised? Adding versions could provide a way how to adapt final BIPs to
+the protocol evolving over time.
+
 ## Format
 ### Specification
 #### BIP Header Preamble
