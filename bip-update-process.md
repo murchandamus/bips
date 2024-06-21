@@ -10,6 +10,12 @@
   Replaces: 1, 2
 </pre>
 
+## More input requested on following open questions
+
+- Should we have a Final and/or Active Status?
+- Should we introduce versioning/revisions to (final) BIPs?
+- Does it make sense to go from Proposed to Withdrawn/Obsolete? Who would decide such a transition and how?
+
 ## Abstract
 
 A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
@@ -136,7 +142,9 @@ clarify ambiguities, fill-in omissions, or address other issues discovered as th
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
-tk: Is there substantial value in keeping an ACTIVE/FINAL status around to indicate that a proposal was adopted and/or is
+### tk: Active/Final
+
+Is there substantial value in keeping an ACTIVE/FINAL status around to indicate that a proposal was adopted and/or is
 no longer subject to changes? If so, the transition from _PROPOSED_ to _ACTIVE_ may be proposed by any member of the
 Bitcoin community either with consent of the BIP champion or convincing evidence.
 
