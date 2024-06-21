@@ -52,6 +52,92 @@ OR:
 The BIPs repository is focused on information that supports the Bitcoin currency.^[Projects that astroturf on the
 Bitcoin network to store data, bootstrap their own consensus, or facilitate another currency are not on-topic.]
 
+## BIP format and structure
+
+### Specification
+
+BIPs should be written in mediawiki or markdown format.
+
+Each BIP should have the following parts:
+
+* Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
+* Abstract -- A short (~200 word) description of the technical issue being addressed.
+* Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
+  existing situation is inadequate to address the problem that the BIP solves.
+* Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
+  design decisions were made. It should describe alternate designs that were considered and related work. The rationale
+  should address important objections or concerns raised during discussion.
+* Specification -- The technical specification should describe the syntax and semantics of any new feature. The
+  specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
+* Backwards compatibility -- BIPs that introduce backwards incompatibilities must include a section describing these
+  incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
+  incompatibilities.
+* Reference implementation -- The reference implementation must be completed before [tk: will we have a final status?]
+  any BIP is given status "Final", but it need not be completed before the BIP is [tk: we do not have an accepted
+  status] accepted. It is better to finish the specification and rationale first and reach consensus on it before
+  writing code. The final implementation must include test code and documentation appropriate for the Bitcoin protocol.
+* Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
+* Copyright -- The BIP must be placed under an acceptable license ([[#BIP licensing|see below]]) [tk: update license].
+
+Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
+topic has been sufficiently addressed.
+
+#### BIP header preamble
+
+Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers
+marked with "\*" are optional. All other headers are required.
+
+```
+  BIP: <BIP number, or "?" before being assigned>
+* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
+  Title: <BIP title; maximum 44 characters>
+  Champions: <list of champions’ names and email addresses>
+  Status: <Draft | Proposed | Withdrawn | [tk] Final>
+  Type: <Standards Track | Informational | Process>
+  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
+  License: <abbreviation for approved license(s)>
+* License-Code: <abbreviation for code under different approved license(s)>
+* Post-History: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
+* Requires: <BIP number(s)>
+* Replaces: <BIP number>
+* Superseded-By: <BIP number>
+```
+
+__BIP__: BIP number, or "?" before a number was assigned. Champions must not self-assign numbers. Numbers are assigned
+by BIP Editors.
+
+__Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
+definitions of the various BIP layers.
+
+__Champions__: The champions header lists the names and email addresses of the current owners of the BIP. This may or
+may not be the original authors of the BIP. The format of each champion header value must be
+
+    Random J. User <address@dom.ain>
+
+If there are multiple champions, each should be on a separate line following [RFC
+2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions [tk: what is the convention?].
+
+__Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
+
+__Created__: The Created header records the date that the BIP was assigned a number. [tk: for reals?! What should that
+date be?]
+
+__Post-History__: Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
+should be in yyyy-mm-dd format, e.g. 2001-08-14. Post-History is permitted to be a link to a specific thread in a
+mailing list archive.
+
+__Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
+
+__Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that a BIP has been rendered obsolete by a
+later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
+Replaces header containing the number of the BIP that it rendered obsolete.
+
+#### Auxiliary Files
+
+BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
+`bip-XXXX`, where "XXXX" is the BIP number. File names in the subdirectory do not need to adhere to a specific
+convention.
+
 ### BIP types
 
 * A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
@@ -177,92 +263,6 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 tk: Should it be possible for a final BIP to be revised? Adding versions could provide a way how to adapt final BIPs to
 the protocol evolving over time.
-
-## BIP format and structure
-
-### Specification
-
-BIPs should be written in mediawiki or markdown format.
-
-Each BIP should have the following parts:
-
-* Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
-* Abstract -- A short (~200 word) description of the technical issue being addressed.
-* Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
-  existing situation is inadequate to address the problem that the BIP solves.
-* Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
-  design decisions were made. It should describe alternate designs that were considered and related work. The rationale
-  should address important objections or concerns raised during discussion.
-* Specification -- The technical specification should describe the syntax and semantics of any new feature. The
-  specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
-* Backwards compatibility -- BIPs that introduce backwards incompatibilities must include a section describing these
-  incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
-  incompatibilities.
-* Reference implementation -- The reference implementation must be completed before [tk: will we have a final status?]
-  any BIP is given status "Final", but it need not be completed before the BIP is [tk: we do not have an accepted
-  status] accepted. It is better to finish the specification and rationale first and reach consensus on it before
-  writing code. The final implementation must include test code and documentation appropriate for the Bitcoin protocol.
-* Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
-* Copyright -- The BIP must be placed under an acceptable license ([[#BIP licensing|see below]]) [tk: update license].
-
-Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
-topic has been sufficiently addressed.
-
-#### BIP header preamble
-
-Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers
-marked with "\*" are optional. All other headers are required.
-
-```
-  BIP: <BIP number, or "?" before being assigned>
-* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
-  Title: <BIP title; maximum 44 characters>
-  Champion: <list of champions’ names and email addresses>
-  Status: <Draft | Proposed | Withdrawn | [tk] Final >
-  Type: <Standards Track | Informational | Process>
-  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-  License: <abbreviation for approved license(s)>
-* License-Code: <abbreviation for code under different approved license(s)>
-* Post-History: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
-* Requires: <BIP number(s)>
-* Replaces: <BIP number>
-* Superseded-By: <BIP number>
-```
-
-__BIP__: BIP number, or "?" before a number was assigned. Champions must not self-assign numbers. Numbers are assigned
-by BIP Editors.
-
-__Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
-definitions of the various BIP layers.
-
-__Champions__: The champions header lists the names and email addresses of the current owners of the BIP. This may or
-may not be the original authors of the BIP. The format of each champion header value must be
-
-    Random J. User <address@dom.ain>
-
-If there are multiple champions, each should be on a separate line following [RFC
-2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions [tk: what is the convention?].
-
-__Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
-
-__Created__: The Created header records the date that the BIP was assigned a number. [tk: for reals?! What should that
-date be?]
-
-__Post-History__: Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
-should be in yyyy-mm-dd format, e.g. 2001-08-14. Post-History is permitted to be a link to a specific thread in a
-mailing list archive.
-
-__Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
-
-__Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that a BIP has been rendered obsolete by a
-later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
-Replaces header containing the number of the BIP that it rendered obsolete.
-
-#### Auxiliary Files
-
-BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
-`bip-XXXX`, where "XXXX" is the BIP number. File names in the subdirectory do not need to adhere to a specific
-convention.
 
 ## BIP status field
 
