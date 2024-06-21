@@ -125,7 +125,7 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
 submitted as pull requests.
 
-### Proposed
+### Proposed^[Could be Review/Candidate instead to avoid overloading "proposed"]
 
 When the champion is confident that their BIP represents a net-improvement, is clear, comprehensive, and ready for
 adoption by the Bitcoin community, they may update the BIP’s status to _PROPOSED_ to indicate that they recommend
