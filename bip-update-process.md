@@ -73,11 +73,11 @@ The BIP process starts with a new idea for Bitcoin. Each potential BIP must have
 champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
-~If PROPOSED is the last status:~
+<sup>If PROPOSED is the last status:</sup>
 
 ![Status transitions](bip-update-process/status-transitions.png "Status Transitions in the BIP Workflow")
 
-~If FINAL is the last status:~
+<sup>If FINAL is the last status:</sup>
 
 ![Status transitions](bip-update-process/status-transitions-with-final.png "Status Transitions in the BIP Workflow")
 
@@ -178,6 +178,168 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 tk: Should it be possible for a final BIP to be revised? Adding versions could provide a way how to adapt final BIPs to
 the protocol evolving over time.
 
+## BIP format and structure
+
+### Specification
+
+BIPs should be written in mediawiki or markdown format.
+
+Each BIP should have the following parts:
+
+* Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
+* Abstract -- A short (~200 word) description of the technical issue being addressed.
+* Motivation -- The motivation is critical for BIPs that want to change the Bitcoin protocol. It should clearly explain
+  why the existing protocol is inadequate to address the problem that the BIP solves.
+* Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
+  design decisions were made. It should describe alternate designs that were considered and related work. The rationale
+  should provide evidence of consensus within the community and discuss important objections or concerns raised during
+  discussion.
+* Specification -- The technical specification should describe the syntax and semantics of any new feature. The
+  specification should be detailed enough to allow competing, interoperable implementations for any of the current
+  Bitcoin platforms.
+* Backwards compatibility -- All BIPs that introduce backwards incompatibilities must include a section describing these
+  incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
+  incompatibilities.
+* Reference implementation -- The reference implementation must be completed before any BIP is given status "Final", but
+  it need not be completed before the BIP is accepted. It is better to finish the specification and rationale first and
+  reach consensus on it before writing code. The final implementation must include test code and documentation
+  appropriate for the Bitcoin protocol.
+* Copyright -- The BIP must be explicitly licensed under acceptable copyright terms ([[#BIP licensing|see below]]).
+
+#### BIP header preamble
+
+Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
+
+<pre>
+  BIP: <BIP number, or "?" before being assigned>
+* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
+  Title: <BIP title; maximum 44 characters>
+  Author: <list of authors’ real names and email addresses>
+* Discussions-To: <email address>
+* Comments-Summary: <summary tone>
+  Comments-URI: <links to wiki page for comments>
+  Status: <Draft | Active | Proposed | Deferred | Rejected |
+           Withdrawn | Final | Replaced | Obsolete>
+  Type: <Standards Track | Informational | Process>
+  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
+  License: <abbreviation for approved license(s)>
+* License-Code: <abbreviation for code under different approved license(s)>
+* Post-History: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
+* Requires: <BIP number(s)>
+* Replaces: <BIP number>
+* Superseded-By: <BIP number>
+</pre>
+
+The Layer header (only for Standards Track BIPs) documents which layer of Bitcoin the BIP applies to.
+See [[bip-0123.mediawiki|BIP 123]] for definitions of the various BIP layers. Activation of this BIP implies activation of BIP 123.
+
+The Author header lists the names and email addresses of all the authors/owners of the BIP.
+The format of the Author header value must be
+
+  Random J. User <address@dom.ain>
+
+If there are multiple authors, each should be on a separate line following RFC 2822 continuation line conventions.
+
+While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
+
+The Type header specifies the type of BIP: Standards Track, Informational, or Process.
+
+The Created header records the date that the BIP was assigned a number, while Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists.
+Dates should be in yyyy-mm-dd format, e.g. 2001-08-14.
+Post-History is permitted to be a link to a specific thread in a mailing list archive.
+
+BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
+
+BIPs may also have a Superseded-By header indicating that a BIP has been rendered obsolete by a later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a Replaces header containing the number of the BIP that it rendered obsolete.
+
+#### Auxiliary Files
+
+BIPs may include auxiliary files such as diagrams. Auxiliary files should be included in a subdirectory for that BIP, or must be named BIP-XXXX-Y.ext, where "XXXX" is the BIP number, "Y" is a serial number (starting at 1), and "ext" is replaced by the actual file extension (e.g. "png").
+
+## BIP status field
+
+### Specification
+
+The typical paths of the status of BIPs are as follows:
+
+<img src="bip-0002/process.png"></img>
+
+
+A BIP may only change status from Draft (or Rejected) to Proposed, when the author deems it is complete, has a working implementation (where applicable), and has community plans to progress it to the Final status.
+
+BIPs should be changed from Draft or Proposed status, to Rejected status, upon request by any person, if they have not made progress in three years. Such a BIP may be changed to Draft status if the champion provides revisions that meaningfully address public criticism of the proposal, or to Proposed status if it meets the criteria required as described in the previous paragraph.
+
+A Proposed BIP may progress to Final only when specific criteria reflecting real-world adoption has occurred. This is different for each BIP depending on the nature of its proposed changes, which will be expanded on below. Evaluation of this status change should be objectively verifiable, and/or be discussed on the development mailing list.
+
+When a Final BIP is no longer relevant, its status may be changed to Replaced or Obsolete (which is equivalent to Replaced). This change must also be objectively verifiable and/or discussed.
+
+A process BIP may change status from Draft to Active when it achieves rough consensus on the mailing list. Such a proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be given in such circumstances.
+
+#### Progression to Final status
+
+A soft-fork BIP strictly requires a clear miner majority expressed by blockchain voting (eg, using BIP 9). In addition, if the economy seems willing to make a "no confidence" hard-fork (such as a change in proof-of-work algorithm), the soft-fork does not become Final for as long as such a hard-fork might have majority support, or at most three months. Soft-fork BIPs may also set additional requirements for their adoption. Because of the possibility of changes to miner dynamics, especially in light of delegated voting (mining pools), it is highly recommended that a supermajority vote around 95% be required by the BIP itself, unless rationale is given for a lower threshold.
+
+A hard-fork BIP requires adoption from the entire Bitcoin economy, particularly including those selling desirable goods and services in exchange for bitcoin payments, as well as Bitcoin holders who wish to spend or would spend their bitcoins (including selling for other currencies) differently in the event of such a hard-fork. Adoption must be expressed by de facto usage of the hard-fork in practice (ie, not merely expressing public support, although that is a good step to establish agreement before adoption of the BIP). This economic adoption cannot be established merely by a super-majority, except by literally forcing the minority to accept the hard-fork (whether this is viable or not is outside the scope of this document).
+
+Peer services BIPs should be observed to be adopted by at least 1% of public listening nodes for one month.
+
+API/RPC and application layer BIPs must be implemented by at least two independent and compatible software applications.
+
+Software authors are encouraged to publish summaries of what BIPs their software supports to aid in verification of status changes. Good examples of this at the time of writing this BIP, can be observed in [https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md Bitcoin Core's doc/bips.md file] as well as [https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.specs.md Bitcoin Wallet for Android's wallet/README.specs.md file].
+
+These criteria are considered objective ways to observe the de facto adoption of the BIP, and are not to be used as reasons to oppose or reject a BIP. Should a BIP become actually and unambiguously adopted despite not meeting the criteria outlined here, it should still be updated to Final status.
+
+### Rationale
+
+Why is this necessary at all?
+
+* BIP 1 defines an ambiguous criteria for the Status field of BIPs, which is often a source of confusion. As a result, many BIPs with significant real-world use have been left as Draft or Proposed status longer than appropriate. By giving objective criteria to judge the progression of BIPs, this proposal aims to help keep the Status accurate and up-to-date.
+
+How is the entire Bitcoin economy defined by people selling goods/services and holders?
+
+* For Bitcoin to function as a currency, it must be accepted as payment. Bitcoins have no value if you cannot acquire anything in exchange for them. If everyone accepting such payments requires a particular set of consensus rules, "bitcoins" are de facto defined by that set of rules - this is already the case today. If those consensus rules are expected to broaden (as with a hard-fork), those merchants need to accept payments made under the new set of rules, or they will reject "bitcoins" as invalid. Holders are relevant to the degree in that they choose the merchants they wish to spend their bitcoins with, and could also as a whole decide to sell under one set of consensus rules or the other, thus flooding the market with bitcoins and crashing the price.
+
+Why aren't <x> included in the economy?
+
+* Some entities may, to some degree, also be involved in offering goods and/or services in exchange for bitcoins, thus in that capacity (but not their capacity as <x>) be involved in the economy.
+* Miners are not included in the economy, because they merely *rely on* others to sell/spend their otherwise-worthless mined produce. Therefore, they must accept everyone else's direction in deciding the consensus rules.
+* Exchanges are not included in the economy, because they merely provide services of connecting the merchants and users who wish to trade. Even if all exchanges were to defect from Bitcoin, those merchants and users can always trade directly and/or establish their own exchanges.
+* Developers are not included in the economy, since they merely write code, and it is up to others to decide to use that code or not.
+
+But they're doing something important and have invested a lot in Bitcoin! Shouldn't they be included in such an important decision?
+
+* This BIP does not aim to address what "should" be the basis of decisions. Such a statement, no matter how perfect in its justification, would be futile without some way to force others to use it. The BIP process does not aim to be a kind of forceful "governance" of Bitcoin, merely to provide a collaborative repository for proposing and providing information on standards, which people may voluntarily adopt or not. It can only hope to achieve accuracy in regard to the "Status" field by striving to reflect the reality of *how things actually are*, rather than *how they should be*.
+
+What if a single merchant wishes to block a hard-fork?
+
+* This BIP addresses only the progression of the BIP Status field, not the deployment of the hard-fork (or any other change) itself.
+* Regardless, one shop cannot operate in a vacuum: if they are indeed alone, they will soon find themselves no longer selling in exchange for bitcoin payments, as nobody else would exist willing to use the previous blockchain to pay them. If they are no longer selling, they cease to meet the criteria herein which enables their veto.
+
+How about a small number of merchants (maybe only two) who sell products to each other?
+
+* In this scenario, it would seem the previous Bitcoin is alive and working, and that the hard-fork has failed. How to resolve such a split is outside the scope of this BIP.
+
+How can economic agreement veto a soft-fork?
+
+* The group of miners is determined by the consensus rules for the dynamic-membership multi-party signature (for Bitcoin, the proof-of-work algorithm), which can be modified with a hard-fork. Thus, if the same conditions required to modify this group are met in opposition to a soft-fork, the miner majority supporting the soft-fork is effectively void because the economy can decide to replace them with another group of would-be miners who do not support the soft-fork.
+
+What happens if the economy decides to hard-fork away from a controversial soft-fork, more than three months later?
+
+* The controversial soft-fork, in this circumstance, changes from Final to Replaced status to reflect the nature of the hard-fork replacing the previous (final) soft-fork.
+
+What is the ideal percentage of listening nodes needed to adopt peer services proposals?
+
+* This is unknown, and set rather arbitrarily at this time. For a random selection of peers to have at least one other peer implementing the extension, 13% or more would be necessary, but nodes could continue to scan the network for such peers with perhaps some reasonable success. Furthermore, service bits exist to help identification upfront.
+
+Why is it necessary for at least two software projects to release an implementation of API/RPC and application layer BIPs, before they become Final?
+
+* If there is only one implementation of a specification, there is no other program for which a standard interface is used with or needed.
+* Even if there are only two projects rather than more, some standard coordination between them exists.
+
+What if a BIP is proposed that only makes sense for a single specific project?
+
+* The BIP process exists for standardisation between independent projects. If something only affects one project, it should be done through that project's own internal processes, and never be proposed as a BIP in the first place.
+
 ## Format
 ### Specification
 #### BIP Header Preamble
@@ -259,167 +421,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 -------------------------
 -------------------------
 -------------------------
-
-==BIP workflow==
-
-
-==BIP format and structure==
-
-===Specification===
-
-BIPs should be written in mediawiki or markdown format.
-
-Each BIP should have the following parts:
-
-* Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
-
-* Abstract -- A short (~200 word) description of the technical issue being addressed.
-
-* Copyright -- The BIP must be explicitly licensed under acceptable copyright terms ([[#BIP licensing|see below]]).
-
-* Specification -- The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Bitcoin platforms.
-
-* Motivation -- The motivation is critical for BIPs that want to change the Bitcoin protocol. It should clearly explain why the existing protocol is inadequate to address the problem that the BIP solves.
-
-* Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular design decisions were made. It should describe alternate designs that were considered and related work. The rationale should provide evidence of consensus within the community and discuss important objections or concerns raised during discussion.
-
-* Backwards compatibility -- All BIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The BIP must explain how the author proposes to deal with these incompatibilities.
-
-* Reference implementation -- The reference implementation must be completed before any BIP is given status "Final", but it need not be completed before the BIP is accepted. It is better to finish the specification and rationale first and reach consensus on it before writing code. The final implementation must include test code and documentation appropriate for the Bitcoin protocol.
-
-====BIP header preamble====
-
-Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
-
-<pre>
-  BIP: <BIP number, or "?" before being assigned>
-* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
-  Title: <BIP title; maximum 44 characters>
-  Author: <list of authors' real names and email addrs>
-* Discussions-To: <email address>
-* Comments-Summary: <summary tone>
-  Comments-URI: <links to wiki page for comments>
-  Status: <Draft | Active | Proposed | Deferred | Rejected |
-           Withdrawn | Final | Replaced | Obsolete>
-  Type: <Standards Track | Informational | Process>
-  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-  License: <abbreviation for approved license(s)>
-* License-Code: <abbreviation for code under different approved license(s)>
-* Post-History: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
-* Requires: <BIP number(s)>
-* Replaces: <BIP number>
-* Superseded-By: <BIP number>
-</pre>
-
-The Layer header (only for Standards Track BIPs) documents which layer of Bitcoin the BIP applies to.
-See [[bip-0123.mediawiki|BIP 123]] for definitions of the various BIP layers. Activation of this BIP implies activation of BIP 123.
-
-The Author header lists the names and email addresses of all the authors/owners of the BIP.
-The format of the Author header value must be
-
-  Random J. User <address@dom.ain>
-
-If there are multiple authors, each should be on a separate line following RFC 2822 continuation line conventions.
-
-While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
-
-The Type header specifies the type of BIP: Standards Track, Informational, or Process.
-
-The Created header records the date that the BIP was assigned a number, while Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists.
-Dates should be in yyyy-mm-dd format, e.g. 2001-08-14.
-Post-History is permitted to be a link to a specific thread in a mailing list archive.
-
-BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
-
-BIPs may also have a Superseded-By header indicating that a BIP has been rendered obsolete by a later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a Replaces header containing the number of the BIP that it rendered obsolete.
-
-====Auxiliary Files====
-
-BIPs may include auxiliary files such as diagrams. Auxiliary files should be included in a subdirectory for that BIP, or must be named BIP-XXXX-Y.ext, where "XXXX" is the BIP number, "Y" is a serial number (starting at 1), and "ext" is replaced by the actual file extension (e.g. "png").
-
-==BIP status field==
-
-===Specification===
-
-The typical paths of the status of BIPs are as follows:
-
-<img src="bip-0002/process.png"></img>
-
-
-A BIP may only change status from Draft (or Rejected) to Proposed, when the author deems it is complete, has a working implementation (where applicable), and has community plans to progress it to the Final status.
-
-BIPs should be changed from Draft or Proposed status, to Rejected status, upon request by any person, if they have not made progress in three years. Such a BIP may be changed to Draft status if the champion provides revisions that meaningfully address public criticism of the proposal, or to Proposed status if it meets the criteria required as described in the previous paragraph.
-
-A Proposed BIP may progress to Final only when specific criteria reflecting real-world adoption has occurred. This is different for each BIP depending on the nature of its proposed changes, which will be expanded on below. Evaluation of this status change should be objectively verifiable, and/or be discussed on the development mailing list.
-
-When a Final BIP is no longer relevant, its status may be changed to Replaced or Obsolete (which is equivalent to Replaced). This change must also be objectively verifiable and/or discussed.
-
-A process BIP may change status from Draft to Active when it achieves rough consensus on the mailing list. Such a proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be given in such circumstances.
-
-====Progression to Final status====
-
-A soft-fork BIP strictly requires a clear miner majority expressed by blockchain voting (eg, using BIP 9). In addition, if the economy seems willing to make a "no confidence" hard-fork (such as a change in proof-of-work algorithm), the soft-fork does not become Final for as long as such a hard-fork might have majority support, or at most three months. Soft-fork BIPs may also set additional requirements for their adoption. Because of the possibility of changes to miner dynamics, especially in light of delegated voting (mining pools), it is highly recommended that a supermajority vote around 95% be required by the BIP itself, unless rationale is given for a lower threshold.
-
-A hard-fork BIP requires adoption from the entire Bitcoin economy, particularly including those selling desirable goods and services in exchange for bitcoin payments, as well as Bitcoin holders who wish to spend or would spend their bitcoins (including selling for other currencies) differently in the event of such a hard-fork. Adoption must be expressed by de facto usage of the hard-fork in practice (ie, not merely expressing public support, although that is a good step to establish agreement before adoption of the BIP). This economic adoption cannot be established merely by a super-majority, except by literally forcing the minority to accept the hard-fork (whether this is viable or not is outside the scope of this document).
-
-Peer services BIPs should be observed to be adopted by at least 1% of public listening nodes for one month.
-
-API/RPC and application layer BIPs must be implemented by at least two independent and compatible software applications.
-
-Software authors are encouraged to publish summaries of what BIPs their software supports to aid in verification of status changes. Good examples of this at the time of writing this BIP, can be observed in [https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md Bitcoin Core's doc/bips.md file] as well as [https://github.com/bitcoin-wallet/bitcoin-wallet/blob/master/wallet/README.specs.md Bitcoin Wallet for Android's wallet/README.specs.md file].
-
-These criteria are considered objective ways to observe the de facto adoption of the BIP, and are not to be used as reasons to oppose or reject a BIP. Should a BIP become actually and unambiguously adopted despite not meeting the criteria outlined here, it should still be updated to Final status.
-
-===Rationale===
-
-Why is this necessary at all?
-
-* BIP 1 defines an ambiguous criteria for the Status field of BIPs, which is often a source of confusion. As a result, many BIPs with significant real-world use have been left as Draft or Proposed status longer than appropriate. By giving objective criteria to judge the progression of BIPs, this proposal aims to help keep the Status accurate and up-to-date.
-
-How is the entire Bitcoin economy defined by people selling goods/services and holders?
-
-* For Bitcoin to function as a currency, it must be accepted as payment. Bitcoins have no value if you cannot acquire anything in exchange for them. If everyone accepting such payments requires a particular set of consensus rules, "bitcoins" are de facto defined by that set of rules - this is already the case today. If those consensus rules are expected to broaden (as with a hard-fork), those merchants need to accept payments made under the new set of rules, or they will reject "bitcoins" as invalid. Holders are relevant to the degree in that they choose the merchants they wish to spend their bitcoins with, and could also as a whole decide to sell under one set of consensus rules or the other, thus flooding the market with bitcoins and crashing the price.
-
-Why aren't <x> included in the economy?
-
-* Some entities may, to some degree, also be involved in offering goods and/or services in exchange for bitcoins, thus in that capacity (but not their capacity as <x>) be involved in the economy.
-* Miners are not included in the economy, because they merely *rely on* others to sell/spend their otherwise-worthless mined produce. Therefore, they must accept everyone else's direction in deciding the consensus rules.
-* Exchanges are not included in the economy, because they merely provide services of connecting the merchants and users who wish to trade. Even if all exchanges were to defect from Bitcoin, those merchants and users can always trade directly and/or establish their own exchanges.
-* Developers are not included in the economy, since they merely write code, and it is up to others to decide to use that code or not.
-
-But they're doing something important and have invested a lot in Bitcoin! Shouldn't they be included in such an important decision?
-
-* This BIP does not aim to address what "should" be the basis of decisions. Such a statement, no matter how perfect in its justification, would be futile without some way to force others to use it. The BIP process does not aim to be a kind of forceful "governance" of Bitcoin, merely to provide a collaborative repository for proposing and providing information on standards, which people may voluntarily adopt or not. It can only hope to achieve accuracy in regard to the "Status" field by striving to reflect the reality of *how things actually are*, rather than *how they should be*.
-
-What if a single merchant wishes to block a hard-fork?
-
-* This BIP addresses only the progression of the BIP Status field, not the deployment of the hard-fork (or any other change) itself.
-* Regardless, one shop cannot operate in a vacuum: if they are indeed alone, they will soon find themselves no longer selling in exchange for bitcoin payments, as nobody else would exist willing to use the previous blockchain to pay them. If they are no longer selling, they cease to meet the criteria herein which enables their veto.
-
-How about a small number of merchants (maybe only two) who sell products to each other?
-
-* In this scenario, it would seem the previous Bitcoin is alive and working, and that the hard-fork has failed. How to resolve such a split is outside the scope of this BIP.
-
-How can economic agreement veto a soft-fork?
-
-* The group of miners is determined by the consensus rules for the dynamic-membership multi-party signature (for Bitcoin, the proof-of-work algorithm), which can be modified with a hard-fork. Thus, if the same conditions required to modify this group are met in opposition to a soft-fork, the miner majority supporting the soft-fork is effectively void because the economy can decide to replace them with another group of would-be miners who do not support the soft-fork.
-
-What happens if the economy decides to hard-fork away from a controversial soft-fork, more than three months later?
-
-* The controversial soft-fork, in this circumstance, changes from Final to Replaced status to reflect the nature of the hard-fork replacing the previous (final) soft-fork.
-
-What is the ideal percentage of listening nodes needed to adopt peer services proposals?
-
-* This is unknown, and set rather arbitrarily at this time. For a random selection of peers to have at least one other peer implementing the extension, 13% or more would be necessary, but nodes could continue to scan the network for such peers with perhaps some reasonable success. Furthermore, service bits exist to help identification upfront.
-
-Why is it necessary for at least two software projects to release an implementation of API/RPC and application layer BIPs, before they become Final?
-
-* If there is only one implementation of a specification, there is no other program for which a standard interface is used with or needed.
-* Even if there are only two projects rather than more, some standard coordination between them exists.
-
-What if a BIP is proposed that only makes sense for a single specific project?
-
-* The BIP process exists for standardisation between independent projects. If something only affects one project, it should be done through that project's own internal processes, and never be proposed as a BIP in the first place.
 
 ==BIP comments==
 
