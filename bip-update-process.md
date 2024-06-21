@@ -10,7 +10,7 @@ License: CC0-1.0
 Replaces: 2
 ```
 
-## More input requested on following open questions
+## tk: More input requested on following open questions
 
 - Should we have a Final and/or Active Status?
 - Should we introduce versioning/revisions to (final) BIPs?
@@ -426,12 +426,12 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ## Footnotes
 
+- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
+- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
+
 ### References
 
 [champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.
-
-- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
-- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
 
 
 -------------------------
