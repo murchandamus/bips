@@ -210,15 +210,14 @@ topic has been sufficiently addressed.
 
 #### BIP header preamble
 
-Each BIP must begin with a header preamble. The headers must appear in the following order. Headers
-marked with "\*" are optional and are described below. All other headers are required.
+Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers
+marked with "\*" are optional. All other headers are required.
 
 ```
   BIP: <BIP number, or "?" before being assigned>
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title; maximum 44 characters>
   Champion: <list of champions’ names and email addresses>
-* Discussions-To: <mailing list/URL>
   Status: <Draft | Proposed | Withdrawn | [tk] Final >
   Type: <Standards Track | Informational | Process>
   Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
@@ -230,23 +229,19 @@ marked with "\*" are optional and are described below. All other headers are req
 * Superseded-By: <BIP number>
 ```
 
-__BIP__: BIP number, or "?" before a number was assigned. Numbers are assigned by BIP Editors and Champions must not
-self-assign numbers.
+__BIP__: BIP number, or "?" before a number was assigned. Champions must not self-assign numbers. Numbers are assigned
+by BIP Editors.
 
 __Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Champions__: The champions header lists the names and email addresses of the current owner(s) of the BIP. This may or
+__Champions__: The champions header lists the names and email addresses of the current owners of the BIP. This may or
 may not be the original authors of the BIP. The format of each champion header value must be
 
     Random J. User <address@dom.ain>
 
 If there are multiple champions, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions [tk: what is the convention?].
-
-__Discussions-To__: While a BIP is in private discussions (usually during the initial Draft phase), a Discussions-To
-header will indicate the mailing list or URL where the BIP is being discussed. No Discussions-To header is necessary if
-the BIP is being discussed privately with the author, or on the bitcoin email mailing lists.
 
 __Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
 
@@ -266,7 +261,7 @@ Replaces header containing the number of the BIP that it rendered obsolete.
 #### Auxiliary Files
 
 BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
-`bip-XXXX`, where "XXXX" is the BIP number. The file names in the subdirectory do not need to adhere to a specific
+`bip-XXXX`, where "XXXX" is the BIP number. File names in the subdirectory do not need to adhere to a specific
 convention.
 
 ## BIP status field
@@ -422,6 +417,7 @@ correcting misspellings, fixing broken links, etc.
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory
+- The Discussions-To header is dropped
 
 ## Copyright
 
