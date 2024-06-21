@@ -188,27 +188,30 @@ Each BIP should have the following parts:
 
 * Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
 * Abstract -- A short (~200 word) description of the technical issue being addressed.
-* Motivation -- The motivation is critical for BIPs that want to change the Bitcoin protocol. It should clearly explain
-  why the existing protocol is inadequate to address the problem that the BIP solves.
+* Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
+  existing situation is inadequate to address the problem that the BIP solves.
 * Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
   design decisions were made. It should describe alternate designs that were considered and related work. The rationale
-  should provide evidence of consensus within the community and discuss important objections or concerns raised during
-  discussion.
+  should address important objections or concerns raised during discussion.
 * Specification -- The technical specification should describe the syntax and semantics of any new feature. The
-  specification should be detailed enough to allow competing, interoperable implementations for any of the current
-  Bitcoin platforms.
-* Backwards compatibility -- All BIPs that introduce backwards incompatibilities must include a section describing these
+  specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
+* Backwards compatibility -- BIPs that introduce backwards incompatibilities must include a section describing these
   incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
   incompatibilities.
-* Reference implementation -- The reference implementation must be completed before any BIP is given status "Final", but
-  it need not be completed before the BIP is accepted. It is better to finish the specification and rationale first and
-  reach consensus on it before writing code. The final implementation must include test code and documentation
-  appropriate for the Bitcoin protocol.
-* Copyright -- The BIP must be explicitly licensed under acceptable copyright terms ([[#BIP licensing|see below]]).
+* Reference implementation -- The reference implementation must be completed before [tk: will we have a final status?]
+  any BIP is given status "Final", but it need not be completed before the BIP is [tk: we do not have an accepted
+  status] accepted. It is better to finish the specification and rationale first and reach consensus on it before
+  writing code. The final implementation must include test code and documentation appropriate for the Bitcoin protocol.
+* Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
+* Copyright -- The BIP must be placed under an acceptable license ([[#BIP licensing|see below]]) [tk: update license].
+
+Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
+topic has been sufficiently addressed.
 
 #### BIP header preamble
 
-Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers marked with "*" are optional and are described below. All other headers are required.
+Each BIP must begin with an RFC 2822 style header preamble. The headers must appear in the following order. Headers
+marked with "\*" are optional and are described below. All other headers are required.
 
 <pre>
   BIP: <BIP number, or "?" before being assigned>
