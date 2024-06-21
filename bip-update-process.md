@@ -214,23 +214,19 @@ Each BIP must begin with an RFC 2822 style header preamble. The headers must app
 marked with "\*" are optional and are described below. All other headers are required.
 
 <pre>
-  BIP: <BIP number, or "?" before being assigned>
-* Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
-  Title: <BIP title; maximum 44 characters>
-  Author: <list of authors’ real names and email addresses>
-* Discussions-To: <email address>
-* Comments-Summary: <summary tone>
-  Comments-URI: <links to wiki page for comments>
-  Status: <Draft | Active | Proposed | Deferred | Rejected |
-           Withdrawn | Final | Replaced | Obsolete>
-  Type: <Standards Track | Informational | Process>
-  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-  License: <abbreviation for approved license(s)>
-* License-Code: <abbreviation for code under different approved license(s)>
-* Post-History: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
-* Requires: <BIP number(s)>
-* Replaces: <BIP number>
-* Superseded-By: <BIP number>
+  BIP: \<BIP number, or "?" before being assigned\>
+* Layer: \<Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications\>
+  Title: \<BIP title; maximum 44 characters\>
+  Author: \<list of champions’ real names and email addresses\>
+  Status: \<Draft | Proposed | Withdrawn | [tk] Final \>
+  Type: \<Standards Track | Informational | Process\>
+  Created: \<date created on, in ISO 8601 (yyyy-mm-dd) format\>
+  License: \<abbreviation for approved license(s)\>
+* License-Code: \<abbreviation for code under different approved license(s)\>
+* Post-History: \<list of mailing list threads, or other noteworthy discussions in "date: link" format\>
+* Requires: \<BIP number(s)\>
+* Replaces: \<BIP number\>
+* Superseded-By: \<BIP number\>
 </pre>
 
 The Layer header (only for Standards Track BIPs) documents which layer of Bitcoin the BIP applies to.
