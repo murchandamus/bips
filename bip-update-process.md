@@ -266,16 +266,14 @@ the protocol evolving over time.
 
 ## BIP status field
 
-### Specification
+### Specification [tk: Rework Specification]
 
 The typical paths of the status of BIPs are as follows:
 
 <img src="bip-0002/process.png"></img>
 
 
-A BIP may only change status from Draft (or Rejected) to Proposed, when the author deems it is complete, has a working implementation (where applicable), and has community plans to progress it to the Final status.
-
-BIPs should be changed from Draft or Proposed status, to Rejected status, upon request by any person, if they have not made progress in three years. Such a BIP may be changed to Draft status if the champion provides revisions that meaningfully address public criticism of the proposal, or to Proposed status if it meets the criteria required as described in the previous paragraph.
+A BIP may only change status from Draft (or Rejected) to Proposed, when the author deems it is complete, has a working implementation (where applicable), and has community plans to progress it to the Final status. [tk: duplicate with above]
 
 A Proposed BIP may progress to Final only when specific criteria reflecting real-world adoption has occurred. This is different for each BIP depending on the nature of its proposed changes, which will be expanded on below. Evaluation of this status change should be objectively verifiable, and/or be discussed on the development mailing list.
 
@@ -283,7 +281,7 @@ When a Final BIP is no longer relevant, its status may be changed to Replaced or
 
 A process BIP may change status from Draft to Active when it achieves rough consensus on the mailing list. Such a proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be given in such circumstances.
 
-#### Progression to Final status
+#### Progression to Final status [tk: Rework Final Status, if we even want one]
 
 A soft-fork BIP strictly requires a clear miner majority expressed by blockchain voting (eg, using BIP 9). In addition, if the economy seems willing to make a "no confidence" hard-fork (such as a change in proof-of-work algorithm), the soft-fork does not become Final for as long as such a hard-fork might have majority support, or at most three months. Soft-fork BIPs may also set additional requirements for their adoption. Because of the possibility of changes to miner dynamics, especially in light of delegated voting (mining pools), it is highly recommended that a supermajority vote around 95% be required by the BIP itself, unless rationale is given for a lower threshold.
 
@@ -419,6 +417,7 @@ correcting misspellings, fixing broken links, etc.
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory
 - Comments-URI, and Comment-Summary headers as well as Comments are dropped
 - The Discussions-To header is dropped
+- BIPs can no longer be rejected due to inactivity
 
 ## Copyright
 
