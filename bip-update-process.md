@@ -244,8 +244,9 @@ their proposal, or no longer recommend the proposed approach.
 ### Adoption of proposals
 
 The BIPs repository does not track the sentiment on or adoption of proposals, and individual BIPs do not take statuses
-based on their adoption or deployment. After a BIP is advanced to _PROPOSED_, it is up to the Bitcoin community to
-adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they implement.
+based on their adoption or deployment. It is not intended for BIPs to list additional implementations beyond the
+reference implementation.[OtherImplementations][] After a BIP is advanced to _PROPOSED_, it is up to the Bitcoin community to adopt, ignore, or
+repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they implement.
 
 ### Transferring BIP Ownership
 
@@ -526,6 +527,7 @@ correcting misspellings, fixing broken links, etc.
 - The Discussions-To header is dropped
 - BIPs can no longer be rejected due to inactivity
 - List of acceptable licenses was reduced to the ones previously used
+- "Other Implementations" sections are discouraged
 
 ## Copyright
 
@@ -540,5 +542,11 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ### References
 
-[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.
+[OtherImplementations]: In the past, some BIPs that so-called "Other Implementations" sections that caused frequent
+changes to existing BIPs. This put an onus on the BIP champions, and frequently lead to lingering pull requests 
+due to the corresponding BIPs’ champions no longer participating in the process. Many of these alternative
+implementations eventually became unmaintained or were low-quality to begin with. Therefore, "Other Implementations"
+sections are heavily discouraged.
+[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin
+development. In that case another proponent may adopt the BIP as a new owner.
 
