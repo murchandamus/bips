@@ -353,85 +353,6 @@ What if a BIP is proposed that only makes sense for a single specific project?
 
 ## Licensing
 
-## BIP Editors
-
-The current BIP editors are:
-
-* Bryan Bishop ([kanzure@gmail.com](mailto:kanzure@gmail.com))
-* Jon Atack ([jon@atack.com](mailto:jon@atack.com))
-* Luke Dashjr ([luke_bipeditor@dashjr.org](mailto:luke_bipeditor@dashjr.org))
-* Mark "Murch" Erhardt ([murch@murch.one](mailto:murch@murch.one))
-* Olaoluwa Osuntokun ([laolu32@gmail.com](mailto:laolu32@gmail.com))
-* Ruben Somsen ([rsomsen@gmail.com](mailto:rsomsen@gmail.com))
-
-### BIP Editor Responsibilities & Workflow
-
-The BIP editors subscribe to the Bitcoin development mailing list and watch the [BIPs
-repository](https://github.com/bitcoin/bips).
-Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
-
-When a new BIP idea is submitted to the mailing list, BIP editor and other community members should comment in regard
-to:
-
-* Novelty of the idea
-* Viability, utility, and relevance of the concept
-* Readiness of the draft
-* On-topic for the Bitcoin community
-
-If the BIP is not ready, an editor should ensure that specific instructions are provided to the champion for revision.
-Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
-repository](https://github.com/bitcoin/bips) where it may get further feedback.
-
-For each new BIP draft pull request that comes in, an editor checks the following:
-
-* Draft has been previously discussed on the Bitcoin development mailing
-* Title accurately describes the content
-* Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
-* Document is properly formatted
-* Licensing terms are acceptable
-* Motivation, rationale, and backward compatibility have been addressed (where applicable)
-* The defined Layer header must be correctly assigned for the given specification
-* The BIP is ready: it is complete, comprehensible, and technically feasible
-
-Editors do NOT evaluate whether the proposal is likely to be adopted.
-
-A BIP editor will:
-
-* Assign a BIP number in the pull request.
-* Merge the pull request when it is ready.
-* List the BIP in [[README.mediawiki]]
-
-The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
-changes, and update BIP headers as appropriate.
-
-BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as
-correcting misspellings, fixing broken links, etc.
-
-## Changes from BIP-2
-
-- Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
-  PROPOSED, and WITHDRAWN. The statuses Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset.
-- Judgment calls required from BIP Editors are reassigned either to the Bitcoin community or the BIP champion
-- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
-- Layer header is no longer restricted to Standards Track
-- Auxiliary files are only permitted in the corresponding BIP’s subdirectory
-- Comments-URI, and Comment-Summary headers as well as Comments are dropped
-- The Discussions-To header is dropped
-- BIPs can no longer be rejected due to inactivity
-
-## Copyright
-
-This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
-
-## Footnotes
-
-- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
-- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
-
-### References
-
-[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.
-
 
 -------------------------
 -------------------------
@@ -537,3 +458,87 @@ Why is Public Domain no longer acceptable for new BIPs?
 * [[bip-0001.mediawiki|BIP 1: BIP Purpose and Guidelines]]
 * [[bip-0123.mediawiki|BIP 123: BIP Classification]]
 * [https://tools.ietf.org/html/rfc7282 RFC 7282: On Consensus and Humming in the IETF]
+
+-------------------------
+-------------------------
+-------------------------
+
+## BIP Editors
+
+The current BIP editors are:
+
+* Bryan Bishop ([kanzure@gmail.com](mailto:kanzure@gmail.com))
+* Jon Atack ([jon@atack.com](mailto:jon@atack.com))
+* Luke Dashjr ([luke_bipeditor@dashjr.org](mailto:luke_bipeditor@dashjr.org))
+* Mark "Murch" Erhardt ([murch@murch.one](mailto:murch@murch.one))
+* Olaoluwa Osuntokun ([laolu32@gmail.com](mailto:laolu32@gmail.com))
+* Ruben Somsen ([rsomsen@gmail.com](mailto:rsomsen@gmail.com))
+
+### BIP Editor Responsibilities & Workflow
+
+The BIP editors subscribe to the Bitcoin development mailing list and watch the [BIPs
+repository](https://github.com/bitcoin/bips).
+Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
+
+When a new BIP idea is submitted to the mailing list, BIP editor and other community members should comment in regard
+to:
+
+* Novelty of the idea
+* Viability, utility, and relevance of the concept
+* Readiness of the draft
+* On-topic for the Bitcoin community
+
+If the BIP is not ready, an editor should ensure that specific instructions are provided to the champion for revision.
+Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
+repository](https://github.com/bitcoin/bips) where it may get further feedback.
+
+For each new BIP draft pull request that comes in, an editor checks the following:
+
+* Draft has been previously discussed on the Bitcoin development mailing
+* Title accurately describes the content
+* Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
+* Document is properly formatted
+* Licensing terms are acceptable
+* Motivation, rationale, and backward compatibility have been addressed (where applicable)
+* The defined Layer header must be correctly assigned for the given specification
+* The BIP is ready: it is complete, comprehensible, and technically feasible
+
+Editors do NOT evaluate whether the proposal is likely to be adopted.
+
+A BIP editor will:
+
+* Assign a BIP number in the pull request.
+* Merge the pull request when it is ready.
+* List the BIP in [[README.mediawiki]]
+
+The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
+changes, and update BIP headers as appropriate.
+
+BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as
+correcting misspellings, fixing broken links, etc.
+
+## Changes from BIP-2
+
+- Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
+  PROPOSED, and WITHDRAWN. The statuses Active, Deferred, Rejected, Final, Replaced, and Obsolete are sunset.
+- Judgment calls required from BIP Editors are reassigned either to the Bitcoin community or the BIP champion
+- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
+- Layer header is no longer restricted to Standards Track
+- Auxiliary files are only permitted in the corresponding BIP’s subdirectory
+- Comments-URI, and Comment-Summary headers as well as Comments are dropped
+- The Discussions-To header is dropped
+- BIPs can no longer be rejected due to inactivity
+
+## Copyright
+
+This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+
+## Footnotes
+
+- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
+- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
+
+### References
+
+[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may adopt the BIP as a new owner.
+
