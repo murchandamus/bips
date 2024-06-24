@@ -351,117 +351,113 @@ What if a BIP is proposed that only makes sense for a single specific project?
 #### BIP Header Preamble
 #### Auxiliary Files
 
-## Licensing
+## BIP Licensing
 
+### Specification
 
--------------------------
--------------------------
--------------------------
-
-==BIP licensing==
-
-===Specification===
-
-New BIPs may be accepted with the following licenses. Each new BIP must identify at least one acceptable license in its preamble. The License header in the preamble must be placed after the Created header. Each license must be referenced by their respective abbreviation given below.
+New BIPs may be accepted with the following licenses. Each new BIP must identify at least one acceptable license in its
+preamble. The License header in the preamble must be placed after the Created header. Each license must be referenced by
+their respective abbreviation given below.
 
 For example, a preamble might include the following License header:
 
-    License: BSD-2-Clause
+    License: CC0-1.0
              GNU-All-Permissive
 
-In this case, the BIP text is fully licensed under both the OSI-approved BSD 2-clause license as well as the GNU All-Permissive License, and anyone may modify and redistribute the text provided they comply with the terms of *either* license. In other words, the license list is an "OR choice", not an "AND also" requirement.
+In this case, the BIP text is fully licensed under both the Creative Commons CC0 1.0 Universal license as well as the
+GNU All-Permissive License, and anyone may modify and redistribute the text provided they comply with the terms of
+*either* license. In other words, the license list is an "OR choice", not an "AND also" requirement.
 
-It is also possible to license source code differently from the BIP text. An optional License-Code header is placed after the License header. Again, each license must be referenced by their respective abbreviation given below.
+It is also possible to license source code differently from the BIP text. An optional License-Code header is placed
+after the License header. Again, each acceptable license must be referenced by their respective abbreviation given
+below.
 
 For example, a preamble specifying the optional License-Code header might look like:
 
-    License: BSD-2-Clause
-             GNU-All-Permissive
-    License-Code: GPL-2.0+
+    License:         CC0-1.0
+    License-Code:    MIT
 
-In this case, the code in the BIP is not available under the BSD or All-Permissive licenses, but only under the terms of the GNU General Public License (GPL), version 2 or newer.
-If the code were to be available under *only* version 2 exactly, the "+" symbol should be removed from the license abbreviation.
-For a later version (eg, GPL 3.0), you would increase the version number (and retain or remove the "+" depending on intent).
+In this case, the code in the BIP is not available under CC0-1.0, but is only available under the terms of the MIT
+License.
 
-    License-Code: GPL-2.0   # This refers to GPL v2.0 *only*, no later license versions are acceptable.
-    License-Code: GPL-2.0+  # This refers to GPL v2.0 *or later*.
-    License-Code: GPL-3.0   # This refers to GPL v3.0 *only*, no later license versions are acceptable.
-    License-Code: GPL-3.0+  # This refers to GPL v3.0 *or later*.
+BIPs are not required to be *exclusively* licensed under approved terms, and may also be licensed under unacceptable
+licenses *in addition to* at least one acceptable license. In this case, only the acceptable license(s) should be listed
+in the License and License-Code headers. It is recommended that BIPs are made available under at least one license
+that is not a software license.
 
-In the event that the licensing for the text or code is too complicated to express with a simple list of alternatives, the list should instead be replaced with the single term "Complex". In all cases, details of the licensing terms must be provided in the Copyright section of the BIP.
+It is recommended that BIPs that include literal code be dual-licensed under the same license terms as the project it
+modifies. For example, literal code intended for Bitcoin Core would ideally be dual-licensed under the MIT license terms
+as well as one of the above with the rest of the BIP text.
 
-BIPs are not required to be *exclusively* licensed under approved terms, and may also be licensed under unacceptable licenses *in addition to* at least one acceptable license.
-In this case, only the acceptable license(s) should be listed in the License and License-Code headers.
+In all cases, details of the licensing terms must be provided in the Copyright section of the BIP.
 
-====Recommended licenses====
+#### Recommended license
 
-* BSD-2-Clause: [https://opensource.org/licenses/BSD-2-Clause OSI-approved BSD 2-clause license]
-* BSD-3-Clause: [https://opensource.org/licenses/BSD-3-Clause OSI-approved BSD 3-clause license]
-* CC0-1.0: [https://creativecommons.org/publicdomain/zero/1.0/ Creative Commons CC0 1.0 Universal]
-* GNU-All-Permissive: [http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html GNU All-Permissive License]
+* CC0-1.0: [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+* GNU-All-Permissive: [GNU All-Permissive License](http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html)
 
-In addition, it is recommended that literal code included in the BIP be dual-licensed under the same license terms as the project it modifies. For example, literal code intended for Bitcoin Core would ideally be dual-licensed under the MIT license terms as well as one of the above with the rest of the BIP text.
+#### Not recommended, but acceptable licenses
 
-====Not recommended, but acceptable licenses====
+* BSD-2-Clause: [OSI-approved BSD 2-clause license](https://opensource.org/licenses/BSD-2-Clause)
+* BSD-3-Clause: [OSI-approved BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause)
+* CC-BY-4.0: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
+* CC-BY-SA-4.0: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+* MIT: [Expat/MIT/X11 license](https://opensource.org/licenses/MIT)
 
-* Apache-2.0: [http://www.apache.org/licenses/LICENSE-2.0 Apache License, version 2.0]
-* BSL-1.0: [http://www.boost.org/LICENSE_1_0.txt Boost Software License, version 1.0]
-* CC-BY-4.0: [https://creativecommons.org/licenses/by/4.0/ Creative Commons Attribution 4.0 International]
-* CC-BY-SA-4.0: [https://creativecommons.org/licenses/by-sa/4.0/ Creative Commons Attribution-ShareAlike 4.0 International]
-* MIT: [https://opensource.org/licenses/MIT Expat/MIT/X11 license]
-* AGPL-3.0+: [http://www.gnu.org/licenses/agpl-3.0.en.html GNU Affero General Public License (AGPL), version 3 or newer]
-* FDL-1.3: [http://www.gnu.org/licenses/fdl-1.3.en.html GNU Free Documentation License, version 1.3]
-* GPL-2.0+: [http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GNU General Public License (GPL), version 2 or newer]
-* LGPL-2.1+: [http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html GNU Lesser General Public License (LGPL), version 2.1 or newer]
 
-====Not acceptable licenses====
+#### Not acceptable licenses
 
-All licenses not explicitly included in the above lists are not acceptable terms for a Bitcoin Improvement Proposal unless a later BIP extends this one to add them.
-However, BIPs predating the acceptance of this BIP were allowed under other terms, and should use these abbreviation when no other license is granted:
+All licenses not explicitly included in the above lists are not acceptable terms for a Bitcoin Improvement Proposal.
+However, BIPs predating the acceptance of this BIP were allowed under other terms, and should use these abbreviation
+when no other license is granted:
 
-* OPL: [http://opencontent.org/openpub/ Open Publication License, version 1.0]
 * PD: Released into the public domain
+* OPL: [Open Publication License, version 1.0](http://opencontent.org/openpub/)
 
-===Rationale===
+### Rationale
 
-BIP 1 allowed the Open Publication License or releasing into the public domain; was this insufficient?
+Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
+some BIPs were made available under more than one license) and only one license has been used to license code:
 
-* The OPL is generally regarded as obsolete, and not a license suitable for new publications.
-* Many are unfamiliar with the OPL terms, and may just prefer to use the public domain rather than license under uncertain terms.
-* The OPL license terms allowed for the author to prevent publication and derived works, which was widely considered inappropriate for Bitcoin standards.
-* Public domain is not universally recognised as a legitimate action, thus it is inadvisable.
+Licenses used:
+
+* BSD-2-Clause: 55
+* PD: 42
+* CC0-1.0: 23
+* BSD-3-Clause: 19
+* OPL: 5
+* CC-BY-SA-4.0: 4
+* GNU-All-Permissive: 3
+* MIT: 2
+* CC-BY-4.0: 1
+
+License-Code used:
+
+* MIT: 4
+
+The following previously acceptable licenses have been dropped, because they have never been used in the BIPs process:
+
+* AGPL-3.0+: [GNU Affero General Public License (AGPL), version 3 or newer](http://www.gnu.org/licenses/agpl-3.0.en.html)
+* Apache-2.0: [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* BSL-1.0: [Boost Software License, version 1.0](http://www.boost.org/LICENSE_1_0.txt)
+* FDL-1.3: [GNU Free Documentation License, version 1.3](http://www.gnu.org/licenses/fdl-1.3.en.html)
+* GPL-2.0+: [GNU General Public License (GPL), version 2 or newer](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+* LGPL-2.1+: [GNU Lesser General Public License (LGPL), version 2.1 or newer](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
+
+Some of the previously recommended licenses explicitly state that they apply to software, but BIPs are foremost text
+documents. As such, the previously recommended BSD-[2|3]-Clause licenses that only apply to software have been moved to
+the "Not recommended" section. This leaves us with only the CC0-1.0 and the GNU-All-Permissive licenses as recommended.
 
 Why are there software licenses included?
 
-* Some BIPs, especially consensus layer, may include literal code in the BIP itself which may not be available under the exact license terms of the BIP.
+* Some BIPs, especially concerning the consensus layer, may include literal code in the BIP itself which may not be
+  available under the exact license terms of the BIP.
 * Despite this, not all software licenses would be acceptable for content included in BIPs.
 
 Why is Public Domain no longer acceptable for new BIPs?
 
-* In some jurisdictions, public domain is not recognised as a legitimate legal action, leaving the BIP simply copyrighted with no redistribution or modification allowed at all.
-
-==Changes from BIP 1==
-
-* Acceptable licenses are entirely rechosen, allowing a wide variety of open licenses, while prohibiting the problematic older choices.
-* Accepted Status has been renamed to Proposed.
-* An implementation is now required (when applicable) before BIPs can proceed to Proposed Status.
-* BIP Comments are newly introduced.
-* The License preamble headers have been added.
-* The Layer header is included from BIP 123.
-* Non-image auxiliary files are permitted in the bip-XXXX subdirectory.
-* Email addresses are now required for authors.
-* The Post-History header may be provided as a link instead of a simple date.
-* The Resolution header has been dropped, as it is not applicable to a decentralised system where no authority exists to make final decisions.
-
-==See Also==
-
-* [[bip-0001.mediawiki|BIP 1: BIP Purpose and Guidelines]]
-* [[bip-0123.mediawiki|BIP 123: BIP Classification]]
-* [https://tools.ietf.org/html/rfc7282 RFC 7282: On Consensus and Humming in the IETF]
-
--------------------------
--------------------------
--------------------------
+* In some jurisdictions, placing documents in the public domain is not recognised as a legitimate legal action, leaving
+  the BIP simply copyrighted with no redistribution or modification allowed at all.
 
 ## BIP Editors
 
@@ -528,6 +524,7 @@ correcting misspellings, fixing broken links, etc.
 - Comments-URI, and Comment-Summary headers as well as Comments are dropped
 - The Discussions-To header is dropped
 - BIPs can no longer be rejected due to inactivity
+- List of acceptable licenses was reduced to the ones previously used
 
 ## Copyright
 
@@ -537,6 +534,8 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
+- [BIP 123: BIP Classification](BIP-0123.mediawiki)
+* [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
 
 ### References
 
