@@ -13,8 +13,9 @@ Replaces: 2
 ## tk: More input requested on following open questions
 
 - Should we have a Final and/or Active Status?
-- Should we introduce versioning/revisions to (final) BIPs?
 - Does it make sense to go from Proposed to Withdrawn/Obsolete? Who would decide such a transition and how?
+- Should we introduce versioning/revisions to (final) BIPs?
+- Should we add a mandatory Change Log section to BIPs?
 
 ## Abstract
 
