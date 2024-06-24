@@ -455,10 +455,10 @@ Why are there software licenses included?
   available under the exact license terms of the BIP.
 * Despite this, not all software licenses would be acceptable for content included in BIPs.
 
-Why is Public Domain no longer acceptable for new BIPs?
+Why are OPL and Public Domain no longer acceptable for new BIPs?
 
-* In some jurisdictions, placing documents in the public domain is not recognised as a legitimate legal action, leaving
-  the BIP simply copyrighted with no redistribution or modification allowed at all.
+* Public domain is not universally recognised as a legitimate action, thus it is inadvisable
+* The OPL is generally regarded as obsolete, and not a license suitable for new publications
 
 ## BIP Editors
 
