@@ -188,12 +188,15 @@ to the Bitcoin community, the champion should work on drafting a BIP.
 It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more
 successful it tends to be. If in doubt, split your BIP into several well-focused ones.
 
-### Draft
+### Progression through BIP Statuses
 
 As the first draft is taking shape, the champion should present it to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev). This gives the champion a chance to collect initial feedback and address
 fundamental concerns. If the champion wishes to work in public on the draft at this stage, it is recommended that they
 open a pull request against their personal fork of the BIPs repository instead of the main BIPs repository.
+
+#### Draft
+
 After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the champion should
 open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
 formatting requirements specified below and named with a working title of the form "bip-authorname-topicofproposal". The
@@ -218,24 +221,27 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
 submitted as pull requests.
 
-### Proposed^[Could be Review/Candidate instead to avoid overloading "proposed"]
+#### Proposed^[Could be Review/Candidate instead to avoid overloading "proposed"]
 
-When the champion is confident that their BIP represents a net-improvement, is clear, comprehensive, and ready for
-adoption by the Bitcoin community, they may update the BIP’s status to _PROPOSED_ to indicate that they recommend
-adoption or implementation of the BIP. Where applicable, the champion must ensure that any proposed specification is
-solid, not unduly complicated, and definitive. Subsequently, a BIP’s content should only be adjusted in minor details to
-clarify ambiguities, fill-in omissions, or address other issues discovered as the BIP is adopted.
+When the champion is confident that their BIP represents a net-improvement, is
+clear, comprehensive, has a working reference implementation (if applicable),
+and is ready for adoption by the Bitcoin community, they may update the BIP’s
+status to _PROPOSED_ to indicate that they recommend adoption or implementation
+of the BIP. Where applicable, the champion must ensure that any proposed
+specification is solid, not unduly complicated, and definitive. Subsequently, a
+BIP’s content should only be adjusted in minor details to clarify ambiguities,
+fill-in omissions, or address other issues discovered as the BIP is adopted.
 
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
-### tk: Active/Final
+#### tk: Active/Final
 
 Is there substantial value in keeping an ACTIVE/FINAL status around to indicate that a proposal was adopted and/or is
 no longer subject to changes? If so, the transition from _PROPOSED_ to _ACTIVE_ may be proposed by any member of the
 Bitcoin community either with consent of the BIP champion or convincing evidence.
 
-### Withdrawn
+#### Withdrawn
 
 BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _WITHDRAWN_ or vice versa. When a BIP
 is labeled _WITHDRAWN_, the BIP champion indicates that they have abandoned work on it, no longer pursue adoption of
@@ -266,7 +272,7 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 tk: Should it be possible for a final BIP to be revised? Adding versions could provide a way how to adapt final BIPs to
 the protocol evolving over time.
 
-## BIP status field
+## BIP status field [tk]
 
 ### Specification [tk: Rework Specification]
 
