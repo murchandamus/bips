@@ -222,7 +222,7 @@ submitted as pull requests.
 When the champion is confident that their BIP represents a net-improvement, is
 clear, comprehensive, has a working reference implementation (if applicable),
 and is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to _NOMINATED_ to indicate that they recommend adoption or implementation
+status to Nominated to indicate that they recommend adoption or implementation
 of the BIP. Where applicable, the champion must ensure that any proposed
 specification is solid, not unduly complicated, and definitive. Subsequently, a
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
@@ -232,12 +232,12 @@ adopted.
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
-A _NOMINATED_ BIP can only transition to _ACTIVE_ or to _ABANDONED_. If a _NOMINATED_ BIP is found to need substantial
-functional changes, it should be moved to _ABANDONED_ and a new BIP should be drafted instead.
+A Nominated BIP can only transition to Active or to Abandoned. If a Nominated BIP is found to need substantial
+functional changes, it should be moved to Abandoned and a new BIP should be drafted instead.
 
 #### Active
 
-At the earliest three months after a BIP has been moved to _NOMINATED_, a BIP may be advanced to _ACTIVE_ upon request of
+At the earliest three months after a BIP has been moved to Nominated, a BIP may be advanced to Active upon request of
 any community member by providing evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -247,44 +247,45 @@ separate BIP.
 
 ##### Process BIPs
 
-A process BIP may change status from _NOMINATED_ to _ACTIVE_ when it achieves rough consensus on the mailing list. Such a
+A process BIP may change status from Nominated to Active when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
-given in such circumstances. An _ACTIVE_ Process BIP may be modified indefinitely as long as a proposed modification
+given in such circumstances. An Active Process BIP may be modified indefinitely as long as a proposed modification
 has rough consensus per the same criteria.
 
 ##### Revisions
 
-Any changes to a BIP after it has transitioned to _NOMINATED_ or _ACTIVE_ are tracked with date and description in a
+Any changes to a BIP after it has transitioned to Nominated or Active are tracked with date and description in a
 Change Log section.
 
 #### Abandoned
 
-A BIP may be labeled _ABANDONED_ when its champion has stopped working on it, no longer pursues adoption of their complete
+A BIP may be labeled Abandoned when its champion has stopped working on it, no longer pursues adoption of their complete
 proposal, or no longer recommends the proposed approach, AND the BIP is not in active use.
 
-BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _ABANDONED_.
+BIP champions may decide on their own to change their BIP’s status from Draft to Abandoned.
 
-BIPs with the status _NOMINATED_ can be moved to _ABANDONED_ after a champion announces this transition to the
+BIPs with the status Nominated can be moved to Abandoned after a champion announces this transition to the
 Bitcoin Developer Mailing List and is not opposed within 14 days. One of the opposers must become the new BIP champion
-for the BIP to remain _NOMINATED_. A BIP can also be transitioned to _ABANDONED_ by BIP Editors, if it is not in active
+for the BIP to remain Nominated. A BIP can also be transitioned to Abandoned by BIP Editors, if it is not in active
 use, its champion has become unresponsive and no new champion volunteers within four weeks.
 
-An BIP may be transitioned from _ACTIVE_ to _ABANDONED_ when it is no longer in active use. Any community member may
+A BIP may be transitioned from Active to Abandoned when it is no longer in active use. Any community member may
 initiate this transition by announcing it to the mailing list and no objections being raised for four weeks.
 
 ### Adoption of proposals
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation.[OtherImplementations][] After a BIP is advanced to _NOMINATED_, it is up to the Bitcoin community to
-adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they implement.
+implementation.[OtherImplementations][] After a BIP is advanced to Nominated, it is up to the Bitcoin community to
+evaluate, adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they
+implement.
 
 ### Transferring BIP Ownership
 
 It occasionally becomes necessary to transfer ownership of BIPs to a new champion. In general, we would like to retain
-the original author as a co-author of the transferred BIP, but that is really up to the original author. A good reason to
+the original author as a co-author of the transferred BIP, but that is up to the original author. A good reason to
 transfer ownership is because the original author no longer has the time or interest in updating it or following through
 with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
 reason to transfer ownership is because you don't agree with the direction of the BIP. We try to build consensus around
