@@ -444,25 +444,34 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ## Rationale
 
-[^astroturfing]: **What does it mean to be focused on Bitcoin the currency?** Proposals to astroturf on the Bitcoin
-    network to store data, bootstrap their own consensus mechanism, or facilitate another currency are not on-topic.
-[^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?** In the past, some BIPs
-    had "Other Implementations" sections that caused frequent change requests to existing BIPs. This put an onus on the
-    BIP champions, and frequently lead to lingering pull requests due to the corresponding BIPs’ champions no longer
-    participating in the process. Many of these alternative implementations eventually became unmaintained or were
-    low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^champ]: **Why do we prefer 'Champion' over 'Author'?** Sometimes BIP authors discontinue work on BIPs or leave Bitcoin
-    development. In that case another proponent may adopt the BIP as a new owner, even if they are not the original
-    author.
-[^nominated]: **Why has the Proposed Status been renamed to Nominated?** Some reviewers of this BIP brought up that all
-    Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a new name was chosen.
-[^abandoned]: **Why was the Abandoned Status introduced?** Previously, we had Deferred, Obsolete, Rejected, Replaced,
-    and Withdrawn which all meant some flavor of "work has stopped on this". The author of this BIP feels that all of
-    these can be represented by Abandoned.
-[^acceptance]: **Why does the BIPs repository no longer track adoption?** BIP 2 made an attempt to gather community
-    feedback into summaries in BIPs directly. Given the low adoption and corresponding low information quality of the
-    summaries that resulted from that feature, this BIP instead intends to leave the evaluation of BIPs to the audience.
-[^licenses]: **Why were software licenses removed from recommended licenses and other licenses dropped?**
+[^astroturfing]: **What does it mean to be focused on Bitcoin the currency?**  
+    Proposals to astroturf on the Bitcoin network to store data, bootstrap their own consensus mechanism, or facilitate
+    another currency are not on-topic.
+[^comments]: **Why were comments, Comments-URI, and Comment-Summary removed from the process?**  
+    The comments feature saw marginal use. Hardly any BIPs received more than two comments and this led to many
+    situations in which the opinion of a single comment or two commenters ended up sourcing the comment summary. While
+    some of those comments may have been representative of broadly held opinions, it also overstated the importance of
+    individual comments. As collecting feedback in this accessible fashion failed, the new process puts the onus back on
+    the audience to make their own evaluation.
+[^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?**  
+    In the past, some BIPs had "Other Implementations" sections that caused frequent change requests to existing BIPs.
+    This put an onus on the BIP champions, and frequently lead to lingering pull requests due to the corresponding BIPs’
+    champions no longer participating in the process. Many of these alternative implementations eventually became
+    unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
+[^champ]: **Why do we prefer 'Champion' over 'Author'?**  
+    Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may
+    adopt the BIP as a new owner, even if they are not the original author.
+[^nominated]: **Why has the Proposed Status been renamed to Nominated?**  
+    Some reviewers of this BIP brought up that all Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a
+    new name was chosen.
+[^abandoned]: **Why was the Abandoned Status introduced?**  
+    Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
+    stopped on this". The author of this BIP feels that all of these can be represented by Abandoned.
+[^acceptance]: **Why does the BIPs repository no longer track adoption?**  
+    BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
+    corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
+    leave the evaluation of BIPs to the audience.
+[^licenses]: **Why were software licenses removed from recommended licenses and other licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
 
