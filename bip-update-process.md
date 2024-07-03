@@ -50,8 +50,7 @@ The BIPs repository collects any proposals relevant to the Bitcoin community.
 
 OR:
 
-The BIPs repository is focused on information that supports the Bitcoin currency.^[Projects that astroturf on the
-Bitcoin network to store data, bootstrap their own consensus, or facilitate another currency are not on-topic.]
+The BIPs repository is focused on information and technology that supports the bitcoin currency.[^astroturfing]
 
 ## BIP format and structure
 
@@ -61,7 +60,8 @@ BIPs should be written in mediawiki or markdown format.
 
 Each BIP should have the following parts:
 
-* Preamble -- Headers containing metadata about the BIP ([[#BIP header preamble|see below]]).
+* Preamble -- Headers containing metadata about the BIP (see the section [BIP header preamble](#bip-header-preamble)
+  below).
 * Abstract -- A short (~200 word) description of the technical issue being addressed.
 * Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
   existing situation is inadequate to address the problem that the BIP solves.
@@ -77,7 +77,7 @@ Each BIP should have the following parts:
   completed before the BIP can be given status "Nominated". It is recommended to focus on specification and rationale
   before writing code.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
-* Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#BIP-licensing)).
+* Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
 Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
 topic has been sufficiently addressed.
@@ -159,7 +159,7 @@ The BIP process starts with a new idea for Bitcoin. Each potential BIP must have
 champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
-![Status transitions](bip-update-process/states-transitions.png "Status Transitions in the BIP Workflow")
+![Status transitions](bip-update-process/status-transitions.png "Status Transitions in the BIP Workflow")
 
 ### Ideation
 
@@ -404,7 +404,7 @@ A BIP editor will:
 
 * Assign a BIP number in the pull request
 * Merge the pull request when it is ready
-* List the BIP in [[README.mediawiki]]
+* List the BIP in the [README](README.mediawiki)
 
 The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
 changes, and update BIP headers as appropriate.
@@ -432,8 +432,17 @@ original intent of the author.
 
 This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
+## Related Specifications
+
+- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
+- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
+- [BIP 123: BIP Classification](BIP-0123.mediawiki)
+* [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
+
 ## Rationale
 
+[^astroturfing]: **What does it mean to be focused on Bitcoin the currency?** Proposals to astroturf on the Bitcoin
+    network to store data, bootstrap their own consensus mechanism, or facilitate another currency are not on-topic.
 [^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?** In the past, some BIPs
     had "Other Implementations" sections that caused frequent change requests to existing BIPs. This put an onus on the
     BIP champions, and frequently lead to lingering pull requests due to the corresponding BIPs’ champions no longer
@@ -493,10 +502,3 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
     * Public domain is not universally recognised as a legitimate action, thus it is inadvisable
     * The OPL is generally regarded as obsolete, and not a license suitable for new publications
-
-## Footnotes
-
-- [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
-- [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
-- [BIP 123: BIP Classification](BIP-0123.mediawiki)
-* [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
