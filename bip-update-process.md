@@ -383,8 +383,8 @@ to:
 * Readiness of the draft
 * On-topic for the Bitcoin community
 
-If the BIP is not ready, an editor should ensure that specific instructions are provided to the champion for revision.
-Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
+If the BIP is not ready, an editor should ensure that constructive, actionable feedback is provided to the champion for
+revision. Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
 repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
 For each new BIP draft pull request that comes in, an editor checks the following:
