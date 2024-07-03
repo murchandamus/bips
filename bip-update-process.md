@@ -415,16 +415,19 @@ original intent of the author.
 
 ## Changes from BIP-2
 
+- Refer to the proponent of a BIP as "Champion"
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
   NOMINATED, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
   are sunset.
-- Judgment calls required from BIP Editors are reassigned either to the Bitcoin community or the BIP champion
+- BIPs can no longer be rejected due to inactivity, but BIPs that get no adoption whose champion has become unreachable can be moved to Abandoned
+- Judgment calls required from BIP Editors are mostly reassigned either to the audience or the BIP champion
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
-- Auxiliary files are only permitted in the corresponding BIP’s subdirectory
-- Comments-URI, and Comment-Summary headers as well as Comments are dropped
-- The Discussions-To header is dropped
-- BIPs can no longer be rejected due to inactivity
+- Auxiliary files are only permitted in the corresponding BIP’s subdirectory as nobody used the alternative of labeling
+  them with the BIP number
+- The Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as an aspect of the process are
+  discontinued[^comments]
+- The Discussions-To header is dropped, as it has never been used
 - List of acceptable licenses was reduced to the ones previously used
 - "Other Implementations" sections are discouraged
 
