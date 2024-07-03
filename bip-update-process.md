@@ -73,7 +73,7 @@ Each BIP should have the following parts:
   incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
   incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
-  completed before the BIP can be given status "Proposed". It is recommended to focus on specification and rationale
+  completed before the BIP can be given status "Nominated". It is recommended to focus on specification and rationale
   before writing code.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
 * Copyright -- The BIP must be placed under an acceptable license ([[#BIP licensing|see below]]).
@@ -91,7 +91,7 @@ marked with "\*" are optional. All other headers are required.
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title; maximum 44 characters>
   Champions: <list of champions’ names and email addresses>
-  Status: <Draft | Proposed | Active | Abandoned>
+  Status: <Draft | Nominated | Active | Abandoned>
   Type: <Standards Track | Informational | Process>
   Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
   License: <abbreviation for approved license(s)>
@@ -158,7 +158,7 @@ The BIP process starts with a new idea for Bitcoin. Each potential BIP must have
 champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
-![Status transitions](bip-update-process/status-transitions-active-abandoned.png "Status Transitions in the BIP Workflow")
+![Status transitions](bip-update-process/states-nominated.png "Status Transitions in the BIP Workflow")
 
 
 ### Ideation
@@ -217,12 +217,12 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
 submitted as pull requests.
 
-#### Proposed^[Could be Review/Candidate instead to avoid overloading "proposed"]
+#### Nominated
 
 When the champion is confident that their BIP represents a net-improvement, is
 clear, comprehensive, has a working reference implementation (if applicable),
 and is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to _PROPOSED_ to indicate that they recommend adoption or implementation
+status to _NOMINATED_ to indicate that they recommend adoption or implementation
 of the BIP. Where applicable, the champion must ensure that any proposed
 specification is solid, not unduly complicated, and definitive. Subsequently, a
 BIP’s content should only be adjusted in minor details to clarify ambiguities, fill-in omissions, add coverage for
@@ -231,12 +231,12 @@ edge-cases that were overlooked, or address other issues discovered as the BIP i
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
-A _PROPOSED_ BIP can only transition to _ACTIVE_ or to _ABANDONED_. If a _PROPOSED_ BIP is found to need substantial functional
+A _NOMINATED_ BIP can only transition to _ACTIVE_ or to _ABANDONED_. If a _NOMINATED_ BIP is found to need substantial functional
 changes to achieve its goal, it should be moved to _ABANDONED_ and a new BIP should be drafted instead.
 
 #### Active
 
-At the earliest three months after a BIP has been moved to _PROPOSED_, a BIP may be advanced to _ACTIVE_ upon request of
+At the earliest three months after a BIP has been moved to _NOMINATED_, a BIP may be advanced to _ACTIVE_ upon request of
 any community member by providing evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -246,7 +246,7 @@ separate BIP.
 
 ##### Process BIPs
 
-A process BIP may change status from _PROPOSED_ to _ACTIVE_ when it achieves rough consensus on the mailing list. Such a
+A process BIP may change status from _NOMINATED_ to _ACTIVE_ when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
@@ -255,7 +255,7 @@ has rough consensus per the same criteria.
 
 ##### Revisions
 
-Any changes to a BIP after it has transitioned to _PROPOSED_ or _ACTIVE_ are tracked with date and description in a
+Any changes to a BIP after it has transitioned to _NOMINATED_ or _ACTIVE_ are tracked with date and description in a
 Change Log section.
 
 #### Abandoned
@@ -265,9 +265,9 @@ proposal, or no longer recommends the proposed approach, AND the BIP is not in a
 
 BIP champions may decide on their own to change their BIP’s status from _DRAFT_ to _ABANDONED_.
 
-BIPs with the status _PROPOSED_ can be moved to _ABANDONED_ after a champion announces this transition to the
+BIPs with the status _NOMINATED_ can be moved to _ABANDONED_ after a champion announces this transition to the
 Bitcoin Developer Mailing List and is not opposed within 14 days. One of the opposers must become the new BIP champion
-for the BIP to remain _PROPOSED_. A BIP can also be transitioned to _ABANDONED_ by BIP Editors, if it is not in active
+for the BIP to remain _NOMINATED_. A BIP can also be transitioned to _ABANDONED_ by BIP Editors, if it is not in active
 use, its champion has become unresponsive and no new champion volunteers within four weeks.
 
 An BIP may be transitioned from _ACTIVE_ to _ABANDONED_ when it is no longer in active use. Any community member may
@@ -277,7 +277,7 @@ initiate this transition by announcing it to the mailing list and no objections 
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation.[OtherImplementations][] After a BIP is advanced to _PROPOSED_, it is up to the Bitcoin community to
+implementation.[OtherImplementations][] After a BIP is advanced to _NOMINATED_, it is up to the Bitcoin community to
 adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they implement.
 
 ### Transferring BIP Ownership
@@ -458,8 +458,8 @@ correcting misspellings, fixing broken links, etc.
 ## Changes from BIP-2
 
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
-  PROPOSED, ACTIVE, and ABANDONED. The statuses Active, Deferred, Rejected, Final, Replaced, Obsolete, and Withdrawn are
-  sunset.
+  NOMINATED, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
+  are sunset.
 - Judgment calls required from BIP Editors are reassigned either to the Bitcoin community or the BIP champion
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
