@@ -225,14 +225,15 @@ and is ready for adoption by the Bitcoin community, they may update the BIP’s
 status to _NOMINATED_ to indicate that they recommend adoption or implementation
 of the BIP. Where applicable, the champion must ensure that any proposed
 specification is solid, not unduly complicated, and definitive. Subsequently, a
-BIP’s content should only be adjusted in minor details to clarify ambiguities, fill-in omissions, add coverage for
-edge-cases that were overlooked, or address other issues discovered as the BIP is adopted.
+BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
+omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
+adopted.
 
 As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
 discouraged.
 
-A _NOMINATED_ BIP can only transition to _ACTIVE_ or to _ABANDONED_. If a _NOMINATED_ BIP is found to need substantial functional
-changes to achieve its goal, it should be moved to _ABANDONED_ and a new BIP should be drafted instead.
+A _NOMINATED_ BIP can only transition to _ACTIVE_ or to _ABANDONED_. If a _NOMINATED_ BIP is found to need substantial
+functional changes, it should be moved to _ABANDONED_ and a new BIP should be drafted instead.
 
 #### Active
 
