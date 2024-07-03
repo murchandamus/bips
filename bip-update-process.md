@@ -23,14 +23,15 @@ feature, standard, implementation guideline, best-practice, or incident report r
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
-the _BIP champions_, and represents the champions’ opinion or recommendation. The champions are expected to foster
+the _BIP champions_[^champ], and represents the champions’ opinion or recommendation. The champions are expected to foster
 discussion, address feedback and dissenting opinions, and, if applicable, advance adoption of their proposal within the
 Bitcoin community.
 
 The BIPs repository serves as a highly visible platform to put forward mature proposals. The repository’s visibility
 facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
 repository’s versioning of the text-based BIPs retains the historical record of each proposal.
-The BIPs repository does not track acceptance, adoption, or community consensus on BIPs.
+The BIPs repository does not[^acceptance] aim to track acceptance, adoption, or community consensus on BIPs except to facilitate a
+quick overview of various BIPs’s statuses to repository visitors.
 
 This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
@@ -76,7 +77,7 @@ Each BIP should have the following parts:
   completed before the BIP can be given status "Nominated". It is recommended to focus on specification and rationale
   before writing code.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
-* Copyright -- The BIP must be placed under an acceptable license ([[#BIP licensing|see below]]).
+* Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#BIP-licensing)).
 
 Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
 topic has been sufficiently addressed.
@@ -160,7 +161,6 @@ finally recommends a mature proposal to the community.
 
 ![Status transitions](bip-update-process/states-nominated.png "Status Transitions in the BIP Workflow")
 
-
 ### Ideation
 
 After having an idea, the champion should evaluate whether it is BIP-able. The idea must be of interest to the broader
@@ -217,7 +217,7 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
 submitted as pull requests.
 
-#### Nominated
+#### Nominated[^nominated]
 
 When the champion is confident that their BIP represents a net-improvement, is
 clear, comprehensive, has a working reference implementation (if applicable),
@@ -259,7 +259,7 @@ has rough consensus per the same criteria.
 Any changes to a BIP after it has transitioned to Nominated or Active are tracked with date and description in a
 Change Log section.
 
-#### Abandoned
+#### Abandoned[^abandoned]
 
 A BIP may be labeled Abandoned when its champion has stopped working on it, no longer pursues adoption of their complete
 proposal, or no longer recommends the proposed approach, AND the BIP is not in active use.
@@ -278,9 +278,10 @@ initiate this transition by announcing it to the mailing list and no objections 
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation.[OtherImplementations][] After a BIP is advanced to Nominated, it is up to the Bitcoin community to
+implementation.[^OtherImplementations] After a BIP is advanced to Nominated, it is up to the Bitcoin community to
 evaluate, adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they
-implement.
+implement. A good example of this at the time of writing this BIP can be observed in [Bitcoin Core’s doc/bips.md
+file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
@@ -327,7 +328,7 @@ License.
 BIPs are not required to be *exclusively* licensed under approved terms, and may also be licensed under unacceptable
 licenses *in addition to* at least one acceptable license. In this case, only the acceptable license(s) should be listed
 in the License and License-Code headers. It is recommended that BIPs are made available under at least one license
-that is not a software license.
+that is not a software license[^licenses].
 
 It is recommended that BIPs that include literal code be dual-licensed under the same license terms as the project it
 modifies. For example, literal code intended for Bitcoin Core would ideally be dual-licensed under the MIT license terms
@@ -348,7 +349,6 @@ In all cases, details of the licensing terms must be provided in the Copyright s
 * CC-BY-SA-4.0: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 * MIT: [Expat/MIT/X11 license](https://opensource.org/licenses/MIT)
 
-
 #### Not acceptable licenses
 
 All licenses not explicitly included in the above lists are not acceptable terms for a Bitcoin Improvement Proposal.
@@ -357,51 +357,6 @@ when no other license is granted:
 
 * PD: Released into the public domain
 * OPL: [Open Publication License, version 1.0](http://opencontent.org/openpub/)
-
-### Rationale
-
-Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
-some BIPs were made available under more than one license) and only one license has been used to license code:
-
-Licenses used:
-
-* BSD-2-Clause: 55
-* PD: 42
-* CC0-1.0: 23
-* BSD-3-Clause: 19
-* OPL: 5
-* CC-BY-SA-4.0: 4
-* GNU-All-Permissive: 3
-* MIT: 2
-* CC-BY-4.0: 1
-
-License-Code used:
-
-* MIT: 4
-
-The following previously acceptable licenses have been dropped, because they have never been used in the BIPs process:
-
-* AGPL-3.0+: [GNU Affero General Public License (AGPL), version 3 or newer](http://www.gnu.org/licenses/agpl-3.0.en.html)
-* Apache-2.0: [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-* BSL-1.0: [Boost Software License, version 1.0](http://www.boost.org/LICENSE_1_0.txt)
-* FDL-1.3: [GNU Free Documentation License, version 1.3](http://www.gnu.org/licenses/fdl-1.3.en.html)
-* GPL-2.0+: [GNU General Public License (GPL), version 2 or newer](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-* LGPL-2.1+: [GNU Lesser General Public License (LGPL), version 2.1 or newer](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
-
-Some of the previously recommended licenses explicitly state that they apply to software, but BIPs are foremost text
-documents. As such, the previously recommended BSD-[2|3]-Clause licenses that only apply to software have been moved to
-the "Not recommended" section. This leaves us with only the CC0-1.0 and the GNU-All-Permissive licenses as recommended.
-
-Why are there software licenses included?
-
-* Some BIPs, especially concerning the consensus layer, may include literal code in the BIP itself which may not be
-  available under the exact license terms of the BIP.
-* Despite this, not all software licenses would be acceptable for content included in BIPs.
-
-Why are OPL and Public Domain no longer acceptable for new BIPs?
-
-* Public domain is not universally recognised as a legitimate action, thus it is inadvisable
-* The OPL is generally regarded as obsolete, and not a license suitable for new publications
 
 ## BIP Editors
 
@@ -439,7 +394,7 @@ For each new BIP draft pull request that comes in, an editor checks the followin
 * Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
 * Document is properly formatted
 * Licensing terms are acceptable
-* Motivation, rationale, and backward compatibility have been addressed (where applicable)
+* Motivation, Rationale, and Backwards Compatibility have been addressed (where applicable)
 * The defined Layer header must be correctly assigned for the given specification
 * The BIP is ready: it is complete, comprehensible, and technically feasible
 
@@ -447,15 +402,16 @@ Editors do NOT evaluate whether the proposal is likely to be adopted.
 
 A BIP editor will:
 
-* Assign a BIP number in the pull request.
-* Merge the pull request when it is ready.
+* Assign a BIP number in the pull request
+* Merge the pull request when it is ready
 * List the BIP in [[README.mediawiki]]
 
 The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
 changes, and update BIP headers as appropriate.
 
 BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as
-correcting misspellings, fixing broken links, etc.
+correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
+original intent of the author.
 
 ## Changes from BIP-2
 
@@ -476,20 +432,71 @@ correcting misspellings, fixing broken links, etc.
 
 This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
+## Rationale
+
+[^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?** In the past, some BIPs
+    had "Other Implementations" sections that caused frequent change requests to existing BIPs. This put an onus on the
+    BIP champions, and frequently lead to lingering pull requests due to the corresponding BIPs’ champions no longer
+    participating in the process. Many of these alternative implementations eventually became unmaintained or were
+    low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
+[^champ]: **Why do we prefer 'Champion' over 'Author'?** Sometimes BIP authors discontinue work on BIPs or leave Bitcoin
+    development. In that case another proponent may adopt the BIP as a new owner, even if they are not the original
+    author.
+[^nominated]: **Why has the Proposed Status been renamed to Nominated?** Some reviewers of this BIP brought up that all
+    Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a new name was chosen.
+[^abandoned]: **Why was the Abandoned Status introduced?** Previously, we had Deferred, Obsolete, Rejected, Replaced,
+    and Withdrawn which all meant some flavor of "work has stopped on this". The author of this BIP feels that all of
+    these can be represented by Abandoned.
+[^acceptance]: **Why does the BIPs repository no longer track adoption?** BIP 2 made an attempt to gather community
+    feedback into summaries in BIPs directly. Given the low adoption and corresponding low information quality of the
+    summaries that resulted from that feature, this BIP instead intends to leave the evaluation of BIPs to the audience.
+[^licenses]: **Why were software licenses removed from recommended licenses and other licenses dropped?**
+    Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
+    some BIPs were made available under more than one license) and only one license has been used to license code:
+
+    Licenses used:
+
+    * BSD-2-Clause: 55
+    * PD: 42
+    * CC0-1.0: 23
+    * BSD-3-Clause: 19
+    * OPL: 5
+    * CC-BY-SA-4.0: 4
+    * GNU-All-Permissive: 3
+    * MIT: 2
+    * CC-BY-4.0: 1
+
+    License-Code used:
+
+    * MIT: 4
+
+    The following previously acceptable licenses have been dropped, because they have never been used in the BIPs process:
+
+    * AGPL-3.0+: [GNU Affero General Public License (AGPL), version 3 or newer](http://www.gnu.org/licenses/agpl-3.0.en.html)
+    * Apache-2.0: [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+    * BSL-1.0: [Boost Software License, version 1.0](http://www.boost.org/LICENSE_1_0.txt)
+    * FDL-1.3: [GNU Free Documentation License, version 1.3](http://www.gnu.org/licenses/fdl-1.3.en.html)
+    * GPL-2.0+: [GNU General Public License (GPL), version 2 or newer](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+    * LGPL-2.1+: [GNU Lesser General Public License (LGPL), version 2.1 or newer](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
+
+    Some of the previously recommended licenses explicitly state that they apply to software, but BIPs are foremost text
+    documents. As such, the previously recommended BSD-[2|3]-Clause licenses that only apply to software have been moved to
+    the "Not recommended" section. This leaves us with only the CC0-1.0 and the GNU-All-Permissive licenses as recommended.
+
+    Why are there software licenses included?
+
+    * Some BIPs, especially concerning the consensus layer, may include literal code in the BIP itself which may not be
+      available under the exact license terms of the BIP.
+    * Despite this, not all software licenses would be acceptable for content included in BIPs.
+
+    Why are OPL and Public Domain no longer acceptable for new BIPs?
+
+    * Public domain is not universally recognised as a legitimate action, thus it is inadvisable
+    * The OPL is generally regarded as obsolete, and not a license suitable for new publications
+
 ## Footnotes
 
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
 - [BIP 123: BIP Classification](BIP-0123.mediawiki)
 * [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
-
-### References
-
-[OtherImplementations]: In the past, some BIPs that so-called "Other Implementations" sections that caused frequent
-changes to existing BIPs. This put an onus on the BIP champions, and frequently lead to lingering pull requests 
-due to the corresponding BIPs’ champions no longer participating in the process. Many of these alternative
-implementations eventually became unmaintained or were low-quality to begin with. Therefore, "Other Implementations"
-sections are heavily discouraged.
-[champ]: '''Why do we prefer Champion over Author?''' Sometimes BIP authors discontinue work on BIPs or leave Bitcoin
-development. In that case another proponent may adopt the BIP as a new owner.
-
