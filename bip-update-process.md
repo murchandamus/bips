@@ -160,7 +160,7 @@ The BIP process starts with a new idea for Bitcoin. Each potential BIP must have
 champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
-![Status transitions](bip-update-process/status-transitions.png "Status Transitions in the BIP Workflow")
+![Status Diagram](bip-update-process/status-diagram.png "Status Diagram for the BIP Workflow")
 
 ### Ideation
 
@@ -229,7 +229,7 @@ BIP’s content should only be adjusted in minor details, e.g. to improve langua
 omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
 adopted.
 
-A Nominated BIP can only transition to Active or to Abandoned. Any necessary changes to the specification should be
+A Nominated BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
 minimal and interfere as little as possible with on-going or concluded adoption. If a Nominated BIP is found to need
 substantial functional changes, it may be preferable to move it to Abandoned, and to draft a new BIP with the changes
 instead.
@@ -255,11 +255,11 @@ has rough consensus per the same criteria.
 
 ##### Revisions
 
-To help implementers understand updates to a BIP, any changes after it has transitioned to Nominated or Active are
+To help implementers understand updates to a BIP, any changes after it has reached Nominated or Active are
 tracked with version, date, and description in a Change Log section. The version number is inspired by semantic
 versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
 that are incompatible with prior versions (which should be an exception after a BIP is Nominated, and not happen to a
-BIP that is Active unless it is a Process BIP). The MINOR version is incremented whenever the specification of the BIP
+BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
 date the BIP was promoted to Nominated. An example of a Change Log section can be seen in [BIP 352](bip-0352.mediawiki).
@@ -271,13 +271,13 @@ proposal, or no longer recommends the proposed approach, AND the BIP is not in a
 
 BIP champions may decide on their own to change their BIP’s status from Draft to Abandoned.
 
-BIPs with the status Nominated can be moved to Abandoned after a champion announces this transition to the
-Bitcoin Developer Mailing List and is not opposed within 14 days. One of the opposers must become the new BIP champion
-for the BIP to remain Nominated. A BIP can also be transitioned to Abandoned by BIP Editors, if it is not in active
+BIPs with the status Nominated can be moved to Abandoned after a champion announces that to the
+Bitcoin Developer Mailing List and the motion is not opposed within 14 days. One of the opposers must become the new BIP champion
+for the BIP to remain Nominated. A BIP can also be moved to Abandoned by BIP Editors, if it is not in active
 use, its champion has become unresponsive and no new champion volunteers within four weeks.
 
-A BIP may be transitioned from Active to Abandoned when it is no longer in active use. Any community member may
-initiate this transition by announcing it to the mailing list and no objections being raised for four weeks.
+A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may
+initiate this Status update by announcing it to the mailing list and no objections being raised for four weeks.
 
 ### Adoption of proposals
 
