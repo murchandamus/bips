@@ -19,7 +19,8 @@ Replaces: 2
 ## Abstract
 
 A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
-feature, standard, implementation guideline, best-practice, or incident report relevant to the Bitcoin community.
+feature, standard, implementation guideline, best-practice, or incident report (e.g. [BIP 50](bip-0050.mediawiki)
+relevant to the Bitcoin community.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
