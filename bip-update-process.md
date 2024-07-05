@@ -104,8 +104,8 @@ marked with "\*" are optional. All other headers are required.
 * Superseded-By: <BIP number>
 ```
 
-__BIP__: BIP number, or "?" before a number was assigned. Champions must not self-assign numbers. Numbers are assigned
-by BIP Editors.
+__BIP__: BIP number, or "?" before a number was assigned. The proposal must not self-assign a BIP number. Numbers are
+assigned by BIP Editors.
 
 __Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
@@ -143,7 +143,7 @@ convention.
 
 * A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
   network protocol, a change in block or transaction validity rules, or any change or addition that affects the
-  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts, a design document and a
+  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts: a design document, and a
   reference implementation.
 * An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or information to the Bitcoin
   community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community
@@ -164,9 +164,10 @@ finally recommends a mature proposal to the community.
 
 ### Ideation
 
-After having an idea, the champion should evaluate whether it is BIP-able. The idea must be of interest to the broader
-community or relevant to multiple software projects. Small improvements and matters concerning only a single project
-usually do not require standardization and should instead be brought up to the relevant project directly.
+After having an idea, the champion should evaluate whether it is meets the criteria to become a BIP, as described in
+this BIP. The idea must be of interest to the broader community or relevant to multiple software projects. Small
+improvements and matters concerning only a single project usually do not require standardization and should instead be
+brought up to the relevant project directly.
 
 The champion should first research whether an idea has been considered before. Ideas in Bitcoin are often rediscovered,
 and prior related discussions may inform the author what issues may arise in its progression. After some investigation,
@@ -196,16 +197,16 @@ specification below.
 
 After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the champion should
 open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
-formatting requirements specified below and named with a working title of the form "bip-authorname-topicofproposal". The
-champion must not self-assign a number to the BIP draft.
+formatting requirements specified below and named with a working title of the form "bip-title". The champion must not
+self-assign a number to the BIP draft.
 
-BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed beyond the
-ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
+BIPs that (1) adhere to the formatting requirements, (2) are on-topic[^astroturfing], and (3) have materially progressed
+beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
 independent Bitcoin projects working on adopting the proposal, or by the champion working for an extended period of time
-towards improving the proposal based on community feedback, will be assigned a number by a BIP editor.
-The BIP editors should delay number assignment when they perceive a BIP draft being met with comprehensive lack of
-interest: number assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest of
-the Bitcoin community, there is no need to refer to it by a number.
+towards improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
+should delay number assignment when they perceive a BIP draft being met with comprehensive lack of interest: number
+assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest of the Bitcoin
+community, there is no need to refer to it by a number.
 
 BIP drafts are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or when the proposed
@@ -220,26 +221,23 @@ submitted as pull requests.
 
 #### Nominated[^nominated]
 
-When the champion is confident that their BIP represents a net-improvement, is
-clear, comprehensive, has a working reference implementation (if applicable),
-and is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to Nominated to indicate that they recommend adoption or implementation
-of the BIP. Where applicable, the champion must ensure that any proposed
-specification is solid, not unduly complicated, and definitive. Subsequently, a
+When the champion is confident that their BIP represents a net-improvement, is clear, comprehensive, has a working
+reference implementation (if applicable), and is ready for adoption by the Bitcoin community, they may update the BIP’s
+status to Nominated to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
+champion must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, a
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
 adopted.
 
-As time passes, substantial changes or changes that interfere with existing implementations are increasingly heavily
-discouraged.
-
-A Nominated BIP can only transition to Active or to Abandoned. If a Nominated BIP is found to need substantial
-functional changes, it should be moved to Abandoned and a new BIP should be drafted instead.
+A Nominated BIP can only transition to Active or to Abandoned. Any necessary changes to the specification should be
+minimal and interfere as little as possible with on-going or concluded adoption. If a Nominated BIP is found to need
+substantial functional changes, it may be preferable to move it to Abandoned, and to draft a new BIP with the changes
+instead.
 
 #### Active
 
-At the earliest three months after a BIP has been moved to Nominated, a BIP may be advanced to Active upon request of
-any community member by providing evidence that the idea described in the BIP is in active use. Such evidence includes
+At the earliest three months after a BIP has been moved to Nominated, a BIP may be advanced to Active upon request by
+any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
 
@@ -343,7 +341,7 @@ as well as one of the above with the rest of the BIP text.
 
 In all cases, details of the licensing terms must be provided in the Copyright section of the BIP.
 
-#### Recommended license
+#### Recommended licenses
 
 * CC0-1.0: [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 * GNU-All-Permissive: [GNU All-Permissive License](http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html)
@@ -359,7 +357,7 @@ In all cases, details of the licensing terms must be provided in the Copyright s
 #### Not acceptable licenses
 
 All licenses not explicitly included in the above lists are not acceptable terms for a Bitcoin Improvement Proposal.
-However, BIPs predating the acceptance of this BIP were allowed under other terms, and should use these abbreviation
+However, BIPs predating the acceptance of this BIP were allowed under other terms, and should use these abbreviations
 when no other license is granted:
 
 * PD: Released into the public domain
@@ -416,7 +414,7 @@ A BIP editor will:
 The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
 changes, and update BIP headers as appropriate.
 
-BIP editors may also, at their option, unilaterally make and merge strictly-editorial changes to BIPs, such as
+BIP editors may also, at their option, unilaterally make and merge strictly editorial changes to BIPs, such as
 correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
 original intent of the author.
 
@@ -426,11 +424,12 @@ original intent of the author.
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
   NOMINATED, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
   are sunset.
-- BIPs can no longer be rejected due to inactivity, but BIPs that get no adoption whose champion has become unreachable can be moved to Abandoned
+- BIPs can no longer be rejected due to inactivity, but BIPs that see no adoption and whose champion has become
+  unreachable can be moved to Abandoned
 - Judgment calls required from BIP Editors are mostly reassigned either to the audience or the BIP champion
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
-- Auxiliary files are only permitted in the corresponding BIP’s subdirectory as nobody used the alternative of labeling
+- Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
   them with the BIP number
 - The Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as an aspect of the process are
   discontinued[^comments]
@@ -462,7 +461,7 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     the audience to make their own evaluation.
 [^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?**  
     In the past, some BIPs had "Other Implementations" sections that caused frequent change requests to existing BIPs.
-    This put an onus on the BIP champions, and frequently lead to lingering pull requests due to the corresponding BIPs’
+    This put an onus on the BIP champions, and frequently led to lingering pull requests due to the corresponding BIPs’
     champions no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
 [^champ]: **Why do we prefer 'Champion' over 'Author'?**  
@@ -511,13 +510,13 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     documents. As such, the previously recommended BSD-[2|3]-Clause licenses that only apply to software have been moved to
     the "Not recommended" section. This leaves us with only the CC0-1.0 and the GNU-All-Permissive licenses as recommended.
 
-    Why are there software licenses included?
+    Why are software licenses included?
 
-    * Some BIPs, especially concerning the consensus layer, may include literal code in the BIP itself which may not be
-      available under the exact license terms of the BIP.
+    * Some BIPs, in particular those concerning the consensus layer, may include literal code in the BIP itself which
+      may not be available under the exact license terms of the BIP.
     * Despite this, not all software licenses would be acceptable for content included in BIPs.
 
     Why are OPL and Public Domain no longer acceptable for new BIPs?
 
-    * Public domain is not universally recognised as a legitimate action, thus it is inadvisable
-    * The OPL is generally regarded as obsolete, and not a license suitable for new publications
+    * Public domain is not universally recognised as a legitimate action, thus it is inadvisable.
+    * The OPL is generally regarded as obsolete, and not a license suitable for new publications.
