@@ -66,17 +66,17 @@ Each BIP should have the following parts:
 * Abstract -- A short (~200 word) description of the technical issue being addressed.
 * Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
   existing situation is inadequate to address the problem that the BIP solves.
+* Specification -- The technical specification should describe the syntax and semantics of any new feature. The
+  specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
 * Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
   design decisions were made. It should describe alternate designs that were considered and related work. The rationale
   should address important objections or concerns raised during discussion.
-* Specification -- The technical specification should describe the syntax and semantics of any new feature. The
-  specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
-* Backwards compatibility -- BIPs that introduce backwards incompatibilities must include a section describing these
-  incompatibilities and their severity. The BIP must explain how the champion proposes to deal with these
-  incompatibilities.
+* Backwards compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
+  The BIP must explain how implementors/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
-  completed before the BIP can be given status "Nominated". It is recommended to focus on specification and rationale
-  before writing code.
+  completed before the BIP can be given status "Nominated". Any or all of these can be provided either in the BIP or as
+  auxiliary files. It is recommended to focus on specification and rationale before writing code.
+* Change Log -- An optional section to track modifications to a BIP after reaching Nominated status.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
