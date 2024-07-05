@@ -32,7 +32,7 @@ The BIPs repository serves as a highly visible platform to put forward mature pr
 facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
 repository’s versioning of the text-based BIPs retains the historical record of each proposal.
 The BIPs repository does not[^acceptance] aim to track acceptance, adoption, or community consensus on BIPs except to facilitate a
-quick overview of various BIPs’s statuses to repository visitors.
+quick overview of BIP statuses to repository visitors.
 
 This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
@@ -257,8 +257,14 @@ has rough consensus per the same criteria.
 
 ##### Revisions
 
-Any changes to a BIP after it has transitioned to Nominated or Active are tracked with date and description in a
-Change Log section.
+To help implementers understand updates to a BIP, any changes after it has transitioned to Nominated or Active are
+tracked with version, date, and description in a Change Log section. The version number is inspired by semantic
+versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
+that are incompatible with prior versions (which should be an exception after a BIP is Nominated, and not happen to a
+BIP that is Active unless it is a Process BIP). The MINOR version is incremented whenever the specification of the BIP
+is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
+are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
+date the BIP was promoted to Nominated. An example of a Change Log section can be seen in [BIP 352](bip-0352.mediawiki).
 
 #### Abandoned[^abandoned]
 
