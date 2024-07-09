@@ -95,7 +95,7 @@ marked with "\*" are optional. All other headers are required.
   Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
   License: <abbreviation for approved license(s)>
 * License-Code: <abbreviation for code under different approved license(s)>
-* Post-History: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
+* Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
 * Superseded-By: <BIP number>
@@ -120,8 +120,8 @@ __Type__: The Type header specifies the type of BIP: Standards Track, Informatio
 __Created__: The Created header records the date that the BIP was assigned a number. [tk: for reals?! What should that
 date be?]
 
-__Post-History__: Post-History is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
-should be in yyyy-mm-dd format, e.g. 2001-08-14. Post-History is permitted to be a link to a specific thread in a
+__Discussion__: Discussion is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
+should be in yyyy-mm-dd format, e.g. 2001-08-14. Discussion is permitted to be a link to a specific thread in a
 mailing list archive.
 
 __Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
