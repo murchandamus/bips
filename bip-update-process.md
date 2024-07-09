@@ -233,7 +233,7 @@ instead.
 
 #### Active
 
-At the earliest three months after a BIP has been moved to Preliminary, a BIP may be advanced to Active upon request by
+At the earliest, three months after a BIP has been moved to Preliminary, a BIP may be advanced to Active upon request by
 any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -268,10 +268,10 @@ proposal, or no longer recommends the proposed approach, AND the BIP is not in a
 
 BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned.
 
-BIPs with the status Preliminary can be moved to Abandoned after an author announces that to the
-Bitcoin Developer Mailing List and the motion is not opposed within 14 days. One of the opposers must become the new BIP author
-for the BIP to remain Preliminary. A BIP can also be moved to Abandoned by BIP Editors, if it is not in active
-use, its author has become unresponsive and no new author volunteers within four weeks.
+BIPs with the status Preliminary can be moved to Abandoned after an author announces that to the Bitcoin Developer
+Mailing List and the motion is not opposed within 14 days. To successfully oppose the move, one of the opposers must
+become the new BIP author for the BIP to remain Preliminary. A BIP can also be moved to Abandoned by BIP Editors, if it
+is not in active use, its author has become unresponsive, and no new author volunteers within four weeks.
 
 A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may
 initiate this Status update by announcing it to the mailing list and no objections being raised for four weeks.
