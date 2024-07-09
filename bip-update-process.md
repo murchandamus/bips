@@ -332,8 +332,7 @@ License.
 
 BIPs are not required to be *exclusively* licensed under approved terms, and may also be licensed under unacceptable
 licenses *in addition to* at least one acceptable license. In this case, only the acceptable license(s) should be listed
-in the License and License-Code headers. It is recommended that BIPs are made available under at least one license
-that is not a software license[^licenses].
+in the License and License-Code headers.
 
 It is recommended that BIPs that include literal code be dual-licensed under the same license terms as the project it
 modifies. For example, literal code intended for Bitcoin Core would ideally be dual-licensed under the MIT license terms
@@ -343,13 +342,13 @@ In all cases, details of the licensing terms must be provided in the Copyright s
 
 #### Recommended licenses
 
+* BSD-2-Clause: [OSI-approved BSD 2-clause license](https://opensource.org/licenses/BSD-2-Clause)
+* BSD-3-Clause: [OSI-approved BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause)
 * CC0-1.0: [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 * GNU-All-Permissive: [GNU All-Permissive License](http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html)
 
-#### Not recommended, but acceptable licenses
+#### Not recommended, but acceptable licenses[^licenses]
 
-* BSD-2-Clause: [OSI-approved BSD 2-clause license](https://opensource.org/licenses/BSD-2-Clause)
-* BSD-3-Clause: [OSI-approved BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause)
 * CC-BY-4.0: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 * CC-BY-SA-4.0: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 * MIT: [Expat/MIT/X11 license](https://opensource.org/licenses/MIT)
@@ -477,7 +476,7 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
     leave the evaluation of BIPs to the audience.
-[^licenses]: **Why were software licenses removed from recommended licenses and other licenses dropped?**  
+[^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
 
@@ -506,15 +505,12 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     * GPL-2.0+: [GNU General Public License (GPL), version 2 or newer](http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
     * LGPL-2.1+: [GNU Lesser General Public License (LGPL), version 2.1 or newer](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
 
-    Some of the previously recommended licenses explicitly state that they apply to software, but BIPs are foremost text
-    documents. As such, the previously recommended BSD-[2|3]-Clause licenses that only apply to software have been moved to
-    the "Not recommended" section. This leaves us with only the CC0-1.0 and the GNU-All-Permissive licenses as recommended.
-
     Why are software licenses included?
 
     * Some BIPs, in particular those concerning the consensus layer, may include literal code in the BIP itself which
-      may not be available under the exact license terms of the BIP.
-    * Despite this, not all software licenses would be acceptable for content included in BIPs.
+      may not be available under the license terms the author wishes to use for the BIP.
+    * We have been provided with a learned opinion indicating that software licenses are perfectly acceptable for
+      licensing "human code" i.e. text as well as Markdown or Mediawiki code.
 
     Why are OPL and Public Domain no longer acceptable for new BIPs?
 
