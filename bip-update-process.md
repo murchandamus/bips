@@ -10,12 +10,6 @@ License: CC0-1.0
 Replaces: 2
 ```
 
-## tk: More input requested on following open questions
-
-- Should we have a Final and/or Active Status?
-- Should we add a mandatory Change Log section to BIPs?
-- Should we introduce versioning/revisions to (final) BIPs?
-
 ## Abstract
 
 A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
