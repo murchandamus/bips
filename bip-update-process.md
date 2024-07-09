@@ -86,7 +86,7 @@ marked with "\*" are optional. All other headers are required.
   Author: <list of authors’ names and email addresses>
   Status: <Draft | Preliminary | Active | Abandoned>
   Type: <Standards Track | Informational | Process>
-  Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
+  Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <abbreviation for approved license(s)>
 * License-Code: <abbreviation for code under different approved license(s)>
 * Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
@@ -111,8 +111,7 @@ If there are multiple authors, each should be on a separate line following [RFC
 
 __Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
 
-__Created__: The Created header records the date that the BIP was assigned a number. [tk: for reals?! What should that
-date be?]
+__Created__: The Created header records the date that the BIP was assigned a number.
 
 __Discussion__: Discussion is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
 should be in yyyy-mm-dd format, e.g. 2001-08-14. Discussion is permitted to be a link to a specific thread in a
