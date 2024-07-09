@@ -414,7 +414,7 @@ BIP editors may also, at their option, unilaterally make and merge strictly edit
 correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
 original intent of the author.
 
-## Changes from BIP-2
+## Changes from BIP 2
 
 - Refer to the proponent of a BIP as "author" throughout the document
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
