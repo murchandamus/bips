@@ -71,9 +71,9 @@ Each BIP should have the following parts:
 * Backwards compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
   The BIP must explain how implementors/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
-  completed before the BIP can be given status "Nominated". Any or all of these can be provided either in the BIP or as
+  completed before the BIP can be given status "Preliminary". Any or all of these can be provided either in the BIP or as
   auxiliary files. It is recommended to focus on specification and rationale before writing code.
-* Change Log -- An optional section to track modifications to a BIP after reaching Nominated status.
+* Change Log -- An optional section to track modifications to a BIP after reaching Preliminary status.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
@@ -90,7 +90,7 @@ marked with "\*" are optional. All other headers are required.
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title; maximum 44 characters>
   Author: <list of authors’ names and email addresses>
-  Status: <Draft | Nominated | Active | Abandoned>
+  Status: <Draft | Preliminary | Active | Abandoned>
   Type: <Standards Track | Informational | Process>
   Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
   License: <abbreviation for approved license(s)>
@@ -216,24 +216,24 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the draft as necessary in the git repository. Updates to drafts by the author should also be
 submitted as pull requests.
 
-#### Nominated[^nominated]
+#### Preliminary[^preliminary]
 
 When the author is confident that their BIP represents a net-improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to Nominated to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
+status to Preliminary to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
 author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, a
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
 adopted.
 
-A Nominated BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
-minimal and interfere as little as possible with on-going or concluded adoption. If a Nominated BIP is found to need
+A Preliminary BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
+minimal and interfere as little as possible with on-going or concluded adoption. If a Preliminary BIP is found to need
 substantial functional changes, it may be preferable to move it to Abandoned, and to draft a new BIP with the changes
 instead.
 
 #### Active
 
-At the earliest three months after a BIP has been moved to Nominated, a BIP may be advanced to Active upon request by
+At the earliest three months after a BIP has been moved to Preliminary, a BIP may be advanced to Active upon request by
 any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -243,7 +243,7 @@ separate BIP.
 
 ##### Process BIPs
 
-A process BIP may change status from Nominated to Active when it achieves rough consensus on the mailing list. Such a
+A process BIP may change status from Preliminary to Active when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
@@ -252,14 +252,14 @@ has rough consensus per the same criteria.
 
 ##### Revisions
 
-To help implementers understand updates to a BIP, any changes after it has reached Nominated or Active are
+To help implementers understand updates to a BIP, any changes after it has reached Preliminary or Active are
 tracked with version, date, and description in a Change Log section. The version number is inspired by semantic
 versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
-that are incompatible with prior versions (which should be an exception after a BIP is Nominated, and not happen to a
+that are incompatible with prior versions (which should be an exception after a BIP is Preliminary, and not happen to a
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Nominated. An example of a Change Log section can be seen in [BIP 352](bip-0352.mediawiki).
+date the BIP was promoted to Preliminary. An example of a Change Log section can be seen in [BIP 352](bip-0352.mediawiki).
 
 #### Abandoned[^abandoned]
 
@@ -268,9 +268,9 @@ proposal, or no longer recommends the proposed approach, AND the BIP is not in a
 
 BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned.
 
-BIPs with the status Nominated can be moved to Abandoned after an author announces that to the
+BIPs with the status Preliminary can be moved to Abandoned after an author announces that to the
 Bitcoin Developer Mailing List and the motion is not opposed within 14 days. One of the opposers must become the new BIP author
-for the BIP to remain Nominated. A BIP can also be moved to Abandoned by BIP Editors, if it is not in active
+for the BIP to remain Preliminary. A BIP can also be moved to Abandoned by BIP Editors, if it is not in active
 use, its author has become unresponsive and no new author volunteers within four weeks.
 
 A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may
@@ -280,7 +280,7 @@ initiate this Status update by announcing it to the mailing list and no objectio
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation.[^OtherImplementations] After a BIP is advanced to Nominated, it is up to the Bitcoin community to
+implementation.[^OtherImplementations] After a BIP is advanced to Preliminary, it is up to the Bitcoin community to
 evaluate, adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they
 implement. A good example of this at the time of writing this BIP can be observed in [Bitcoin Core’s doc/bips.md
 file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
@@ -418,7 +418,7 @@ original intent of the author.
 
 - Refer to the proponent of a BIP as "author" throughout the document
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
-  NOMINATED, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
+  PRELIMINARY, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
   are sunset.
 - BIPs can no longer be rejected due to inactivity, but BIPs that see no adoption and whose author has become
   unreachable can be moved to Abandoned
@@ -460,7 +460,7 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
     authors no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^nominated]: **Why has the Proposed Status been renamed to Nominated?**  
+[^preliminary]: **Why has the Proposed Status been renamed to Preliminary?**  
     Some reviewers of this BIP brought up that all Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a
     new name was chosen.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
