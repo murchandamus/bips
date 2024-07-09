@@ -24,15 +24,15 @@ relevant to the Bitcoin community.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
-the _BIP champions_[^champ], and represents the champions’ opinion or recommendation. The champions are expected to foster
+and represents the authors’ opinion or recommendation. The authors are expected to foster
 discussion, address feedback and dissenting opinions, and, if applicable, advance adoption of their proposal within the
 Bitcoin community.
 
 The BIPs repository serves as a highly visible platform to put forward mature proposals. The repository’s visibility
 facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
 repository’s versioning of the text-based BIPs retains the historical record of each proposal.
-The BIPs repository does not[^acceptance] aim to track acceptance, adoption, or community consensus on BIPs except to facilitate a
-quick overview of BIP statuses to repository visitors.
+The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to facilitate a
+quick overview of BIP statuses (see below) to repository visitors.
 
 This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
 BIP process.
@@ -42,16 +42,13 @@ BIP process.
 ### What is the significance of BIPs?
 
 Individual BIPs do not represent Bitcoin community consensus or a general recommendation for implementation. A BIP
-represents a personal recommendations by the BIP champions to the Bitcoin community. Some BIPs may be adopted by one or
+represents a personal recommendations by the BIP author to the Bitcoin community. Some BIPs may be adopted by one or
 multiple implementations or even incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
 
-The BIPs repository collects any proposals relevant to the Bitcoin community.
-
-OR:
-
-The BIPs repository is focused on information and technology that supports the bitcoin currency.[^astroturfing]
+The BIPs repository is focused on information and technology that support and expand the utility of the bitcoin
+currency.[^astroturfing]
 
 ## BIP format and structure
 
@@ -92,7 +89,7 @@ marked with "\*" are optional. All other headers are required.
   BIP: <BIP number, or "?" before being assigned>
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title; maximum 44 characters>
-  Champions: <list of champions’ names and email addresses>
+  Author: <list of authors’ names and email addresses>
   Status: <Draft | Nominated | Active | Abandoned>
   Type: <Standards Track | Informational | Process>
   Created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
@@ -110,13 +107,13 @@ assigned by BIP Editors.
 __Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Champions__: The champions header lists the names and email addresses of the current owners of the BIP. This may or
-may not be the original authors of the BIP. The format of each champion header value must be
+__Authors__: The authors header lists the names and email addresses of the current proponents of the BIP. This may or
+may not be the original authors of the BIP. The format of each authors header value must be
 
     Random J. User <address@dom.ain>
 
-If there are multiple champions, each should be on a separate line following [RFC
-2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions [tk: what is the convention?].
+If there are multiple authors, each should be on a separate line following [RFC
+2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
 __Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
 
@@ -156,38 +153,38 @@ convention.
 
 ## Workflow
 
-The BIP process starts with a new idea for Bitcoin. Each potential BIP must have a champion (or multiple
-champions)—someone who authors the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
+The BIP process starts with a new idea for Bitcoin. Each potential BIP must have an author (or multiple
+authors)—someone who writes the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
 finally recommends a mature proposal to the community.
 
 ![Status Diagram](bip-update-process/status-diagram.png "Status Diagram for the BIP Workflow")
 
 ### Ideation
 
-After having an idea, the champion should evaluate whether it is meets the criteria to become a BIP, as described in
+After having an idea, the author should evaluate whether it is meets the criteria to become a BIP, as described in
 this BIP. The idea must be of interest to the broader community or relevant to multiple software projects. Small
 improvements and matters concerning only a single project usually do not require standardization and should instead be
 brought up to the relevant project directly.
 
-The champion should first research whether an idea has been considered before. Ideas in Bitcoin are often rediscovered,
+The author should first research whether an idea has been considered before. Ideas in Bitcoin are often rediscovered,
 and prior related discussions may inform the author what issues may arise in its progression. After some investigation,
 the novelty of an idea can be tested by posting about it to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev).
 
-Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the champion and
-the broader community time. Not only may someone point out relevant discussion topics that were missed in the champion’s
+Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the author and
+the broader community time. Not only may someone point out relevant discussion topics that were missed in the author’s
 research, or that an idea is guaranteed to be rejected based on prior discussions, but describing an idea publicly also
-tests whether it is of interest to more people beside the champion. After establishing that the idea may be of interest
-to the Bitcoin community, the champion should work on drafting a BIP.
+tests whether it is of interest to more people beside the author. After establishing that the idea may be of interest
+to the Bitcoin community, the author should work on drafting a BIP.
 
 It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more
 successful it tends to be. If in doubt, split your BIP into several well-focused ones.
 
 ### Progression through BIP Statuses
 
-As the first draft is taking shape, the champion should present it to the [Bitcoin development mailing
-list](https://groups.google.com/g/bitcoindev). This gives the champion a chance to collect initial feedback and address
-fundamental concerns. If the champion wishes to work in public on the draft at this stage, it is recommended that they
+As the first draft is taking shape, the author should present it to the [Bitcoin development mailing
+list](https://groups.google.com/g/bitcoindev). This gives the author a chance to collect initial feedback and address
+fundamental concerns. If the author wishes to work in public on the draft at this stage, it is recommended that they
 open a pull request against their personal fork of the BIPs repository instead of the main BIPs repository.
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
@@ -195,14 +192,14 @@ specification below.
 
 #### Draft
 
-After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the champion should
+After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the author should
 open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
-formatting requirements specified below and named with a working title of the form "bip-title". The champion must not
+formatting requirements specified below and named with a working title of the form "bip-title". The author must not
 self-assign a number to the BIP draft.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic[^astroturfing], and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
-independent Bitcoin projects working on adopting the proposal, or by the champion working for an extended period of time
+independent Bitcoin projects working on adopting the proposal, or by the author working for an extended period of time
 towards improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
 should delay number assignment when they perceive a BIP draft being met with comprehensive lack of interest: number
 assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest of the Bitcoin
@@ -215,16 +212,16 @@ be improved to progress towards readiness. Pull requests that are proposing off-
 stopped to make progress may be closed.
 
 When the BIP draft is complete, a BIP editor will assign a BIP type (see below), and merge it to the BIPs repository.
-After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the champion
-may continue to update the draft as necessary in the git repository. Updates to drafts by the champion should also be
+After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the author
+may continue to update the draft as necessary in the git repository. Updates to drafts by the author should also be
 submitted as pull requests.
 
 #### Nominated[^nominated]
 
-When the champion is confident that their BIP represents a net-improvement, is clear, comprehensive, has a working
+When the author is confident that their BIP represents a net-improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the Bitcoin community, they may update the BIP’s
 status to Nominated to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
-champion must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, a
+author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, a
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
 adopted.
@@ -266,15 +263,15 @@ date the BIP was promoted to Nominated. An example of a Change Log section can b
 
 #### Abandoned[^abandoned]
 
-A BIP may be labeled Abandoned when its champion has stopped working on it, no longer pursues adoption of their complete
+A BIP may be labeled Abandoned when its author has stopped working on it, no longer pursues adoption of their complete
 proposal, or no longer recommends the proposed approach, AND the BIP is not in active use.
 
-BIP champions may decide on their own to change their BIP’s status from Draft to Abandoned.
+BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned.
 
-BIPs with the status Nominated can be moved to Abandoned after a champion announces that to the
-Bitcoin Developer Mailing List and the motion is not opposed within 14 days. One of the opposers must become the new BIP champion
+BIPs with the status Nominated can be moved to Abandoned after an author announces that to the
+Bitcoin Developer Mailing List and the motion is not opposed within 14 days. One of the opposers must become the new BIP author
 for the BIP to remain Nominated. A BIP can also be moved to Abandoned by BIP Editors, if it is not in active
-use, its champion has become unresponsive and no new champion volunteers within four weeks.
+use, its author has become unresponsive and no new author volunteers within four weeks.
 
 A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may
 initiate this Status update by announcing it to the mailing list and no objections being raised for four weeks.
@@ -290,7 +287,7 @@ file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
-It occasionally becomes necessary to transfer ownership of BIPs to a new champion. In general, we would like to retain
+It occasionally becomes necessary to transfer ownership of BIPs to a new author. In general, we would like to retain
 the original author as a co-author of the transferred BIP, but that is up to the original author. A good reason to
 transfer ownership is because the original author no longer has the time or interest in updating it or following through
 with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
@@ -387,7 +384,7 @@ to:
 * Readiness of the draft
 * On-topic for the Bitcoin community
 
-If the BIP is not ready, an editor should ensure that constructive, actionable feedback is provided to the champion for
+If the BIP is not ready, an editor should ensure that constructive, actionable feedback is provided to the author for
 revision. Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
 repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
@@ -419,13 +416,13 @@ original intent of the author.
 
 ## Changes from BIP-2
 
-- Refer to the proponent of a BIP as "Champion"
+- Refer to the proponent of a BIP as "author" throughout the document
 - Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
   NOMINATED, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
   are sunset.
-- BIPs can no longer be rejected due to inactivity, but BIPs that see no adoption and whose champion has become
+- BIPs can no longer be rejected due to inactivity, but BIPs that see no adoption and whose author has become
   unreachable can be moved to Abandoned
-- Judgment calls required from BIP Editors are mostly reassigned either to the audience or the BIP champion
+- Judgment calls required from BIP Editors are mostly reassigned either to the audience or the BIP author
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
 - Layer header is no longer restricted to Standards Track
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
@@ -460,12 +457,9 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     the audience to make their own evaluation.
 [^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?**  
     In the past, some BIPs had "Other Implementations" sections that caused frequent change requests to existing BIPs.
-    This put an onus on the BIP champions, and frequently led to lingering pull requests due to the corresponding BIPs’
-    champions no longer participating in the process. Many of these alternative implementations eventually became
+    This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
+    authors no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^champ]: **Why do we prefer 'Champion' over 'Author'?**  
-    Sometimes BIP authors discontinue work on BIPs or leave Bitcoin development. In that case another proponent may
-    adopt the BIP as a new owner, even if they are not the original author.
 [^nominated]: **Why has the Proposed Status been renamed to Nominated?**  
     Some reviewers of this BIP brought up that all Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a
     new name was chosen.
