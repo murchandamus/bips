@@ -241,7 +241,7 @@ proposal is said to have rough consensus if it has been open to discussion on th
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
 given in such circumstances. An Active Process BIP may be modified indefinitely as long as a proposed modification
-has rough consensus per the same criteria.
+has rough consensus per the same criteria.[^living-documents]
 
 ##### Revisions
 
@@ -294,9 +294,10 @@ number, unless it is obvious that the new attempt is a direct continuation of th
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation.[^OtherImplementations] After a BIP is advanced to Preliminary, it is up to the Bitcoin community to
-evaluate, adopt, ignore, or repudiate a BIP. Individual Bitcoin projects are encouraged to publish a list of BIPs they
-implement. A good example of this at the time of writing this BIP can be observed in [Bitcoin Core’s doc/bips.md
+implementation: the BIPs repository is not a sign-post where to find implementations.[^OtherImplementations] After a BIP
+is advanced to Preliminary, it is up to the Bitcoin community to evaluate, adopt, ignore, or repudiate a BIP. Individual
+Bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
+this BIP can be observed in [Bitcoin Core’s doc/bips.md
 file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
@@ -436,6 +437,7 @@ original intent of the author.
 - Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
   an aspect of the process are discontinued[^comments]
+- Process BIPs are living documents that do not ossify and may be modified indefinitely
 - The Discussions-To header is dropped, as it has never been used in any BIP
 - The Status field is no longer modeled around the workflow of consensus changes.
 - Status field values are reduced from nine to four:  
@@ -518,6 +520,12 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
     leave the evaluation of BIPs to the audience.
+[^living-documents]: **Why are Process BIPs living documents?**  
+    In the past years, the existing BIPs process has not always provided a clear approach to all situations. For
+    example, the content of BIP 2 appears to have been penned with fork proposals in mind. It seems clear that the
+    Bitcoin development will evolve in many surprising ways in the future. Instead of mandating the effort of writing a
+    new process every so often to catch up with new challenges, it seems preferable to allow the process to adapt to the
+    concerns of the future. Therefore, we define Process BIPs as living documents that remain open to amendment.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
