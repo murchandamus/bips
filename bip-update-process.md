@@ -428,24 +428,35 @@ BIP editors may also, at their option, unilaterally make and merge strictly edit
 correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
 original intent of the author.
 
-## Changes from BIP 2
+## Backwards Compatibility
+
+### Changes from BIP 2
 
 - Refer to the proponent of a BIP as "author" throughout the document
-- Status field is no longer modeled around the workflow of consensus changes. The only remaining status are DRAFT,
-  PRELIMINARY, ACTIVE, and ABANDONED. The statuses Deferred, Final, Obsolete, Proposed, Rejected, Replaced, and Withdrawn
-  are sunset.
-- BIPs can no longer be rejected due to inactivity, but BIPs that see no adoption and whose author has become
-  unreachable can be moved to Abandoned
-- Judgment calls required from BIP Editors are mostly reassigned either to the audience or the BIP author
-- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository
-- Layer header is no longer restricted to Standards Track
+- Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs
+- The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
+  an aspect of the process are discontinued[^comments]
+- The Discussions-To header is dropped, as it has never been used in any BIP
+- The Status field is no longer modeled around the workflow of consensus changes.
+- Status field values are reduced from nine to four:  
+  - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned[^abandoned]
+  - Proposed is renamed to Preliminary
+  - The remaining statuses are Draft, Preliminary, Active, and Abandoned
+- A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
+  year and its Author does not assert that they are still working on it when contacted
+- BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
+- Many judgment calls previously required from BIP Editors are reassigned either to the BIP Author or the repository’s
+  audience
+- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository, except to determine
+  whether a BIP is in active use for the move into or out of the Active status
+- "Other Implementations" sections are discouraged[^OtherImplementations]
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
   them with the BIP number
-- The Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as an aspect of the process are
-  discontinued[^comments]
-- The Discussions-To header is dropped, as it has never been used
 - List of acceptable licenses was reduced to the ones previously used
-- "Other Implementations" sections are discouraged
+
+### Updates to existing BIPs should this BIP get merged
+
+
 
 ## Copyright
 
@@ -477,6 +488,11 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 [^preliminary]: **Why has the Proposed Status been renamed to Preliminary?**  
     Some reviewers of this BIP brought up that all Bitcoin Improvement _Proposals_ are _proposed_ per se. Therefore, a
     new name was chosen.
+[^rejection]: **Why can proposals remain in Draft or Preliminary indefinitely?**  
+    The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
+    the author is still active in the community and still considers their idea worth pursuing. On the other hand,
+    proposals that appear abandoned may be tested and cleared out after only one year which hopefully achieves the main
+    goals of the original rule.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
     Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
     stopped on this". The author of this BIP feels that all of these can be represented by Abandoned without
