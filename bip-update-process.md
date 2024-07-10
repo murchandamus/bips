@@ -256,18 +256,39 @@ date the BIP was promoted to Preliminary. An example of a Change Log section can
 
 #### Abandoned[^abandoned]
 
-A BIP may be labeled Abandoned when its author has stopped working on it, no longer pursues adoption of their complete
-proposal, or no longer recommends the proposed approach, AND the BIP is not in active use.
+A BIP that is _not in active use_, may be labeled Abandoned when its author has stopped working on it, no longer
+recommends the proposed approach, or no longer pursues adoption of their completed proposal. The reason for moving the
+proposal to Abandoned should be recorded in the Change Log section in the same commit that updates the status.
 
-BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned.
+##### Draft ↦ Abandoned
 
-BIPs with the status Preliminary can be moved to Abandoned after an author announces that to the Bitcoin Developer
-Mailing List and the motion is not opposed within 14 days. To successfully oppose the move, one of the opposers must
-become the new BIP author for the BIP to remain Preliminary. A BIP can also be moved to Abandoned by BIP Editors, if it
-is not in active use, its author has become unresponsive, and no new author volunteers within four weeks.
+BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned. If a Draft BIP stops making
+progress, sees accumulated feedback unaddressed, or otherwise appears stalled for a year, the community may move the BIP
+to Abandoned unless the authors assert that they intend to continue work when contacted.
 
-A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may
-initiate this Status update by announcing it to the mailing list and no objections being raised for four weeks.
+##### Preliminary ↦ Abandoned
+
+BIPs that had attained Preliminary status, i.e. that had been recommended for adoption, may be moved to Abandoned per
+the author’s announcement to the Bitcoin Developer Mailing List after not being opposed within 28 days. To successfully
+oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Preliminary. A BIP
+can also be moved to Abandoned by the community, if it has had Preliminary status for at least one year, there is no
+evidence of it being in active use, and its authors have become incommunicado, unless a new author volunteers within
+four weeks.
+
+##### Active ↦ Abandoned
+
+A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may initiate this
+Status update by announcing it to the mailing list, and proceed if no objections have been raised for four weeks.
+
+##### Abandoned ↦ Draft
+
+The Abandoned status is generally intended to be the final status for BIPs.
+
+If a BIP Author decides to make another attempt at a previously abandoned proposal, it is generally recommended to
+create a new proposal. (Obviously, the author may borrow any amount of inspiration or actual text from any prior BIPs as
+licensing permits.) The author should take special care to address the issues that caused the prior attempt’s
+abandonment. Even if the prior attempt had been assigned a number, the new BIP will generally be assigned a distinct
+number, unless it is obvious that the new attempt is a direct continuation of the prior work.
 
 ### Adoption of proposals
 
@@ -458,7 +479,9 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     new name was chosen.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
     Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
-    stopped on this". The author of this BIP feels that all of these can be represented by Abandoned.
+    stopped on this". The author of this BIP feels that all of these can be represented by Abandoned without
+    significantly impacting the information quality of the overview table. Where the many Status variants provided
+    minuscule additional information, the Change Log section now collects specific details per BIP.
 [^acceptance]: **Why does the BIPs repository no longer track adoption?**  
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
