@@ -433,7 +433,7 @@ original intent of the author.
 ### Changes from BIP 2
 
 - Refer to the proponent of a BIP as "author" throughout the document
-- Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs
+- Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
   an aspect of the process are discontinued[^comments]
 - The Discussions-To header is dropped, as it has never been used in any BIP
@@ -456,7 +456,20 @@ original intent of the author.
 
 ### Updates to existing BIPs should this BIP get merged
 
+#### Comments
 
+The Comments-URI and Comment-Summary headers should be removed from all BIPs whose comment page in the wiki is empty.
+For existing BIPs whose comment page has content, BIP authors may keep both headers or remove both headers at their
+discretion. It is recommended that existing wiki pages are not modified due to the activation of this BIP.
+
+#### Status field
+
+Subsequent to the activation of this BIP, the Status field of any existing BIPs that do not fit the specification in
+this BIP are updated to the corresponding values prescribed in this BIP.
+
+#### Licenses
+
+The licenses of existing BIPs remain untouched.
 
 ## Copyright
 
@@ -475,11 +488,14 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     Proposals to astroturf on the Bitcoin network to store data, bootstrap their own consensus mechanism, or facilitate
     another currency are not on-topic.
 [^comments]: **Why were comments, Comments-URI, and Comment-Summary removed from the process?**  
-    The comments feature saw marginal use. Hardly any BIPs received more than two comments and this led to many
-    situations in which the opinion of a single comment or two commenters ended up sourcing the comment summary. While
-    some of those comments may have been representative of broadly held opinions, it also overstated the importance of
-    individual comments. As collecting feedback in this accessible fashion failed, the new process puts the onus back on
-    the audience to make their own evaluation.
+    The comments feature saw insignificant adoption. Few BIPs received any comments and barely any more than two with
+    only a handful of contributors commenting at all. This led to many situations in which one or two comments ended up
+    sourcing the comment summary. While some of those comments may have been representative of broadly held opinions, it
+    also overstated the importance of individual comments directly in the Preamble of BIPs. As collecting feedback in
+    this accessible fashion failed, the new process puts the onus back on the audience to make their own evaluation.
+[^layer]: **Why is the layer header now permitted for other BIP types?**  
+    The layer header had already been used by many Informational BIPs, so the rule that it is only available to
+    Standards Track BIPs is dropped.
 [^OtherImplementations]: **What is the issue with "Other Implementations" sections in BIPs?**  
     In the past, some BIPs had "Other Implementations" sections that caused frequent change requests to existing BIPs.
     This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
