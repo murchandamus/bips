@@ -39,9 +39,10 @@ and dissenting opinions, and, if applicable, advance adoption of their proposal 
 
 ### What is the significance of BIPs?
 
-Individual BIPs do not represent Bitcoin community consensus or a general recommendation for implementation. A BIP
-represents a personal recommendations by the BIP author to the Bitcoin community. Some BIPs may be adopted by one or
-multiple implementations or even incorporated into the Bitcoin protocol.
+BIPs do not define what Bitcoin is: individual BIPs do not represent Bitcoin community consensus or a general
+recommendation for implementation. A BIP represents a personal recommendations by the BIP author to the Bitcoin
+community. Some BIPs may never be adopted. Some BIPs may be adopted by one or multiple implementations or even
+incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
 
@@ -89,7 +90,7 @@ marked with "\*" are optional. All other headers are required.
   Title: <BIP title; maximum 44 characters>
   Author: <list of authors’ names and email addresses>
   Status: <Draft | Preliminary | Active | Abandoned>
-  Type: <Standards Track | Informational | Process>
+  Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <abbreviation for approved license(s)>
 * License-Code: <abbreviation for code under different approved license(s)>
@@ -113,7 +114,7 @@ may not be the original authors of the BIP. The format of each authors header va
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
-__Type__: The Type header specifies the type of BIP: Standards Track, Informational, or Process.
+__Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
 
 __Created__: The Created header records the date that the BIP was assigned a number.
 
@@ -135,15 +136,14 @@ convention.
 
 ### BIP types
 
-* A **Standards Track BIP** describes any change that affects most or all Bitcoin implementations, such as a change to the
-  network protocol, a change in block or transaction validity rules, or any change or addition that affects the
-  interoperability of applications using Bitcoin. Standards Track BIPs consist of two parts: a design document, and a
-  reference implementation.
-* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or information to the Bitcoin
-  community, but does not propose a new feature. Informational BIPs do not necessarily represent a Bitcoin community
-  consensus or recommendation, so users and implementors are free to ignore Informational BIPs or follow their advice.
+* A **Specification BIP** defines a set of rules to enable a new feature or protocol change that affects the
+  interoperability of applications using Bitcoin. The distinguishing feature of a Specification BIP is that it can be
+  implemented, and applications using Bitcoin can be compliant with it. Specification BIPs must contain a specification
+  section as well as contain or link to a reference implementation.
+* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or other information to the
+  Bitcoin community, but does not propose a new feature.
 * A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
-  BIPs are like Standards Track BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
+  BIPs are like Specification BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
   implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
   are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
   guidelines, and changes to the decision-making process. Any meta-BIP is also considered a Process BIP.
@@ -438,6 +438,7 @@ original intent of the author.
 ### Changes from BIP 2
 
 - Refer to the proponent of a BIP as "author" throughout the document
+- The Standards Track type is superseded by the similar Specification type[^standard-track]
 - Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
   an aspect of the process are discontinued[^comments]
@@ -460,7 +461,16 @@ original intent of the author.
   them with the BIP number
 - List of acceptable licenses was reduced to the ones previously used
 
-### Updates to existing BIPs should this BIP get merged
+### Updates to existing BIPs should this BIP be activated
+
+#### Previous BIP Process
+
+This BIP supersedes BIP 2 as the guideline for the BIP process. BIP 2 is considered obsolete.
+
+#### BIP types
+
+Standards Track BIPs and eligible Informational BIPs are assigned the Specification type. The Standards Track type is
+considered obsolete. Specification BIPs use the Layer header rules specified in [BIP 123](BIP-0123.mediawiki).
 
 #### Comments
 
@@ -481,7 +491,7 @@ The licenses of existing BIPs remain untouched.
 
 This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
-## Related Specifications
+## Related Work
 
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
@@ -495,6 +505,14 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 [^astroturfing]: **What does it mean to be focused on the bitcoin currency?**  
     Proposals to astroturf on the Bitcoin network to store data, bootstrap their own consensus mechanism, or facilitate
     another currency are not on-topic.
+[^standard-track]: **Why was the Specification type introduced?**  
+    The definitions of Informational and Standards Track BIPs caused some confusion in the past. Due to Informational
+    BIPs being described as optional, Standards Track BIPs were sometimes misunderstood to be generally recommended.
+    This has led to a large number of BIPs that define new features that affect interoperability of implementations
+    being assigned the Informational type. We remedy this situation by introducing a new _Specification BIP_ type that
+    is inclusive of any BIPs that can be implemented and affect interoperability of Bitcoin applications. Since all BIPs
+    are individual recommendations by the authors (even if some may eventually achieve endorsement by the majority of
+    the community), the prior reminder that Informational BIPs are optional is dropped.
 [^blog-posts]: **Why do we not just publish blog posts?**  
     By curating, collecting, and publishing a broad range of ideas in one place, we ensure that knowledge of past ideas
     is not lost in time.
