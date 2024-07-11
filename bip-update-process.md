@@ -12,26 +12,30 @@ Replaces: 2
 
 ## Abstract
 
-A _Bitcoin improvement proposal (BIP)_ provides a concise, self-contained, technical description of one new concept,
-feature, standard, implementation guideline, best-practice, or incident report (e.g. [BIP 50](bip-0050.mediawiki)
-relevant to the Bitcoin community.
+This _Bitcoin improvement Proposal (BIP)_ provides information about the preparation of BIPs, and policies relating to
+the publication of BIPs. It replaces BIP 2 with a trimmed process, and may be amended to address future needs of the BIP
+process.
+
+BIPs cover the range of interests of the Bitcoin community. The main topic is technology that supports the bitcoin
+currency. However, any topics related to the Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be
+acceptable. BIPs may be submitted by anyone.
+
+The BIPs repository serves as a highly visible platform[^blog-posts] to put forward mature proposals. The repository’s
+visibility facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
+repository’s versioning of the text-based BIPs retains the historical record of each proposal. The BIPs repository does
+not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to facilitate a quick overview
+of BIP statuses (see below) to repository visitors.
+
+## What is a BIP?
+
+Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard. Some BIPs
+describe processes, implementation guidelines, best practices, incident reports (e.g. [BIP 50](bip-0050.mediawiki), or
+other information relevant to the Bitcoin community.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
-and represents the authors’ opinion or recommendation. The authors are expected to foster
-discussion, address feedback and dissenting opinions, and, if applicable, advance adoption of their proposal within the
-Bitcoin community.
-
-The BIPs repository serves as a highly visible platform to put forward mature proposals. The repository’s visibility
-facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
-repository’s versioning of the text-based BIPs retains the historical record of each proposal.
-The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to facilitate a
-quick overview of BIP statuses (see below) to repository visitors.
-
-This BIP replaces BIP 2 with a more well-defined and clear process, and may be amended to address future needs of the
-BIP process.
-
-## What is a BIP?
+and represents the authors’ opinion or recommendation. The authors are expected to foster discussion, address feedback
+and dissenting opinions, and, if applicable, advance adoption of their proposal within the Bitcoin community.
 
 ### What is the significance of BIPs?
 
@@ -41,7 +45,7 @@ multiple implementations or even incorporated into the Bitcoin protocol.
 
 ### What should be documented in a BIP?
 
-The BIPs repository is focused on information and technology that support and expand the utility of the bitcoin
+The BIPs repository is focused on information and technologies that support and expand the utility of the bitcoin
 currency.[^astroturfing]
 
 ## BIP format and structure
@@ -482,13 +486,18 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 - [BIP 1: BIP Purpose and Guidelines](bip-0001.mediawiki)
 - [BIP 2: BIP Process, revised](BIP-0002.mediawiki)
 - [BIP 123: BIP Classification](BIP-0123.mediawiki)
-* [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
+- [RFC 822: Standard for ARPA Internet Text Messages](https://datatracker.ietf.org/doc/html/rfc822)
+- [RFC 2223: Instructions to RFC Authors](https://datatracker.ietf.org/doc/html/rfc2223)
+- [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
 
 ## Rationale
 
-[^astroturfing]: **What does it mean to be focused on Bitcoin the currency?**  
+[^astroturfing]: **What does it mean to be focused on the bitcoin currency?**  
     Proposals to astroturf on the Bitcoin network to store data, bootstrap their own consensus mechanism, or facilitate
     another currency are not on-topic.
+[^blog-posts]: **Why do we not just publish blog posts?**  
+    By curating, collecting, and publishing a broad range of ideas in one place, we ensure that knowledge of past ideas
+    is not lost in time.
 [^comments]: **Why were comments, Comments-URI, and Comment-Summary removed from the process?**  
     The comments feature saw insignificant adoption. Few BIPs received any comments and barely any more than two with
     only a handful of contributors commenting at all. This led to many situations in which one or two comments ended up
