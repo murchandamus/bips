@@ -7,24 +7,23 @@ Status: Draft
 Type: Process
 Created: 2024-05-13
 License: CC0-1.0
+Requires: 123
 Replaces: 2
 ```
 
 ## Abstract
 
-This _Bitcoin improvement Proposal (BIP)_ provides information about the preparation of BIPs, and policies relating to
-the publication of BIPs. It replaces BIP 2 with a trimmed process, and may be amended to address future needs of the BIP
-process.
+This _Bitcoin Improvement Proposal (BIP)_ provides information about the preparation of BIPs and policies relating to
+the publication of BIPs. It replaces BIP 2 with a streamlined process, and may be amended in the future to address the
+evolving needs of the BIP process.
 
-BIPs cover the range of interests of the Bitcoin community. The main topic is technology that supports the bitcoin
-currency. However, any topics related to the Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be
-acceptable. BIPs may be submitted by anyone.
+The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
+facilitates the distributed consideration of BIPs by providing an established source to retrieve the latest versions of
+BIPs. The repository transparently records all changes to each BIP and allows any community member to easily retain a
+complete copy of the archive.
 
-The BIPs repository serves as a highly visible platform[^blog-posts] to put forward mature proposals. The repository’s
-visibility facilitates the distributed consideration of proposals by establishing the current state of the proposal. The
-repository’s versioning of the text-based BIPs retains the historical record of each proposal. The BIPs repository does
-not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to facilitate a quick overview
-of BIP statuses (see below) to repository visitors.
+The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
+provide a quick overview of BIP statuses (see below) to visitors.
 
 ## What is a BIP?
 
@@ -508,14 +507,11 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 [^standard-track]: **Why was the Specification type introduced?**  
     The definitions of Informational and Standards Track BIPs caused some confusion in the past. Due to Informational
     BIPs being described as optional, Standards Track BIPs were sometimes misunderstood to be generally recommended.
-    This has led to a large number of BIPs that define new features that affect interoperability of implementations
+    This has led to a number of BIPs that propose new features affecting interoperability of implementations
     being assigned the Informational type. We remedy this situation by introducing a new _Specification BIP_ type that
     is inclusive of any BIPs that can be implemented and affect interoperability of Bitcoin applications. Since all BIPs
     are individual recommendations by the authors (even if some may eventually achieve endorsement by the majority of
     the community), the prior reminder that Informational BIPs are optional is dropped.
-[^blog-posts]: **Why do we not just publish blog posts?**  
-    By curating, collecting, and publishing a broad range of ideas in one place, we ensure that knowledge of past ideas
-    is not lost in time.
 [^comments]: **Why were comments, Comments-URI, and Comment-Summary removed from the process?**  
     The comments feature saw insignificant adoption. Few BIPs received any comments and barely any more than two with
     only a handful of contributors commenting at all. This led to many situations in which one or two comments ended up
