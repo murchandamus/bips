@@ -133,22 +133,21 @@ Replaces header containing the number of the BIP that it rendered obsolete.
 #### Auxiliary Files
 
 BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
-`bip-XXXX`, where "XXXX" is the BIP number. File names in the subdirectory do not need to adhere to a specific
+`bip-XXXX`, where "XXXX" is the BIP number zero-padded to four digits. File names in the subdirectory do not need to adhere to a specific
 convention.
 
 ### BIP types
 
-* A **Specification BIP** defines a set of rules to enable a new feature or protocol change that affects the
-  interoperability of applications using Bitcoin. The distinguishing feature of a Specification BIP is that it can be
-  implemented, and applications using Bitcoin can be compliant with it. Specification BIPs must contain a specification
-  section as well as contain or link to a reference implementation.
+* A **Specification BIP** defines a set of technical rules affecting the interoperability of implementations. The
+  distinguishing feature of a Specification BIP is that it can be implemented, and implementations can be compliant with
+  it. Specification BIPs should come with or refer to a reference implementation.
 * An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or other information to the
-  Bitcoin community, but does not propose a new feature.
+  Bitcoin community.
 * A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
   BIPs are like Specification BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
   implementation, but not to Bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
   are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
-  guidelines, and changes to the decision-making process. Any meta-BIP is also considered a Process BIP.
+  guidelines, and changes to the decision-making process.
 
 ## Workflow
 
@@ -177,7 +176,7 @@ tests whether it is of interest to more people beside the author. After establis
 to the Bitcoin community, the author should work on drafting a BIP.
 
 It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more
-successful it tends to be. If in doubt, split your BIP into several well-focused ones.
+successful it tends to be. If in doubt, the BIP should be separated into several well-focused ones.
 
 ### Progression through BIP Statuses
 
@@ -217,16 +216,16 @@ submitted as pull requests.
 
 #### Preliminary[^preliminary]
 
-When the author is confident that their BIP represents a net-improvement, is clear, comprehensive, has a working
+When the author is confident that their BIP represents a net improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the Bitcoin community, they may update the BIP’s
 status to Preliminary to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
-author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, a
+author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
-omissions in the specification, add test vectors for edge-cases, or address other issues discovered as the BIP is
+omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is
 adopted.
 
 A Preliminary BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
-minimal and interfere as little as possible with on-going or concluded adoption. If a Preliminary BIP is found to need
+minimal and interfere as little as possible with on going adoption. If a Preliminary BIP is found to need
 substantial functional changes, it may be preferable to move it to Abandoned, and to draft a new BIP with the changes
 instead.
 
