@@ -27,14 +27,17 @@ provide a quick overview of BIP statuses (see below) to visitors.
 
 ## What is a BIP?
 
-Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard. Some BIPs
-describe processes, implementation guidelines, best practices, incident reports (e.g. [BIP 50](bip-0050.mediawiki), or
-other information relevant to the Bitcoin community.
+BIPs cover the range of interests of the Bitcoin community. The main topic is technology that supports the bitcoin
+currency. Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard.
+Some BIPs describe processes, implementation guidelines, best practices, incident reports (e.g.
+[BIP 50](bip-0050.mediawiki), or other information relevant to the Bitcoin community. However, any topics related to the
+Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be acceptable.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
-documenting design decisions that have gone into Bitcoin implementations. Each BIP is primarily owned by its authors,
-and represents the authors’ opinion or recommendation. The authors are expected to foster discussion, address feedback
-and dissenting opinions, and, if applicable, advance adoption of their proposal within the Bitcoin community.
+documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors, and
+represents the authors’ opinion or recommendation. The authors are expected to foster discussion, address feedback and
+dissenting opinions, and, if applicable, advance adoption of their proposal within the Bitcoin community. BIPs may be
+submitted by anyone.
 
 ### What is the significance of BIPs?
 
@@ -43,7 +46,7 @@ recommendation for implementation. A BIP represents a personal recommendations b
 community. Some BIPs may never be adopted. Some BIPs may be adopted by one or multiple implementations or even
 incorporated into the Bitcoin protocol.
 
-### What should be documented in a BIP?
+### What is the scope of the BIPs repository?
 
 The BIPs repository is focused on information and technologies that support and expand the utility of the bitcoin
 currency.[^astroturfing]
