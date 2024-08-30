@@ -49,7 +49,7 @@ incorporated into the Bitcoin protocol.
 ### What is the scope of the BIPs repository?
 
 The BIPs repository is focused on information and technologies that support and expand the utility of the bitcoin
-currency.[^astroturfing]
+currency.
 
 ## BIP format and structure
 
@@ -195,7 +195,7 @@ open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). T
 formatting requirements specified below and named with a working title of the form "bip-title". The author must not
 self-assign a number to the BIP draft.
 
-BIPs that (1) adhere to the formatting requirements, (2) are on-topic[^astroturfing], and (3) have materially progressed
+BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
 independent Bitcoin projects working on adopting the proposal, or by the author working for an extended period of time
 towards improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
@@ -503,9 +503,6 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
 
 ## Rationale
 
-[^astroturfing]: **What does it mean to be focused on the bitcoin currency?**  
-    Proposals to astroturf on the Bitcoin network to store data, bootstrap their own consensus mechanism, or facilitate
-    another currency are not on-topic.
 [^standard-track]: **Why was the Specification type introduced?**  
     The definitions of Informational and Standards Track BIPs caused some confusion in the past. Due to Informational
     BIPs being described as optional, Standards Track BIPs were sometimes misunderstood to be generally recommended.
