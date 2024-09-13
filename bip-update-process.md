@@ -66,11 +66,12 @@ currency.
 
 BIPs should be written in mediawiki or markdown[^markdown] format.
 
-Each BIP should have the following parts:
+Each BIP must have a Preamble, an Abstract, and a Copyright section. Authors should consider all issues in the following
+list and address each as appropriate. For some BIPs, some concerns may not warrant a dedicated section.
 
 * Preamble -- Headers containing metadata about the BIP (see the section [BIP header preamble](#bip-header-preamble)
   below).
-* Abstract -- A short (~200 word) description of the technical issue being addressed.
+* Abstract -- A short description of the technical issue being addressed.
 * Motivation -- The motivation is critical for BIPs. It should clearly explain what issue the BIP addresses, and how the
   existing situation is inadequate to address the problem that the BIP solves.
 * Specification -- The technical specification should describe the syntax and semantics of any new feature. The
@@ -83,12 +84,9 @@ Each BIP should have the following parts:
 * Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
   completed before the BIP can be given status "Preliminary". Any or all of these can be provided either in the BIP or as
   auxiliary files. It is recommended to focus on specification and rationale before writing code.
-* Change Log -- An optional section to track modifications to a BIP after reaching Preliminary status.
+* Change Log -- A section to track modifications to a BIP after reaching Preliminary status.
 * Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
-
-Some sections may not be necessary for all BIPs. When in doubt, a section should be included and briefly state how its
-topic has been sufficiently addressed.
 
 #### BIP header preamble
 
