@@ -90,7 +90,7 @@ list and address each as appropriate. For some BIPs, some concerns may not warra
 #### BIP header preamble
 
 Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers
-marked with "\*" are optional. All other headers are required.
+marked with "\*" are optional. All other headers are required. The overview is followed by explanations for each header.
 
 ```
   BIP: <BIP number, or "?" before being assigned>
@@ -100,8 +100,8 @@ marked with "\*" are optional. All other headers are required.
   Status: <Draft | Preliminary | Active | Abandoned>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
-  License: <abbreviation for approved license(s)>
-* License-Code: <abbreviation for code under different approved license(s)>
+  License: <SPDX License Identifier of approved license(s)>
+* License-Code: <SPDX License Identifier for Code under different approved license(s)>
 * Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
@@ -114,7 +114,7 @@ assigned by BIP Editors.
 __Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Title__: a short descriptive title. Strongly preferred to be less than 50 characters long.
+__Title__: A short descriptive title. Strongly preferred to be less than 50 characters long.
 
 __Author__: The author header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
 This may or may not be the original authors of the BIP. The format of each authors header value must be
@@ -124,13 +124,18 @@ This may or may not be the original authors of the BIP. The format of each autho
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
+__Status__: See the [Workflow](#workflow) section below.
+
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
 
 __Created__: The Created header records the date that the BIP was assigned a number.
 
-__Discussion__: The Discussion header is used to record when new versions of the BIP are posted to bitcoin mailing
-lists. Dates should be in yyyy-mm-dd format, e.g. 2001-08-14. The Discussion header is permitted to be a link to a
-specific thread in a mailing list archive.
+__Discussion__: The Discussion header is used to point the audience to relevant discussions of the BIP, e.g. the mailing
+list thread in which the idea for the BIP was discussed, a thread where a new version of the BIP draft was presented, or
+relevant disussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g. `2009-09-09:
+https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
+
+__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below.
 
 __Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
 
