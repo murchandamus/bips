@@ -85,7 +85,6 @@ list and address each as appropriate. For some BIPs, some concerns may not warra
   completed before the BIP can be given status "Preliminary". Any or all of these can be provided either in the BIP or as
   auxiliary files. It is recommended to focus on specification and rationale before writing code.
 * Change Log -- A section to track modifications to a BIP after reaching Preliminary status.
-* Footnotes -- A collection of footnotes cited in the BIP, and a place to list non-inline hyperlink targets
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
 #### BIP header preamble
