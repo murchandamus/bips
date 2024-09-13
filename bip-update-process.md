@@ -64,7 +64,7 @@ currency.
 
 ### Specification
 
-BIPs should be written in mediawiki or markdown format.
+BIPs should be written in mediawiki or markdown[^markdown] format.
 
 Each BIP should have the following parts:
 
@@ -551,6 +551,9 @@ This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/p
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
     leave the evaluation of BIPs to the audience.
+[^markdown]: **Which flavor of markdown is allowed?**  
+    The author of this proposal has no opinion on Markdown flavors, but recommends that proposals stick to the basic
+    Markdown syntax features commonly shared across Markdown dialects.
 [^living-documents]: **Why are Process BIPs living documents?**  
     In the past years, the existing BIPs process has not always provided a clear approach to all situations. For
     example, the content of BIP 2 appears to have been penned with fork proposals in mind. It seems clear that the
