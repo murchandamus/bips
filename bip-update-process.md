@@ -95,7 +95,7 @@ marked with "\*" are optional. All other headers are required.
 ```
   BIP: <BIP number, or "?" before being assigned>
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
-  Title: <BIP title; maximum 44 characters>
+  Title: <BIP title, up to 50 characters>
   Author: <list of authors’ names and email addresses>
   Status: <Draft | Preliminary | Active | Abandoned>
   Type: <Specification | Informational | Process>
@@ -114,8 +114,10 @@ assigned by BIP Editors.
 __Layer__: The Layer header documents which layer of Bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Authors__: The authors header lists the names and email addresses of the current proponents of the BIP. This may or
-may not be the original authors of the BIP. The format of each authors header value must be
+__Title__: a short descriptive title. Strongly preferred to be less than 50 characters long.
+
+__Author__: The author header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
+This may or may not be the original authors of the BIP. The format of each authors header value must be
 
     Random J. User <address@dom.ain>
 
@@ -126,9 +128,9 @@ __Type__: The Type header specifies the type of BIP: Specification, Informationa
 
 __Created__: The Created header records the date that the BIP was assigned a number.
 
-__Discussion__: Discussion is used to record when new versions of the BIP are posted to bitcoin mailing lists. Dates
-should be in yyyy-mm-dd format, e.g. 2001-08-14. Discussion is permitted to be a link to a specific thread in a
-mailing list archive.
+__Discussion__: The Discussion header is used to record when new versions of the BIP are posted to bitcoin mailing
+lists. Dates should be in yyyy-mm-dd format, e.g. 2001-08-14. The Discussion header is permitted to be a link to a
+specific thread in a mailing list archive.
 
 __Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
 
