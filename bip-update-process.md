@@ -23,7 +23,16 @@ BIPs. The repository transparently records all changes to each BIP and allows an
 complete copy of the archive.
 
 The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
-provide a quick overview of BIP statuses (see below) to visitors.
+provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
+
+## Motivation
+
+BIP 2 is over eight years old and was written when different concerns were pressing to the Bitcoin community. The BIP 2
+process seems to have been fashioned to facilitate design and activation of protocol changes. In the past years, BIPs
+more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
+BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
+proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
+the BIP Editor role, and delineates the BIP Types more cleanly.
 
 ## What is a BIP?
 
