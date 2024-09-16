@@ -32,15 +32,15 @@ process seems to have been fashioned to facilitate design and activation of prot
 more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
 BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
-the BIP Editor role, and delineates the BIP Types more cleanly.
+the BIP Editor role, and delineates the BIP Types more expediently.
 
 ## What is a BIP?
 
 BIPs cover the range of interests of the Bitcoin community. The main topic is technology that supports the bitcoin
 currency. Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard.
 Some BIPs describe processes, implementation guidelines, best practices, incident reports (e.g.
-[BIP 50](bip-0050.mediawiki), or other information relevant to the Bitcoin community. However, any topics related to the
-Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be acceptable.
+[BIP 50](bip-0050.mediawiki)), or other information relevant to the Bitcoin community. However, any topics related to
+the Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be acceptable.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors, and
@@ -51,8 +51,8 @@ submitted by anyone.
 ### What is the significance of BIPs?
 
 BIPs do not define what Bitcoin is: individual BIPs do not represent Bitcoin community consensus or a general
-recommendation for implementation. A BIP represents a personal recommendations by the BIP author to the Bitcoin
-community. Some BIPs may never be adopted. Some BIPs may be adopted by one or multiple implementations or even
+recommendation for implementation. A BIP represents a personal recommendation by the BIP author to the Bitcoin
+community. Some BIPs may never be adopted. Some BIPs may be adopted by several implementations. Some may even be
 incorporated into the Bitcoin protocol.
 
 ### What is the scope of the BIPs repository?
@@ -68,7 +68,7 @@ storage, or hobbling mining decentralization, may be considered out-of-scope.
 
 BIPs should be written in mediawiki or markdown[^markdown] format.
 
-Each BIP must have a Preamble, an Abstract, a Copyright section, and a Backward Compatibility section. Authors should
+Each BIP must have a Preamble, an Abstract, a Copyright section, and a Backwards Compatibility section. Authors should
 consider all issues in the following list and address each as appropriate. For some BIPs, some concerns may not warrant
 a dedicated section.
 
@@ -127,7 +127,8 @@ This may or may not be the original authors of the BIP. The format of each autho
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
-__Status__: See the [Workflow](#workflow) section below.
+__Status__: The Status field can take the four values Draft, Preliminary, Active, and Abandoned. The
+[Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
 
@@ -138,9 +139,10 @@ list thread in which the idea for the BIP was discussed, a thread where a new ve
 relevant disussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g. `2009-09-09:
 https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
 
-__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below.
+__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below for a description of the
+acceptable Licenses and their SPDX License Identifiers.
 
-__Requires__: BIPs may have a Requires header, indicating the BIP numbers that this BIP depends on.
+__Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on.
 
 __Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that a BIP has been rendered obsolete by a
 later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
@@ -191,8 +193,9 @@ research, or that an idea is guaranteed to be rejected based on prior discussion
 tests whether it is of interest to more people beside the author. After establishing that the idea may be of interest
 to the Bitcoin community, the author should work on drafting a BIP.
 
-It is highly recommended that a single BIP contain a single key proposal or new idea. The more focused the BIP, the more
-successful it tends to be. If in doubt, the BIP should be separated into several well-focused ones.
+It is highly recommended that a single BIP contains only a single key proposal or new idea. The more focused a BIP, the
+more successful it tends to be. If in doubt, the BIP should be separated into several well-focused ones. Several related
+BIPs can be proposed in a single pull request if they only make sense in context of the others.
 
 ### Progression through BIP Statuses
 
@@ -220,9 +223,9 @@ assignment facilitates the distributed discussion of ideas, but before a BIP gar
 community, there is no need to refer to it by a number.
 
 BIP drafts are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
-unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or when the proposed
+unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or while the proposed
 feature’s specification is unclear or incomplete. Reviewers and BIP editors should provide guidance on how the draft may
-be improved to progress towards readiness. Pull requests that are proposing off-topic or unserious proposals, or have
+be improved to progress towards readiness. Pull requests that are proposing off-topic or unserious ideas, or have
 stopped to make progress may be closed.
 
 When the BIP draft is complete, a BIP editor will assign a BIP type (see below), and merge it to the BIPs repository.
@@ -273,7 +276,8 @@ that are incompatible with prior versions (which should be an exception after a 
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Preliminary. An example of a Change Log section can be seen in [BIP 352](bip-0352.mediawiki).
+date the BIP was promoted to Preliminary. An example for a Change Log section can be seen in
+[BIP 352](bip-0352.mediawiki).
 
 #### Abandoned[^abandoned]
 
@@ -327,11 +331,12 @@ It occasionally becomes necessary to transfer ownership of BIPs to a new author.
 the original author as a co-author of the transferred BIP, but that is up to the original author. A good reason to
 transfer ownership is because the original author no longer has the time or interest in updating it or following through
 with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
-reason to transfer ownership is because you don't agree with the direction of the BIP. We try to build consensus around
-a BIP, but if that's not possible, rather than fighting over control, dissenters should supply a competing BIP.
+reason to transfer ownership is because someone doesn't agree with the direction of the BIP. We try to build consensus
+around a BIP, but if that's not possible, rather than fighting over control, the dissenters should supply a competing
+BIP.
 
-If you are interested in assuming ownership of a BIP, send a message asking to take over, addressed to both the original
-author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
+If someone is interested in assuming ownership of a BIP, they should send an email asking to take over, addressed to the
+original author and the BIP editors. If the author does not respond to email in a timely manner, the BIP editors will
 make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 ## BIP Licensing
@@ -352,8 +357,7 @@ GNU All-Permissive License, and anyone may modify and redistribute the text prov
 *either* license. In other words, the license list is an "OR choice", not an "AND also" requirement.
 
 It is also possible to license source code differently from the BIP text. An optional License-Code header is placed
-after the License header. Again, each acceptable license must be referenced by their respective abbreviation given
-below.
+after the License header. Again, each license must be referenced by their respective abbreviation given below.
 
 For example, a preamble specifying the optional License-Code header might look like:
 
@@ -431,7 +435,8 @@ For each new BIP draft pull request that comes in, an editor checks the followin
 * Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
 * Document is properly formatted
 * Licensing terms are acceptable
-* Motivation, Rationale, and Backwards Compatibility have been addressed (where applicable)
+* Motivation, Rationale, and Backwards Compatibility have been addressed
+* Specification provides sufficient detail for implementation
 * The defined Layer header must be correctly assigned for the given specification
 * The BIP is ready: it is complete, comprehensible, and technically feasible
 
@@ -463,14 +468,16 @@ original intent of the author.
 - Process BIPs are living documents that do not ossify and may be modified indefinitely
 - Titles may be up to 50 characters
 - The Discussions-To header is dropped, as it has never been used in any BIP
-- The Status field is no longer modeled around the workflow of consensus changes.
+- The Post-History header is replaced with the Discussion header
+- The Status field is no longer modeled around the workflow of consensus changes
 - Status field values are reduced from nine to four:  
   - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned[^abandoned]
-  - Proposed is renamed to Preliminary
+  - Proposed is renamed to Preliminary[^preliminary]
+  - Final and Active are collapsed into Active
   - The remaining statuses are Draft, Preliminary, Active, and Abandoned
+- BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
 - A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
   year and its Author does not assert that they are still working on it when contacted
-- BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
 - Many judgment calls previously required from BIP Editors are reassigned either to the BIP Author or the repository’s
   audience
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository, except to determine
@@ -484,7 +491,7 @@ original intent of the author.
 
 #### Previous BIP Process
 
-This BIP supersedes BIP 2 as the guideline for the BIP process. BIP 2 is considered obsolete.
+This BIP supersedes BIP 2 as the guideline for the BIP process.
 
 #### BIP types
 
@@ -502,6 +509,10 @@ discretion. It is recommended that existing wiki pages are not modified due to t
 Subsequent to the activation of this BIP, the Status field of any existing BIPs that do not fit the specification in
 this BIP are updated to the corresponding values prescribed in this BIP.
 
+#### Discussion header
+
+The Post-History header is replaced with the Discussion header in all BIPs.
+
 #### Licenses
 
 The licenses of existing BIPs remain untouched.
@@ -509,7 +520,7 @@ The licenses of existing BIPs remain untouched.
 ## Copyright
 
 This BIP is licensed under the [BSD-2-Clause License](https://opensource.org/licenses/BSD-2-Clause). Some content was
-adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed per BSD-2-Clause.
+adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD-2-Clause.
 
 ## Related Work
 
@@ -571,7 +582,11 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed per BSD-2-Cla
     new process every so often to catch up with new challenges, it seems preferable to allow the process to adapt to the
     concerns of the future. Therefore, we define Process BIPs as living documents that remain open to amendment.
 [^new-BIP]: **Why should the specification of active BIPs no longer be changed?**  
-    Active BIPs by definition are those that are in active use by one or multiple implementations. If there are breaking changes to the specification after a BIP is deployed, it would be possible for multiple projects that are in compliance with a BIP to fail being interoperable, because they implement different versions of the same BIP. Therefore, even changes to the specification of preliminary BIPs should be avoided, but active BIPs should never be subject to breaking changes to their specification.
+    Active BIPs by definition are those that are in active use by multiple implementations. If there are breaking
+    changes to the specification after a BIP is deployed, it would be possible for multiple projects that are in
+    compliance with a BIP to fail at being interoperable, because they implement different versions of the same BIP.
+    Therefore, even changes to the specification of preliminary BIPs should be avoided, but active BIPs should never be
+    subject to breaking changes to their specification.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
