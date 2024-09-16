@@ -335,9 +335,9 @@ make a unilateral decision (it's not like such decisions can't be reversed :)).
 
 ### Specification
 
-New BIPs may be accepted with the following licenses. Each new BIP must identify at least one acceptable license in its
-preamble. The License header in the preamble must be placed after the Created header. Each license must be referenced by
-their respective abbreviation given below.
+Each new BIP must identify at least one acceptable license in its preamble. Licenses must be referenced per their
+respective [SPDX License identifier](https://spdx.org/licenses). New BIPs may be accepted with the licenses described
+below.
 
 For example, a preamble might include the following License header:
 
