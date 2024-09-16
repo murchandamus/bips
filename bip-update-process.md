@@ -66,8 +66,9 @@ currency.
 
 BIPs should be written in mediawiki or markdown[^markdown] format.
 
-Each BIP must have a Preamble, an Abstract, and a Copyright section. Authors should consider all issues in the following
-list and address each as appropriate. For some BIPs, some concerns may not warrant a dedicated section.
+Each BIP must have a Preamble, an Abstract, a Copyright section, and a Backward Compatibility section. Authors should
+consider all issues in the following list and address each as appropriate. For some BIPs, some concerns may not warrant
+a dedicated section.
 
 * Preamble -- Headers containing metadata about the BIP (see the section [BIP header preamble](#bip-header-preamble)
   below).
@@ -453,10 +454,12 @@ original intent of the author.
 
 - Refer to the proponent of a BIP as "author" throughout the document
 - The Standards Track type is superseded by the similar Specification type[^standard-track]
-- Layer header is no longer restricted to Standards Track, but remains optional as it does not make sense for all BIPs[^layer]
+- Most sections are declared optional, it is up to the author and audience to judge whether all relevant topics have been comprehensively addressed and which topics require a designated section to do so
+- Layer header is optional for Specification BIPs or Informational BIPs, as it does not make sense for all BIPs[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
   an aspect of the process are discontinued[^comments]
 - Process BIPs are living documents that do not ossify and may be modified indefinitely
+- Titles may be up to 50 characters
 - The Discussions-To header is dropped, as it has never been used in any BIP
 - The Status field is no longer modeled around the workflow of consensus changes.
 - Status field values are reduced from nine to four:  
