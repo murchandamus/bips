@@ -290,8 +290,8 @@ BIPs that had attained Preliminary status, i.e. that had been recommended for ad
 the author’s announcement to the Bitcoin Developer Mailing List after not being opposed within 28 days. To successfully
 oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Preliminary. A BIP
 can also be moved to Abandoned by the community, if it has had Preliminary status for at least one year, there is no
-evidence of it being in active use, and its authors have become incommunicado, unless a new author volunteers within
-four weeks.
+evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
+within four weeks.
 
 ##### Active ↦ Abandoned
 
@@ -313,7 +313,7 @@ number, unless it is obvious that the new attempt is a direct continuation of th
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
 implementation: the BIPs repository is not a sign-post where to find implementations.[^OtherImplementations] After a BIP
-is advanced to Preliminary, it is up to the Bitcoin community to evaluate, adopt, ignore, or repudiate a BIP. Individual
+is advanced to Preliminary, it is up to the Bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 Bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
 this BIP can be observed in [Bitcoin Core’s doc/bips.md
 file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
@@ -325,7 +325,7 @@ the original author as a co-author of the transferred BIP, but that is up to the
 transfer ownership is because the original author no longer has the time or interest in updating it or following through
 with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
 reason to transfer ownership is because you don't agree with the direction of the BIP. We try to build consensus around
-a BIP, but if that's not possible, you can always submit a competing BIP.
+a BIP, but if that's not possible, rather than fighting over control, dissenters should supply a competing BIP.
 
 If you are interested in assuming ownership of a BIP, send a message asking to take over, addressed to both the original
 author and the BIP editors. If the original author does not respond to email in a timely manner, the BIP editors will
