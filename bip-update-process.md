@@ -6,7 +6,7 @@ Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-Updated-BIP-Proc
 Status: Draft
 Type: Process
 Created: 2024-05-13
-License: CC0-1.0
+License: BSD-2-Clause
 Requires: 123
 Replaces: 2
 ```
@@ -506,7 +506,8 @@ The licenses of existing BIPs remain untouched.
 
 ## Copyright
 
-This BIP is licensed under the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+This BIP is licensed under the [BSD-2-Clause License](https://opensource.org/licenses/BSD-2-Clause). Some content was
+adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed per BSD-2-Clause.
 
 ## Related Work
 
