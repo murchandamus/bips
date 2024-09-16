@@ -58,7 +58,9 @@ incorporated into the Bitcoin protocol.
 ### What is the scope of the BIPs repository?
 
 The BIPs repository is focused on information and technologies that aim to support and expand the utility of the bitcoin
-currency.
+currency. Related topics that are of interest to the Bitcoin community may be acceptable. Proposals that are in direct
+contradiction to this mission, e.g. by undermining fungibility, facilitating unrelated protocols, using Bitcoin for data
+storage, or hobbling mining decentralization, may be considered out-of-scope.
 
 ## BIP format and structure
 
