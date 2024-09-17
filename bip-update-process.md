@@ -244,8 +244,8 @@ adopted.
 
 A Preliminary BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
 minimal and interfere as little as possible with on going adoption. If a Preliminary BIP is found to need
-substantial functional changes, it may be preferable to move it to Abandoned, and to draft a new BIP with the changes
-instead.
+substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to draft a new BIP with the changes
+instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
 #### Active
 
@@ -255,7 +255,7 @@ for example: two or more projects having deployed support for the BIP in mainnet
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
 
 At that point, the BIP should be considered final and any breaking changes to the BIP should be proposed as a new
-separate BIP[^new-BIP].
+separate BIP.[^new-BIP]
 
 ##### Process BIPs
 
@@ -580,12 +580,12 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     Bitcoin development will evolve in many surprising ways in the future. Instead of mandating the effort of writing a
     new process every so often to catch up with new challenges, it seems preferable to allow the process to adapt to the
     concerns of the future. Therefore, we define Process BIPs as living documents that remain open to amendment.
-[^new-BIP]: **Why should the specification of active BIPs no longer be changed?**  
-    Active BIPs by definition are those that are in active use by multiple implementations. If there are breaking
-    changes to the specification after a BIP is deployed, it would be possible for multiple projects that are in
-    compliance with a BIP to fail at being interoperable, because they implement different versions of the same BIP.
-    Therefore, even changes to the specification of preliminary BIPs should be avoided, but active BIPs should never be
-    subject to breaking changes to their specification.
+[^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
+    After a preliminary or active BIP has been deployed by one or more implementation, breaking changes to the
+    specification could lead to a situation where multiple "compliant" implementations fail at
+    being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
+    specification of preliminary BIPs should be avoided, but active BIPs should never be subject to breaking changes to
+    their specification.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
