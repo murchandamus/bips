@@ -106,6 +106,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   License: <SPDX License Identifier of approved license(s)>
 * License-Code: <SPDX License Identifier for Code under different approved license(s)>
 * Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
+* Revision: Version number of this document after a Change Log has been introduced
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
 * Superseded-By: <BIP number>
@@ -134,13 +135,15 @@ __Type__: The Type header specifies the type of BIP: Specification, Informationa
 
 __Created__: The Created header records the date that the BIP was assigned a number.
 
+__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below for a description of the
+acceptable Licenses and their SPDX License Identifiers.
+
 __Discussion__: The Discussion header is used to point the audience to relevant discussions of the BIP, e.g. the mailing
 list thread in which the idea for the BIP was discussed, a thread where a new version of the BIP draft was presented, or
 relevant disussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g. `2009-09-09:
 https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
 
-__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below for a description of the
-acceptable Licenses and their SPDX License Identifiers.
+__Revision__: The Revision header indicates the version of this BIP after a Change Log section has been added.
 
 __Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on.
 
@@ -276,7 +279,8 @@ BIP that is Active). The MINOR version is incremented whenever the specification
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
 date the BIP was promoted to Preliminary. An example for a Change Log section can be seen in
-[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki).
+[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Change Log, the
+Preamble must indcate the latest version in the Revision header.
 
 #### Abandoned[^abandoned]
 
