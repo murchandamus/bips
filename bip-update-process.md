@@ -415,13 +415,17 @@ The BIP editors subscribe to the Bitcoin development mailing list and watch the 
 repository](https://github.com/bitcoin/bips).
 Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
 
-When a new BIP idea is submitted to the mailing list, BIP editor and other community members should comment in regard
+When a new BIP idea is submitted to the mailing list, BIP editors and other community members should comment in regard
 to:
 
 * Novelty of the idea
 * Viability, utility, and relevance of the concept
 * Readiness of the draft
 * On-topic for the Bitcoin community
+
+We observe that discussion in pull requests comments can often be hard to follow as feedback gets marked as resolved
+when it is addressed by authors. Substantive discussion of ideas may be more accessible to a broader audience on the
+mailing list, where it is also more likely to be retained by the community memory.
 
 If the BIP is not ready, an editor should ensure that constructive, actionable feedback is provided to the author for
 revision. Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
