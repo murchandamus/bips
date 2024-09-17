@@ -83,7 +83,7 @@ a dedicated section.
   design decisions were made. It should describe alternate designs that were considered and related work. The rationale
   should address important objections or concerns raised during discussion.
 * Backwards compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
-  The BIP must explain how implementors/users should deal with these incompatibilities.
+  The BIP must explain how implementers/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
   completed before the BIP can be given status "Preliminary". Any or all of these can be provided either in the BIP or as
   auxiliary files. It is recommended to focus on specification and rationale before writing code.
@@ -193,9 +193,8 @@ research, or that an idea is guaranteed to be rejected based on prior discussion
 tests whether it is of interest to more people beside the author. After establishing that the idea may be of interest
 to the Bitcoin community, the author should work on drafting a BIP.
 
-It is highly recommended that a single BIP contains only a single key proposal or new idea. The more focused a BIP, the
-more successful it tends to be. If in doubt, the BIP should be separated into several well-focused ones. Several related
-BIPs can be proposed in a single pull request if they only make sense in context of the others.
+It is recommended that complicated proposals be split into separate BIPs that each focus on a specific component of the
+overall proposal.
 
 ### Progression through BIP Statuses
 
