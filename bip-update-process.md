@@ -249,7 +249,7 @@ instead. Otherwise, it could cause confusion as to what being compliant with the
 
 #### Active
 
-At the earliest, three months after a BIP has been moved to Preliminary, a BIP may be advanced to Active upon request by
+A settled[^settled] BIP may be advanced to Active upon request by
 any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -586,6 +586,9 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
     specification of preliminary BIPs should be avoided, but active BIPs should never be subject to breaking changes to
     their specification.
+[^settled]: **What is meant with a BIP being settled?**  
+    Since active BIPs should not be changed, a preliminary BIP should only be moved to Active after its Specification
+    has been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
