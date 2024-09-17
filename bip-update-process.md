@@ -276,7 +276,7 @@ BIP that is Active). The MINOR version is incremented whenever the specification
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
 date the BIP was promoted to Preliminary. An example for a Change Log section can be seen in
-[BIP 352](bip-0352.mediawiki).
+[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki).
 
 #### Abandoned[^abandoned]
 
