@@ -222,8 +222,8 @@ assignment facilitates the distributed discussion of ideas, but before a BIP gar
 community, there is no need to refer to it by a number.
 
 BIP drafts are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
-unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or while the proposed
-feature’s specification is unclear or incomplete. Reviewers and BIP editors should provide guidance on how the draft may
+unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or fail to specify
+the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the draft may
 be improved to progress towards readiness. Pull requests that are proposing off-topic or unserious ideas, or have
 stopped to make progress may be closed.
 
