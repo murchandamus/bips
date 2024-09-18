@@ -14,7 +14,7 @@ Replaces: 2
 ## Abstract
 
 This _Bitcoin Improvement Proposal (BIP)_ provides information about the preparation of BIPs and policies relating to
-the publication of BIPs. It replaces BIP 2 with a streamlined process, and may be amended in the future to address the
+the publication of BIPs. It replaces BIP 2 with a streamlined process, and may be amended to address the
 evolving needs of the BIP process.
 
 The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
@@ -28,11 +28,11 @@ provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to vi
 ## Motivation
 
 BIP 2 is over eight years old and was written when different concerns were pressing to the Bitcoin community. The BIP 2
-process seems to have been fashioned to facilitate design and activation of protocol changes. In the past years, BIPs
+process seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
 more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
 BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
-the BIP Editor role, and delineates the BIP Types more expediently.
+to the BIP Editor role, and delineates the BIP Types more expediently.
 
 ## What is a BIP?
 
@@ -43,17 +43,17 @@ Some BIPs describe processes, implementation guidelines, best practices, inciden
 the Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be acceptable.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
-documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors, and
+documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors and
 represents the authors’ opinion or recommendation. The authors are expected to foster discussion, address feedback and
-dissenting opinions, and, if applicable, advance adoption of their proposal within the Bitcoin community. BIPs may be
+dissenting opinions, and, if applicable, advance the adoption of their proposal within the Bitcoin community. BIPs may be
 submitted by anyone.
 
 ### What is the significance of BIPs?
 
 BIPs do not define what Bitcoin is: individual BIPs do not represent Bitcoin community consensus or a general
 recommendation for implementation. A BIP represents a personal recommendation by the BIP author to the Bitcoin
-community. Some BIPs may never be adopted. Some BIPs may be adopted by several implementations. Some may even be
-incorporated into the Bitcoin protocol.
+community. Some BIPs may never be adopted. Some BIPs may be adopted by one or more Bitcoin clients or other related
+software. Some may even end up changing the consensus rules that the Bitcoin ecosystem jointly enforces.
 
 ### What is the scope of the BIPs repository?
 
@@ -68,7 +68,7 @@ storage, or hobbling mining decentralization, may be considered out-of-scope.
 
 BIPs should be written in mediawiki or markdown[^markdown] format.
 
-Each BIP must have a Preamble, an Abstract, a Copyright section, and a Backwards Compatibility section. Authors should
+Each BIP must have a _Preamble_, an _Abstract_, a _Copyright_, and a _Backward Compatibility_ section. Authors should
 consider all issues in the following list and address each as appropriate. For some BIPs, some concerns may not warrant
 a dedicated section.
 
@@ -81,19 +81,19 @@ a dedicated section.
   specification should be detailed enough to enable any Bitcoin project to create an interoperable implementation.
 * Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
   design decisions were made. It should describe alternate designs that were considered and related work. The rationale
-  should address important objections or concerns raised during discussion.
-* Backwards compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
+  should address important objections or concerns raised.
+* Backward compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
   The BIP must explain how implementers/users should deal with these incompatibilities.
-* Reference implementation -- Where applicable, a reference implementation, test vectors and documentation must be
-  completed before the BIP can be given status "Ready". Any or all of these can be provided either in the BIP or as
-  auxiliary files. It is recommended to focus on specification and rationale before writing code.
-* Change Log -- A section to track modifications to a BIP after reaching Ready status.
+* Reference implementation -- Where applicable, a reference implementation, test vectors, and documentation must be
+  completed before the BIP can be given the status "Ready". Any or all of these can be provided either in the BIP or as
+  auxiliary files.
+* Changelog -- A section to track modifications to a BIP after reaching Ready status.
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
 #### BIP header preamble
 
-Each BIP must begin with an RFC 822 style header preamble. The headers must appear in the following order. Headers
-marked with "\*" are optional. All other headers are required. The overview is followed by explanations for each header.
+Each BIP must begin with an RFC 822-style header preamble. The headers must appear in the following order. Headers
+marked with "\*" are optional. All other headers are required. The overview is followed by an explanation for each header.
 
 ```
   BIP: <BIP number, or "?" before being assigned>
@@ -106,7 +106,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   License: <SPDX License Identifier of approved license(s)>
 * License-Code: <SPDX License Identifier for Code under different approved license(s)>
 * Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
-* Revision: Version number of this document after a Change Log has been introduced
+* Revision: Version number of this document after a Changelog has been introduced
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
 * Superseded-By: <BIP number>
@@ -121,7 +121,7 @@ definitions of the various BIP layers.
 __Title__: A short descriptive title. Strongly preferred to be less than 50 characters long.
 
 __Author__: The author header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
-This may or may not be the original authors of the BIP. The format of each authors header value must be
+This may or may not be the original authors of the BIP. The format of each author header value must be
 
     Random J. User <address@dom.ain>
 
@@ -143,7 +143,7 @@ list thread in which the idea for the BIP was discussed, a thread where a new ve
 relevant discussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g.
 `2009-09-09: https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
 
-__Revision__: The Revision header indicates the version of this BIP after a Change Log section has been added.
+__Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added.
 
 __Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on.
 
@@ -162,7 +162,7 @@ convention.
 * A **Specification BIP** defines a set of technical rules affecting the interoperability of implementations. The
   distinguishing feature of a Specification BIP is that it can be implemented, and implementations can be compliant with
   it. Specification BIPs should come with or refer to a reference implementation.
-* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines, or other information to the
+* An **Informational BIP** describes a Bitcoin design issue, provides general guidelines or other information to the
   Bitcoin community.
 * A **Process BIP** describes a process surrounding Bitcoin, or proposes a change to (or an event in) a process. Process
   BIPs are like Specification BIPs, but apply to areas other than the Bitcoin protocol itself. They may propose an
@@ -180,7 +180,7 @@ finally recommends a mature proposal to the community.
 
 ### Ideation
 
-After having an idea, the author should evaluate whether it is meets the criteria to become a BIP, as described in
+After having an idea, the author should evaluate whether it meets the criteria to become a BIP, as described in
 this BIP. The idea must be of interest to the broader community or relevant to multiple software projects. Small
 improvements and matters concerning only a single project usually do not require standardization and should instead be
 brought up to the relevant project directly.
@@ -193,7 +193,7 @@ list](https://groups.google.com/g/bitcoindev).
 Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the author and
 the broader community time. Not only may someone point out relevant discussion topics that were missed in the author’s
 research, or that an idea is guaranteed to be rejected based on prior discussions, but describing an idea publicly also
-tests whether it is of interest to more people beside the author. After establishing that the idea may be of interest
+tests whether it is of interest to more people besides the author. After establishing that the idea may be of interest
 to the Bitcoin community, the author should work on drafting a BIP.
 
 It is recommended that complicated proposals be split into separate BIPs that each focus on a specific component of the
@@ -204,7 +204,7 @@ overall proposal.
 As the first draft is taking shape, the author should present it to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev). This gives the author a chance to collect initial feedback and address
 fundamental concerns. If the author wishes to work in public on the draft at this stage, it is recommended that they
-open a pull request against their personal fork of the BIPs repository instead of the main BIPs repository.
+open a pull request against their fork of the BIPs repository instead of the main BIPs repository.
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
 specification above.
@@ -213,24 +213,24 @@ specification above.
 
 After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the author should
 open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
-formatting requirements specified below and named with a working title of the form "bip-title". The author must not
+formatting requirements specified below and be named with a working title of the form "bip-title". The author must not
 self-assign a number to the BIP draft.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
 independent Bitcoin projects working on adopting the proposal, or by the author working for an extended period of time
-towards improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
-should delay number assignment when they perceive a BIP draft being met with comprehensive lack of interest: number
-assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest of the Bitcoin
+toward improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
+should delay number assignment when they perceive a BIP draft being met with lack of interest: number
+assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest in the Bitcoin
 community, there is no need to refer to it by a number.
 
 BIP drafts are also not eligible for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or fail to specify
 the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the draft may
-be improved to progress towards readiness. Pull requests that are proposing off-topic or unserious ideas, or have
+be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
 stopped to make progress may be closed.
 
-When the BIP draft is complete, a BIP editor will assign a BIP type, and merge it to the BIPs repository.
+When the BIP draft has been assigned a number and is complete, a BIP editor will merge it to the BIPs repository.
 After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the author
 may continue to update the draft as necessary in the git repository. Updates to drafts by the author should also be
 submitted as pull requests.
@@ -245,8 +245,8 @@ BIP’s content should only be adjusted in minor details, e.g. to improve langua
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is
 adopted.
 
-A Ready BIP can only move to Active or to Abandoned. Any necessary changes to the specification should be
-minimal and interfere as little as possible with on going adoption. If a Ready BIP is found to need
+A Ready BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
+minimal and interfere as little as possible with ongoing adoption. If a Ready BIP is found to need
 substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to draft a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
@@ -272,21 +272,21 @@ has rough consensus per the same criteria.[^living-documents]
 ##### Revisions
 
 To help implementers understand updates to a BIP, any changes after it has reached Ready or Active are
-tracked with version, date, and description in a Change Log section. The version number is inspired by semantic
+tracked with version, date, and description in a Changelog section. The version number is inspired by semantic
 versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
 that are incompatible with prior versions (which should be an exception after a BIP is Ready, and not happen to a
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Ready. An example for a Change Log section can be seen in
-[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Change Log, the
-Preamble must indcate the latest version in the Revision header.
+date the BIP was promoted to Ready. An example for a Changelog section can be seen in
+[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
+Preamble must indicate the latest version in the Revision header.
 
 #### Abandoned[^abandoned]
 
 A BIP that is _not in active use_, may be labeled Abandoned when its author has stopped working on it, no longer
 recommends the proposed approach, or no longer pursues adoption of their completed proposal. The reason for moving the
-proposal to Abandoned should be recorded in the Change Log section in the same commit that updates the status.
+proposal to Abandoned should be recorded in the Changelog section in the same commit that updates the status.
 
 ##### Preliminary ↦ Abandoned
 
@@ -340,7 +340,7 @@ BIP.
 
 If someone is interested in assuming ownership of a BIP, they should send an email asking to take over, addressed to the
 original author and the BIP editors. If the author does not respond to email in a timely manner, the BIP editors will
-make a unilateral decision (it's not like such decisions can't be reversed :)).
+make a unilateral decision (which may be amended should the original author make a delayed reappearance).
 
 ## BIP Licensing
 
@@ -437,12 +437,12 @@ repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
 For each new BIP draft pull request that comes in, an editor checks the following:
 
-* Draft has been previously discussed on the Bitcoin development mailing
+* Draft has been previously discussed on the Bitcoin development mailing list
 * Title accurately describes the content
 * Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
 * Document is properly formatted
 * Licensing terms are acceptable
-* Motivation, Rationale, and Backwards Compatibility have been addressed
+* Motivation, Rationale, and Backward Compatibility have been addressed
 * Specification provides sufficient detail for implementation
 * The defined Layer header must be correctly assigned for the given specification
 * The BIP is fit: it is complete, comprehensible, and technically feasible
@@ -460,9 +460,10 @@ changes, and update BIP headers as appropriate.
 
 BIP editors may also, at their option, unilaterally make and merge strictly editorial changes to BIPs, such as
 correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
-original intent of the author.
+original intent of the author. Such a change must be recorded in the Changelog if it’s noteworthy per the criteria
+mentioned in the [Changelog](#changelog) section.
 
-## Backwards Compatibility
+## Backward Compatibility
 
 ### Changes from BIP 2
 
@@ -471,7 +472,7 @@ original intent of the author.
 - Most sections are declared optional, it is up to the author and audience to judge whether all relevant topics have been comprehensively addressed and which topics require a designated section to do so
 - Layer header is optional for Specification BIPs or Informational BIPs, as it does not make sense for all BIPs[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
-  an aspect of the process are discontinued[^comments]
+  an aspect of the process are discontinued.[^comments]
 - Process BIPs are living documents that do not ossify and may be modified indefinitely
 - Titles may be up to 50 characters
 - The Discussions-To header is dropped, as it has never been used in any BIP
@@ -552,7 +553,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
 [^comments]: **Why were comments, Comments-URI, and Comment-Summary removed from the process?**  
     The comments feature saw insignificant adoption. Few BIPs received any comments and barely any more than two with
     only a handful of contributors commenting at all. This led to many situations in which one or two comments ended up
-    sourcing the comment summary. While some of those comments may have been representative of broadly held opinions, it
+    dominating the comment summary. While some of those comments may have been representative of broadly held opinions, it
     also overstated the importance of individual comments directly in the Preamble of BIPs. As collecting feedback in
     this accessible fashion failed, the new process puts the onus back on the audience to make their own evaluation.
 [^layer]: **Why is the layer header now permitted for other BIP types?**  
@@ -578,9 +579,11 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     goals of the original rule.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
     Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
-    stopped on this". The author of this BIP feels that all of these can be represented by Abandoned without
-    significantly impacting the information quality of the overview table. Where the many Status variants provided
-    minuscule additional information, the Change Log section now collects specific details per BIP.
+    stopped on this". The many statuses complicated the process, may have contributed to process fatigue, and may have
+    resulted in BIPs’ statuses not being maintained well. The author of this BIP feels that all of the aforementioned
+    can be represented by _Abandoned_ without significantly impacting the information quality of the overview table.
+    Where the many Status variants provided minuscule additional information, the simplification is more valuable and
+    the Changelog section now collects specific details.
 [^acceptance]: **Why does the BIPs repository no longer track adoption?**  
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
