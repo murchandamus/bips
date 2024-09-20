@@ -417,7 +417,6 @@ The current BIP editors are:
 
 The BIP editors subscribe to the Bitcoin Development Mailing List and watch the [BIPs
 repository](https://github.com/bitcoin/bips).
-Off-list BIP-related correspondence should be sent (or CC'd) to the BIP editors.
 
 When a new BIP idea is submitted to the mailing list, BIP editors and other community members should comment in regard
 to:
