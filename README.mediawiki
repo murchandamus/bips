@@ -7,12 +7,11 @@ href="bip-update-process.md">tk: BIP Update Process</a> for the full process.
 
 The BIPs repository serves as a publication medium and archive. Having a BIP published here indicates that the proposal
 is in scope and has met other formal criteria for this repository, but does not indicate that it is a good idea, has
-community consensus, or that it is about to be adopted. The BIP Editors are expected to be liberal with approving BIPs
-and try not to be too involved in decision-making on behalf of the community. Beyond the formal criteria, evaluation of
-the proposals is left to the audience of the repository. The exceptions are rare cases when a decision is contentious
-and cannot be agreed upon. In those cases, the conservative option will be preferred. Authors proposing changes should
-consider that ultimately, consent rests with the Bitcoin users (see also: [https://en.bitcoin.it/wiki/Economic_majority
-economic majority]).
+community consensus, or that it is about to be adopted. The BIP Editors are expected to be liberal with accepting BIPs
+and not to be too involved in decision-making on behalf of the community. Beyond the formal criteria, evaluation of
+proposals is left to the audience of the repository. When a proposal is controversial, but deemed high-quality and in
+scope, the BIP Editors shall err on the side of merging it. Ultimately, consent and adoption rests with the Bitcoin
+users (see also: [https://en.bitcoin.it/wiki/Economic_majority economic majority]).
 
 {| class="wikitable sortable" style="width: auto; text-align: center; font-size: smaller; table-layout: fixed;"
 !Number
