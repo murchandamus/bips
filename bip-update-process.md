@@ -218,7 +218,7 @@ self-assign a number to their proposal.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
-independent bitcoin projects working on adopting the proposal, or by the author working for an extended period of time
+independent bitcoin projects working on adopting the proposal, or by the author working for an extended period
 toward improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
 should delay number assignment when they perceive a proposal being met with lack of interest: number
 assignment facilitates the distributed discussion of ideas, but before a proposal garners some interest in the bitcoin
@@ -278,7 +278,7 @@ that are incompatible with prior versions (which should be an exception after a 
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Proposed. An example for a Changelog section can be seen in
+date the BIP was promoted to Proposed. An example of a Changelog section can be seen in
 [BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
 Preamble must indicate the latest version in the Revision header.
 
@@ -299,7 +299,7 @@ to Abandoned unless the authors assert that they intend to continue work when co
 BIPs that had attained Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
 the author’s announcement to the Bitcoin Development Mailing List after not being opposed within 28 days. To successfully
 oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Proposed. A BIP
-can also be moved to Abandoned by the community, if it has had Proposed status for at least one year, there is no
+can also be moved to Abandoned by the community if it has had Proposed status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
 
@@ -598,7 +598,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     documents that remain open to amendment. If a Process BIP requires large modifications or even a complete
     overhaul, a new BIP should be preferred.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
-    After a Proposed or Active BIP has been deployed by one or more implementation, breaking changes to the
+    After a Proposed or Active BIP has been deployed by one or more implementations, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
     specification of Proposed BIPs should be avoided, but Active BIPs should never be subject to breaking changes to
