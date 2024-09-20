@@ -165,9 +165,8 @@ convention.
 * An **Informational BIP** describes a bitcoin design issue, provides general guidelines or other information to the
   bitcoin community.
 * A **Process BIP** describes a process surrounding bitcoin, or proposes a change to (or an event in) a process. Process
-  BIPs are like Specification BIPs, but apply to areas other than the bitcoin protocol itself. They may propose an
-  implementation, but not to bitcoin's codebase; they often require community consensus; unlike Informational BIPs, they
-  are more than recommendations, and users are typically not free to ignore them. Examples include procedures,
+  BIPs are like Specification BIPs, but apply to topics other than the bitcoin protocol and bitcoin implementations.
+  They often require community consensus, and users are typically not free to ignore them. Examples include procedures,
   guidelines, and changes to the decision-making process.
 
 ## Workflow
