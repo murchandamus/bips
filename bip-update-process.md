@@ -100,7 +100,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title, up to 50 characters>
   Author: <list of authors’ names and email addresses>
-  Status: <Preliminary | Ready | Active | Abandoned>
+  Status: <Draft | Ready | Active | Abandoned>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
@@ -128,7 +128,7 @@ This may or may not be the original authors of the BIP. The format of each autho
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
-__Status__: The Status field can take the four values Preliminary, Ready, Active, and Abandoned. The
+__Status__: The Status field can take the four values Draft, Ready, Active, and Abandoned. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
@@ -209,7 +209,7 @@ open a pull request against their fork of the BIPs repository instead of the mai
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
 specification above.
 
-#### Preliminary
+#### Draft
 
 After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the author should
 open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The document must adhere to the
@@ -288,9 +288,9 @@ A BIP that is _not in active use_, may be labeled Abandoned when its author has 
 recommends the proposed approach, or no longer pursues adoption of their completed proposal. The reason for moving the
 proposal to Abandoned should be recorded in the Changelog section in the same commit that updates the status.
 
-##### Preliminary ↦ Abandoned
+##### Draft ↦ Abandoned
 
-BIP authors may decide on their own to change their BIP’s status from Preliminary to Abandoned. If a Preliminary BIP stops making
+BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned. If a Draft BIP stops making
 progress, sees accumulated feedback unaddressed, or otherwise appears stalled for a year, the community may move the BIP
 to Abandoned unless the authors assert that they intend to continue work when contacted.
 
@@ -308,7 +308,7 @@ within four weeks.
 A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may initiate this
 Status update by announcing it to the mailing list, and proceed if no objections have been raised for four weeks.
 
-##### Abandoned ↦ Preliminary
+##### Abandoned ↦ Draft
 
 The Abandoned status is generally intended to be the final status for BIPs.
 
@@ -480,10 +480,9 @@ mentioned in the [Changelog](#changelog) section.
 - The Status field is no longer modeled around the workflow of consensus changes
 - Status field values are reduced from nine to four:
   - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned[^abandoned]
-  - Draft is renamed to Preliminary[^preliminary]
   - Proposed is renamed to Ready[^ready]
   - Final and Active are collapsed into Active
-  - The remaining statuses are Preliminary, Ready, Active, and Abandoned
+  - The remaining statuses are Draft, Ready, Active, and Abandoned
 - BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
 - A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
   year and its Author does not assert that they are still working on it when contacted
@@ -564,15 +563,11 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
     authors no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^preliminary]: **Why has the Draft status been renamed to Preliminary?**  
-    The term "draft" appears all over this document and was inconsistently overlapping with the status field value.
-    Also, "Draft" stood out as the only noun among the status field values. Preliminary fits the intended meaning and
-    does not appear otherwise in the process description.
 [^ready]: **Why has the Proposed status been renamed to Ready?**  
     Some reviewers of this BIP raised that in a process that outlines the workflow of Bitcoin Improvement _Proposals_
     using "Proposed" as a status field value was overloading the term: clearly _proposals_ are proposed at all stages of
     the process.
-[^rejection]: **Why can proposals remain in Preliminary or Ready indefinitely?**  
+[^rejection]: **Why can proposals remain in Draft or Ready indefinitely?**  
     The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
     the author is still active in the community and still considers their idea worth pursuing. On the other hand,
     proposals that appear stale may be tested and cleared out after only one year which hopefully achieves the main
