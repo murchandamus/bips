@@ -310,7 +310,7 @@ Status update by announcing it to the mailing list, and proceed if no objections
 
 ##### Abandoned ↦ Draft
 
-The Abandoned status is generally intended to be the final status for BIPs.
+The Abandoned status is generally intended to be a final status for BIPs.
 
 If a BIP Author decides to make another attempt at a previously abandoned proposal, it is generally recommended to
 create a new proposal. (Obviously, the author may borrow any amount of inspiration or actual text from any prior BIPs as
@@ -323,7 +323,7 @@ reasonable to return the Abandoned BIP to Draft status.
 
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation: the BIPs repository is not a sign-post where to find implementations.[^OtherImplementations] After a BIP
+implementation: the BIPs repository is not a signpost where to find implementations.[^OtherImplementations] After a BIP
 is advanced to Proposed, it is up to the bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
 this BIP can be observed in [Bitcoin Core’s doc/bips.md
@@ -428,7 +428,7 @@ to:
 * Readiness of the proposal
 * On-topic for the bitcoin community
 
-We observe that discussion in pull requests comments can often be hard to follow as feedback gets marked as resolved
+We observe that discussion in pull request comments can often be hard to follow as feedback gets marked as resolved
 when it is addressed by authors. Substantive discussion of ideas may be more accessible to a broader audience on the
 mailing list, where it is also more likely to be retained by the community memory.
 
@@ -515,7 +515,7 @@ discretion. It is recommended that existing wiki pages are not modified due to t
 
 #### Status field
 
-Subsequent to the activation of this BIP, the Status field of any existing BIPs that do not fit the specification in
+After the activation of this BIP, the Status fields of existing BIPs that do not fit the specification in
 this BIP are updated to the corresponding values prescribed in this BIP.
 
 #### Discussion header
@@ -573,8 +573,8 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
 [^rejection]: **Why can proposals remain in Draft or Proposed indefinitely?**  
     The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
     the author is still active in the community and still considers their idea worth pursuing. On the other hand,
-    proposals that appear stale may be tested and cleared out after only one year which hopefully achieves the main
-    goals of the original rule.
+    proposals that appear stale may be tested and cleared out after only one year which should achieve the main
+    goal of the original rule.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
     Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
     stopped on this". The many statuses complicated the process, may have contributed to process fatigue, and may have
@@ -603,9 +603,9 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
     specification of Proposed BIPs should be avoided, but Active BIPs should never be subject to breaking changes to
     their specification.
-[^settled]: **What is meant with a BIP being settled?**  
-    Since Active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification
-    has been put through its paces and changes to the BIP have stopped.
+[^settled]: **What is meant by a BIP being settled?**  
+    Since Active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification has
+    been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
     some BIPs were made available under more than one license) and only one license has been used to license code:
