@@ -201,9 +201,9 @@ overall proposal.
 
 ### Progression through BIP Statuses
 
-As the first draft is taking shape, the author should present it to the [Bitcoin development mailing
+As a first sketch of the proposal is taking shape, the author should present it to the [Bitcoin development mailing
 list](https://groups.google.com/g/bitcoindev). This gives the author a chance to collect initial feedback and address
-fundamental concerns. If the author wishes to work in public on the draft at this stage, it is recommended that they
+fundamental concerns. If the author wishes to work in public on the proposal at this stage, it is recommended that they
 open a pull request against their fork of the BIPs repository instead of the main BIPs repository.
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
@@ -211,28 +211,28 @@ specification above.
 
 #### Preliminary
 
-After fleshing out the draft further and ensuring that it is of high quality and properly formatted, the author should
-open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The draft BIP must adhere to the
+After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the author should
+open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The document must adhere to the
 formatting requirements specified below and be named with a working title of the form "bip-title". The author must not
-self-assign a number to the BIP draft.
+self-assign a number to their proposal.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
 independent Bitcoin projects working on adopting the proposal, or by the author working for an extended period of time
 toward improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
-should delay number assignment when they perceive a BIP draft being met with lack of interest: number
-assignment facilitates the distributed discussion of ideas, but before a BIP garners some interest in the Bitcoin
+should delay number assignment when they perceive a proposal being met with lack of interest: number
+assignment facilitates the distributed discussion of ideas, but before a proposal garners some interest in the Bitcoin
 community, there is no need to refer to it by a number.
 
-BIP drafts are also not eligible for number assignment if they duplicate efforts, disregard formatting rules, are too
+Proposals are also not eligible for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or fail to specify
-the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the draft may
+the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the proposal may
 be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
 stopped to make progress may be closed.
 
-When the BIP draft has been assigned a number and is complete, a BIP editor will merge it to the BIPs repository.
+When the proposal has been assigned a number and is complete, a BIP editor will merge it to the BIPs repository.
 After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the author
-may continue to update the draft as necessary in the git repository. Updates to drafts by the author should also be
+may continue to update the proposal as necessary in the git repository. Updates to merged documents by the author should also be
 submitted as pull requests.
 
 #### Ready[^ready]
@@ -247,7 +247,7 @@ adopted.
 
 A Ready BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
 minimal and interfere as little as possible with ongoing adoption. If a Ready BIP is found to need
-substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to draft a new BIP with the changes
+substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to start a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
 #### Active
@@ -424,7 +424,7 @@ to:
 
 * Novelty of the idea
 * Viability, utility, and relevance of the concept
-* Readiness of the draft
+* Readiness of the proposal
 * On-topic for the Bitcoin community
 
 We observe that discussion in pull requests comments can often be hard to follow as feedback gets marked as resolved
@@ -435,9 +435,9 @@ If the BIP needs more work, an editor should ensure that constructive, actionabl
 revision. Once the BIP is fleshed out it should be submitted as a "pull request" to the [BIPs
 repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
-For each new BIP draft pull request that comes in, an editor checks the following:
+For each new BIP pull request that comes in, an editor checks the following:
 
-* Draft has been previously discussed on the Bitcoin development mailing list
+* The idea has been previously discussed on the Bitcoin development mailing list
 * Title accurately describes the content
 * Proposal is of general interest and/or pertains to more than one Bitcoin project/implementation
 * Document is properly formatted
