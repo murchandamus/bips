@@ -85,9 +85,9 @@ a dedicated section.
 * Backward compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
   The BIP must explain how implementers/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors, and documentation must be
-  completed before the BIP can be given the status "Ready". Any or all of these can be provided either in the BIP or as
+  completed before the BIP can be given the status "Proposed". Any or all of these can be provided either in the BIP or as
   auxiliary files.
-* Changelog -- A section to track modifications to a BIP after reaching Ready status.
+* Changelog -- A section to track modifications to a BIP after reaching Proposed status.
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
 #### BIP header preamble
@@ -100,7 +100,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title, up to 50 characters>
   Author: <list of authors’ names and email addresses>
-  Status: <Draft | Ready | Active | Abandoned>
+  Status: <Draft | Proposed | Active | Abandoned>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
@@ -128,7 +128,7 @@ This may or may not be the original authors of the BIP. The format of each autho
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
-__Status__: The Status field can take the four values Draft, Ready, Active, and Abandoned. The
+__Status__: The Status field can take the four values Draft, Proposed, Active, and Abandoned. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
@@ -235,18 +235,18 @@ After the BIP is merged to the repository, its main focus should no longer shift
 may continue to update the proposal as necessary in the git repository. Updates to merged documents by the author should also be
 submitted as pull requests.
 
-#### Ready[^ready]
+#### Proposed[^proposed]
 
 When the author is confident that their BIP represents a net improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the Bitcoin community, they may update the BIP’s
-status to Ready to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
+status to Proposed to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
 author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is
 adopted.
 
-A Ready BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
-minimal and interfere as little as possible with ongoing adoption. If a Ready BIP is found to need
+A Proposed BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
+minimal and interfere as little as possible with ongoing adoption. If a Proposed BIP is found to need
 substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to start a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
@@ -262,7 +262,7 @@ separate BIP.[^new-BIP]
 
 ##### Process BIPs
 
-A process BIP may change status from Ready to Active when it achieves rough consensus on the mailing list. Such a
+A process BIP may change status from Proposed to Active when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
@@ -271,14 +271,14 @@ has rough consensus per the same criteria.[^living-documents]
 
 ##### Revisions
 
-To help implementers understand updates to a BIP, any changes after it has reached Ready or Active are
+To help implementers understand updates to a BIP, any changes after it has reached Proposed or Active are
 tracked with version, date, and description in a Changelog section. The version number is inspired by semantic
 versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
-that are incompatible with prior versions (which should be an exception after a BIP is Ready, and not happen to a
+that are incompatible with prior versions (which should be an exception after a BIP is Proposed, and not happen to a
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Ready. An example for a Changelog section can be seen in
+date the BIP was promoted to Proposed. An example for a Changelog section can be seen in
 [BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
 Preamble must indicate the latest version in the Revision header.
 
@@ -294,12 +294,12 @@ BIP authors may decide on their own to change their BIP’s status from Draft to
 progress, sees accumulated feedback unaddressed, or otherwise appears stalled for a year, the community may move the BIP
 to Abandoned unless the authors assert that they intend to continue work when contacted.
 
-##### Ready ↦ Abandoned
+##### Proposed ↦ Abandoned
 
-BIPs that had attained Ready status, i.e. that had been recommended for adoption, may be moved to Abandoned per
+BIPs that had attained Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
 the author’s announcement to the Bitcoin Developer Mailing List after not being opposed within 28 days. To successfully
-oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Ready. A BIP
-can also be moved to Abandoned by the community, if it has had Ready status for at least one year, there is no
+oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Proposed. A BIP
+can also be moved to Abandoned by the community, if it has had Proposed status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
 
@@ -323,7 +323,7 @@ number, unless it is obvious that the new attempt is a direct continuation of th
 The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
 implementation: the BIPs repository is not a sign-post where to find implementations.[^OtherImplementations] After a BIP
-is advanced to Ready, it is up to the Bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
+is advanced to Proposed, it is up to the Bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 Bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
 this BIP can be observed in [Bitcoin Core’s doc/bips.md
 file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
@@ -480,9 +480,8 @@ mentioned in the [Changelog](#changelog) section.
 - The Status field is no longer modeled around the workflow of consensus changes
 - Status field values are reduced from nine to four:
   - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned[^abandoned]
-  - Proposed is renamed to Ready[^ready]
   - Final and Active are collapsed into Active
-  - The remaining statuses are Draft, Ready, Active, and Abandoned
+  - The remaining statuses are Draft, Proposed, Active, and Abandoned
 - BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
 - A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
   year and its Author does not assert that they are still working on it when contacted
@@ -563,11 +562,13 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
     authors no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^ready]: **Why has the Proposed status been renamed to Ready?**  
+[^proposed]: **Why was the Proposed status retained?**  
     Some reviewers of this BIP raised that in a process that outlines the workflow of Bitcoin Improvement _Proposals_
     using "Proposed" as a status field value was overloading the term: clearly _proposals_ are proposed at all stages of
-    the process.
-[^rejection]: **Why can proposals remain in Draft or Ready indefinitely?**  
+    the process. However, it fits the situation best: it does not imply that it needs no further changes like
+    "complete", is less subjective than "ready", communicates that the author is putting it forth for the community to
+    decide whether to adopt it.
+[^rejection]: **Why can proposals remain in Draft or Proposed indefinitely?**  
     The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
     the author is still active in the community and still considers their idea worth pursuing. On the other hand,
     proposals that appear stale may be tested and cleared out after only one year which hopefully achieves the main
@@ -593,13 +594,13 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     new process every so often to catch up with new challenges, it seems preferable to allow the process to adapt to the
     concerns of the future. Therefore, we define Process BIPs as living documents that remain open to amendment.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
-    After a Ready or Active BIP has been deployed by one or more implementation, breaking changes to the
+    After a Proposed or Active BIP has been deployed by one or more implementation, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
-    specification of Ready BIPs should be avoided, but active BIPs should never be subject to breaking changes to
+    specification of Proposed BIPs should be avoided, but active BIPs should never be subject to breaking changes to
     their specification.
 [^settled]: **What is meant with a BIP being settled?**  
-    Since active BIPs should not be changed, a Ready BIP should only be moved to Active after its Specification
+    Since active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification
     has been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
