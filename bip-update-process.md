@@ -224,7 +224,7 @@ should delay number assignment when they perceive a proposal being met with lack
 assignment facilitates the distributed discussion of ideas, but before a proposal garners some interest in the Bitcoin
 community, there is no need to refer to it by a number.
 
-Proposals are also not eligible for number assignment if they duplicate efforts, disregard formatting rules, are too
+Proposals are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or fail to specify
 the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the proposal may
 be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
@@ -432,7 +432,7 @@ when it is addressed by authors. Substantive discussion of ideas may be more acc
 mailing list, where it is also more likely to be retained by the community memory.
 
 If the BIP needs more work, an editor should ensure that constructive, actionable feedback is provided to the author for
-revision. Once the BIP is fleshed out it should be submitted as a "pull request" to the [BIPs
+revision. Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
 repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
 For each new BIP pull request that comes in, an editor checks the following:
@@ -445,14 +445,14 @@ For each new BIP pull request that comes in, an editor checks the following:
 * Motivation, Rationale, and Backward Compatibility have been addressed
 * Specification provides sufficient detail for implementation
 * The defined Layer header must be correctly assigned for the given specification
-* The BIP is fit: it is complete, comprehensible, and technically feasible
+* The BIP is ready: it is complete, comprehensible, and technically feasible
 
 Editors do NOT evaluate whether the proposal is likely to be adopted.
 
 A BIP editor will:
 
 * Assign a BIP number and BIP type in the pull request
-* Merge the pull request when it is complete
+* Merge the pull request when it is ready
 * List the BIP in the [README](README.mediawiki)
 
 The BIP editors are intended to fulfill administrative and editorial responsibilities. The BIP editors monitor BIP
@@ -597,10 +597,10 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     After a Proposed or Active BIP has been deployed by one or more implementation, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
-    specification of Proposed BIPs should be avoided, but active BIPs should never be subject to breaking changes to
+    specification of Proposed BIPs should be avoided, but Active BIPs should never be subject to breaking changes to
     their specification.
 [^settled]: **What is meant with a BIP being settled?**  
-    Since active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification
+    Since Active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification
     has been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
