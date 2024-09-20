@@ -40,7 +40,7 @@ BIPs cover the range of interests of the Bitcoin community. The main topic is te
 currency. Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard.
 Some BIPs describe processes, implementation guidelines, best practices, incident reports (e.g.
 [BIP 50](bip-0050.mediawiki)), or other information relevant to the Bitcoin community. However, any topics related to
-the Bitcoin protocol, Bitcoin’s P2P network, and Bitcoin client software may be acceptable.
+the Bitcoin protocol, Bitcoin’s peer-to-peer network, and Bitcoin client software may be acceptable.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
 documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors and
@@ -262,11 +262,11 @@ separate BIP.[^new-BIP]
 
 ##### Process BIPs
 
-A process BIP may change status from Proposed to Active when it achieves rough consensus on the mailing list. Such a
+A Process BIP may change status from Proposed to Active when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
-given in such circumstances. An Active Process BIP may be modified indefinitely as long as a proposed modification
+given in such circumstances. Active Process BIPs may be modified indefinitely as long as a proposed modification
 has rough consensus per the same criteria.[^living-documents]
 
 ##### Revisions
@@ -316,7 +316,8 @@ If a BIP Author decides to make another attempt at a previously abandoned propos
 create a new proposal. (Obviously, the author may borrow any amount of inspiration or actual text from any prior BIPs as
 licensing permits.) The author should take special care to address the issues that caused the prior attempt’s
 abandonment. Even if the prior attempt had been assigned a number, the new BIP will generally be assigned a distinct
-number, unless it is obvious that the new attempt is a direct continuation of the prior work.
+number, unless it is obvious that the new attempt directly continues work on the same idea, in which case it may be
+reasonable to return the Abandoned BIP to Draft status.
 
 ### Adoption of proposals
 
@@ -467,32 +468,33 @@ mentioned in the [Changelog](#changelog) section.
 
 ### Changes from BIP 2
 
-- Refer to the proponent of a BIP as "author" throughout the document
-- The Standards Track type is superseded by the similar Specification type[^standard-track]
-- Most sections are declared optional, it is up to the author and audience to judge whether all relevant topics have been comprehensively addressed and which topics require a designated section to do so
-- Layer header is optional for Specification BIPs or Informational BIPs, as it does not make sense for all BIPs[^layer]
+- Refer to the proponent of a BIP as "author" throughout the document.
+- The Standards Track type is superseded by the similar Specification type.[^standard-track]
+- Most sections are declared optional, it is up to the author and audience to judge whether all relevant topics have
+  been comprehensively addressed and which topics require a designated section to do so.
+- Layer header is optional for Specification BIPs or Informational BIPs, as it does not make sense for all BIPs.[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
   an aspect of the process are discontinued.[^comments]
-- Process BIPs are living documents that do not ossify and may be modified indefinitely
-- Titles may be up to 50 characters
-- The Discussions-To header is dropped, as it has never been used in any BIP
-- The Post-History header is replaced with the Discussion header
-- The Status field is no longer modeled around the workflow of consensus changes
+- Process BIPs are living documents that do not ossify and may be modified indefinitely.
+- Titles may now be up to 50 characters.
+- The Discussions-To header is dropped as it has never been used in any BIP.
+- The Post-History header is replaced with the Discussion header.
+- The Status field is no longer modeled around the workflow of consensus changes.
 - Status field values are reduced from nine to four:
-  - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned[^abandoned]
-  - Final and Active are collapsed into Active
-  - The remaining statuses are Draft, Proposed, Active, and Abandoned
-- BIPs no longer get rejected solely on grounds of not making progress for three years[^rejection]
+  - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned.[^abandoned]
+  - Final and Active are collapsed into Active.
+  - The remaining statuses are Draft, Proposed, Active, and Abandoned.
+- BIPs no longer get rejected solely on grounds of not making progress for three years.[^rejection]
 - A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
-  year and its Author does not assert that they are still working on it when contacted
+  year and its Author does not assert that they are still working on it when contacted.
 - Many judgment calls previously required from BIP Editors are reassigned either to the BIP Author or the repository’s
-  audience
+  audience.
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository, except to determine
-  whether a BIP is in active use for the move into or out of the Active status
-- "Other Implementations" sections are discouraged[^OtherImplementations]
+  whether a BIP is in active use for the move into or out of the Active status.
+- "Other Implementations" sections are discouraged.[^OtherImplementations]
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
-  them with the BIP number
-- List of acceptable licenses was reduced to the ones previously used
+  them with the BIP number.
+- The set of acceptable licenses was reduced to the ones previously used.
 
 ### Updates to existing BIPs should this BIP be activated
 
@@ -589,10 +591,12 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     Markdown syntax features commonly shared across Markdown dialects.
 [^living-documents]: **Why are Process BIPs living documents?**  
     In the past years, the existing BIPs process has not always provided a clear approach to all situations. For
-    example, the content of BIP 2 appears to have been penned with fork proposals in mind. It seems clear that the
-    Bitcoin development will evolve in many surprising ways in the future. Instead of mandating the effort of writing a
-    new process every so often to catch up with new challenges, it seems preferable to allow the process to adapt to the
-    concerns of the future. Therefore, we define Process BIPs as living documents that remain open to amendment.
+    example, the content of BIP 2 appears to have been penned especially with fork proposals in mind. It seems clear
+    that Bitcoin development will evolve in many surprising ways in the future. Instead of mandating the effort of
+    writing a new process document every time new situations arise, it seems preferable to allow the
+    process to adapt to the concerns of the future in specific aspects. Therefore, we define Process BIPs as living
+    documents that remain open to amendment. If a Process BIP requires large modifications or even a complete
+    overhaul, a new BIP should be preferred.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
     After a Proposed or Active BIP has been deployed by one or more implementation, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
