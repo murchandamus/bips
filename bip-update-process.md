@@ -141,7 +141,7 @@ acceptable Licenses and their SPDX License Identifiers.
 __Discussion__: The Discussion header is used to point the audience to relevant discussions of the BIP, e.g. the mailing
 list thread in which the idea for the BIP was discussed, a thread where a new version of the BIP was presented, or
 relevant discussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g.
-`2009-09-09: https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
+`2009-01-09: https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
 
 __Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added.
 
