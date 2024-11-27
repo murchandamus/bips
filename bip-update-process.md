@@ -20,7 +20,7 @@ evolving needs of the BIP process.
 
 ## Motivation
 
-BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin community. The BIP 2
+BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin[^capitalization] community. The BIP 2
 process seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
 more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
 BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
@@ -58,11 +58,13 @@ complete copy of the archive.
 The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
 provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
 
+
+
 ### What is the scope of the BIPs repository?
 
 The BIPs repository is focused on information and technologies that aim to support and expand the utility of the bitcoin
 currency. Related topics that are of interest to the bitcoin community may be acceptable. Proposals that undermine the
-fundamental principle that Bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency are
+fundamental principle that bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency are
 out-of-scope.
 
 ## BIP format and structure
@@ -543,6 +545,9 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
 
 ## Rationale
 
+[^capitalization]: **When is Bitcoin capitalized and when is it lowercased?**  
+    This document refers to the currency and the concept as lowercase bitcoin, and only uses capitalized Bitcoin in
+    proper nouns.
 [^standard-track]: **Why was the Specification type introduced?**  
     The definitions of Informational and Standards Track BIPs caused some confusion in the past. Due to Informational
     BIPs being described as optional, Standards Track BIPs were sometimes misunderstood to be generally recommended.
