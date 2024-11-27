@@ -18,14 +18,6 @@ This _Bitcoin Improvement Proposal (BIP)_ provides information about the prepara
 the publication of BIPs. It replaces [BIP 2](bip-0002.mediawiki) with a streamlined process, and may be amended to address the
 evolving needs of the BIP process.
 
-The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
-facilitates the distributed consideration of BIPs by providing an established source to retrieve the latest versions of
-BIPs. The repository transparently records all changes to each BIP and allows any community member to easily retain a
-complete copy of the archive.
-
-The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
-provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
-
 ## Motivation
 
 BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin community. The BIP 2
@@ -55,6 +47,16 @@ BIPs do not define what bitcoin is: individual BIPs do not represent bitcoin com
 recommendation for implementation. A BIP represents a personal recommendation by the BIP author to the bitcoin
 community. Some BIPs may never be adopted. Some BIPs may be adopted by one or more bitcoin clients or other related
 software. Some may even end up changing the consensus rules that the bitcoin ecosystem jointly enforces.
+
+### What is the purpose of the BIPs repository?
+
+The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
+facilitates the distributed consideration of BIPs by providing an established source to retrieve the latest versions of
+BIPs. The repository transparently records all changes to each BIP and allows any community member to easily retain a
+complete copy of the archive.
+
+The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
+provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
 
 ### What is the scope of the BIPs repository?
 
