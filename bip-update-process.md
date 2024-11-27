@@ -7,6 +7,7 @@ Status: Draft
 Type: Process
 Created: 2024-05-13
 License: BSD-2-Clause
+Post-History: https://github.com/murchandamus/bips/pull/2
 Requires: 123
 Replaces: 2
 ```
