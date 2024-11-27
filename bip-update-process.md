@@ -15,7 +15,7 @@ Replaces: 2
 ## Abstract
 
 This _Bitcoin Improvement Proposal (BIP)_ provides information about the preparation of BIPs and policies relating to
-the publication of BIPs. It replaces BIP 2 with a streamlined process, and may be amended to address the
+the publication of BIPs. It replaces [BIP 2](bip-0002.mediawiki) with a streamlined process, and may be amended to address the
 evolving needs of the BIP process.
 
 The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
