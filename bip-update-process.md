@@ -20,8 +20,8 @@ evolving needs of the BIP process.
 
 ## Motivation
 
-BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin[^capitalization] community. The BIP 2
-process seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
+BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin[^capitalization] community. The BIP
+process as defined by BIP 2 thus far seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
 more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
 BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
