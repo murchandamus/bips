@@ -68,7 +68,7 @@ out-of-scope.
 
 BIPs should be written in mediawiki or markdown[^markdown] format.
 
-Each BIP must have a _Preamble_, an _Abstract_, a _Copyright_, and a _Backward Compatibility_ section. Authors should
+Each BIP must have a _Preamble_, an _Abstract_, and a _Copyright_ section. Authors should
 consider all issues in the following list and address each as appropriate. For some BIPs, some concerns may not warrant
 a dedicated section.
 
