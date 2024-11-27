@@ -48,21 +48,19 @@ recommendation for implementation. A BIP represents a personal recommendation by
 community. Some BIPs may never be adopted. Some BIPs may be adopted by one or more bitcoin clients or other related
 software. Some may even end up changing the consensus rules that the bitcoin ecosystem jointly enforces.
 
-### What is the purpose of the BIPs repository?
+### What is the purpose of the BIP repository?
 
-The BIPs repository serves as a publication medium and archive for mature proposals. The repository’s visibility
-facilitates the distributed consideration of BIPs by providing an established source to retrieve the latest versions of
-BIPs. The repository transparently records all changes to each BIP and allows any community member to easily retain a
+The [BIP repository](https://github.com/bitcoin/bips/) serves as a publication medium and archive for mature proposals. Through its high visibility, it
+facilitates the community-wide consideration of BIPs and provides a well-established source to retrieve the latest version of
+any BIP. The repository records all changes to each BIP transparently and allows any community member to easily retain a
 complete copy of the archive.
 
-The BIPs repository does not aim to track acceptance[^acceptance], adoption, or community consensus on BIPs except to
-provide a quick overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
+The BIP repository is not a tool to track acceptance[^acceptance], adoption, or community consensus on BIPs, beyond
+providing a brief overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
 
+### What is the scope of the BIP repository?
 
-
-### What is the scope of the BIPs repository?
-
-The BIPs repository is focused on information and technologies that aim to support and expand the utility of the bitcoin
+The BIP repository is focused on information and technologies that aim to support and expand the utility of the bitcoin
 currency. Related topics that are of interest to the bitcoin community may be acceptable. Proposals that undermine the
 fundamental principle that bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency are
 out-of-scope.
@@ -208,7 +206,7 @@ overall proposal.
 As a first sketch of the proposal is taking shape, the author should present it to the [Bitcoin Development Mailing
 List](https://groups.google.com/g/bitcoindev). This gives the author a chance to collect initial feedback and address
 fundamental concerns. If the author wishes to work in public on the proposal at this stage, it is recommended that they
-open a pull request against their fork of the BIPs repository instead of the main BIPs repository.
+open a pull request against their fork of the BIP repository instead of the main BIP repository.
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
 specification above.
@@ -216,7 +214,7 @@ specification above.
 #### Draft
 
 After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the author should
-open a pull request to the [BIPs repository](https://github.com/bitcoin/bips). The document must adhere to the
+open a pull request to the [BIP repository](https://github.com/bitcoin/bips). The document must adhere to the
 formatting requirements specified below and be named with a working title of the form "bip-title". The author must not
 self-assign a number to their proposal.
 
@@ -234,7 +232,7 @@ the feature clearly and completely. Reviewers and BIP editors should provide gui
 be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
 stopped to make progress may be closed.
 
-When the proposal has been assigned a number and is complete, a BIP editor will merge it to the BIPs repository.
+When the proposal has been assigned a number and is complete, a BIP editor will merge it to the BIP repository.
 After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the author
 may continue to update the proposal as necessary in the git repository. Updates to merged documents by the author should also be
 submitted as pull requests.
@@ -325,9 +323,9 @@ reasonable to return the Abandoned BIP to Draft status.
 
 ### Adoption of proposals
 
-The BIPs repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
+The BIP repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
-implementation: the BIPs repository is not a signpost where to find implementations.[^OtherImplementations] After a BIP
+implementation: the BIP repository is not a signpost where to find implementations.[^OtherImplementations] After a BIP
 is advanced to Proposed, it is up to the bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
 this BIP can be observed in [Bitcoin Core’s doc/bips.md
@@ -492,7 +490,7 @@ mentioned in the [Changelog](#changelog) section.
   year and its Author does not assert that they are still working on it when contacted.
 - Many judgment calls previously required from BIP Editors are reassigned either to the BIP Author or the repository’s
   audience.
-- Tracking of adoption, acceptance, and community consensus is out of scope for the BIPs repository, except to determine
+- Tracking of adoption, acceptance, and community consensus is out of scope for the BIP repository, except to determine
   whether a BIP is in active use for the move into or out of the Active status.
 - "Other Implementations" sections are discouraged.[^OtherImplementations]
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
@@ -588,7 +586,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     can be represented by _Abandoned_ without significantly impacting the information quality of the overview table.
     Where the many Status variants provided minuscule additional information, the simplification is more valuable and
     the Changelog section now collects specific details.
-[^acceptance]: **Why does the BIPs repository no longer track adoption?**  
+[^acceptance]: **Why does the BIP repository no longer track adoption?**  
     BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
     leave the evaluation of BIPs to the audience.
