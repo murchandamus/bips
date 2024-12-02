@@ -27,7 +27,9 @@ BIP Editors, and some aspects of the process specified by BIP 2 that did not
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
 to the BIP Editor role, and delineates the BIP Types more expediently.
 
-## What is a BIP?
+## Fundamentals
+
+### What is a BIP?
 
 BIPs cover the range of interests of the bitcoin community. The main topic is technology that supports the bitcoin
 currency. Most BIPs provide a concise, self-contained, technical description of one new concept, feature, or standard.
