@@ -110,7 +110,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
 * License-Code: <SPDX License Identifier for Code under different approved license(s)>
-* Discussion: <list of mailing list threads, or other noteworthy discussions in "date: link" format>
+* Discussion: <list of link to mailing list threads, or other noteworthy discussions in "date: URL" format>
 * Revision: Version number of this document after a Changelog has been introduced
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
