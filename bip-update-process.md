@@ -85,8 +85,8 @@ a dedicated section.
 * Specification -- The technical specification should describe the syntax and semantics of any new feature. The
   specification should be detailed enough to enable any bitcoin project to create an interoperable implementation.
 * Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
-  design decisions were made. It should describe alternate designs that were considered and related work. The rationale
-  should address important objections or concerns raised.
+  design decisions were made. It should describe related work and alternate designs that were considered. The rationale
+  should record relevant objections or important concerns that were raised and addressed as this proposal was developed.
 * Backward compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
   The BIP must explain how implementers/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors, and documentation must be
