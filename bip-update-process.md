@@ -97,7 +97,7 @@ a dedicated section.
 
 #### BIP header preamble
 
-Each BIP must begin with an RFC 822-style header preamble. The headers must appear in the following order. Headers
+Each BIP must begin with an [RFC 822-style header preamble](https://www.w3.org/Protocols/rfc822/). The headers must appear in the following order. Headers
 marked with "\*" are optional. All other headers are required. The overview is followed by an explanation for each header.
 
 ```
