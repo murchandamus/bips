@@ -22,7 +22,7 @@ evolving needs of the BIP process.
 
 BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin[^capitalization] community. The BIP
 process as defined by BIP 2 thus far seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
-more often describe interoperable features beyond the base protocol. We have had multiple debates about the role of
+more often describe interoperable features beyond the base protocol. The community has had multiple debates about the role of
 BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
 to the BIP Editor role, and delineates the BIP Types more expediently.
@@ -333,11 +333,11 @@ file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
-It occasionally becomes necessary to transfer ownership of BIPs to a new author. In general, we would like to retain
+It occasionally becomes necessary to transfer ownership of BIPs to a new author. In general, it would be preferable to retain
 the original author as a co-author of the transferred BIP, but that is up to the original author. A good reason to
 transfer ownership is because the original author no longer has the time or interest in updating it or following through
 with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
-reason to transfer ownership is because someone doesn't agree with the direction of the BIP. We try to build consensus
+reason to transfer ownership is because someone doesn't agree with the direction of the BIP. The community tries to build consensus
 around a BIP, but if that's not possible, rather than fighting over control, the dissenters should supply a competing
 BIP.
 
@@ -429,7 +429,7 @@ to:
 * Readiness of the proposal
 * On-topic for the bitcoin community
 
-We observe that discussion in pull request comments can often be hard to follow as feedback gets marked as resolved
+Discussion in pull request comments can often be hard to follow as feedback gets marked as resolved
 when it is addressed by authors. Substantive discussion of ideas may be more accessible to a broader audience on the
 mailing list, where it is also more likely to be retained by the community memory.
 
@@ -550,7 +550,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     The definitions of Informational and Standards Track BIPs caused some confusion in the past. Due to Informational
     BIPs being described as optional, Standards Track BIPs were sometimes misunderstood to be generally recommended.
     This has led to a number of BIPs that propose new features affecting interoperability of implementations
-    being assigned the Informational type. We remedy this situation by introducing a new _Specification BIP_ type that
+    being assigned the Informational type. The situation is remedied by introducing a new _Specification BIP_ type that
     is inclusive of any BIPs that can be implemented and affect interoperability of bitcoin applications. Since all BIPs
     are individual recommendations by the authors (even if some may eventually achieve endorsement by the majority of
     the community), the prior reminder that Informational BIPs are optional is dropped.
@@ -580,7 +580,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     proposals that appear stale may be tested and cleared out after only one year which should achieve the main
     goal of the original rule.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
-    Previously, we had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
+    Previously, the process had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
     stopped on this". The many statuses complicated the process, may have contributed to process fatigue, and may have
     resulted in BIPs’ statuses not being maintained well. The author of this BIP feels that all of the aforementioned
     can be represented by _Abandoned_ without significantly impacting the information quality of the overview table.
@@ -598,7 +598,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     example, the content of BIP 2 appears to have been penned especially with fork proposals in mind. It seems clear
     that bitcoin development will evolve in many surprising ways in the future. Instead of mandating the effort of
     writing a new process document every time new situations arise, it seems preferable to allow the
-    process to adapt to the concerns of the future in specific aspects. Therefore, we define Process BIPs as living
+    process to adapt to the concerns of the future in specific aspects. Therefore, Process BIPs are defined as living
     documents that remain open to amendment. If a Process BIP requires large modifications or even a complete
     overhaul, a new BIP should be preferred.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
@@ -643,7 +643,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
 
     * Some BIPs, in particular those concerning the consensus layer, may include literal code in the BIP itself which
       may not be available under the license terms the author wishes to use for the BIP.
-    * We have been provided with a learned opinion indicating that software licenses are perfectly acceptable for
+    * The author of this BIP has been provided with a learned opinion indicating that software licenses are perfectly acceptable for
       licensing "human code" i.e. text as well as Markdown or Mediawiki code.
 
     Why are OPL and Public Domain no longer acceptable for new BIPs?
