@@ -118,7 +118,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
 ```
 
 __BIP__: BIP number, or "?" before a number was assigned. The proposal must not self-assign a BIP number. Numbers are
-assigned by BIP Editors.
+assigned solely by BIP Editors.
 
 __Layer__: The Layer header documents which layer of bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
