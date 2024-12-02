@@ -121,7 +121,7 @@ assigned by BIP Editors.
 __Layer__: The Layer header documents which layer of bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Title__: A short descriptive title. Strongly preferred to be less than 50 characters long.
+__Title__: A short descriptive title, must be less than 50 characters long.
 
 __Author__: The author header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
 This may or may not be the original authors of the BIP. The format of each author header value must be
