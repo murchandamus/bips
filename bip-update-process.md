@@ -344,7 +344,7 @@ around a BIP, but if that's not possible, rather than fighting over control, the
 BIP.
 
 If someone is interested in assuming ownership of a BIP, they should send an email asking to take over, addressed to the
-original authors and the BIP editors. If the authors do not respond to email in a timely manner, the BIP editors will
+original authors, the BIP Editors, and the Bitcoin Development Mailing List. If the authors do not respond in a timely manner (e.g. two weeks), the BIP editors will
 make a unilateral decision (which may be amended should the original authors make a delayed reappearance).
 
 ## BIP Licensing
