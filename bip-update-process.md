@@ -156,9 +156,9 @@ __Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that
 later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
 Replaces header containing the number of the BIP that it rendered obsolete.
 
-#### Auxiliary Files
+#### Auxiliary files
 
-BIPs may include auxiliary files such as diagrams. Auxiliary files must be included in a subdirectory for that BIP named
+BIPs may include auxiliary files such as diagrams and source code. Auxiliary files must be included in a subdirectory for that BIP named
 `bip-XXXX`, where "XXXX" is the BIP number zero-padded to four digits. File names in the subdirectory do not need to adhere to a specific
 convention.
 
@@ -171,8 +171,8 @@ convention.
   bitcoin community.
 * A **Process BIP** describes a process surrounding bitcoin, or proposes a change to (or an event in) a process. Process
   BIPs are like Specification BIPs, but apply to topics other than the bitcoin protocol and bitcoin implementations.
-  They often require community consensus, and users are typically not free to ignore them. Examples include procedures,
-  guidelines, and changes to the decision-making process.
+  They often require community consensus and are typically binding for the corresponding process. Examples include procedures,
+  guidelines, and changes to decision-making processes such as the BIP Process.
 
 ## Workflow
 
@@ -192,7 +192,8 @@ brought up to the relevant project directly.
 The authors should first research whether an idea has been considered before. Ideas in bitcoin are often rediscovered,
 and prior related discussions may inform the authors what issues may arise in its progression. After some investigation,
 the novelty of an idea can be tested by posting about it to the [Bitcoin Development Mailing
-List](https://groups.google.com/g/bitcoindev).
+List](https://groups.google.com/g/bitcoindev). Prior correspondence can be found in the
+[mailing list archive](https://gnusha.org/pi/bitcoindev/).
 
 Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the authors and
 the broader community time. Not only may someone point out relevant discussion topics that were missed in the authors’
@@ -229,14 +230,14 @@ assignment facilitates the distributed discussion of ideas, but before a proposa
 community, there is no need to refer to it by a number.
 
 Proposals are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
-unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility, or fail to specify
+unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility where necessary, or fail to specify
 the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the proposal may
 be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
 stopped to make progress may be closed.
 
-When the proposal has been assigned a number and is complete, a BIP editor will merge it to the BIP repository.
-After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the authors
-may continue to update the proposal as necessary in the git repository. Updates to merged documents by the authors should also be
+When the proposal has been assigned a number and is complete, a BIP editor will merge it into the BIP repository.
+After the BIP has been merged to the repository, its main focus should no longer shift significantly, even while the authors
+may continue to update the proposal as necessary. Updates to merged documents by the authors should also be
 submitted as pull requests.
 
 #### Proposed[^proposed]
@@ -246,7 +247,7 @@ reference implementation (if applicable), and is ready for adoption by the bitco
 status to Proposed to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
 authors must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
-omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is
+omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is being
 adopted.
 
 A Proposed BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
@@ -275,10 +276,10 @@ has rough consensus per the same criteria.[^living-documents]
 
 ##### Revisions
 
-To help implementers understand updates to a BIP, any changes after it has reached Proposed or Active are
+To help implementers understand updates to a BIP, any changes after it has reached Proposed are
 tracked with version, date, and description in a Changelog section. The version number is inspired by semantic
 versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
-that are incompatible with prior versions (which should be an exception after a BIP is Proposed, and not happen to a
+that are incompatible with prior versions (which should be rare after a BIP is Proposed, and only happen in well-grounded exceptional cases to a
 BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
 is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
 are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
@@ -300,8 +301,8 @@ to Abandoned unless the authors assert that they intend to continue work when co
 
 ##### Proposed ↦ Abandoned
 
-BIPs that had attained Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
-the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within 28 days. To successfully
+BIPs that had attained the Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
+the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within four weeks. To successfully
 oppose the move, at least one of the opposers must become BIP author for the BIP to remain Proposed. A BIP
 can also be moved to Abandoned by the community if it has had Proposed status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
