@@ -46,7 +46,7 @@ submitted by anyone.
 ### What is the significance of BIPs?
 
 BIPs do not define what bitcoin is: individual BIPs do not represent bitcoin community consensus or a general
-recommendation for implementation. A BIP represents a personal recommendation by the BIP author to the bitcoin
+recommendation for implementation. A BIP represents a personal recommendation by the BIP authors to the bitcoin
 community. Some BIPs may never be adopted. Some BIPs may be adopted by one or more bitcoin clients or other related
 software. Some may even end up changing the consensus rules that the bitcoin ecosystem jointly enforces.
 
@@ -104,7 +104,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   BIP: <BIP number, or "?" before being assigned>
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title, up to 50 characters>
-  Author: <list of authors’ names and email addresses>
+  Authors: <list of authors’ names and email addresses>
   Status: <Draft | Proposed | Active | Abandoned>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
@@ -125,8 +125,8 @@ definitions of the various BIP layers.
 
 __Title__: A short descriptive title, must be less than 50 characters long.
 
-__Author__: The author header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
-This may or may not be the original authors of the BIP. The format of each author header value must be
+__Authors__: The authors header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
+This may or may not be the original authors of the BIP. The format of each authors header value must be
 
     Random J. User <address@dom.ain>
 
@@ -176,53 +176,53 @@ convention.
 
 ## Workflow
 
-The BIP process starts with a new idea for bitcoin. Each potential BIP must have an author (or multiple
-authors)—someone who writes the BIP, gathers feedback, shepherds the discussion in the appropriate forums, and
-finally recommends a mature proposal to the community.
+The BIP process starts with a new idea for bitcoin. Each potential BIP must have authors
+—people who write the BIP, gather feedback, shepherd the discussion in the appropriate forums, and
+finally recommend a mature proposal to the community.
 
 ![Status Diagram](bip-update-process/status-diagram.png "Status Diagram for the BIP Workflow")
 
 ### Ideation
 
-After having an idea, the author should evaluate whether it meets the criteria to become a BIP, as described in
+After having an idea, the authors should evaluate whether it meets the criteria to become a BIP, as described in
 this BIP. The idea must be of interest to the broader community or relevant to multiple software projects. Small
 improvements and matters concerning only a single project usually do not require standardization and should instead be
 brought up to the relevant project directly.
 
-The author should first research whether an idea has been considered before. Ideas in bitcoin are often rediscovered,
-and prior related discussions may inform the author what issues may arise in its progression. After some investigation,
+The authors should first research whether an idea has been considered before. Ideas in bitcoin are often rediscovered,
+and prior related discussions may inform the authors what issues may arise in its progression. After some investigation,
 the novelty of an idea can be tested by posting about it to the [Bitcoin Development Mailing
 List](https://groups.google.com/g/bitcoindev).
 
-Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the author and
-the broader community time. Not only may someone point out relevant discussion topics that were missed in the author’s
+Vetting an idea publicly before investing the time to formally describe the idea is meant to save both the authors and
+the broader community time. Not only may someone point out relevant discussion topics that were missed in the authors’
 research, or that an idea is guaranteed to be rejected based on prior discussions, but describing an idea publicly also
-tests whether it is of interest to more people besides the author. After establishing that the idea may be of interest
-to the bitcoin community, the author should work on drafting a BIP.
+tests whether it is of interest to more people besides the authors. After establishing that the idea may be of interest
+to the bitcoin community, the authors should work on drafting a BIP.
 
 It is recommended that complicated proposals be split into separate BIPs that each focus on a specific component of the
 overall proposal.
 
 ### Progression through BIP Statuses
 
-As a first sketch of the proposal is taking shape, the author should present it to the [Bitcoin Development Mailing
-List](https://groups.google.com/g/bitcoindev). This gives the author a chance to collect initial feedback and address
-fundamental concerns. If the author wishes to work in public on the proposal at this stage, it is recommended that they
-open a pull request against their fork of the BIP repository instead of the main BIP repository.
+As a first sketch of the proposal is taking shape, the authors should present it to the [Bitcoin Development Mailing
+List](https://groups.google.com/g/bitcoindev). This gives the authors a chance to collect initial feedback and address
+fundamental concerns. If the authors wish to work in public on the proposal at this stage, it is recommended that they
+open a pull request against one of their forks of the BIP repository instead of the main BIP repository.
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
 specification above.
 
 #### Draft
 
-After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the author should
+After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the authors should
 open a pull request to the [BIP repository](https://github.com/bitcoin/bips). The document must adhere to the
-formatting requirements specified below and be named with a working title of the form "bip-title". The author must not
+formatting requirements specified below and be named with a working title of the form "bip-title". The authors must not
 self-assign a number to their proposal.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
 beyond the ideation phase, e.g. by generating substantial public discussion and commentary from diverse contributors, by
-independent bitcoin projects working on adopting the proposal, or by the author working for an extended period
+independent bitcoin projects working on adopting the proposal, or by the authors working for an extended period
 toward improving the proposal based on community feedback, will be assigned a number by a BIP editor. The BIP editors
 should delay number assignment when they perceive a proposal being met with lack of interest: number
 assignment facilitates the distributed discussion of ideas, but before a proposal garners some interest in the bitcoin
@@ -235,16 +235,16 @@ be improved to progress toward readiness. Pull requests that are proposing off-t
 stopped to make progress may be closed.
 
 When the proposal has been assigned a number and is complete, a BIP editor will merge it to the BIP repository.
-After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the author
-may continue to update the proposal as necessary in the git repository. Updates to merged documents by the author should also be
+After the BIP is merged to the repository, its main focus should no longer shift significantly, even while the authors
+may continue to update the proposal as necessary in the git repository. Updates to merged documents by the authors should also be
 submitted as pull requests.
 
 #### Proposed[^proposed]
 
-When the author is confident that their BIP represents a net improvement, is clear, comprehensive, has a working
+When the authors are confident that their BIP represents a net improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the bitcoin community, they may update the BIP’s
 status to Proposed to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
-author must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
+authors must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is
 adopted.
@@ -288,8 +288,8 @@ Preamble must indicate the latest version in the Revision header.
 
 #### Abandoned[^abandoned]
 
-A BIP that is _not in active use_, may be labeled Abandoned when its author has stopped working on it, no longer
-recommends the proposed approach, or no longer pursues adoption of their completed proposal. The reason for moving the
+A BIP that is _not in active use_, may be labeled Abandoned when its authors have stopped working on it, no longer
+recommend the proposed approach, or no longer pursue adoption of their completed proposal. The reason for moving the
 proposal to Abandoned should be recorded in the Changelog section in the same commit that updates the status.
 
 ##### Draft ↦ Abandoned
@@ -301,8 +301,8 @@ to Abandoned unless the authors assert that they intend to continue work when co
 ##### Proposed ↦ Abandoned
 
 BIPs that had attained Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
-the author’s announcement to the Bitcoin Development Mailing List after not being opposed within 28 days. To successfully
-oppose the move, at least one of the opposers must become the new BIP author for the BIP to remain Proposed. A BIP
+the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within 28 days. To successfully
+oppose the move, at least one of the opposers must become BIP author for the BIP to remain Proposed. A BIP
 can also be moved to Abandoned by the community if it has had Proposed status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
@@ -316,9 +316,9 @@ Status update by announcing it to the mailing list, and proceed if no objections
 
 The Abandoned status is generally intended to be a final status for BIPs.
 
-If a BIP Author decides to make another attempt at a previously abandoned proposal, it is generally recommended to
-create a new proposal. (Obviously, the author may borrow any amount of inspiration or actual text from any prior BIPs as
-licensing permits.) The author should take special care to address the issues that caused the prior attempt’s
+If BIP authors decide to make another attempt at a previously abandoned proposal, it is generally recommended to
+create a new proposal. (Obviously, the authors may borrow any amount of inspiration or actual text from any prior BIPs as
+licensing permits.) The authors should take special care to address the issues that caused the prior attempt’s
 abandonment. Even if the prior attempt had been assigned a number, the new BIP will generally be assigned a distinct
 number, unless it is obvious that the new attempt directly continues work on the same idea, in which case it may be
 reasonable to return the Abandoned BIP to Draft status.
@@ -335,17 +335,17 @@ file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
-It occasionally becomes necessary to transfer ownership of BIPs to a new author. In general, it would be preferable to retain
-the original author as a co-author of the transferred BIP, but that is up to the original author. A good reason to
-transfer ownership is because the original author no longer has the time or interest in updating it or following through
-with the BIP process, or has fallen off the face of the 'net (i.e. is unreachable or not responding to email). A bad
+It occasionally becomes necessary to transfer ownership of BIPs to new authors. In general, it would be preferable to retain
+the original authors as a co-authors of the transferred BIP, but that is up to the original authors. A good reason to
+transfer ownership is because the original authors no longer have the time or interest in updating it or following through
+with the BIP process, or have fallen off the face of the 'net (i.e. are unreachable or not responding to email). A bad
 reason to transfer ownership is because someone doesn't agree with the direction of the BIP. The community tries to build consensus
 around a BIP, but if that's not possible, rather than fighting over control, the dissenters should supply a competing
 BIP.
 
 If someone is interested in assuming ownership of a BIP, they should send an email asking to take over, addressed to the
-original author and the BIP editors. If the author does not respond to email in a timely manner, the BIP editors will
-make a unilateral decision (which may be amended should the original author make a delayed reappearance).
+original authors and the BIP editors. If the authors do not respond to email in a timely manner, the BIP editors will
+make a unilateral decision (which may be amended should the original authors make a delayed reappearance).
 
 ## BIP Licensing
 
@@ -435,7 +435,7 @@ Discussion in pull request comments can often be hard to follow as feedback gets
 when it is addressed by authors. Substantive discussion of ideas may be more accessible to a broader audience on the
 mailing list, where it is also more likely to be retained by the community memory.
 
-If the BIP needs more work, an editor should ensure that constructive, actionable feedback is provided to the author for
+If the BIP needs more work, an editor should ensure that constructive, actionable feedback is provided to the authors for
 revision. Once the BIP is ready it should be submitted as a "pull request" to the [BIPs
 repository](https://github.com/bitcoin/bips) where it may get further feedback.
 
@@ -464,16 +464,17 @@ changes, and update BIP headers as appropriate.
 
 BIP editors may also, at their option, unilaterally make and merge strictly editorial changes to BIPs, such as
 correcting misspellings, fixing broken links, etc. as long as they do not change the meaning or conflict with the
-original intent of the author. Such a change must be recorded in the Changelog if it’s noteworthy per the criteria
+original intent of the authors. Such a change must be recorded in the Changelog if it’s noteworthy per the criteria
 mentioned in the [Changelog](#changelog) section.
 
 ## Backward Compatibility
 
 ### Changes from BIP 2
 
-- Refer to the proponent of a BIP as "author" throughout the document.
+- Rename "Author" field to "Authors"
+- Refer to the proponents of a BIP as "authors" throughout the document.
 - The Standards Track type is superseded by the similar Specification type.[^standard-track]
-- Most sections are declared optional, it is up to the author and audience to judge whether all relevant topics have
+- Most sections are declared optional, it is up to the authors and audience to judge whether all relevant topics have
   been comprehensively addressed and which topics require a designated section to do so.
 - Layer header is optional for Specification BIPs or Informational BIPs, as it does not make sense for all BIPs.[^layer]
 - The comment system is abolished. Comments-URI and Comment-Summary headers are dropped from the preamble, Comments as
@@ -488,9 +489,9 @@ mentioned in the [Changelog](#changelog) section.
   - Final and Active are collapsed into Active.
   - The remaining statuses are Draft, Proposed, Active, and Abandoned.
 - BIPs no longer get rejected solely on grounds of not making progress for three years.[^rejection]
-- A BIP may be set to Abandoned by its Author, or by anyone if it appears to have stopped making progress for at least a
-  year and its Author does not assert that they are still working on it when contacted.
-- Many judgment calls previously required from BIP Editors are reassigned either to the BIP Author or the repository’s
+- A BIP may be set to Abandoned by its authors, or by anyone if it appears to have stopped making progress for at least a
+  year and its authors do not assert that they are still working on it when contacted.
+- Many judgment calls previously required from BIP Editors are reassigned either to the BIP authors or the repository’s
   audience.
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIP repository, except to determine
   whether a BIP is in active use for the move into or out of the Active status.
@@ -513,13 +514,17 @@ considered obsolete. Specification BIPs use the Layer header rules specified in 
 #### Comments
 
 The Comments-URI and Comment-Summary headers should be removed from all BIPs whose comment page in the wiki is empty.
-For existing BIPs whose comment page has content, BIP authors may keep both headers or remove both headers at their
+For existing BIPs whose comment page has content, BIP Authors may keep both headers or remove both headers at their
 discretion. It is recommended that existing wiki pages are not modified due to the activation of this BIP.
 
 #### Status field
 
 After the activation of this BIP, the Status fields of existing BIPs that do not fit the specification in
 this BIP are updated to the corresponding values prescribed in this BIP.
+
+#### Authors header
+
+The Author header is replaced with the Authors header in all BIPs.
 
 #### Discussion header
 
@@ -574,11 +579,11 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     Some reviewers of this BIP raised that in a process that outlines the workflow of Bitcoin Improvement _Proposals_
     using "Proposed" as a status field value was overloading the term: clearly _proposals_ are proposed at all stages of
     the process. However, it fits the situation best: it does not imply that it needs no further changes like
-    "complete", is less subjective than "ready", communicates that the author is putting it forth for the community to
+    "complete", is less subjective than "ready", communicates that the authors are putting it forth for the community to
     decide whether to adopt it.
 [^rejection]: **Why can proposals remain in Draft or Proposed indefinitely?**  
     The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
-    the author is still active in the community and still considers their idea worth pursuing. On the other hand,
+    the authors are still active in the community and still considers their idea worth pursuing. On the other hand,
     proposals that appear stale may be tested and cleared out after only one year which should achieve the main
     goal of the original rule.
 [^abandoned]: **Why was the Abandoned Status introduced?**  
@@ -644,7 +649,7 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
     Why are software licenses included?
 
     * Some BIPs, in particular those concerning the consensus layer, may include literal code in the BIP itself which
-      may not be available under the license terms the author wishes to use for the BIP.
+      may not be available under the license terms the authors wish to use for the BIP.
     * The author of this BIP has been provided with a learned opinion indicating that software licenses are perfectly acceptable for
       licensing "human code" i.e. text as well as Markdown or Mediawiki code.
 
