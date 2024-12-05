@@ -366,7 +366,7 @@ GNU All-Permissive License, and anyone may modify and redistribute the text prov
 *either* license. In other words, the license list is an "OR choice", not an "AND also" requirement.
 
 It is also possible to license source code differently from the BIP text. An optional License-Code header is placed
-after the License header. Again, each license must be referenced by their respective abbreviation given below.
+after the License header. Again, each license must be referenced by their respective SPDX License identifier shown below.
 
 For example, a preamble specifying the optional License-Code header might look like:
 
@@ -380,21 +380,17 @@ BIPs are not required to be *exclusively* licensed under approved terms, and may
 licenses *in addition to* at least one acceptable license. In this case, only the acceptable license(s) should be listed
 in the License and License-Code headers.
 
-It is recommended that BIPs that include literal code be dual-licensed under the same license terms as the project it
-modifies. For example, literal code intended for Bitcoin Core would ideally be dual-licensed under the MIT license terms
-as well as one of the above with the rest of the BIP text.
+It is recommended that BIPs that include literal code be licensed under the same license terms as the project it
+modifies. For example, literal code intended for Bitcoin Core would ideally be licensed (or dual-licensed) under the MIT license terms.
 
 In all cases, details of the licensing terms must be provided in the Copyright section of the BIP.
 
-#### Recommended licenses
+#### Acceptable licenses[^licenses]
 
 * BSD-2-Clause: [OSI-approved BSD 2-clause license](https://opensource.org/licenses/BSD-2-Clause)
 * BSD-3-Clause: [OSI-approved BSD 3-clause license](https://opensource.org/licenses/BSD-3-Clause)
 * CC0-1.0: [Creative Commons CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 * GNU-All-Permissive: [GNU All-Permissive License](http://www.gnu.org/prep/maintain/html_node/License-Notices-for-Other-Files.html)
-
-#### Not recommended, but acceptable licenses[^licenses]
-
 * CC-BY-4.0: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)
 * CC-BY-SA-4.0: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
 * MIT: [Expat/MIT/X11 license](https://opensource.org/licenses/MIT)
@@ -499,7 +495,8 @@ mentioned in the [Changelog](#changelog) section.
 - "Other Implementations" sections are discouraged.[^OtherImplementations]
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
   them with the BIP number.
-- The set of acceptable licenses was reduced to the ones previously used.
+- The set of acceptable licenses was reduced to the ones previously used, and the distinction between recommended and
+  acceptable licenses was dropped
 
 ### Updates to existing BIPs should this BIP be activated
 
