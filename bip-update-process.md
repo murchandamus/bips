@@ -368,6 +368,10 @@ GNU All-Permissive License, and anyone may modify and redistribute the text prov
 It is also possible to license source code differently from the BIP text. An optional License-Code header is placed
 after the License header. Again, each license must be referenced by their respective SPDX License identifier shown below.
 
+Each source code file or source directory should specify the license under which it is made available. It is recommended
+to make any test vectors available under CC0-1.0 or GNU-All-Permissive in addition to any other licenses to allow anyone
+to copy test vectors into their implementations without introducing license hindrances.
+
 For example, a preamble specifying the optional License-Code header might look like:
 
     License:         CC0-1.0
