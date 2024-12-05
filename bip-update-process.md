@@ -218,7 +218,7 @@ specification above.
 
 After fleshing out the proposal further and ensuring that it is of high quality and properly formatted, the authors should
 open a pull request to the [BIP repository](https://github.com/bitcoin/bips). The document must adhere to the
-formatting requirements specified below and be named with a working title of the form "bip-title". The authors must not
+formatting requirements specified below and should be provided as a file named with a working title of the form "bip-title.[md|mediawiki]". The authors must not
 self-assign a number to their proposal.
 
 BIPs that (1) adhere to the formatting requirements, (2) are on-topic, and (3) have materially progressed
