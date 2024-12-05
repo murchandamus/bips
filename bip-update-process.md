@@ -558,6 +558,11 @@ adapted from [BIP 2](BIP-0002.mediawiki) which was also licensed under the BSD
 - [RFC 2223: Instructions to RFC Authors](https://datatracker.ietf.org/doc/html/rfc2223)
 - [RFC 7282: On Consensus and Humming in the IETF](https://tools.ietf.org/html/rfc7282)
 
+## Acknowledgements
+
+We thank AJ Towns, Jon Atack, Jonas Nick, Larry Ruane, Pieter Wuille, Tim Ruffing, and others for their review,
+feedback, and helpful comments.
+
 ## Rationale
 
 [^capitalization]: **When is Bitcoin capitalized and when is it lowercased?**  
