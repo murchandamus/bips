@@ -106,7 +106,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   Title: <BIP title, up to 50 characters>
   Authors: <list of authors’ names and email addresses>
 * Proponents: <list of proponents’ names and email addresses>
-  Status: <Draft | Proposed | Active | Closed>
+  Status: <Draft | Proposed | Deployed | Closed>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
@@ -137,7 +137,7 @@ If there are multiple authors, each should be on a separate line following [RFC
 __Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
 of a BIP. The proponents header uses the same format as the Authors header.
 
-__Status__: The Status field can take the four values Draft, Proposed, Active, and Closed. The
+__Status__: The Status field can take the four values Draft, Proposed, Deployed, and Closed. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
@@ -254,14 +254,14 @@ BIP’s content should only be adjusted in minor details, e.g. to improve langua
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is being
 adopted.
 
-A Proposed BIP can only move to Active or Closed. Any necessary changes to the specification should be
+A Proposed BIP can only move to Deployed or Closed. Any necessary changes to the specification should be
 minimal and interfere as little as possible with ongoing adoption. If a Proposed BIP is found to need
 substantial functional changes, it may be preferable to move it to Closed[^new-BIP], and to start a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
-#### Active
+#### Deployed
 
-A settled[^settled] BIP may be advanced to Active upon request by
+A settled[^settled] BIP may be advanced to Deployed upon request by
 any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
 for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
@@ -271,11 +271,11 @@ separate BIP.[^new-BIP]
 
 ##### Process BIPs
 
-A Process BIP may change status from Proposed to Active when it achieves rough consensus on the mailing list. Such a
+A Process BIP may change status from Proposed to Deployed when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
-given in such circumstances. Active Process BIPs may be modified indefinitely as long as a proposed modification
+given in such circumstances. Deployed Process BIPs may be modified indefinitely as long as a proposed modification
 has rough consensus per the same criteria.[^living-documents]
 
 #### Closed[^closed]
@@ -299,9 +299,9 @@ can also be moved to Closed by the community if it has had Proposed status for a
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
 
-##### Active ↦ Closed
+##### Deployed ↦ Closed
 
-A BIP may evolve from Active to Closed when it is no longer in active use. Any community member may initiate this
+A BIP may evolve from Deployed to Closed when it is no longer in active use. Any community member may initiate this
 Status update by announcing it to the mailing list, and proceed if no objections have been raised for four weeks.
 
 ##### Closed ↦ Draft
@@ -321,7 +321,7 @@ To help implementers understand updates to a BIP, any changes after it has reach
 date, and description in a Changelog section. The version number is inspired by semantic versioning (MAJOR.MINOR.PATCH).
 The MAJOR version is incremented if changes to the BIP’s Specification are introduced that are incompatible with prior
 versions (which should be rare after a BIP is Proposed, and only happen in well-grounded exceptional cases to a BIP that
-is Active). The MINOR version is incremented whenever the specification of the BIP is changed or extended in a
+is Deployed). The MINOR version is incremented whenever the specification of the BIP is changed or extended in a
 backward-compatible way. The PATCH version is incremented for other changes to the BIP that are noteworthy (bug fixes,
 test vectors, important clarifications, etc.). The version should start at 1.0.0 with the date the BIP was promoted to
 Proposed. An example of a Changelog section can be seen in
@@ -491,15 +491,15 @@ mentioned in the [Changelog](#changelog) section.
 - The Status field is no longer modeled around the workflow of consensus changes.
 - Status field values are reduced from nine to four:
   - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Closed.[^closed]
-  - Final and Active are collapsed into Active.
-  - The remaining statuses are Draft, Proposed, Active, and Closed.
+  - Final and Active are collapsed into Deployed.
+  - The remaining statuses are Draft, Proposed, Deployed, and Closed.
 - BIPs no longer get rejected solely on grounds of not making progress for three years.[^rejection]
 - A BIP may be set to Closed by its authors, or by anyone if it appears to have stopped making progress for at least a
   year and its authors do not assert that they are still working on it when contacted.
 - Many judgment calls previously required from BIP Editors are reassigned either to the BIP authors or the repository’s
   audience.
 - Tracking of adoption, acceptance, and community consensus is out of scope for the BIP repository, except to determine
-  whether a BIP is in active use for the move into or out of the Active status.
+  whether a BIP is in active use for the move into or out of the Deployed status.
 - "Other Implementations" sections are discouraged.[^OtherImplementations]
 - Auxiliary files are only permitted in the corresponding BIP’s subdirectory, as no one used the alternative of labeling
   them with the BIP number.
@@ -624,13 +624,13 @@ feedback, and helpful comments.
     documents that remain open to amendment. If a Process BIP requires large modifications or even a complete
     overhaul, a new BIP should be preferred.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
-    After a Proposed or Active BIP has been deployed by one or more implementations, breaking changes to the
+    After a Proposed or Deployed BIP have been deployed by one or more implementations, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
-    specification of Proposed BIPs should be avoided, but Active BIPs should never be subject to breaking changes to
+    specification of Proposed BIPs should be avoided, but Deployed BIPs should never be subject to breaking changes to
     their specification.
 [^settled]: **What is meant by a BIP being settled?**  
-    Since Active BIPs should not be changed, a Proposed BIP should only be moved to Active after its Specification has
+    Since Deployed BIPs should not be changed, a Proposed BIP should only be moved to Deployed after its Specification has
     been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
