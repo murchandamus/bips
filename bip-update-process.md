@@ -105,6 +105,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title, up to 50 characters>
   Authors: <list of authors’ names and email addresses>
+* Proponents: <list of proponents’ names and email addresses>
   Status: <Draft | Proposed | Active | Abandoned>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
@@ -125,13 +126,16 @@ definitions of the various BIP layers.
 
 __Title__: A short descriptive title, must be less than 50 characters long.
 
-__Authors__: The authors header lists the names (or pseudonyms) and email addresses of the current proponents of the BIP.
-This may or may not be the original authors of the BIP. The format of each authors header value must be
+__Authors__: The authors header lists the names (or pseudonyms) and email addresses of all authors of the BIP.
+The format of each authors header value must be
 
     Random J. User <address@dom.ain>
 
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
+
+__Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
+of a BIP. The proponents header uses the same format as the Authors header.
 
 __Status__: The Status field can take the four values Draft, Proposed, Active, and Abandoned. The
 [Workflow](#workflow) section below describes the statuses in detail.
@@ -336,8 +340,8 @@ file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
-It occasionally becomes necessary to transfer ownership of BIPs to new authors. In general, it would be preferable to retain
-the original authors as a co-authors of the transferred BIP, but that is up to the original authors. A good reason to
+It occasionally becomes necessary to transfer ownership of BIPs to new Proponents. In general, it would be preferable to retain
+the original authors of the transferred BIP, but that is up to the original authors. A good reason to
 transfer ownership is because the original authors no longer have the time or interest in updating it or following through
 with the BIP process, or have fallen off the face of the 'net (i.e. are unreachable or not responding to email). A bad
 reason to transfer ownership is because someone doesn't agree with the direction of the BIP. The community tries to build consensus
@@ -473,7 +477,7 @@ mentioned in the [Changelog](#changelog) section.
 ### Changes from BIP 2
 
 - Rename "Author" field to "Authors"
-- Refer to the proponents of a BIP as "authors" throughout the document.
+- Refer to the proposers of a BIP as "authors" throughout the document.
 - The Standards Track type is superseded by the similar Specification type.[^standard-track]
 - Most sections are declared optional, it is up to the authors and audience to judge whether all relevant topics have
   been comprehensively addressed and which topics require a designated section to do so.
@@ -527,6 +531,10 @@ this BIP are updated to the corresponding values prescribed in this BIP.
 #### Authors header
 
 The Author header is replaced with the Authors header in all BIPs.
+
+#### Proponents header
+
+The optional Proponents header is introduced to distinguish the original authors of a BIP from later successors.
 
 #### Discussion header
 
