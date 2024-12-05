@@ -278,19 +278,6 @@ may be ignored/overruled by general agreement that they have been sufficiently a
 given in such circumstances. Active Process BIPs may be modified indefinitely as long as a proposed modification
 has rough consensus per the same criteria.[^living-documents]
 
-##### Revisions
-
-To help implementers understand updates to a BIP, any changes after it has reached Proposed are
-tracked with version, date, and description in a Changelog section. The version number is inspired by semantic
-versioning (MAJOR.MINOR.PATCH). The MAJOR version is incremented if changes to the BIP’s Specification are introduced
-that are incompatible with prior versions (which should be rare after a BIP is Proposed, and only happen in well-grounded exceptional cases to a
-BIP that is Active). The MINOR version is incremented whenever the specification of the BIP
-is changed or extended in a backward-compatible way. The PATCH version is incremented for other changes to the BIP that
-are noteworthy (bug fixes, test vectors, important clarifications, etc.). The version should start at 1.0.0 with the
-date the BIP was promoted to Proposed. An example of a Changelog section can be seen in
-[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
-Preamble must indicate the latest version in the Revision header.
-
 #### Abandoned[^abandoned]
 
 A BIP that is _not in active use_, may be labeled Abandoned when its authors have stopped working on it, no longer
@@ -327,6 +314,19 @@ licensing permits.) The authors should take special care to address the issues t
 abandonment. Even if the prior attempt had been assigned a number, the new BIP will generally be assigned a distinct
 number, unless it is obvious that the new attempt directly continues work on the same idea, in which case it may be
 reasonable to return the Abandoned BIP to Draft status.
+
+### Changelog
+
+To help implementers understand updates to a BIP, any changes after it has reached Proposed are tracked with version,
+date, and description in a Changelog section. The version number is inspired by semantic versioning (MAJOR.MINOR.PATCH).
+The MAJOR version is incremented if changes to the BIP’s Specification are introduced that are incompatible with prior
+versions (which should be rare after a BIP is Proposed, and only happen in well-grounded exceptional cases to a BIP that
+is Active). The MINOR version is incremented whenever the specification of the BIP is changed or extended in a
+backward-compatible way. The PATCH version is incremented for other changes to the BIP that are noteworthy (bug fixes,
+test vectors, important clarifications, etc.). The version should start at 1.0.0 with the date the BIP was promoted to
+Proposed. An example of a Changelog section can be seen in
+[BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
+Preamble must indicate the latest version in the Revision header.
 
 ### Adoption of proposals
 
