@@ -106,7 +106,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   Title: <BIP title, up to 50 characters>
   Authors: <list of authors’ names and email addresses>
 * Proponents: <list of proponents’ names and email addresses>
-  Status: <Draft | Proposed | Active | Abandoned>
+  Status: <Draft | Proposed | Active | Closed>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
@@ -137,7 +137,7 @@ If there are multiple authors, each should be on a separate line following [RFC
 __Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
 of a BIP. The proponents header uses the same format as the Authors header.
 
-__Status__: The Status field can take the four values Draft, Proposed, Active, and Abandoned. The
+__Status__: The Status field can take the four values Draft, Proposed, Active, and Closed. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
@@ -254,9 +254,9 @@ BIP’s content should only be adjusted in minor details, e.g. to improve langua
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is being
 adopted.
 
-A Proposed BIP can only move to Active or Abandoned. Any necessary changes to the specification should be
+A Proposed BIP can only move to Active or Closed. Any necessary changes to the specification should be
 minimal and interfere as little as possible with ongoing adoption. If a Proposed BIP is found to need
-substantial functional changes, it may be preferable to move it to Abandoned[^new-BIP], and to start a new BIP with the changes
+substantial functional changes, it may be preferable to move it to Closed[^new-BIP], and to start a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
 
 #### Active
@@ -278,42 +278,42 @@ may be ignored/overruled by general agreement that they have been sufficiently a
 given in such circumstances. Active Process BIPs may be modified indefinitely as long as a proposed modification
 has rough consensus per the same criteria.[^living-documents]
 
-#### Abandoned[^abandoned]
+#### Closed[^closed]
 
-A BIP that is _not in active use_, may be labeled Abandoned when its authors have stopped working on it, no longer
+A BIP that is _not in active use_, may be labeled Closed when its authors have stopped working on it, no longer
 recommend the proposed approach, or no longer pursue adoption of their completed proposal. The reason for moving the
-proposal to Abandoned should be recorded in the Changelog section in the same commit that updates the status.
+proposal to Closed should be recorded in the Changelog section in the same commit that updates the status.
 
-##### Draft ↦ Abandoned
+##### Draft ↦ Closed
 
-BIP authors may decide on their own to change their BIP’s status from Draft to Abandoned. If a Draft BIP stops making
+BIP authors may decide on their own to change their BIP’s status from Draft to Closed. If a Draft BIP stops making
 progress, sees accumulated feedback unaddressed, or otherwise appears stalled for a year, the community may move the BIP
-to Abandoned unless the authors assert that they intend to continue work when contacted.
+to Closed unless the authors assert that they intend to continue work when contacted.
 
-##### Proposed ↦ Abandoned
+##### Proposed ↦ Closed
 
-BIPs that had attained the Proposed status, i.e. that had been recommended for adoption, may be moved to Abandoned per
+BIPs that had attained the Proposed status, i.e. that had been recommended for adoption, may be moved to Closed per
 the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within four weeks. To successfully
 oppose the move, at least one of the opposers must become BIP author for the BIP to remain Proposed. A BIP
-can also be moved to Abandoned by the community if it has had Proposed status for at least one year, there is no
+can also be moved to Closed by the community if it has had Proposed status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
 
-##### Active ↦ Abandoned
+##### Active ↦ Closed
 
-A BIP may evolve from Active to Abandoned when it is no longer in active use. Any community member may initiate this
+A BIP may evolve from Active to Closed when it is no longer in active use. Any community member may initiate this
 Status update by announcing it to the mailing list, and proceed if no objections have been raised for four weeks.
 
-##### Abandoned ↦ Draft
+##### Closed ↦ Draft
 
-The Abandoned status is generally intended to be a final status for BIPs.
+The Closed status is generally intended to be a final status for BIPs.
 
-If BIP authors decide to make another attempt at a previously abandoned proposal, it is generally recommended to
+If BIP authors decide to make another attempt at a previously Closed BIP, it is generally recommended to
 create a new proposal. (Obviously, the authors may borrow any amount of inspiration or actual text from any prior BIPs as
 licensing permits.) The authors should take special care to address the issues that caused the prior attempt’s
 abandonment. Even if the prior attempt had been assigned a number, the new BIP will generally be assigned a distinct
 number, unless it is obvious that the new attempt directly continues work on the same idea, in which case it may be
-reasonable to return the Abandoned BIP to Draft status.
+reasonable to return the Closed BIP to Draft status.
 
 ### Changelog
 
@@ -490,11 +490,11 @@ mentioned in the [Changelog](#changelog) section.
 - The Post-History header is replaced with the Discussion header.
 - The Status field is no longer modeled around the workflow of consensus changes.
 - Status field values are reduced from nine to four:
-  - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Abandoned.[^abandoned]
+  - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Closed.[^closed]
   - Final and Active are collapsed into Active.
-  - The remaining statuses are Draft, Proposed, Active, and Abandoned.
+  - The remaining statuses are Draft, Proposed, Active, and Closed.
 - BIPs no longer get rejected solely on grounds of not making progress for three years.[^rejection]
-- A BIP may be set to Abandoned by its authors, or by anyone if it appears to have stopped making progress for at least a
+- A BIP may be set to Closed by its authors, or by anyone if it appears to have stopped making progress for at least a
   year and its authors do not assert that they are still working on it when contacted.
 - Many judgment calls previously required from BIP Editors are reassigned either to the BIP authors or the repository’s
   audience.
@@ -601,11 +601,11 @@ feedback, and helpful comments.
     the authors are still active in the community and still considers their idea worth pursuing. On the other hand,
     proposals that appear stale may be tested and cleared out after only one year which should achieve the main
     goal of the original rule.
-[^abandoned]: **Why was the Abandoned Status introduced?**  
+[^closed]: **Why was the Closed Status introduced?**  
     Previously, the process had Deferred, Obsolete, Rejected, Replaced, and Withdrawn which all meant some flavor of "work has
     stopped on this". The many statuses complicated the process, may have contributed to process fatigue, and may have
     resulted in BIPs’ statuses not being maintained well. The author of this BIP feels that all of the aforementioned
-    can be represented by _Abandoned_ without significantly impacting the information quality of the overview table.
+    can be represented by _Closed_ without significantly impacting the information quality of the overview table.
     Where the many Status variants provided minuscule additional information, the simplification is more valuable and
     the Changelog section now collects specific details.
 [^acceptance]: **Why does the BIP repository no longer track adoption?**  
