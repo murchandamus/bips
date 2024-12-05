@@ -63,9 +63,9 @@ providing a brief overview of BIP statuses (see [Workflow](#workflow) below) to 
 ### What is the scope of the BIP repository?
 
 The BIP repository is focused on information and technologies that aim to support and expand the utility of the bitcoin
-currency. Related topics that are of interest to the bitcoin community may be acceptable. Proposals that undermine the
-fundamental principle that bitcoin constitutes a peer-to-peer electronic cash system for the bitcoin currency are
-out-of-scope.
+currency. Related topics that are of interest to the bitcoin community may be acceptable. The scope of the BIP
+repository is limited to BIPs that do not oppose the fundamental principle that bitcoin constitutes a peer-to-peer
+electronic cash system for the bitcoin currency.
 
 ## BIP format and structure
 
