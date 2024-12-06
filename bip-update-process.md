@@ -90,9 +90,9 @@ a dedicated section.
 * Backward compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
   The BIP must explain how implementers/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors, and documentation must be
-  completed before the BIP can be given the status "Proposed". Any or all of these can be provided either in the BIP or as
+  finished before the BIP can be given the status "Complete". Any or all of these can be provided either in the BIP or as
   auxiliary files.
-* Changelog -- A section to track modifications to a BIP after reaching Proposed status.
+* Changelog -- A section to track modifications to a BIP after reaching Complete status.
 * Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
 
 #### BIP header preamble
@@ -106,7 +106,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
   Title: <BIP title, up to 50 characters>
   Authors: <list of authors’ names and email addresses>
 * Proponents: <list of proponents’ names and email addresses>
-  Status: <Draft | Proposed | Deployed | Closed>
+  Status: <Draft | Complete | Deployed | Closed>
   Type: <Specification | Informational | Process>
   Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
   License: <SPDX License Identifier of approved license(s)>
@@ -137,7 +137,7 @@ If there are multiple authors, each should be on a separate line following [RFC
 __Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
 of a BIP. The proponents header uses the same format as the Authors header.
 
-__Status__: The Status field can take the four values Draft, Proposed, Deployed, and Closed. The
+__Status__: The Status field can take the four values Draft, Complete, Deployed, and Closed. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
 __Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
@@ -235,29 +235,31 @@ community, there is no need to refer to it by a number.
 
 Proposals are also not ready for number assignment if they duplicate efforts, disregard formatting rules, are too
 unfocused or too broad, fail to provide proper motivation, fail to address backwards compatibility where necessary, or fail to specify
-the feature clearly and completely. Reviewers and BIP editors should provide guidance on how the proposal may
+the feature clearly and comprehensively. Reviewers and BIP editors should provide guidance on how the proposal may
 be improved to progress toward readiness. Pull requests that are proposing off-topic or unserious ideas or have
 stopped to make progress may be closed.
 
-When the proposal has been assigned a number and is complete, a BIP editor will merge it into the BIP repository.
+When the proposal is ready and has been assigned a number, a BIP editor will merge it into the BIP repository.
 After the BIP has been merged to the repository, its main focus should no longer shift significantly, even while the authors
 may continue to update the proposal as necessary. Updates to merged documents by the authors should also be
 submitted as pull requests.
 
-#### Proposed[^proposed]
+#### Complete[^complete]
 
-When the authors are confident that their BIP represents a net improvement, is clear, comprehensive, has a working
+When the authors have concluded all planned work on their proposal, are confident that their BIP represents a net improvement, is clear, comprehensive, has a working
 reference implementation (if applicable), and is ready for adoption by the bitcoin community, they may update the BIP’s
-status to Proposed to indicate that they recommend adoption or implementation of the BIP. Where applicable, the
+status to Complete to indicate that they recommend adoption, implementation, or deployment of the BIP. Where applicable, the
 authors must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
 omissions in the specification, add test vectors for edge cases, or address other issues discovered as the BIP is being
 adopted.
 
-A Proposed BIP can only move to Deployed or Closed. Any necessary changes to the specification should be
-minimal and interfere as little as possible with ongoing adoption. If a Proposed BIP is found to need
+A Complete BIP can only move to Deployed or Closed. Any necessary changes to the specification should be
+minimal and interfere as little as possible with ongoing adoption. If a Complete BIP is found to need
 substantial functional changes, it may be preferable to move it to Closed[^new-BIP], and to start a new BIP with the changes
 instead. Otherwise, it could cause confusion as to what being compliant with the BIP means.
+
+Complete is the final state for most successful Informational BIPs.
 
 #### Deployed
 
@@ -271,7 +273,7 @@ separate BIP.[^new-BIP]
 
 ##### Process BIPs
 
-A Process BIP may change status from Proposed to Deployed when it achieves rough consensus on the mailing list. Such a
+A Process BIP may change status from Complete to Deployed when it achieves rough consensus on the mailing list. Such a
 proposal is said to have rough consensus if it has been open to discussion on the development mailing list for at least
 one month, and no person maintains any unaddressed substantiated objections to it. Addressed or obstructive objections
 may be ignored/overruled by general agreement that they have been sufficiently addressed, but clear reasoning must be
@@ -281,7 +283,7 @@ has rough consensus per the same criteria.[^living-documents]
 #### Closed[^closed]
 
 A BIP that is _not in active use_, may be labeled Closed when its authors have stopped working on it, no longer
-recommend the proposed approach, or no longer pursue adoption of their completed proposal. The reason for moving the
+recommend the proposed approach, or no longer pursue adoption of their Complete proposal. The reason for moving the
 proposal to Closed should be recorded in the Changelog section in the same commit that updates the status.
 
 ##### Draft ↦ Closed
@@ -290,12 +292,12 @@ BIP authors may decide on their own to change their BIP’s status from Draft to
 progress, sees accumulated feedback unaddressed, or otherwise appears stalled for a year, the community may move the BIP
 to Closed unless the authors assert that they intend to continue work when contacted.
 
-##### Proposed ↦ Closed
+##### Complete ↦ Closed
 
-BIPs that had attained the Proposed status, i.e. that had been recommended for adoption, may be moved to Closed per
+BIPs that had attained the Complete status, i.e. that had been recommended for adoption, may be moved to Closed per
 the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within four weeks. To successfully
-oppose the move, at least one of the opposers must become BIP author for the BIP to remain Proposed. A BIP
-can also be moved to Closed by the community if it has had Proposed status for at least one year, there is no
+oppose the move, at least one of the opposers must become BIP author for the BIP to remain Complete. A BIP
+can also be moved to Closed by the community if it has had Complete status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
 
@@ -317,14 +319,14 @@ reasonable to return the Closed BIP to Draft status.
 
 ### Changelog
 
-To help implementers understand updates to a BIP, any changes after it has reached Proposed are tracked with version,
+To help implementers understand updates to a BIP, any changes after it has reached Complete are tracked with version,
 date, and description in a Changelog section. The version number is inspired by semantic versioning (MAJOR.MINOR.PATCH).
 The MAJOR version is incremented if changes to the BIP’s Specification are introduced that are incompatible with prior
-versions (which should be rare after a BIP is Proposed, and only happen in well-grounded exceptional cases to a BIP that
+versions (which should be rare after a BIP is Complete, and only happen in well-grounded exceptional cases to a BIP that
 is Deployed). The MINOR version is incremented whenever the specification of the BIP is changed or extended in a
 backward-compatible way. The PATCH version is incremented for other changes to the BIP that are noteworthy (bug fixes,
 test vectors, important clarifications, etc.). The version should start at 1.0.0 with the date the BIP was promoted to
-Proposed. An example of a Changelog section can be seen in
+Complete. An example of a Changelog section can be seen in
 [BIP 352](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki). After a BIP receives a Changelog, the
 Preamble must indicate the latest version in the Revision header.
 
@@ -333,7 +335,7 @@ Preamble must indicate the latest version in the Revision header.
 The BIP repository does not track the sentiment on proposals and does not track the adoption of BIPs beyond whether
 they are in active use or not. It is not intended for BIPs to list additional implementations beyond the reference
 implementation: the BIP repository is not a signpost where to find implementations.[^OtherImplementations] After a BIP
-is advanced to Proposed, it is up to the bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
+is advanced to Complete, it is up to the bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
 this BIP can be observed in [Bitcoin Core’s doc/bips.md
 file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
@@ -454,7 +456,7 @@ For each new BIP pull request that comes in, an editor checks the following:
 * Motivation, Rationale, and Backward Compatibility have been addressed
 * Specification provides sufficient detail for implementation
 * The defined Layer header must be correctly assigned for the given specification
-* The BIP is ready: it is complete, comprehensible, and technically feasible
+* The BIP is ready: it is comprehensible, technically feasible, and all aspects are addressed as necessary
 
 Editors do NOT evaluate whether the proposal is likely to be adopted.
 
@@ -492,7 +494,7 @@ mentioned in the [Changelog](#changelog) section.
 - Status field values are reduced from nine to four:
   - Deferred, Obsolete, Rejected, Replaced, and Withdrawn are gathered up into Closed.[^closed]
   - Final and Active are collapsed into Deployed.
-  - The remaining statuses are Draft, Proposed, Deployed, and Closed.
+  - The remaining statuses are Draft, Complete, Deployed, and Closed.
 - BIPs no longer get rejected solely on grounds of not making progress for three years.[^rejection]
 - A BIP may be set to Closed by its authors, or by anyone if it appears to have stopped making progress for at least a
   year and its authors do not assert that they are still working on it when contacted.
@@ -590,13 +592,12 @@ feedback, and helpful comments.
     This put an onus on the BIP authors, and frequently led to lingering pull requests due to the corresponding BIPs’
     authors no longer participating in the process. Many of these alternative implementations eventually became
     unmaintained or were low-quality to begin with. Therefore, "Other Implementations" sections are heavily discouraged.
-[^proposed]: **Why was the Proposed status retained?**  
-    Some reviewers of this BIP raised that in a process that outlines the workflow of Bitcoin Improvement _Proposals_
+[^complete]: **Why was the Proposed status renamed to Complete?**  
+    Some reviewers of this BIP raised that in a process which outlines the workflow of Bitcoin Improvement _Proposals_
     using "Proposed" as a status field value was overloading the term: clearly _proposals_ are proposed at all stages of
-    the process. However, it fits the situation best: it does not imply that it needs no further changes like
-    "complete", is less subjective than "ready", communicates that the authors are putting it forth for the community to
-    decide whether to adopt it.
-[^rejection]: **Why can proposals remain in Draft or Proposed indefinitely?**  
+    the process. "Complete" expresses that the authors have concluded planned work on all parts of the proposal and are
+    ready to recommend their BIP for adoption. The term "ready" was also considered, but considered too subjective.
+[^rejection]: **Why can proposals remain in Draft or Complete indefinitely?**  
     The automatic 3-year timeout of BIPs has led to some disagreement in the past and seems unnecessary in cases where
     the authors are still active in the community and still considers their idea worth pursuing. On the other hand,
     proposals that appear stale may be tested and cleared out after only one year which should achieve the main
@@ -624,13 +625,13 @@ feedback, and helpful comments.
     documents that remain open to amendment. If a Process BIP requires large modifications or even a complete
     overhaul, a new BIP should be preferred.
 [^new-BIP]: **Why should the specification of an implemented BIP no longer be changed?**  
-    After a Proposed or Deployed BIP have been deployed by one or more implementations, breaking changes to the
+    After a Complete or Deployed BIP have been deployed by one or more implementations, breaking changes to the
     specification could lead to a situation where multiple "compliant" implementations fail at
     being interoperable, because they implemented different versions of the same BIP. Therefore, even changes to the
-    specification of Proposed BIPs should be avoided, but Deployed BIPs should never be subject to breaking changes to
+    specification of Complete BIPs should be avoided, but Deployed BIPs should never be subject to breaking changes to
     their specification.
 [^settled]: **What is meant by a BIP being settled?**  
-    Since Deployed BIPs should not be changed, a Proposed BIP should only be moved to Deployed after its Specification has
+    Since Deployed BIPs should not be changed, a Complete BIP should only be moved to Deployed after its Specification has
     been put through its paces and changes to the BIP have stopped.
 [^licenses]: **Why were some licenses dropped?**  
     Among the 141 BIPs with licenses in the repository, only nine licenses have ever been used to license BIPs (although,
