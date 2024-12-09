@@ -101,30 +101,30 @@ Each BIP must begin with an [RFC 822-style header preamble](https://www.w3.org/P
 marked with "\*" are optional. All other headers are required. The overview is followed by an explanation for each header.
 
 ```
-  BIP: <BIP number, or "?" before being assigned>
+  BIP: <BIP number, or "?" before assignment>
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
-  Title: <BIP title, up to 50 characters>
-  Authors: <list of authors’ names and email addresses>
-* Proponents: <list of proponents’ names and email addresses>
+  Title: <BIP title (≤ 50 characters)>
+  Authors: <Authors’ names and email addresses>
+* Proponents: <Proponents’ names and email addresses>
   Status: <Draft | Complete | Deployed | Closed>
   Type: <Specification | Informational | Process>
-  Created: <date the BIP was assigned a number, in ISO 8601 (yyyy-mm-dd) format>
-  License: <SPDX License Identifier of approved license(s)>
-* License-Code: <SPDX License Identifier for Code under different approved license(s)>
-* Discussion: <list of link to mailing list threads, or other noteworthy discussions in "date: URL" format>
-* Revision: Version number of this document after a Changelog has been introduced
+  Created: <Date of number assignment (yyyy-mm-dd)>
+  License: <Identifier(s) of acceptable license(s)>
+* License-Code: <Identifier(s) for Code under different acceptable license(s)>
+* Discussion: <Mailing list thread(s), or other noteworthy discussion(s) in "date: URL" format>
+* Revision: <Version number (MAJOR.MINOR.PATCH)>
 * Requires: <BIP number(s)>
 * Replaces: <BIP number>
 * Superseded-By: <BIP number>
 ```
 
-__BIP__: BIP number, or "?" before a number was assigned. The proposal must not self-assign a BIP number. Numbers are
+__BIP__: The BIP number, or "?" before a number was assigned. A proposal must not self-assign a BIP number. Numbers are
 assigned solely by BIP Editors.
 
-__Layer__: The Layer header documents which layer of bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
+__Layer__: The layer of bitcoin the BIP applies to. See [BIP 123](bip-0123.mediawiki) for
 definitions of the various BIP layers.
 
-__Title__: A short descriptive title, must be less than 50 characters long.
+__Title__: A descriptive title of up to 50 characters.
 
 __Authors__: The authors header lists the names (or pseudonyms) and email addresses of all authors of the BIP.
 The format of each authors header value must be
@@ -137,28 +137,34 @@ If there are multiple authors, each should be on a separate line following [RFC
 __Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
 of a BIP. The proponents header uses the same format as the Authors header.
 
-__Status__: The Status field can take the four values Draft, Complete, Deployed, and Closed. The
+__Status__: The Status header takes one of the four values Draft, Complete, Deployed, and Closed. The
 [Workflow](#workflow) section below describes the statuses in detail.
 
-__Type__: The Type header specifies the type of BIP: Specification, Informational, or Process.
+__Type__: The Type header specifies the type of BIP: Specification, Informational, or Process. See the [BIP types](#bip-types) section below.
 
-__Created__: The Created header records the date that the BIP was assigned a number.
+__Created__: The Created header records the date that the BIP was assigned a number using ISO 8601 (yyyy-mm-dd) format.
 
-__License/License-Code__: See the [BIP Licensing](#bip-licensing) section below for a description of the
+__License/License-Code__: The SPDX License Identifier(s) of the acceptable licenses under which this BIP is available.
+See the [BIP Licensing](#bip-licensing) section below for a description of the
 acceptable Licenses and their SPDX License Identifiers.
+
+If there are multiple licenses, each should be on a separate line.
 
 __Discussion__: The Discussion header is used to point the audience to relevant discussions of the BIP, e.g. the mailing
 list thread in which the idea for the BIP was discussed, a thread where a new version of the BIP was presented, or
-relevant discussion threads on other platforms. Entries take the format "yyyy-mm-dd: link", e.g.
+relevant discussion threads on other platforms. Entries take the format "yyyy-mm-dd: URL", e.g.
 `2009-01-09: https://www.mail-archive.com/cryptography@metzdowd.com/msg10142.html`.
 
-__Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added.
+Multiple discussions should be listed on separate lines.
 
-__Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on.
+__Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added. The value is provided as MAJOR.MINOR.PATCH, e.g. "2.3.1".
 
-__Replaces/Superseded-By__: BIPs may have a Superseded-By header indicating that a BIP has been rendered obsolete by a
-later document; the value is the number of the BIP that replaces the current document. The newer BIP must have a
-Replaces header containing the number of the BIP that it rendered obsolete.
+__Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on. If multiple BIPs
+are required, they should be listed in one line separated by a comma and space (e.g. "1, 2").
+
+__Replaces/Superseded-By__: BIPs may have a Replaces header that contains the number of an older BIP it renders
+obsolete. A Superseded-By header indicates in turn that a BIP has been rendered obsolete by the later document with the
+provided number.
 
 #### Auxiliary files
 
