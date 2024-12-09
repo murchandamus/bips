@@ -23,7 +23,7 @@ evolving needs of the BIP process.
 BIP 2 is over eight years old and was written when different concerns were pressing to the bitcoin[^capitalization] community. The BIP
 process as defined by BIP 2 thus far seems to have been fashioned to facilitate the design and activation of protocol changes. In the past years, BIPs
 more often describe interoperable features beyond the base protocol. The community has had multiple debates about the role of
-BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goal. This
+BIP Editors, and some aspects of the process specified by BIP 2 that did not seem to achieve the intended goals. This
 proposal sunsets aspects of the BIP 2 process that did not achieve broad adoption, reduces the judgment calls assigned
 to the BIP Editor role, and delineates the BIP Types more expediently.
 
@@ -58,7 +58,7 @@ any BIP. The repository records all changes to each BIP transparently and allows
 complete copy of the archive.
 
 The BIP repository is not a tool to track acceptance[^acceptance], adoption, or community consensus on BIPs, beyond
-providing a brief overview of BIP statuses (see [Workflow](#workflow) below) to visitors.
+providing a brief overview of BIP statuses (see [Workflow](#workflow) below) to the audience.
 
 ### What is the scope of the BIP repository?
 
@@ -176,7 +176,7 @@ convention.
 
 * A **Specification BIP** defines a set of technical rules affecting the interoperability of implementations. The
   distinguishing feature of a Specification BIP is that it can be implemented, and implementations can be compliant with
-  it. Specification BIPs should come with or refer to a reference implementation.
+  it. Specification BIPs should come with or refer to a reference implementation and preferably provide test vectors.
 * An **Informational BIP** describes a bitcoin design issue, provides general guidelines or other information to the
   bitcoin community.
 * A **Process BIP** describes a process surrounding bitcoin, or proposes a change to (or an event in) a process. Process
