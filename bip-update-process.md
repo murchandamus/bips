@@ -87,13 +87,13 @@ a dedicated section.
 * Rationale -- The rationale fleshes out the specification by describing what motivated the design and why particular
   design decisions were made. It should describe related work and alternate designs that were considered. The rationale
   should record relevant objections or important concerns that were raised and addressed as this proposal was developed.
-* Backward compatibility -- BIPs must include a section describing any backwards incompatibilities and their severity.
-  The BIP must explain how implementers/users should deal with these incompatibilities.
+* Backward compatibility -- A section describing any backwards incompatibilities, their severity, and instructions
+  how implementers/users should deal with these incompatibilities.
 * Reference implementation -- Where applicable, a reference implementation, test vectors, and documentation must be
   finished before the BIP can be given the status "Complete". Any or all of these can be provided either in the BIP or as
-  auxiliary files.
+  auxiliary files (see [Auxiliary Files](#auxiliary-files)).
 * Changelog -- A section to track modifications to a BIP after reaching Complete status.
-* Copyright -- The BIP must be placed under an acceptable license ([see BIP Licensing below](#bip-licensing)).
+* Copyright -- The BIP must be placed under an acceptable license (see [BIP Licensing](#bip-licensing) below).
 
 #### BIP header preamble
 
