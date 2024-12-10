@@ -38,10 +38,21 @@ Some BIPs describe processes, implementation guidelines, best practices, inciden
 the bitcoin protocol, bitcoin’s peer-to-peer network, and bitcoin client software may be acceptable.
 
 BIPs are intended to be the primary mechanism for proposing new protocol features, coordinating client standards, and
-documenting design decisions that have gone into implementations. Each BIP is primarily owned by its authors and
-represents the authors’ opinion or recommendation. The authors are expected to foster discussion, address feedback and
-dissenting opinions, and, if applicable, advance the adoption of their proposal within the bitcoin community. BIPs may be
-submitted by anyone.
+documenting design decisions that have gone into implementations. BIPs may be submitted by anyone.
+
+### BIP Ownership
+
+Each BIP is primarily owned by its authors and represents the authors’ opinion or recommendation. The authors are
+expected to foster discussion, address feedback and dissenting opinions, and, if applicable, advance the adoption of
+their proposal within the bitcoin community.
+
+#### Authors and Shepherds
+
+Authors may want additional support with the BIP process after writing an initial draft. In that case, they may assign
+one or more Shepherds to their BIP. Shepherds are stand-in owners of a BIP who were not involved in writing the
+document. They support the authors in advancing the proposal, or act as point-of-contact for the BIP in absence of the
+authors. A shepherds may perform the role of an Author for any aspect of the BIP process unless overruled by an Author.
+Shepherds share ownership of the BIP at the discretion of the Authors.
 
 ### What is the significance of BIPs?
 
@@ -105,7 +116,7 @@ marked with "\*" are optional. All other headers are required. The overview is f
 * Layer: <Consensus (soft fork) | Consensus (hard fork) | Peer Services | API/RPC | Applications>
   Title: <BIP title (≤ 50 characters)>
   Authors: <Authors’ names and email addresses>
-* Proponents: <Proponents’ names and email addresses>
+* Shepherds: <Shepherds’ names and email addresses>
   Status: <Draft | Complete | Deployed | Closed>
   Type: <Specification | Informational | Process>
   Created: <Date of number assignment (yyyy-mm-dd)>
@@ -134,8 +145,9 @@ The format of each authors header value must be
 If there are multiple authors, each should be on a separate line following [RFC
 2822](https://datatracker.ietf.org/doc/html/rfc2822.html) continuation line conventions.
 
-__Proponents__: The proponents header lists additional owners of the BIP. Proponents stand-in for the original authors
-of a BIP. The proponents header uses the same format as the Authors header.
+__Shepherds__: The Shepherds header lists additional owners of the BIP. Shepherds stand-in for the original authors
+of a BIP. The Shepherds header uses the same format as the Authors header. See
+the [BIP Ownership](#bip-ownership) section above.
 
 __Status__: The Status header takes one of the four values Draft, Complete, Deployed, and Closed. The
 [Workflow](#workflow) section below describes the statuses in detail.
@@ -348,7 +360,7 @@ file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
 
 ### Transferring BIP Ownership
 
-It occasionally becomes necessary to transfer ownership of BIPs to new Proponents. In general, it would be preferable to retain
+It occasionally becomes necessary to transfer ownership of BIPs to new owners. In general, it would be preferable to retain
 the original authors of the transferred BIP, but that is up to the original authors. A good reason to
 transfer ownership is because the original authors no longer have the time or interest in updating it or following through
 with the BIP process, or have fallen off the face of the 'net (i.e. are unreachable or not responding to email). A bad
@@ -358,7 +370,7 @@ BIP.
 
 If someone is interested in assuming ownership of a BIP, they should send an email asking to take over, addressed to the
 original authors, the BIP Editors, and the Bitcoin Development Mailing List. If the authors do not respond in a timely manner (e.g. two weeks), the BIP editors will
-make a unilateral decision (which may be amended should the original authors make a delayed reappearance).
+make a unilateral decision whether to appoint the applicants as [Shepherds](#authors-and-shepherds) (which may be amended should the original authors make a delayed reappearance).
 
 ## BIP Licensing
 
@@ -540,9 +552,9 @@ this BIP are updated to the corresponding values prescribed in this BIP.
 
 The Author header is replaced with the Authors header in all BIPs.
 
-#### Proponents header
+#### Shepherds header
 
-The optional Proponents header is introduced to distinguish the original authors of a BIP from later successors.
+The optional Shepherds header is introduced to distinguish the original authors of a BIP from later successors.
 
 #### Discussion header
 
