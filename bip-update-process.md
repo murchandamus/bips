@@ -283,7 +283,7 @@ Complete is the final state for most successful Informational BIPs.
 
 A settled[^settled] BIP may be advanced to Deployed upon request by
 any community member with evidence that the idea described in the BIP is in active use. Such evidence includes
-for example: two or more projects having deployed support for the BIP in mainnet software releases, a soft fork
+for example: at least one project having deployed support for the BIP in mainnet software releases, a soft fork
 proposal’s activation criteria having been met on the network, or rough consensus for the BIP having been demonstrated.
 
 At that point, the BIP should be considered final and any breaking changes to the BIP should be proposed as a new
