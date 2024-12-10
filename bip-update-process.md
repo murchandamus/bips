@@ -389,12 +389,15 @@ In this case, the BIP text is fully licensed under both the Creative Commons CC0
 GNU All-Permissive License, and anyone may modify and redistribute the text provided they comply with the terms of
 *either* license. In other words, the license list is an "OR choice", not an "AND also" requirement.
 
-It is also possible to license source code differently from the BIP text. An optional License-Code header is placed
+It is also possible to license source code differently from the BIP text by including the optional License-Code header
 after the License header. Again, each license must be referenced by their respective SPDX License identifier shown below.
 
-Each source code file or source directory should specify the license under which it is made available. It is recommended
+Each source code file or source directory should specify the license under which it is made available as is common in
+software (e.g. with a license header or a LICENSE/COPYING file). It is recommended
 to make any test vectors available under CC0-1.0 or GNU-All-Permissive in addition to any other licenses to allow anyone
 to copy test vectors into their implementations without introducing license hindrances.
+Licenses listed in the License-Code header apply to all source directories, source code files, and test vectors
+provided with the BIP except those where a LICENSE file in a directory or the file header states otherwise.
 
 For example, a preamble specifying the optional License-Code header might look like:
 
