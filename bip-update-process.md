@@ -223,15 +223,15 @@ research, or that an idea is guaranteed to be rejected based on prior discussion
 tests whether it is of interest to more people besides the authors. After establishing that the idea may be of interest
 to the bitcoin community, the authors should work on drafting a BIP.
 
-It is recommended that complicated proposals be split into separate BIPs that each focus on a specific component of the
-overall proposal.
-
-### Progression through BIP Statuses
-
 As a first sketch of the proposal is taking shape, the authors should present it to the [Bitcoin Development Mailing
 List](https://groups.google.com/g/bitcoindev). This gives the authors a chance to collect initial feedback and address
 fundamental concerns. If the authors wish to work in public on the proposal at this stage, it is recommended that they
 open a pull request against one of their forks of the BIP repository instead of the main BIP repository.
+
+It is recommended that complicated proposals be split into separate BIPs that each focus on a specific component of the
+overall proposal.
+
+### Progression through BIP Statuses
 
 The following sections refer to BIP Status Field values. The BIP Status Field is defined in the Header Preamble
 specification above.
