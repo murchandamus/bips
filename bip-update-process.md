@@ -169,7 +169,7 @@ relevant discussion threads on other platforms. Entries take the format "yyyy-mm
 
 Multiple discussions should be listed on separate lines.
 
-__Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added. The value is provided as MAJOR.MINOR.PATCH, e.g. "2.3.1".
+__Revision__: The Revision header indicates the version of this BIP after a Changelog section has been added. The value is provided as MAJOR.MINOR.PATCH, e.g. "Revision: 2.3.1".
 
 __Requires__: BIPs may have a Requires header to indicate existing BIPs the new proposal depends on. If multiple BIPs
 are required, they should be listed in one line separated by a comma and space (e.g. "1, 2").
@@ -265,7 +265,7 @@ submitted as pull requests.
 #### Complete[^complete]
 
 When the authors have concluded all planned work on their proposal, are confident that their BIP represents a net improvement, is clear, comprehensive, has a working
-reference implementation (if applicable), and is ready for adoption by the bitcoin community, they may update the BIP’s
+reference implementation and test vectors (if applicable), and is ready for adoption by the bitcoin community, they may update the BIP’s
 status to Complete to indicate that they recommend adoption, implementation, or deployment of the BIP. Where applicable, the
 authors must ensure that any proposed specification is solid, not unduly complicated, and definitive. Subsequently, the
 BIP’s content should only be adjusted in minor details, e.g. to improve language, clarify ambiguities, backfill
@@ -314,7 +314,7 @@ to Closed unless the authors assert that they intend to continue work when conta
 
 BIPs that had attained the Complete status, i.e. that had been recommended for adoption, may be moved to Closed per
 the authors’ announcement to the Bitcoin Development Mailing List after not being opposed within four weeks. To successfully
-oppose the move, at least one of the opposers must become BIP author for the BIP to remain Complete. A BIP
+oppose the move, at least one of the opposers must volunteer to become the BIP’s author or shepherd for the BIP to remain Complete. A BIP
 can also be moved to Closed by the community if it has had Complete status for at least one year, there is no
 evidence of it being in active use, and its authors do not object or fail to respond, unless a new author volunteers
 within four weeks.
@@ -355,8 +355,8 @@ they are in active use or not. It is not intended for BIPs to list additional im
 implementation: the BIP repository is not a signpost where to find implementations.[^OtherImplementations] After a BIP
 is advanced to Complete, it is up to the bitcoin community to evaluate, adopt, ignore, or reject a BIP. Individual
 bitcoin projects are encouraged to publish a list of BIPs they implement. A good example of this at the time of writing
-this BIP can be observed in [Bitcoin Core’s doc/bips.md
-file](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md).
+this BIP can be observed in Bitcoin Core’s [doc/bips.md](https://github.com/bitcoin/bitcoin/blob/master/doc/bips.md)
+file.
 
 ### Transferring BIP Ownership
 
@@ -631,7 +631,7 @@ feedback, and helpful comments.
     Where the many Status variants provided minuscule additional information, the simplification is more valuable and
     the Changelog section now collects specific details.
 [^acceptance]: **Why does the BIP repository no longer track adoption?**  
-    BIP 2 made an attempt to gather community feedback into summaries in BIPs directly. Given the low adoption and
+    BIP 2 made an attempt to gather community feedback into comment summaries in BIPs directly. Given the low adoption and
     corresponding low information quality of the summaries that resulted from that feature, this BIP instead intends to
     leave the evaluation of BIPs to the audience.
 [^markdown]: **Which flavor of markdown is allowed?**  
