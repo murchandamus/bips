@@ -37,13 +37,13 @@ This BIP introduces a simple, systematic and explicit cost framework for evaluat
 
 Without an explicit and low limit on the size of stack operands, the bottleneck for script operations is based on the time taken to process the stack data it accesses (with the exception of signature operations).  The cost model uses the length of the stack inputs (or occasionally, outputs), hence the term "varops".
 
-- We assume that the manipulation of the stack vector itself (e.g. OP_DROP) is negligible (with the exception of OP_ROLL)
-- We assume that memory allocation and deallocation overhead is negligible.
-- We do not consider the cost of the script interpretation itself, which is necessarily limited by block size.
-- We assume implementations use simple linear arrays/vectors of contiguous memory.
-- We assume implementations use linear accesses to stack data (perhaps multiple times): random accesses would require an extension to the model.
-- We assume object size is limited to the entire transaction (4,000,000 bytes, worst-case).
-- Costs are based on the worst-case behavior of each opcode.
+* We assume that the manipulation of the stack vector itself (e.g. OP_DROP) is negligible (with the exception of OP_ROLL)
+* We assume that memory allocation and deallocation overhead is negligible.
+* We do not consider the cost of the script interpretation itself, which is necessarily limited by block size.
+* We assume implementations use simple linear arrays/vectors of contiguous memory.
+* We assume implementations use linear accesses to stack data (perhaps multiple times): random accesses would require an extension to the model.
+* We assume object size is limited to the entire transaction (4,000,000 bytes, worst-case).
+* Costs are based on the worst-case behavior of each opcode.
 
 The last two assumptions make a large difference in practice: normal usage on small, cache-hot objects is much faster than this model suggests.  But an implementation which is more efficient than the versions modeled does not introduce any problems (though a future soft-fork version may want to reflect this in reduced costings): only an implementation with a significantly worse worst-case behavior would be problematic.
 
@@ -60,8 +60,8 @@ The costs of opcodes were determined by benchmarking on a variety of platforms.
 As each block can contain 80,000 Schnorr signature checks, we used this as a reasonable upper bound for maximally slow block processing.
 
 To estimate a conservative maximum runtime for each opcode, we consider scripts with two constraints:
-1. the script size is limited by the existing weight limit of 4,000,000 units and
-2. the script can only consume the varops budget of a whole block: 10,000 * 4,000,000 (40b).
+# the script size is limited by the existing weight limit of 4,000,000 units and
+# the script can only consume the varops budget of a whole block: 10,000 * 4,000,000 (40b).
 
 The script is assumed to execute in a single thread and acts on initial stack elements that are not included in the limits for conservatism.
 
@@ -97,21 +97,21 @@ The raw benchmark data, analysis scripts, and visualized results are available a
 
 We divided operations into six speed categories:
 
-1. Signature operations.
-2. Hashing operations.
-3. OP_ROLL, which does a large-scale stack movement.
-4. Fast operations: comparing bytes, comparing bytes against zero, and zeroing bytes.  Empirically, these have been shown to be well-optimized.
-5. Copying bytes: slightly more expensive than fast operations due to memory allocation overhead.
-6. Everything else.
+# Signature operations.
+# Hashing operations.
+# OP_ROLL, which does a large-scale stack movement.
+# Fast operations: comparing bytes, comparing bytes against zero, and zeroing bytes.  Empirically, these have been shown to be well-optimized.
+# Copying bytes: slightly more expensive than fast operations due to memory allocation overhead.
+# Everything else.
 
 Each class then has the following costs.
 
-1. Signature operations cost 500,000 (10,000 * 50) units each, this resembles the cost of the existing sigops budget.
-2. Hashing costs 50 units per byte hashed.
-3. OP_ROLL costs an additional 48 units (24 bytes per std::vector * 2 units per byte) per stack entry moved (i.e. the value of its operand).
-4. Fast operations cost 2 units per byte output.
-5. Copying operations cost 3 units per byte output.
-6. Other operations cost 4 units per byte output.
+# Signature operations cost 500,000 (10,000 * 50) units each, this resembles the cost of the existing sigops budget.
+# Hashing costs 50 units per byte hashed.
+# OP_ROLL costs an additional 48 units (24 bytes per std::vector * 2 units per byte) per stack entry moved (i.e. the value of its operand).
+# Fast operations cost 2 units per byte output.
+# Copying operations cost 3 units per byte output.
+# Other operations cost 4 units per byte output.
 
 ===Variable Opcode Budget===
 
@@ -328,21 +328,22 @@ Work in progress:
 
 ==Changelog==
 
-0.1.0: 2025-09-27: first public posting
-0.2.0: 2025-02-21: increase in cost for hashing and copying based on benchmark results.
+- 0.2.0: 2026-02-21: increase in cost for hashing and copying based on benchmark results.
+- 0.1.0: 2025-09-27: first public posting
 
 ==Thanks==
 
 This BIP would not exist without the thoughtful contributions of coders who considered all the facets carefully and thoroughly, and also my inspirational wife Alex and my kids who have been tirelessly supportive of my esoteric-seeming endeavors such as this!
 
 In alphabetical order:
-- Anthony Towns
-- Brandon Black (aka Reardencode)
-- John Light
-- Jonas Nick
-- Rijndael (aka rot13maxi)
-- Steven Roose
-- FIXME: your name here!
+* Anthony Towns
+* Brandon Black (aka Reardencode)
+* John Light
+* Jonas Nick
+* Mark "Murch" Erhardt 
+* Rijndael (aka rot13maxi)
+* Steven Roose
+* FIXME: your name here!
 
 == Footnotes ==
 
