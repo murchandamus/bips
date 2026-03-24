@@ -528,6 +528,10 @@ Work in progress:
 
 	https://github.com/jmoik/bitcoin/tree/gsr
 
+==Changelog==
+
+- 0.1.0: 2025-09-27: first public posting
+
 ==Thanks==
 
 This BIP would not exist without the thoughtful contributions of coders who considered all the facets carefully and thoroughly, and also my inspirational wife Alex and my kids who have been tirelessly supportive of my esoteric-seeming endeavors such as this!
