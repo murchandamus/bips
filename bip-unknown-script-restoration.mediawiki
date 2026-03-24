@@ -10,6 +10,7 @@
   License: BSD-3-Clause
   Discussion: https://groups.google.com/g/bitcoindev/c/GisTcPb8Jco/m/8znWcWwKAQAJ
   Version: 0.1.0
+  Requires: Varops BIP
 </pre>
 
 ==Introduction==
@@ -122,65 +123,65 @@ Now:
 
 Fifteen opcodes that were removed in v0.3.1 are re-enabled in 0xC2 Tapscript.
 
-If there are fewer than the required number of stack elements, these opcodes fail validation.  Equivalently, a requirement to pop off the stack which cannot be satisfied causes the opcode to fail validation.
+If there are fewer than the required number of stack elements, these opcodes fail validation.  These are popped off the stack in right-to-left order, i.e. [A B] means pop B off the stack, then pop A off the stack.
 
 See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the annotations in the varops cost field.
 
 ====Splice Opcodes====
 
 {|
+! Mnemonic
 ! Opcode
-! Value
-! Required Stack Elements
+! Input Stack
+! Description
+! Definition
 ! Varops Cost
 ! Varops Reason
-! Definition
 |-
 |OP_CAT
 |126
-|2
-|(length(A) + length(B)) * 3
-|COPYING
+|[A B]
+|Append B to A
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Append B to A.
 # Push A onto the stack.
+|(length(A) + length(B)) * 3
+|COPYING
 |-
 |OP_SUBSTR
 |127
-|3
-|(length(LEN) + length(BEGIN)) * 2 + MIN(Value of LEN, MAX(length(A) - Value of BEGIN, 0)) * 3
-|LENGTHCONV + COPYING
+|[A BEGIN LEN]
+|Extract bytes BEGIN through BEGIN+LEN of A
 |
-# Pop LEN off the stack.
-# Pop BEGIN off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Remove BEGIN bytes from the front of A (all bytes if BEGIN is greater than length of A).
 # If length(A) is greater than value(LEN), truncate A to length value(LEN).
 # Push A onto the stack.
+|(length(LEN) + length(BEGIN)) * 2 + MIN(Value of LEN, MAX(length(A) - Value of BEGIN, 0)) * 3
+|LENGTHCONV + COPYING
 |-
 |OP_LEFT
 |128
-|2
-|length(OFFSET) * 2
-|LENGTHCONV
+|[A OFFSET]
+|Extract the left OFFSET bytes of A
 |
-# Pop OFFSET off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If length(A) is greater than value(OFFSET), truncate A to length value(OFFSET).
 # Push A onto the stack.
+|length(OFFSET) * 2
+|LENGTHCONV
 |-
 |OP_RIGHT
 |129
-|2
-|length(OFFSET) * 2 + value of OFFSET * 3
-|LENGTHCONV + COPYING
+|[A OFFSET]
+|Extract the right bytes of A, from OFFSET onwards
 |
-# Pop OFFSET off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If value(OFFSET) is less than length(A), copy value(OFFSET) bytes from offset length(A) - value(OFFSET) to offset 0 in A, and truncate A to length(A) - value(OFFSET).  Otherwise truncate A to length 0.
 # Push A onto the stack.
+|length(OFFSET) * 2 + value of OFFSET * 3
+|LENGTHCONV + COPYING
 |}
 
 =====Rationale=====
@@ -194,58 +195,60 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 ====Bit Operation Opcodes====
 
 {|
+! Mnemonic
 ! Opcode
-! Value
-! Required Stack Elements
+! Input Stack
+! Description
+! Definition
 ! Varops Cost
 ! Varops Reason
-! Definition
 |-
 |OP_INVERT
 |131
-|1
-|length(A) * 4
-|OTHER
+|[A]
+|Bitwise invert A
 |
-# Pop A off the stack.
+# Pop operands off the stack.
 # For each byte in A, replace it with that byte bitwise XOR 0xFF (i.e. invert the bits)
 # Push A onto the stack.
+|length(A) * 4
+|OTHER
 |-
 |OP_AND
 |132
-|2
-|(length(A) + length(B)) * 2
-|OTHER + ZEROING
+|[A B]
+|Binary AND of A and B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If B is longer than A, swap B and A.
 # For each byte in A (the longer operand): bitwise AND it with the equivalent byte in B (or 0 if past end of B)
 # Push A onto the stack.
+|(length(A) + length(B)) * 2
+|OTHER + ZEROING
 |-
 |OP_OR
 |133
-|2
-|MIN(length(A), length(B)) * 4
-|OTHER
+|[A B]
+|Binary OR of A and B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If B is longer than A, swap B and A.
 # For each byte in B (the shorter operand): bitwise OR it into the equivalent byte in A (altering A).
 # Push A onto the stack.
+|MIN(length(A), length(B)) * 4
+|OTHER
 |-
 |OP_XOR
 |134
-|2
-|MIN(length(A), length(B)) * 4
-|OTHER
+|[A B]
+|Binary exclusive-OR of A and B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If B is longer than A, swap B and A.
 # For each byte in B (the shorter operand): exclusive OR it into the equivalent byte in A (altering A).
 # Push A onto the stack.
+|MIN(length(A), length(B)) * 4
+|OTHER
 |}
 
 =====Rationale=====
@@ -257,38 +260,39 @@ OP_AND, OP_OR and OP_XOR are assumed to fold the results into the longer of the 
 Note that these are raw bitshifts, unlike the sign-preserving arithmetic shifts in Bitcoin v0.3.0, and as such they also do not truncate trailing zeroes from results: they are renamed OP_UPSHIFT (née OP_LSHIFT) and OP_DOWNSHIFT (née OP_RSHIFT).
 
 {|
+! Mnemonic
 ! Opcode
-! Value
-! Required Stack Elements
+! Input Stack
+! Description
+! Definition
 ! Varops Cost
 ! Varops Reason
-! Definition
 |-
 |OP_UPSHIFT
 |152
-|2
-|length(BITS) * 2 + (Value of BITS) / 8 * 2 + length(A) * 3.  If BITS % 8 != 0, add length(A) * 4
-|LENGTHCONV + ZEROING + COPYING. If BITS % 8 != 0, + OTHER.
+|[A BITS]
+|Move bits of A right by BITS (numerically increase)
 |
-# Pop BITS off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # If A shifted by value(BITS) would exceed the individual stack limit, fail.
 # If value(BITS) % 8 == 0: simply prepend value(BITS) / 8 zeroes to A.
 # Otherwise: prepend (value(BITS) / 8) + 1 zeroes to A, then shift A *down* (8 - (value(BITS) % 8)) bits.
 # Push A onto the stack.
+|length(BITS) * 2 + (Value of BITS) / 8 * 2 + length(A) * 3.  If BITS % 8 != 0, add length(A) * 4
+|LENGTHCONV + ZEROING + COPYING. If BITS % 8 != 0, + OTHER.
 |-
 |OP_DOWNSHIFT
 |153
-|2
-|length(BITS) * 2 + MAX((length(A) - (Value of BITS) / 8), 0) * 3
-|LENGTHCONV + COPYING
+|[A BITS]
+|Move bits of A left by BITS (numerically decrease)
 |
-# Pop BITS off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # For BITOFF from 0 to (length(A)-1) * 8 - value(BITS):
 ## Copy each bit in A from BITOFF + value(BITS) to BITOFF.
 # Truncate A to remove value(BITS) / 8 bytes from the end (or all bytes, if value(BITS) / 8 > length(A)).
 # Push A onto the stack.
+|length(BITS) * 2 + MAX((length(A) - (Value of BITS) / 8), 0) * 3
+|LENGTHCONV + COPYING
 |}
 
 =====Rationale=====
@@ -302,77 +306,80 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 ====Multiply and Divide Opcodes====
 
 {|
+! Mnemonic
 ! Opcode
-! Value
-! Required Stack Elements
+! Input Stack
+! Description
+! Definition
 ! Varops Cost
 ! Varops Reason
-! Definition
 |-
 |OP_2MUL
 |141
-|1
-|length(A) * 7
-|OTHER + COPYING
+|[A]
+|Multiply A by 2
 |
-# Pop A off the stack.
+# Pop operands off the stack.
 # Shift each byte in A 1 bit to the left (increasing values, equivalent to C's << operator), overflowing into the next byte.
 # If the final byte overflows, append a single 1 byte.
 # Otherwise, truncate A at the last non-zero byte.
 # Push A onto the stack.
+|length(A) * 7
+|OTHER + COPYING
 |-
 |OP_2DIV
 |142
-|1
-|length(A) * 4
-|OTHER
+|[A]
+|Divide A by 2
 |
-# Pop A off the stack.
+# Pop operands off the stack.
 # Shift each byte in A 1 bit to the right (decreasing values, equivalent to C's >> operator), taking the top bit from the next byte, and tracking the last non-zero value.
 # Truncate A at the last non-zero byte.
 # Push A onto the stack.
+|length(A) * 4
+|OTHER
 |-
 |OP_MUL
 |149
-|2
-|(length(A) + length(B)) * 3 + (length(A) + 7) / 8 * length(B) * 27  (BEWARE OVERFLOW)
-|See Appendix
+|[A B]
+|Multiply A by B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Calculate the varops cost of the operation: if it exceeds the remaining budget, fail.
 # Allocate an all-zero vector R of length equal to length(A) + length(B).
 # For each word in A, multiply it by B and add it into the vector R, offset by the word offset in A.
 # Truncate R at the last non-zero byte.
 # Push R onto the stack.
+|(length(A) + length(B)) * 3 + (length(A) + 7) / 8 * length(B) * 27  (BEWARE OVERFLOW)
+|See Appendix
 |-
 |OP_DIV
 |150
-|2
-|length(A) * 18 + length(B) * 4 + length(A)^2 * 2 / 3  (BEWARE OVERFLOW)
-|See Appendix
+|[A B]
+|Divide A by (non-zero) B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Calculate the varops cost of the operation: if it exceeds the remaining budget, fail.
 # If B is empty or all zeroes, fail.
 # Perform division as per Knuth's The Art of Computer Programming v2 page 272, Algorithm D "Division of non-negative integers".
 # Trim trailing zeroes off the quotient.
 # Push the quotient onto the stack.
+|length(A) * 18 + length(B) * 4 + length(A)^2 * 2 / 3  (BEWARE OVERFLOW)
+|See Appendix
 |-
 |OP_MOD
 |151
-|2
-|length(A) * 18 + length(B) * 4 + length(A)^2 * 2 / 3  (BEWARE OVERFLOW)
-|See Appendix
+|[A B]
+|Replace A with remainder when A divided by (non-zero) B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Calculate the varops cost of the operation: if it exceeds the remaining budget, fail.
 # If B is empty or all zeroes, fail.
 # Perform division as per Knuth's The Art of Computer Programming v2 page 272, Algorithm D "Division of non-negative integers".
 # Trim trailing zeroes off the remainder.
 # Push the remainder onto the stack.
+|length(A) * 18 + length(B) * 4 + length(A)^2 * 2 / 3  (BEWARE OVERFLOW)
+|See Appendix
 |}
 
 =====Rationale=====
@@ -390,57 +397,60 @@ OP_RIPEMD160 and OP_SHA1 are now defined to FAIL validation if their operands ex
 The opcodes OP_ADD, OP_SUB, OP_1ADD and OP_1SUB are redefined in 0xC2 Tapscript to operate on variable-length unsigned integers.  These always produce minimal values (no trailing zero bytes).
 
 {|
+! Mnemonic
 ! Opcode
-! Value
-! Required Stack Elements
+! Input Stack
+! Description
+! Definition
 ! Varops Cost
 ! Varops Reason
-! Definition
 |-
 |OP_ADD
 |147
-|2
-|MAX(length(A), length(B)) * 9
-|ARITH + COPYING
+|[A B]
+|Add A and B
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # Option 1: trim trailing zeroes off A and B.
 # If B is longer than A, swap A and B.
 # For each byte in B, add it and previous overflow into the equivalent byte in A, remembering next overflow.
 # If there was final overflow, append a 1 byte to A.
 # Option 2: If there was no final overflow, remember last non-zero byte written into A, and truncate A after that point.
 # Either Option 1 or Option 2 MUST be implemented.
+|MAX(length(A), length(B)) * 9
+|ARITH + COPYING
 |-
 |OP_1ADD
 |139
-|1
+|[A]
+|Add one to A
+|
+# Pop operands off the stack.
+# Let B = 1, and continue as OP_ADD.
 |MAX(1, length(A)) * 9
 |ARITH + COPYING
-|
-# Pop A off the stack.
-# Let B = 1, and continue as OP_ADD.
 |-
 |OP_SUB
 |148
-|2
-|MAX(length(A), length(B)) * 6
-|ARITH
+|[A B]
+|Subtract B from A where B is <= A
 |
-# Pop B off the stack.
-# Pop A off the stack.
+# Pop operands off the stack.
 # For each byte in B, subtract it and previous underflow from the equivalent byte in A, remembering next underflow.
 # If there was final underflow, fail validation.
 # Remember last non-zero byte written into A, and truncate A after that point.
+|MAX(length(A), length(B)) * 6
+|ARITH
 |-
 |OP_1SUB
 |140
-|1
+|[A]
+|Subtract 1 from (non-zero) A
+|
+# Pop operands off the stack.
+# Let B = 1, and continue as OP_SUB.
 |MAX(1, length(A)) * 6
 |ARITH
-|
-# Pop A off the stack.
-# Let B = 1, and continue as OP_SUB.
 |}
 
 ====Rationale====
