@@ -67,7 +67,7 @@ The script is assumed to execute in a single thread and acts on initial stack el
 
 Ideally, on each platform we tested, the worst case time for each opcode would be no worse than the Schnorr signature upper bound: i.e. the block would get no slower.  And while CHECKSIG can be batched and/or done in parallel, it also involves hashing, which is not taken into account here (the worst-case being significantly slower than the signature validations themselves).
 
-The signature cost is simply carried across from the existing [[bip-0342.mediawiki|BIP-342]] limit: 50 weight units allow you one signature.  Since each transaction gets varops budget for the entire transaction (not just the current input's witness), and each input has at least 40 bytes (160 weight), this is actually slightly more generous than the sigops budget (which was 50 + witness weight), but still limits the entire block to 80,000 signatures.
+The signature cost is simply carried across from the existing [[bip-0342.mediawiki|BIP-342]] limit: 50 weight units allow you one signature.  Since each transaction gets varops budget for the entire transaction (not just the current input's witness), and each input has at least 41 bytes (164 weight), this is actually slightly more generous than the sigops budget (which was 50 + witness weight), but still limits the entire block to 80,000 signatures.
 
 ===Benchmarks===
 
