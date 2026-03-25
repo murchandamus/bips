@@ -75,7 +75,7 @@ Negative numbers are not natively supported in 0xC2 Tapscript.  Arbitrary precis
 
 The restoration of bit operations means that the little-endianness of stack values is once more exposed to the Script author, if they mix them with arithmetic operations.  The restoration of arbitrary-length values additionally exposes the endianness to the implementation authors (who cannot simply load stack entries into registers), and requires explicit consideration when considering varops costs of operations.<ref>For example, removing trailing bytes from a stack element is almost free, whereas removing bytes from the front involves copying all remaining bytes.</ref>
 
-Note that only arithmetic operations (those which treat operands as numbers) normalize their results: bit and byte operations do not.<ref>Such non-arithmetic operations can used to operate on values such as preimages or (with introspection) parts of transactions, where truncation of zeros would be unexpected.  One could argue that even arithmetic operators should not normalize, but that would be a gratuitous and surprising change.  Note that "0 OP_ADD" can always be used to cheaply normalize the top stack element.</ref>  Thus operations such as "0 OP_ADD" and "2 OP_MUL" will never result in a top stack entry with a trailing zero byte, but "0 OP_OR" and "1 OP_UPSHIFT" may.<ref>The original Bitcoin implementation had a similar operational split, but OP_LSHIFT and OP_RSHIFT did normalize, which was almost a requirement given that they also preserved the sign of the shifted operand</ref>
+Note that only arithmetic operations (those which treat operands as numbers) normalize their results: bit and byte operations do not.<ref>Such non-arithmetic operations can be used to operate on values such as preimages or (with introspection) parts of transactions, where truncation of zeros would be unexpected.  One could argue that even arithmetic operators should not normalize, but that would be a gratuitous and surprising change.  Note that "0 OP_ADD" can always be used to cheaply normalize the top stack element.</ref>  Thus operations such as "0 OP_ADD" and "2 OP_MUL" will never result in a top stack entry with a trailing zero byte, but "0 OP_OR" and "1 OP_UPSHIFT" may.<ref>The original Bitcoin implementation had a similar operational split, but OP_LSHIFT and OP_RSHIFT did normalize, which was almost a requirement given that they also preserved the sign of the shifted operand</ref>
 
 To be explicit, the following operations are defined as arithmetic and will normalize their results:
 
@@ -178,7 +178,7 @@ See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the an
 |Extract the right bytes of A, from OFFSET onwards
 |
 # Pop operands off the stack.
-# If value(OFFSET) is less than length(A), copy value(OFFSET) bytes from offset length(A) - value(OFFSET) to offset 0 in A, and truncate A to length(A) - value(OFFSET).  Otherwise truncate A to length 0.
+# If value(OFFSET) is less than length(A), copy value(OFFSET) bytes from offset value(OFFSET) to offset 0 in A, and truncate A to length(A) - value(OFFSET).  Otherwise truncate A to length 0.
 # Push A onto the stack.
 |length(OFFSET) * 2 + value of OFFSET * 3
 |LENGTHCONV + COPYING
@@ -333,7 +333,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |Divide A by 2
 |
 # Pop operands off the stack.
-# Shift each byte in A 1 bit to the right (decreasing values, equivalent to C's >> operator), taking the top bit from the next byte, and tracking the last non-zero value.
+# Shift each byte in A 1 bit to the right (decreasing values, equivalent to C's >> operator), taking the next byte’s bottom bit as the value of the top bit, and tracking the last non-zero value.
 # Truncate A at the last non-zero byte.
 # Push A onto the stack.
 |length(A) * 4
@@ -558,7 +558,7 @@ In alphabetical order:
 
 ==Appendix A: Cost Model Calculations for Multiply and Divide==
 
-Multiplication and division require multiple passes over the operands, meaning a cost proportional to the square of the lengths involved, and the word size used for that iteration makes a difference.  We assume 8 bytes (64 bits) at a time are evaluated, and the ability to multiply two 64-bit numbers and receive a 128-bit result, and divide a 128-bit number by a 64-bit number to receive a 128 bit quotient and remainder.  This is true on modern 64-bit CPUs (sometimes using multiple instructions).
+Multiplication and division require multiple passes over the operands, meaning a cost proportional to the square of the lengths involved, and the word size used for that iteration makes a difference.  We assume 8 bytes (64 bits) at a time are evaluated, and the ability to multiply two 64-bit numbers and receive a 128-bit result, and divide a 128-bit number by a 64-bit number to receive a 128-bit quotient and remainder.  This is true on modern 64-bit CPUs (sometimes using multiple instructions).
 
 ===Multiplication Cost===
 
