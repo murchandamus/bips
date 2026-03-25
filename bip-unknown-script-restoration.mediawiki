@@ -211,7 +211,7 @@ annotations in the varops cost field.
 |-
 |OP_SUBSTR
 |127
-|<nowiki>[A BEGIN LEN]</nowiki>
+|<nowiki>[A BEGIN LEN]</nowiki>
 |Extract bytes BEGIN through BEGIN+LEN of A
 |
 # Pop operands off the stack.
