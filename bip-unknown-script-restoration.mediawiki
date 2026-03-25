@@ -253,7 +253,7 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 
 =====Rationale=====
 
-OP_AND, OP_OR and OP_XOR are assumed to fold the results into the longer of the two operands.  This is an OTHER operation (i.e. cost is 2 per byte), but OP_AND needs to do this until one operand is exhausted, and then zero the rest (ZEROING, cost 1 per byte).   OP_OR and OP_XOR can stop processing the operands as soon as the shorter operand is exhausted.
+OP_AND, OP_OR and OP_XOR are assumed to fold the results into the longer of the two operands.  This is an OTHER operation (i.e. cost is 4 per byte), but OP_AND needs to do this until one operand is exhausted, and then zero the rest (ZEROING, cost 2 per byte).   OP_OR and OP_XOR can stop processing the operands as soon as the shorter operand is exhausted.
 
 ====Bitshift Opcodes====
 
