@@ -113,17 +113,17 @@ In addition, the [[bip-0342.mediawiki#specification|BIP-342 success requirement]
 
 Previously:
 
-## If the execution results in anything but exactly one element on the stack which evaluates to true with <code>CastToBool()</code>, fail.
+``4. (ii) If the execution results in anything but exactly one element on the stack which evaluates to true with <code>CastToBool()</code>, fail.``
 
 Now:
 
-## If the execution results in anything but exactly one element on the stack which contains one or more non-zero bytes, fail.
+``4. (ii) If the execution results in anything but exactly one element on the stack which contains one or more non-zero bytes, fail.``
 
 ===Enabled Opcodes===
 
 Fifteen opcodes that were removed in v0.3.1 are re-enabled in 0xC2 Tapscript.
 
-If there are fewer than the required number of stack elements, these opcodes fail validation.  These are popped off the stack in right-to-left order, i.e. [A B] means pop B off the stack, then pop A off the stack.
+If there are fewer than the required number of stack elements, these opcodes fail validation.  These are popped off the stack in right-to-left order, i.e. <nowiki>[A B]</nowiki> means pop B off the stack, then pop A off the stack.
 
 See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the annotations in the varops cost field.
 
@@ -140,7 +140,7 @@ See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the an
 |-
 |OP_CAT
 |126
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Append B to A
 |
 # Pop operands off the stack.
@@ -151,7 +151,7 @@ See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the an
 |-
 |OP_SUBSTR
 |127
-|[A BEGIN LEN]
+|<nowiki>[A BEGIN LEN]</nowiki>
 |Extract bytes BEGIN through BEGIN+LEN of A
 |
 # Pop operands off the stack.
@@ -163,7 +163,7 @@ See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the an
 |-
 |OP_LEFT
 |128
-|[A OFFSET]
+|<nowiki>[A OFFSET]</nowiki>
 |Extract the left OFFSET bytes of A
 |
 # Pop operands off the stack.
@@ -174,7 +174,7 @@ See [[bip-unknown-varops-budget.mediawiki|BIP-varops]] for the meaning of the an
 |-
 |OP_RIGHT
 |129
-|[A OFFSET]
+|<nowiki>[A OFFSET]</nowiki>
 |Extract the right bytes of A, from OFFSET onwards
 |
 # Pop operands off the stack.
@@ -205,7 +205,7 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 |-
 |OP_INVERT
 |131
-|[A]
+|<nowiki>[A]</nowiki>
 |Bitwise invert A
 |
 # Pop operands off the stack.
@@ -216,7 +216,7 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 |-
 |OP_AND
 |132
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Binary AND of A and B
 |
 # Pop operands off the stack.
@@ -228,7 +228,7 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 |-
 |OP_OR
 |133
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Binary OR of A and B
 |
 # Pop operands off the stack.
@@ -240,7 +240,7 @@ OP_LEFT only needs to read its OFFSET operand (truncation is free), whereas OP_R
 |-
 |OP_XOR
 |134
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Binary exclusive-OR of A and B
 |
 # Pop operands off the stack.
@@ -270,7 +270,7 @@ Note that these are raw bitshifts, unlike the sign-preserving arithmetic shifts 
 |-
 |OP_UPSHIFT
 |152
-|[A BITS]
+|<nowiki>[A BITS]</nowiki>
 |Move bits of A right by BITS (numerically increase)
 |
 # Pop operands off the stack.
@@ -283,7 +283,7 @@ Note that these are raw bitshifts, unlike the sign-preserving arithmetic shifts 
 |-
 |OP_DOWNSHIFT
 |153
-|[A BITS]
+|<nowiki>[A BITS]</nowiki>
 |Move bits of A left by BITS (numerically decrease)
 |
 # Pop operands off the stack.
@@ -316,7 +316,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |-
 |OP_2MUL
 |141
-|[A]
+|<nowiki>[A]</nowiki>
 |Multiply A by 2
 |
 # Pop operands off the stack.
@@ -329,7 +329,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |-
 |OP_2DIV
 |142
-|[A]
+|<nowiki>[A]</nowiki>
 |Divide A by 2
 |
 # Pop operands off the stack.
@@ -341,7 +341,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |-
 |OP_MUL
 |149
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Multiply A by B
 |
 # Pop operands off the stack.
@@ -355,7 +355,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |-
 |OP_DIV
 |150
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Divide A by (non-zero) B
 |
 # Pop operands off the stack.
@@ -369,7 +369,7 @@ OP_UPSHIFT can produce huge results, and so must be checked for limits prior to 
 |-
 |OP_MOD
 |151
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Replace A with remainder when A divided by (non-zero) B
 |
 # Pop operands off the stack.
@@ -407,7 +407,7 @@ The opcodes OP_ADD, OP_SUB, OP_1ADD and OP_1SUB are redefined in 0xC2 Tapscript 
 |-
 |OP_ADD
 |147
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Add A and B
 |
 # Pop operands off the stack.
@@ -422,7 +422,7 @@ The opcodes OP_ADD, OP_SUB, OP_1ADD and OP_1SUB are redefined in 0xC2 Tapscript 
 |-
 |OP_1ADD
 |139
-|[A]
+|<nowiki>[A]</nowiki>
 |Add one to A
 |
 # Pop operands off the stack.
@@ -432,7 +432,7 @@ The opcodes OP_ADD, OP_SUB, OP_1ADD and OP_1SUB are redefined in 0xC2 Tapscript 
 |-
 |OP_SUB
 |148
-|[A B]
+|<nowiki>[A B]</nowiki>
 |Subtract B from A where B is <= A
 |
 # Pop operands off the stack.
@@ -444,7 +444,7 @@ The opcodes OP_ADD, OP_SUB, OP_1ADD and OP_1SUB are redefined in 0xC2 Tapscript 
 |-
 |OP_1SUB
 |140
-|[A]
+|<nowiki>[A]</nowiki>
 |Subtract 1 from (non-zero) A
 |
 # Pop operands off the stack.
