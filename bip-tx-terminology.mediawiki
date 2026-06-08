@@ -91,7 +91,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; lock time
 : [Component] Part of the transaction header. Lock time specifies a time (in blockheight or UNIX time) before which a transaction cannot be included in a block if any input’s sequence number indicates non-finality. The lock time can also indicate a relative spending lock in combination with <code>OP_CHECKSEQUENCEVERIFY</code>. Serialized as the four-byte <code>nLockTime</code> integer field.
-: Synonym: <code>nLockTime</code>
+: Synonym: <code>nLockTime</code>, <code>lock_time</code>
 
 ; marker
 : [Artifact] 1-byte serialization artifact indicating that a type of extended serialization is being used for this transaction. Must always be <code>00</code> (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]). (Note: Non-segwit nodes will only accept stripped segwit transactions, because the marker appears at the position where non-segwit nodes expect the input counter. The input counter may not be zero, so a complete (non-stripped) segwit transaction appears invalid to a non-segwit node.)
@@ -171,7 +171,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; transaction input list
 : [Concept] The enumeration of all transaction inputs of a transaction.
-: Synonym: inputs, <code>vin</code>, <code>tx_ins</code>
+: Synonym: inputs, <code>vin</code>, <code>txins</code>, <code>tx_ins</code>
 
 ; transaction output (TXO)
 : [Component] A transaction component that consists of an amount and an output script. Adds a new unspent transaction output (UTXO) to the UTXO set that is uniquely identified by an outpoint.
@@ -179,7 +179,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; transaction output list
 : [Concept] The enumeration of all transaction outputs of a transaction.
-: Synonym: outputs, <code>vout</code>, <code>tx_outs</code>
+: Synonym: outputs, <code>vout</code>, <code>txouts</code>, <code>tx_outs</code>
 
 ; unspent transaction output (UTXO)
 : [Concept] An entry in Bitcoin’s ledger of spendable funds, the UTXO set. UTXOs get created by transaction outputs and spent by transaction inputs. UTXOs are uniquely identified<ref>There have been two instances in which UTXOs with existing outpoints were recreated, see [[https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki|BIP30]]</ref> by an outpoint. The UTXO model with its uniquely-identifiable discrete portions of funds is instrumental to Bitcoin’s solution of the doublespend problem.
@@ -198,14 +198,14 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; witness structure
 : [Concept] The part of the serialized transaction that contains the witness stacks for each input. Transactions without segwit inputs are serialized without a witness structure.
-: Synonym: witness (underdefined without more context, as "witness" is used for both witness structure and witness stack including in BIP141)
+: Synonym: <code>script_witnesses</code> (BIP144), witness (BIP141, underdefined without more context, as "witness" is used for both witness structure and witness stack)
 
 ; witness script
 : [Component] A witness item that provides the condition script used to spend P2WSH outputs. Appears in the witness stack.
 
 ; witness stack
 : [Component] The pre-built stack of witness items that is consumed in validation of the input’s condition script. Witness stacks are not scripts, but may include witness items that are scripts. While there is a witness stack for each input, the witness stack is not part of the input. A witness stack can contain witness items that will not be added to the stack, such as the control block. The witness stack may contain condition scripts, specifically it will contain a witness script for P2WSH inputs, and a leaf script for a P2TR scriptpath spend. Every transaction input is accompanied by a witness stack, but the witness stack of non-segwit inputs is empty, i.e. consists just of the serialization artifact of a witness item count of 0.
-: Synonym: input witness, witness (underdefined without more context, as "witness" is used for both witness structure and witness stack including in BIP141)
+: Synonym: input witness, witness (underdefined without more context, as "witness" is used for both witness structure and witness stack including in BIP141), script witness (BIP144)
 
 ; witness transaction identifier (wtxid)
 : [Concept] Result of hashing a complete transaction including its witness structure. Used in transaction propagation and to construct a witness commitment.
