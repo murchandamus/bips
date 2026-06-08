@@ -149,6 +149,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 ; transaction header
 : [Concept] Collective term for the serialization artifacts and transaction fields that appear only once in the transaction serialization regardless of lengths of the input and output Lists: transaction version, marker (segwit only), flag (segwit only), input counter, output counter, and lock time.
 
+; transaction identifier (txid)
+: [Component] Identifies the transaction that created a TXO in an outpoint. Result of hashing a transaction without its witness structure. The txid is serialized in little-endian but displayed in big-endian.
+
 ; transaction input
 : [Component] An element of the transaction input list that consists of an outpoint, an input script, and a sequence. The outpoint identifies the TXO that is being spent. The input script can have various content depending on the type of output being spent. The input script has length 0 for native segwit inputs. In segwit transactions, every input must be accompanied by a witness stack. The witness stack is not part of the transaction input.
 : Synonym: input, <code>txin</code>
@@ -164,9 +167,6 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 ; transaction output list
 : [Concept] The enumeration of all transaction outputs of a transaction.
 : Synonym: outputs, <code>vout</code>, <code>tx_outs</code>
-
-; txid
-: [Component] Transaction identifier. Identifies the transaction that created a TXO in an outpoint. Result of hashing a transaction without its witness structure. The txid is serialized in little-endian but displayed in big-endian.
 
 ; unspent transaction output (UTXO)
 : [Concept] An entry in Bitcoin’s ledger of spendable funds, the UTXO set. UTXOs get created by transaction outputs and spent by transaction inputs. UTXOs are uniquely identified<ref>There have been two instances in which UTXOs with existing outpoints were recreated, see [[https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki|BIP30]]</ref> by an outpoint. The UTXO model with its uniquely-identifiable discrete portions of funds is instrumental to Bitcoin’s solution of the doublespend problem.
@@ -194,11 +194,11 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : [Component] The pre-built stack of witness items that is consumed in validation of the input’s condition script. Witness stacks are not scripts, but may include witness items that are scripts. While there is a witness stack for each input, the witness stack is not part of the input. A witness stack can contain witness items that will not be added to the stack, such as the control block. The witness stack may contain condition scripts, specifically it will contain a witness script for P2WSH inputs, and a leaf script for a P2TR scriptpath spend. Every transaction input is accompanied by a witness stack, but the witness stack of non-segwit inputs is empty, i.e. consists just of the serialization artifact of a witness item count of 0.
 : Synonym: input witness, witness
 
+; witness transaction identifier (wtxid)
+: [Concept] Result of hashing a complete transaction including its witness structure. Used in transaction propagation and to construct a witness commitment.
+
 ; witness version
 : [Component] The version of a witness program.
-
-; wtxid
-: [Concept] Witness transaction identifier. Result of hashing a complete transaction including its witness structure. Used in transaction propagation and to construct a witness commitment.
 
 ===Usage in context of TXO creation and spending===
 
@@ -275,14 +275,14 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, <code>CompactSize</code> here indicating 2 inputs, considered part of the transaction header
 *** First '''Input'''
 **** '''Outpoint'''
-***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b<ref group=footnotes>Txids are the result of hashing the content of a transaction. The result of a hash is a sequence of bytes. Hashes are defined by the standards as being big-endian and cryptography libraries deal with hashes in that form: Bitcoin also stores and transfers txids in big-endian. Bitcoin sometimes considers hashes to be little-endian integers instead of strings (in the context of block hashes and proof of work calculations), which is presumably why Bitcoin _displays_ hashes, including txids, in little-endian.</ref>.
+***** '''Transaction Identifier (txid)''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b<ref group=footnotes>Txids are the result of hashing the content of a transaction. The result of a hash is a sequence of bytes. Hashes are defined by the standards as being big-endian and cryptography libraries deal with hashes in that form: Bitcoin also stores and transfers txids in big-endian. Bitcoin sometimes considers hashes to be little-endian integers instead of strings (in the context of block hashes and proof of work calculations), which is presumably why Bitcoin _displays_ hashes, including txids, in little-endian.</ref>.
 ***** '''Output Index''' <code>00000000</code>: position of the TXO on transaction output list of e700b7b33…a4bbc07b
 **** '''Input Script'''
 ***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
 **** '''Sequence''' <code>feffffff</code>: transaction field encoding MAX-1, which indicates that the transaction uses lock time but does not signal replaceability
 *** Second '''Input'''
 **** '''Outpoint'''
-***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: indicating that the spent TXO was created by transaction e700b7b33…a4bbc07b
+***** '''Transaction Identifier (txid)''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: indicating that the spent TXO was created by transaction e700b7b33…a4bbc07b
 ***** '''Output Index''' <code>01000000</code>: the output position, the TXO was the second position on the transaction output list of e700…c07b
 **** '''Input Script'''
 ***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
