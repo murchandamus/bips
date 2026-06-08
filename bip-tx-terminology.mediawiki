@@ -114,7 +114,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; redeem script
 : [Component] The condition script used in spending P2SH outputs. Is provided in the input script along with script arguments to satisfy it. The input script of wrapped segwit inputs is not a redeem script but a witness program.
-: Synonyms: `redeemScript`, redemption script
+: Synonyms: <code>redeemScript</code>, redemption script
 
 ; script arguments
 : [Concept] Arguments presented to satisfy a condition script, e.g. signatures and public keys.
