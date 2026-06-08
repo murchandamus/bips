@@ -128,6 +128,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 ; script tree
 : [Concept] The Merkle tree composed from the collection of leaf scripts committed to by a P2TR output.
 
+; <code>scriptCode</code>
+: [Concept] A value calculated from the input script and output script excluding malleable elements that is used to commit to an input in the transaction data hashed to create the message that is signed by a signature.
+
 ; <code>scriptPubKey</code>
 : See '''output script'''.
 
