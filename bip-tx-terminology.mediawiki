@@ -30,9 +30,9 @@ The hope is that this terminology could be used in technical writing about Bitco
 ===Objects and their Serialization===
 
 We treat the objects of the Bitcoin protocol (e.g. transactions, blocks) as distinct from their serialization.
-We distinguish concrete properties of transactions such as fields and scripts (labeled [Component]) from serialization artifacts (labeled [Artifact]).
+We distinguish parts and concrete properties of transactions (labeled [Component]) such as fields and scripts as well as composites thereof from serialization artifacts (labeled [Artifact]) which only appear in the serialization format.
 For example, version and lock time are fields that can be set during transaction creation and therefore components of a transaction, while the input counter is a serialization artifact resulting from how the input list of the transaction is represented in the transfer format.
-Likewise, the input script is a transaction component, but the length indicator of the input script is a serialization artifact.
+Likewise, the input script is a transaction component, but the length indicator of the input script is a serialization artifact, and a witness stack is a component, but the marker and flag appearing in a segwit transaction’s header are serialization artifacts.
 
 We also introduce some umbrella terms, concepts, and ideas that are useful to describe aspects of transactions (labeled [Concept]).
 
@@ -250,7 +250,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, <code>CompactSize</code> here indicating 2 inputs, considered part of the transaction header
 *** First '''Input'''
 **** '''Outpoint'''
-***** '''Transaction Identifier (txid)''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b<ref group=footnotes>Txids are the result of hashing the content of a transaction. The result of a hash is a sequence of bytes. Hashes are defined by the standards as being big-endian and cryptography libraries deal with hashes in that form: Bitcoin also stores and transfers txids in big-endian. Bitcoin sometimes considers hashes to be little-endian integers instead of strings (in the context of block hashes and proof of work calculations), which is presumably why Bitcoin _displays_ hashes, including txids, in little-endian.</ref>.
+***** '''Transaction Identifier (txid)''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b<ref>Txids are the result of hashing the content of a transaction. The result of a hash is a sequence of bytes. Hashes are defined by the standards as being big-endian and cryptography libraries deal with hashes in that form: Bitcoin also stores and transfers txids in big-endian. Bitcoin sometimes considers hashes to be little-endian integers instead of strings (in the context of block hashes and proof of work calculations), which is presumably why Bitcoin _displays_ hashes, including txids, in little-endian.</ref>.
 ***** '''Output Index''' <code>00000000</code>: position of the TXO on transaction output list of e700b7b33…a4bbc07b
 **** '''Input Script'''
 ***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
@@ -275,7 +275,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** First '''Witness Stack''': The witness data corresponding to the first input. (Note that the count of witness stacks is implicitly provided by the input counter, since each input must have a witness stack.)
 **** Item count for the first '''Witness Stack''' <code>01</code>: serialization artifact. A single witness item indicates a keypath spend.
 **** First '''Witness Item'''
-***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a Schnorr signature<ref group="footnotes">Note that the ECDSA signatures used by pre-taproot inputs are larger and vary in size. Only the Schnorr signatures introduced with Tapscript have always a fixed size of 64 bytes (or 65 bytes with a non-default sighash flag)</ref>
+***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a Schnorr signature<ref>Note that the ECDSA signatures used by pre-taproot inputs are larger and vary in size. Only the Schnorr signatures introduced with Tapscript have always a fixed size of 64 bytes (or 65 bytes with a non-default sighash flag)</ref>
 ***** '''Signature''' <code>134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c</code>: The first witness item here is a script argument for the corresponding condition script. In this case, we see the signature corresponding to the P2TR keypath spend.
 *** Second '''Witness Stack''': The witness data corresponding to the second input.
 **** Item count for the second '''Witness Stack''' <code>03</code>: serialization artifact, two or more Witness Items indicate a scriptpath spend.
@@ -335,3 +335,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 
 Thanks to Pieter Wuille for the discussions that led to this proposal.
 Thanks to Otto Allmendinger, Matthew Zipkin, Larry Ruane, Stacie Waleyko, Dave Harding, Lloyd Fournier, Vojtěch Strnad, Armin Sabouri, and Kostas Karasavvas for feedback on this proposal.
+
+==Notes==
+
+<references/>
