@@ -6,7 +6,7 @@
   Type: Informational
   Assigned: ?
   License: BSD-3-Clause
-  Discussion: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
+  Discussion: 2023-04-05: https://gnusha.org/pi/bitcoindev/6bb373cc-bee0-13a3-a510-b65d4faa867f@murch.one/#t
 </pre>
 
 == Introduction==
