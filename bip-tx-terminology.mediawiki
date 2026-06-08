@@ -50,6 +50,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 ; bare output script
 : [Component] A condition script that is directly defined in the output script field. Used to specify all types of bare outputs including Pay to Pubkey (P2PK), Pay to Public Key Hash (P2PKH), Pay to Multisig (P2MS) outputs, and arbitrary scripts.
 
+; coinbase
+: [Component] The coinbase field takes the place of the input script in a coinbase transaction (named after this field), since coinbase transactions do not spend a transaction output.
+
 ; <code>CompactSize</code>
 : [Concept] A variable-length integer encoding used in the transaction serialization to express input and output count.
 : Synonym: <code>VarInt</code> (do not use, see [[compactsize|Rationale]])
@@ -111,6 +114,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; redeem script
 : [Component] The condition script used in spending P2SH outputs. Is provided in the input script along with script arguments to satisfy it. The input script of wrapped segwit inputs is not a redeem script but a witness program.
+: Synonyms: `redeemScript`, redemption script
 
 ; script arguments
 : [Concept] Arguments presented to satisfy a condition script, e.g. signatures and public keys.
