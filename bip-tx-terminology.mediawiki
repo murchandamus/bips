@@ -1,14 +1,12 @@
 <pre>
   BIP: <?>
   Title: <Terminology for Transaction Components>
-  Author: Mark Erhardt <murch@murch.one>
-  Comments-Summary: No comments yet
-  Comments-URI: <links to wiki page for comments>
+  Authors: Mark Erhardt <murch@murch.one>
   Status: Draft
   Type: Informational
-  Created: 2022-01-13
+  Assigned: ?
   License: BSD-3-Clause
-  Post-History: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
+  Discussion: <dates of postings to bitcoin mailing list, or link to thread in mailing list archive>
 </pre>
 
 == Introduction==
