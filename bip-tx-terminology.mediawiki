@@ -189,14 +189,14 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; witness structure
 : [Concept] The part of the serialized transaction that contains the witness stacks for each input. Transactions without segwit inputs are serialized without a witness structure.
-: Synonym: witness
+: Synonym: witness (underdefined, as "witness" is often used for both witness structure and witness stack)
 
 ; witness script
 : [Component] A witness item that provides the condition script used to spend P2WSH outputs. Appears in the witness stack.
 
 ; witness stack
 : [Component] The pre-built stack of witness items that is consumed in validation of the input’s condition script. Witness stacks are not scripts, but may include witness items that are scripts. While there is a witness stack for each input, the witness stack is not part of the input. A witness stack can contain witness items that will not be added to the stack, such as the control block. The witness stack may contain condition scripts, specifically it will contain a witness script for P2WSH inputs, and a leaf script for a P2TR scriptpath spend. Every transaction input is accompanied by a witness stack, but the witness stack of non-segwit inputs is empty, i.e. consists just of the serialization artifact of a witness item count of 0.
-: Synonym: input witness, witness
+: Synonym: input witness, witness (underdefined, as "witness" is often used for both witness structure and witness stack)
 
 ; witness transaction identifier (wtxid)
 : [Concept] Result of hashing a complete transaction including its witness structure. Used in transaction propagation and to construct a witness commitment.
