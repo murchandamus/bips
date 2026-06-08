@@ -318,7 +318,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 ***** Length of the third '''Witness Item''' <code>41</code>: serialization artifact, the length indicates the depth of the control block and how many hashing partners are necessary to prove the membership of the leaf script
 ***** '''Leaf Version''' <code>c0</code>: indicates the version of Script used in this leaf script, here Tapscript
 ***** '''Inner key''' <code>d9dfdf0fe3c83e9870095d67fff59a8056dad28c6dfb944bb71cf64b90ace9a7</code>: The taproot internal key which was tweaked with the Merkle root of the script tree to result in the public key committed to in the TXO’s witness program being spent
-***** '''Tap Branch''' <code>776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45b</code>: The hashing partners necessary to connect the leaf script to the Merkle root of the script tree.
+***** '''Taproot Branch''' <code>776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45b</code>: The hashing partners necessary to connect the leaf script to the Merkle root of the script tree.
 ** '''Transaction Header''' (cont.)
 *** '''Lock Time''' <code>ffd30a00</code>: the 4-byte lock time field, little-endian for 709631
 
