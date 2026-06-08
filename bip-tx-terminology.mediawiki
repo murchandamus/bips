@@ -275,7 +275,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** Length of '''Transaction Input List''' <code>02</code>: serialization artifact, <code>CompactSize</code> here indicating 2 inputs, considered part of the transaction header
 *** First '''Input'''
 **** '''Outpoint'''
-***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: little-endian txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b.
+***** '''txid''' <code>7bc0bba407bc67178f100e352bf6e047fae4cbf960d783586cb5e430b3b700e7</code>: txhash indicating that the spent TXO was created by the transaction e700b7b330e4b56c5883d760f9cbe4fa47e0f62b350e108f1767bc07a4bbc07b<ref group=footnotes>Txids are the result of hashing the content of a transaction. The result of a hash is a sequence of bytes. Hashes are defined by the standards as being big-endian and cryptography libraries deal with hashes in that form: Bitcoin also stores and transfers txids in big-endian. Bitcoin sometimes considers hashes to be little-endian integers instead of strings (in the context of block hashes and proof of work calculations), which is presumably why Bitcoin _displays_ hashes, including txids, in little-endian.</ref>.
 ***** '''Output Index''' <code>00000000</code>: position of the TXO on transaction output list of e700b7b33…a4bbc07b
 **** '''Input Script'''
 ***** Length of '''Input Script''' <code>00</code>: serialization artifact indicating the length of the input script. Since this input spends a native segwit output, the input script is empty (length 0).
@@ -300,7 +300,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** First '''Witness Stack''': The witness data corresponding to the first input. (Note that the count of witness stacks is implicitly provided by the input counter, since each input must have a witness stack.)
 **** Item count for the first '''Witness Stack''' <code>01</code>: serialization artifact. A single witness item indicates a keypath spend.
 **** First '''Witness Item'''
-***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a signature
+***** Length of the first '''Witness Item''' <code>40</code>: serialization artifact, 64 bytes indicate a Schnorr signature<ref group="footnotes">Note that the ECDSA signatures used by pre-taproot inputs are larger and vary in size. Only the Schnorr signatures introduced with Tapscript have always a fixed size of 64 bytes (or 65 bytes with a non-default sighash flag)</ref>
 ***** '''Signature''' <code>134896c42cd95680b048845847c8054756861ffab7d4abab72f6508d67d1ec0c590287ec2161dd7884983286e1cd56ce65c08a24ee0476ede92678a93b1b180c</code>: The first witness item here is a script argument for the corresponding condition script. In this case, we see the signature corresponding to the P2TR keypath spend.
 *** Second '''Witness Stack''': The witness data corresponding to the second input.
 **** Item count for the second '''Witness Stack''' <code>03</code>: serialization artifact, two or more Witness Items indicate a scriptpath spend.
