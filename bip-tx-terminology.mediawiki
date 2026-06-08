@@ -295,8 +295,8 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 *** Length of '''Transaction Output List''' <code>01</code>: serialization artifact, <Code>CompactSize</code> here indicating 1 output, considered part of the Transaction Header
 *** First '''Output'''
 **** '''Amount''' <code>b4ba0e0000000000</code>: field defining that 965300 satoshis are assigned to this output
-**** '''Output Script (scriptPubKey)'''
-***** Length of the '''scriptPubKey''' <code>16</code>: serialization artifact, here instructing the interpreter to read 22 bytes
+**** '''Output Script'''
+***** Length of the '''Output Script''' <code>16</code>: serialization artifact, here instructing the interpreter to read 22 bytes
 ***** '''Witness Version''' <code>00</code>: indicates a native segwit v0 output
 ***** Length of the '''Witness Program''' <code>14</code>: serialization artifact indicating a 20-byte witness program
 ***** '''Witness Program''' <code>173fd310e9db2c7e9550ce0f03f1e6c01d833aa9</code>: a public key hash since a 20-byte v0 witness program indicates a P2WPKH output)
