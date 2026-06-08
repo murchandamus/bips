@@ -228,44 +228,6 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 <sub>¹ Bare outputs include P2PK, P2PKH, P2MS, and any other arbitrary scripts that are fully defined in the output script.</sub>
 
-==Rationale==
-
-; Amount vs Value
-: Amount underscores that we are referring to a count of satoshis rather than subjective value. As Bitcoin transactions (and code altogether) are littered with “values”, we prefer “amount” as being less ambiguous.
-
-; <span id="compactsize"></span><code>CompactSize</code> vs <code>VarInt</code>
-: The Bitcoin Core codebase uses the term <code>CompactSize</code> for a “variable-length integer encoding used in Bitcoin Core’s serialization framework” that has outside of Bitcoin Core also been referred to as <code>VarInt</code><ref>Also see Bitcoin Stack Exchange: [[What is the different between CompactSize and VarInt encoding?|https://bitcoin.stackexchange.com/a/114585/5406]]. Since the Bitcoin Core codebase uses another type of variable-length integer encoding called <code>VarInt</code> in the context of database interaction, we prefer using <code>CompactSize</code> in the context of transaction serialization. This approach is also preferred by some technical writers working on widely read technical resources concerned with Bitcoin.
-
-; Forwarding and condition script in the context of P2TR keypath spends
-: The terminology is open to interpretation in the context of P2TR keypath spends. When spending a P2TR output per the keypath, the signer uses the private key corresponding to the taproot internal key and tweaks the resulting signature with the Merkle root of the script tree. Looking at the process under the hood, we should consider the taproot output key a forwarding script that commits to multiple condition scripts: the taproot internal key and all leaf scripts. However, looking at the serialization, this means that a P2TR keypath input is an exception in that it does not explicitly reveal its condition script, since the taproot internal key does not appear in the transaction serialization. Alternatively, the taproot output key could be interpreted as being both the condition script in the case of a keypath spend and a forwarding script in the case of a script path spend.
-
-; Witness
-: We have seen “witness” used to refer to both the witness data of a single input or the entirety of a transaction’s witness data. We use Witness Stack to refer to the witness data of a single Transaction Input, and Witness Structure when talking about all witness data of a transaction.
-
-; Forwarding Scripts and Condition Scripts
-: We introduce these two new terms to distinguish two types of functions for “scripts”. The condition scripts encode the actual spending conditions, while forwarding scripts commit the spender to providing another script down the line. [[File:bip-tx-terminology/scripts.png|framed|center|alt=An overview of forwarding and condition scripts|Figure 1]]
-
-; Flag
-: While the Flag currently only indicates the presence of a Witness Structure, it could perhaps also indicate the presence of other extended serialization formats in the future, therefore, it’s only flag, not “witness flag”.
-
-; P2SH Program
-: We introduce the term P2SH Program to refer to the commitment in an Output Script that forwards execution to the input script corresponding to witness programs.
-
-; Witness Item vs Witness Element
-: BIP341 refers to parts of the witness stack as “witness elements” and “witness stack elements”, but BIP144 speaks of “item count”. We prefer witness item to refer to parts of a witness stack.
-
-; Witness Section vs Witness Structure
-: While witness section and witness structure are both used, we prefer the use of witness structure as introduced in BIP144.
-
-; Witness Stack
-: While BIP144 refers to witness stacks as “script witnesses”, they are not scripts. Strictly speaking, they’re also not stacks, because some witness items that appear in witness stacks are not added to the stack that’s evaluated with the condition script, such as control blocks. We still prefer witness stack as it is well-established.
-
-; <span id="locking_unlocking"></span>Locking Script and Unlocking Script
-: Some popular works refer to <code>scriptPubKey</code> and <code>scriptSig</code> as “locking script” and “unlocking script” respectively. We do not recommend the use of these terms since they conflate the transaction component with the function these scripts had for some of the earlier output types. We introduce a set of new terms to decouple the position of the '''output script''' and '''input script''' from the function of locking and unlocking, and to underscore the evolution of output types from executable scripts to templates with additional implied meaning.—As output types have evolved over the years, we have departed from them relying on fully specified executable scripts, but rather imbued certain templates with additional constraints. For example a P2SH program interpreted as written only checks that the redeem script revealed in the input script matches the pre-image in the output script, but the implied meaning of the P2SH program additionally requires the redeem script to be evaluated satisfactorily. Later with wrapped P2WSH, we didn’t even require the witness script to contain all the arguments with push operations directly in a script but rather provide them as separate items akin to a pre-built stack. We refer to these stand-alone witness items as '''script arguments'''. With native segwit outputs finally, the input script is empty altogether, and no longer plays any role in “unlocking” the funds at all.
-
-; Locking Script vs Output Script + Forwarding Script + Condition Script
-: The <code>scriptPubKey</code> has also sometimes been referred to as “locking script”, especially before the activation of the segwit soft fork. However, this term is ambiguous in that it refers to the function of the output script but appears as the label for the field at the same time. This document introduces new terms to distinguish the transaction component from the abstract function it takes. We use '''output script''' when we refer to the <code>scriptPubKey</code> field in the transaction, and speak of either a '''condition script''' or '''forwarding script''' when we refer to the function the output script fulfills in a particular output.
-
 ===Example: Anatomy of a serialized transaction===
 
 In this section we dissect a serialized transaction. Each sub-level in the list repeats a subset of the transaction’s serialization to label the included parts. The goal is to provide a map from a serialized transaction back to our definitions above. We use the first ever P2TR transaction with a keypath and a scriptpath input <code>37777defed8717c581b4c0509329550e344bdc14ac38f71fc050096887e535c8</code>.
@@ -321,6 +283,44 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 ***** '''Taproot Branch''' <code>776b22a1185fb2dc9524f6b178e2693189bf01655d7f38f043923668dc5af45b</code>: The hashing partners necessary to connect the leaf script to the Merkle root of the script tree.
 ** '''Transaction Header''' (cont.)
 *** '''Lock Time''' <code>ffd30a00</code>: the 4-byte lock time field, little-endian for 709631
+
+==Rationale==
+
+; Amount vs Value
+: Amount underscores that we are referring to a count of satoshis rather than subjective value. As Bitcoin transactions (and code altogether) are littered with “values”, we prefer “amount” as being less ambiguous.
+
+; <span id="compactsize"></span><code>CompactSize</code> vs <code>VarInt</code>
+: The Bitcoin Core codebase uses the term <code>CompactSize</code> for a “variable-length integer encoding used in Bitcoin Core’s serialization framework” that has outside of Bitcoin Core also been referred to as <code>VarInt</code><ref>Also see Bitcoin Stack Exchange: [[What is the different between CompactSize and VarInt encoding?|https://bitcoin.stackexchange.com/a/114585/5406]]. Since the Bitcoin Core codebase uses another type of variable-length integer encoding called <code>VarInt</code> in the context of database interaction, we prefer using <code>CompactSize</code> in the context of transaction serialization. This approach is also preferred by some technical writers working on widely read technical resources concerned with Bitcoin.
+
+; Forwarding and condition script in the context of P2TR keypath spends
+: The terminology is open to interpretation in the context of P2TR keypath spends. When spending a P2TR output per the keypath, the signer uses the private key corresponding to the taproot internal key and tweaks the resulting signature with the Merkle root of the script tree. Looking at the process under the hood, we should consider the taproot output key a forwarding script that commits to multiple condition scripts: the taproot internal key and all leaf scripts. However, looking at the serialization, this means that a P2TR keypath input is an exception in that it does not explicitly reveal its condition script, since the taproot internal key does not appear in the transaction serialization. Alternatively, the taproot output key could be interpreted as being both the condition script in the case of a keypath spend and a forwarding script in the case of a script path spend.
+
+; Witness
+: We have seen “witness” used to refer to both the witness data of a single input or the entirety of a transaction’s witness data. We use Witness Stack to refer to the witness data of a single Transaction Input, and Witness Structure when talking about all witness data of a transaction.
+
+; Forwarding Scripts and Condition Scripts
+: We introduce these two new terms to distinguish two types of functions for “scripts”. The condition scripts encode the actual spending conditions, while forwarding scripts commit the spender to providing another script down the line. [[File:bip-tx-terminology/scripts.png|framed|center|alt=An overview of forwarding and condition scripts|Figure 1]]
+
+; Flag
+: While the Flag currently only indicates the presence of a Witness Structure, it could perhaps also indicate the presence of other extended serialization formats in the future, therefore, it’s only flag, not “witness flag”.
+
+; P2SH Program
+: We introduce the term P2SH Program to refer to the commitment in an Output Script that forwards execution to the input script corresponding to witness programs.
+
+; Witness Item vs Witness Element
+: BIP341 refers to parts of the witness stack as “witness elements” and “witness stack elements”, but BIP144 speaks of “item count”. We prefer witness item to refer to parts of a witness stack.
+
+; Witness Section vs Witness Structure
+: While witness section and witness structure are both used, we prefer the use of witness structure as introduced in BIP144.
+
+; Witness Stack
+: While BIP144 refers to witness stacks as “script witnesses”, they are not scripts. Strictly speaking, they’re also not stacks, because some witness items that appear in witness stacks are not added to the stack that’s evaluated with the condition script, such as control blocks. We still prefer witness stack as it is well-established.
+
+; <span id="locking_unlocking"></span>Locking Script and Unlocking Script
+: Some popular works refer to <code>scriptPubKey</code> and <code>scriptSig</code> as “locking script” and “unlocking script” respectively. We do not recommend the use of these terms since they conflate the transaction component with the function these scripts had for some of the earlier output types. We introduce a set of new terms to decouple the position of the '''output script''' and '''input script''' from the function of locking and unlocking, and to underscore the evolution of output types from executable scripts to templates with additional implied meaning.—As output types have evolved over the years, we have departed from them relying on fully specified executable scripts, but rather imbued certain templates with additional constraints. For example a P2SH program interpreted as written only checks that the redeem script revealed in the input script matches the pre-image in the output script, but the implied meaning of the P2SH program additionally requires the redeem script to be evaluated satisfactorily. Later with wrapped P2WSH, we didn’t even require the witness script to contain all the arguments with push operations directly in a script but rather provide them as separate items akin to a pre-built stack. We refer to these stand-alone witness items as '''script arguments'''. With native segwit outputs finally, the input script is empty altogether, and no longer plays any role in “unlocking” the funds at all.
+
+; Locking Script vs Output Script + Forwarding Script + Condition Script
+: The <code>scriptPubKey</code> has also sometimes been referred to as “locking script”, especially before the activation of the segwit soft fork. However, this term is ambiguous in that it refers to the function of the output script but appears as the label for the field at the same time. This document introduces new terms to distinguish the transaction component from the abstract function it takes. We use '''output script''' when we refer to the <code>scriptPubKey</code> field in the transaction, and speak of either a '''condition script''' or '''forwarding script''' when we refer to the function the output script fulfills in a particular output.
 
 ==Acknowledgements==
 
