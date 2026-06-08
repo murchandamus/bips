@@ -51,7 +51,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : [Component] A condition script that is directly defined in the output script field. Used to specify all types of bare outputs including Pay to Pubkey (P2PK), Pay to Public Key Hash (P2PKH), Pay to Multisig (P2MS) outputs, and arbitrary scripts.
 
 ; coinbase
-: [Component] The coinbase field takes the place of the input script in a coinbase transaction (named after this field), since coinbase transactions do not spend a transaction output.
+: [Component] The coinbase field takes the place of the input script in a coinbase transaction (named after this field), since coinbase transactions do not spend a previous transaction output (TXO).
 
 ; <code>CompactSize</code>
 : [Concept] A variable-length integer encoding used in the transaction serialization to express input and output count.
@@ -68,6 +68,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; forwarding script
 : [Concept] A collective term for scripts that redirect input validation to another script or data structure. Witness programs and P2SH Programs are forwarding scripts. Forwarding scripts make use of script templates that imply additional evaluation steps beyond the explicitly expressed conditions. In the case of P2SH, the output script itself only explicitly specifies that the redeem script must be the preimage of the hash in the output script, but the template prescribes that the redeem script must additionally be satisfied. For witness programs, the output script is even less verbose with more implied meaning.
+
+; input
+: See '''transaction input'''.
 
 ; input counter
 : [Artifact] The length of the transaction input list (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]).
@@ -96,6 +99,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 ; outpoint
 : [Component] Identifies the transaction output (TXO) being spent by a transaction input. Consists of a txid and output index. The txid is serialized in little-endian but displayed in big-endian.
 : Synonym: <code>prevout</code>
+
+; output
+: See '''transaction output'''.
 
 ; output counter
 : [Artifact] The length of the transaction output list, (see [[https://github.com/bitcoin/bips/blob/master/bip-0144.mediawiki|BIP144]]).
@@ -166,7 +172,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 
 ; transaction output (TXO)
 : [Component] A transaction component that consists of an amount and an output script. Adds a new unspent transaction output (UTXO) to the UTXO set that is uniquely identified by an outpoint.
-: Synonym: <code>txout</code>
+: Synonym: output, <code>txout</code>
 
 ; transaction output list
 : [Concept] The enumeration of all transaction outputs of a transaction.
