@@ -151,7 +151,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : [Concept] The variant of the Script language used in P2TR leaf scripts (see [[https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki|BIP342]]).
 
 ; transaction header
-: [Concept] Collective term for the serialization artifacts and transaction fields that appear only once in the transaction serialization regardless of lengths of the input and output Lists: transaction version, marker (segwit only), flag (segwit only), input counter, output counter, and lock time.
+: [Concept] Collective term for the serialization artifacts and transaction fields that appear only once in the transaction serialization regardless of lengths of the input and output lists: transaction version, marker (segwit only), flag (segwit only), input counter, output counter, and lock time.
 
 ; transaction identifier (txid)
 : [Component] Identifies the transaction that created a TXO in an outpoint. Result of hashing a transaction without its witness structure. The txid is serialized in little-endian but displayed in big-endian.
