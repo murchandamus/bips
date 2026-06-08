@@ -103,7 +103,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : Synonym: <code>vout_index</code>, sometimes abbreviated as <code>vout</code>
 
 ; output script
-: [Component] Must be present in each transaction output. Contains either a condition script or a forwarding script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named <code>scriptPubKey</code> to refer to the transaction field of the type script that contained the public key. The use of this field had evolved beyond that interpretation even when Bitcoin was published since the field could already contain more complicated scripts. Today, this field is referred to as the output script.
+: [Component] Must be present in each transaction output. Contains either a condition script or a forwarding script. Originally, the Bitcoin code base used Hungarian notation. This field was presumably named <code>scriptPubKey</code> as it was of the type script and because it fulfilled the role of a public key. While the first standard output type, Pay to Public Key, only contained the public key in this field, the use of this field had evolved beyond that even when Bitcoin was published, since the field could already contain more complicated bare scripts. Today, this field is referred to as the output script.
 :  Synonyms: <code>scriptPubKey</code>, locking script (see [[locking_unlocking|Rationale]])
 
 ; P2SH program
