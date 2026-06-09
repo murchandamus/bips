@@ -125,6 +125,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : [Component] The condition script used in spending P2SH outputs. Is provided in the input script along with script arguments to satisfy it. The input script of wrapped segwit inputs is not a redeem script but a witness program.
 : Synonyms: <code>redeemScript</code>, redemption script
 
+; Script
+: [Concept] The original variant of the Bitcoin Script language used in bare output scripts, P2SH redeems scripts, and P2WSH witness scripts. Signature processing opcodes in Script expect DER-encoded ECDSA signatures. Capitalized Script refers to the language, whereas lowercase script refers to a script.
+
 ; script arguments
 : [Concept] Arguments presented to satisfy a condition script, e.g. signatures and public keys.
 
@@ -160,7 +163,7 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 : [Component] The public key present in the witness program of a P2TR output script composed by tweaking the inner key with the script tree’s Merkle root.
 
 ; Tapscript
-: [Concept] The variant of the Script language used in P2TR leaf scripts (see [[https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki|BIP342]]).
+: [Concept] The variant of the Script language used in P2TR leaf scripts (see [[https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki|BIP342]]). Signature processing opcodes in Tapscript expect Schnorr signatures.
 
 ; transaction header
 : [Concept] Collective term for the serialization artifacts and transaction fields that appear only once in the transaction serialization regardless of lengths of the input and output lists: transaction version, marker (segwit only), flag (segwit only), input counter, output counter, and lock time.
@@ -233,9 +236,9 @@ We also introduce some umbrella terms, concepts, and ideas that are useful to de
 |-
 | P2WSH || <nowiki>OP_0 <SH></nowiki>  || <nowiki>[…Script Arguments, Witness Script]</nowiki>
 |-
-| P2TR KP || rowspan="2" | <nowiki>OP_1 <PK></nowiki> || <nowiki>[<SIG>]</nowiki>
+| P2TR Keypath || rowspan="2" | <nowiki>OP_1 <PK></nowiki> || <nowiki>[<SIG>]</nowiki>
 |-
-| P2TR SP || <nowiki>[…Script Arguments, Leaf Script, Control Block, (Opt: Annex)]</nowiki>
+| P2TR Scriptpath || <nowiki>[…Script Arguments, Leaf Script, Control Block, (Opt: Annex)]</nowiki>
 |}
 
 <sub>¹ Bare outputs include P2PK, P2PKH, P2MS, and any other arbitrary scripts that are fully defined in the output script.</sub>
@@ -337,7 +340,7 @@ In this section we dissect a serialized transaction. Each sub-level in the list 
 ==Acknowledgements==
 
 Thanks to Pieter Wuille for the discussions that led to this proposal.
-Thanks to Otto Allmendinger, Matthew Zipkin, Larry Ruane, Stacie Waleyko, Dave Harding, Lloyd Fournier, Vojtěch Strnad, Armin Sabouri, and Kostas Karasavvas for feedback on this proposal.
+Thanks to Otto Allmendinger, Matthew Zipkin, Larry Ruane, Stacie Waleyko, Dave Harding, Lloyd Fournier, Vojtěch Strnad, Armin Sabouri, Kostas Karasavvas, Sebastian Falbesoner, Ishaana Misra, AJ Towns, dpc, Matt Corallo, and John Moffett for feedback on this proposal.
 
 ==Notes==
 
