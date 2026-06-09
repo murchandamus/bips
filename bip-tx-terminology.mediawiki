@@ -1,7 +1,7 @@
 <pre>
   BIP: ?
   Title: Terminology of Transaction Components
-  Authors: Mark Erhardt <murch@murch.one>
+  Authors: Murch <murch@murch.one>
   Status: Draft
   Type: Informational
   Assigned: ?
@@ -33,6 +33,8 @@ We treat the objects of the Bitcoin protocol (e.g. transactions, blocks) as dist
 We distinguish parts and concrete properties of transactions (labeled [Component]) such as fields and scripts as well as composites thereof from serialization artifacts (labeled [Artifact]) which only appear in the serialization format.
 For example, version and lock time are fields that can be set during transaction creation and therefore components of a transaction, while the input counter is a serialization artifact resulting from how the input list of the transaction is represented in the transfer format.
 Likewise, the input script is a transaction component, but the length indicator of the input script is a serialization artifact, and a witness stack is a component, but the marker and flag appearing in a segwit transaction’s header are serialization artifacts.
+
+If the distinction between components and serialization artifacts is not readily clear, perusing the below example of a [[#example-anatomy-of-a-serialized-transaction|transaction’s anatomy]] may help foster an intuitive sense.
 
 We also introduce some umbrella terms, concepts, and ideas that are useful to describe aspects of transactions (labeled [Concept]).
 
