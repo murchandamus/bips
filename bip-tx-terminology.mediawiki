@@ -1,6 +1,6 @@
 <pre>
-  BIP: <?>
-  Title: <Terminology for Transaction Components>
+  BIP: ?
+  Title: Terminology of Transaction Components
   Authors: Mark Erhardt <murch@murch.one>
   Status: Draft
   Type: Informational
