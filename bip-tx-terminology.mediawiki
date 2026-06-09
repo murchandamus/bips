@@ -7,6 +7,7 @@
   Assigned: ?
   License: BSD-3-Clause
   Discussion: 2023-04-05: https://gnusha.org/pi/bitcoindev/6bb373cc-bee0-13a3-a510-b65d4faa867f@murch.one/#t
+              2023-03-22–…: https://github.com/murchandamus/bips/pull/1
 </pre>
 
 == Introduction==
